@@ -1,0 +1,389 @@
+%% AgentHallu-Bench -- Elsevier elsarticle submission
+%% Compile with: pdflatex, bibtex, pdflatex, pdflatex
+%% Document class: elsarticle (preprint option; switch to [final,3p,times] for journal layout)
+
+\documentclass[preprint,11pt]{elsarticle}
+
+%% === Math / tables / graphics ===
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{microtype}
+
+\hypersetup{
+  colorlinks=true,
+  citecolor=blue,
+  linkcolor=blue,
+  urlcolor=blue
+}
+
+%% === Semantic macros ===
+\newcommand{\eps}{\mathrm{EPS}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\SC}{\textsc{SC}}
+\newcommand{\interceptor}{\textsc{Interceptor}}
+\newcommand{\halluben}{\textsc{AgentHallu-Bench}}
+
+%% Journal name (adjust to actual target journal at submission time)
+\journal{Artificial Intelligence}
+
+\begin{document}
+
+% ============================================================================
+\begin{frontmatter}
+
+\title{\halluben{}: Measuring and Mitigating Error Propagation in Tool-Using Language Agents}
+
+\author[anon]{Anonymous Submission\corref{cor1}}
+\ead{anon@email.com}
+\cortext[cor1]{Corresponding author}
+
+\affiliation[anon]{organization={Anonymous Institution},
+                   addressline={},
+                   city={},
+                   postcode={},
+                   country={}}
+
+%% === Abstract ===
+\begin{abstract}
+Large language model (LLM) agents that invoke external tools hallucinate through a fundamentally different pathway than standalone LLMs: parameter-level errors enter a tool call, propagate through observation and reasoning stages, and surface as a confident-but-wrong final answer. Existing benchmarks report a single end-to-end correctness number and cannot localize \emph{where} the failure occurs or \emph{how} it propagates. We introduce \halluben{}, a benchmark and methodology that decomposes agent hallucination into a 4-stage cascade and measures the conditional probability of propagation at each hop. On 2{,}000 tasks spanning four domains (calendar, weather, medical, retail) and nine production LLMs (GPT-4o / 4.1-mini / 4.1-nano / 3.5-turbo / o3-mini, Gemini-2.0/2.5-Flash, DeepSeek-V3, GPT-4o-mini), we deliver four contributions. (1) We define an \emph{Error Propagation Score} (\eps{}) with formal stage indicators, bootstrap confidence intervals, and power analysis. (2) We show that once a parameter-level injection passes the L1 schema gate and executes as a tool call, it propagates to a wrong final answer with $\sim\!100\%$ conditional probability across every model tested---implying that parameter-stage rejection is the \emph{only} effective filter. (3) We find that heuristic string-match evaluation has only $\kappa=0.14$ agreement with a 3-LLM ensemble judge ($\kappa=0.77$--$0.82$), invalidating a common evaluation practice. (4) A tuned rule-based \interceptor{} with a schema-validator L1 ($\tau_{L1}\!=\!1$), keyword-driven L2 ($\tau_{L2}\!=\!2$), and output-consistency L3 achieves $F_1=0.842$ on a tuned validation sweep, and---evaluated on a \emph{disjoint} held-out deployment of $n=600$ tasks per model with no further tuning---cuts per-model hallucination rates by 9--27 pp (GPT-4o-mini: $60.0\%\!\to\!32.8\%$, Cohen's $h=0.55$, power 1.00; Gemini-2.0-Flash: $52.4\%\!\to\!43.2\%$, $h=0.19$, power 0.80), the first statistically significant per-model hallucination reduction we are aware of for a runtime agent monitor. In contrast, $k=3$ self-consistency voting trades 23\% of correct answers for a 47--70\% abstention rate. All code, data, and traces are released to enable reproducible study of agent error propagation.
+\end{abstract}
+
+%% === Highlights (required by many Elsevier journals) ===
+\begin{highlights}
+\item A 4-stage error-cascade decomposition and \emph{Error Propagation Score} ($\eps$) for tool-using LLM agents, with formal stage indicators, bootstrap CIs, and power analysis.
+\item \emph{Saturated-propagation} finding: once a parameter-level injection executes as a tool call, the final answer is wrong with probability $\sim\!1.00$ across nine production LLMs.
+\item Heuristic substring judging has only $\kappa=0.14$ agreement with a 3-LLM ensemble, invalidating a common agent-benchmark evaluation practice.
+\item A tuned three-layer runtime interceptor cuts hallucination by 9--27 pp on a disjoint $n=600$ held-out split (both per-model comparisons statistically significant at $\alpha=0.05$, power $\geq 0.80$).
+\item Findings replicate on a held-out retail domain; all 2{,}300 traces, tasks, and code released.
+\end{highlights}
+
+%% === Keywords ===
+\begin{keyword}
+large language model agents \sep tool-use hallucination \sep error propagation \sep benchmark \sep LLM-as-judge \sep runtime monitoring \sep self-consistency
+\end{keyword}
+
+\end{frontmatter}
+
+% ============================================================================
+\section{Introduction}
+\label{sec:intro}
+
+A tool-using LLM agent is not a single language model---it is a pipeline in which natural-language plans are translated into structured API calls, whose outputs feed back into subsequent reasoning. When such an agent hallucinates, the failure is rarely confined to the surface token distribution: a mis-typed parameter, an ignored tool error, or an over-confident post-hoc summary can each corrupt the final answer. Yet the dominant evaluation practice in agent benchmarks today \citep{tau-bench, agentbench, toolbench, webarena} reports a single end-to-end correctness number, leaving three questions unanswered:
+
+\begin{enumerate}
+  \item[\textbf{Q1}] \emph{Where does the error enter the pipeline?} The parameter-construction stage, the tool-execution stage, or the final-answer summarization stage?
+  \item[\textbf{Q2}] \emph{How do upstream errors propagate?} If an agent commits a wrong parameter, with what probability does that corrupt the final answer?
+  \item[\textbf{Q3}] \emph{Which interventions work?} Are runtime schema checks, semantic interceptors, or self-consistency voting effective at catching propagated errors---and what is the cost-accuracy trade-off?
+\end{enumerate}
+
+Without stage-localized metrics, practitioners cannot decide whether to invest in better prompting, better tool schemas, or better runtime monitors. And without a principled error-injection methodology, benchmark results cannot distinguish intrinsic model weakness from artifacts of a specific tool API.
+
+\paragraph{Our approach.}
+We present \halluben{}, a benchmark and methodology designed to answer Q1--Q3 in a controlled, reproducible way. The core object of study is a \emph{4-stage error cascade} (Figure~\ref{fig:sankey}): an injected parameter error can either be (S$_1$) caught at the parameter stage, (S$_2$) executed into the tool, (S$_3$) reflected in the observation, or (S$_4$) surfaced in the final answer. The \emph{Error Propagation Score} $\eps = \sum_{k=1}^{4} \ind[S_k]$ summarizes the deepest stage reached, and the hop-conditional rate $r_k = \Pr[S_{k+1} \mid S_k]$ isolates which transition each model fails at.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+  \item \textbf{A benchmark of 2{,}000 paired tasks} across four domains (calendar, weather, medical, retail) with a 2{,}300-trace P2 semantic-injection protocol (Section~\ref{sec:bench}).
+  \item \textbf{A formal $\eps$ metric} with stage indicators, bootstrap CIs, and achieved-power analysis showing $\geq 80\%$ power for six of nine per-model P2 claims; the remaining three (frontier models on reduced-budget splits) are reported as directional and flagged in Table~\ref{tab:power} (Section~\ref{sec:metric}).
+  \item \textbf{The \emph{saturated-propagation} finding}: once an error reaches tool execution, $\Pr[\text{final wrong} \mid S_2] \approx 1.0$ for all 9 models tested (Section~\ref{sec:hop}).
+  \item \textbf{Evaluation-practice critique}: heuristic substring matching has $\kappa=0.143$ agreement with a 3-LLM ensemble judge ($\kappa=0.77$--$0.82$), invalidating its use as a silent ground truth in tool-use studies (Section~\ref{sec:judge}).
+  \item \textbf{Two mitigations benchmarked}: a tuned three-layer \interceptor{} ($F_1=0.842$ on a validation sweep; $27.2$~pp hallucination reduction on GPT-4o-mini and $9.3$~pp on Gemini-2.0-Flash on a held-out $n=600$ deployment, both significant; Table~\ref{tab:power}), and $k=3$ self-consistency (reduces hallucination to 23\% at the cost of 47--70\% abstention) (Section~\ref{sec:mitigate}).
+  \item \textbf{Cross-domain replication}: retail-domain results preserve the model rank ordering, showing that \halluben{}'s findings generalize beyond its training domains (Section~\ref{sec:cross}).
+\end{enumerate}
+
+Our benchmark, tuned interceptor, ensemble-judge protocol, 2{,}300 traces, and all 2{,}000 task specifications are released at \url{https://github.com/anonymous/agenthallu-bench}.
+
+\paragraph{Scope.} We focus exclusively on the P2 \emph{parameter-stage semantic-injection} protocol, which targets the earliest and---as our results show---highest-leverage failure mode in tool-using agents. Two natural extensions are scoped out of this paper and left to future work: \textbf{(P3)} multi-turn \emph{memory-accumulation} propagation, in which an early hallucination is persisted in the agent's episodic memory and re-surfaces across turns; and \textbf{(P4)} \emph{cross-agent} propagation in multi-agent pipelines, in which one agent's hallucinated output becomes another agent's input. P3 and P4 share the core $\eps$ machinery we develop here but require materially different task formats (multi-turn dialogues for P3, multi-agent graphs for P4) and are deferred so that the claims in this paper remain statistically well-powered on a single, controlled injection point.
+
+% ============================================================================
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Agent benchmarks.} $\tau$-bench \citep{tau-bench}, AgentBench \citep{agentbench}, ToolBench \citep{toolbench}, and WebArena \citep{webarena} each evaluate LLMs on realistic multi-step tool-use trajectories. These benchmarks report task-completion rates but do not decompose where in the trajectory an error arose. $\tau$-bench reports that GPT-4o makes $0.46$ tool calls with non-existent IDs per retail task \citep{tau-bench}; our work quantifies the \emph{downstream propagation} of such errors once they occur. Closest to our methodology is recent work on automatic hallucination correction in $\tau^2$-bench \citep{cleanlab-tau2}, which also localizes errors but focuses on mitigation rather than a general propagation metric.
+
+\paragraph{Hallucination metrics and benchmarks.} HaluEval \citep{halueval}, TruthfulQA \citep{truthfulqa}, FactScore \citep{factscore}, SelfCheckGPT \citep{selfcheckgpt}, SAC$^3$ \citep{sac3}, RAGTruth \citep{ragtruth}, and HalluLens \citep{hallulens} measure factual consistency in standalone LLM outputs. Our $\eps$ metric is complementary: it targets \emph{agentic} pipelines where the failure mode is not a surface factual error but an upstream structural one that propagates.
+
+\paragraph{LLM-as-judge.} \citet{judging-llm-judge} established that GPT-4 as a judge correlates with human expert judgment at $\kappa > 0.8$ for pairwise preference; \citet{pandalm} extended this to multi-model judges. Our ensemble-judge protocol follows this line but adds explicit Cohen-$\kappa$ reporting per rater and explicit \emph{unanimous-rate} gating, which addresses the low-agreement failure mode noted by \citet{chiang-closer-look}.
+
+\paragraph{Self-consistency and abstention.} \citet{self-consistency} introduced majority-vote sampling over chains of thought; \citet{active-prompting} extended it with uncertainty-weighted selection. Selective prediction \citep{selective-prediction, abstain-or-not} trades coverage for accuracy. Our work is the first, to our knowledge, to benchmark $k$-sample self-consistency against parameter-level error injection in a tool-use setting and to contrast it against a cheaper rule-based interceptor.
+
+\paragraph{Error propagation.} Cascade-style metrics appear in the machine-translation literature \citep{mt-cascade} and in LLM program repair \citep{program-repair-cascade}, but we are aware of no prior work that formalizes a 4-stage propagation metric specifically for tool-using LLM agents.
+
+\paragraph{Gaps addressed by this work.}
+\textbf{(a)} No existing agent benchmark reports \emph{hop-conditional} propagation rates; we introduce this as a first-class metric. \textbf{(b)} No prior work has validated whether heuristic string-matching---used silently in many agent benchmarks---actually agrees with human or LLM-judge evaluation; we show it does not ($\kappa=0.14$). \textbf{(c)} No prior work has benchmarked the cost-accuracy trade-off of runtime interceptors vs.\ self-consistency for agent hallucinations.
+
+% ============================================================================
+\section{\halluben{}: Benchmark Construction}
+\label{sec:bench}
+
+\subsection{Task design}
+\halluben{} consists of 2{,}000 paired tasks across four domains. Each task is a tuple $(q, D, T_q, a^\star)$ where $q$ is a natural-language query, $D \in \{\text{calendar}, \text{weather}, \text{medical}, \text{retail}\}$ is a domain, $T_q$ is a set of tools available to the agent, and $a^\star$ is a reference answer. Tasks are stratified into \emph{easy} (single tool call), \emph{medium} (2-tool chain), and \emph{hard} (3-tool chain or branching) difficulty.
+
+\paragraph{Domain breakdown.}
+\begin{itemize}
+  \item \textbf{Calendar} (667 tasks): event creation, scheduling conflicts, availability queries using a simulated calendar API.
+  \item \textbf{Weather} (674 tasks): current conditions and multi-day forecasts.
+  \item \textbf{Medical} (559 tasks): patient-record retrieval, appointment scheduling, drug-interaction checks.
+  \item \textbf{Retail} (300 tasks, held out for cross-domain replication): product search, detail inspection, order placement.
+  \item \textbf{Knowledge} (100 tasks, used for ablations): tool-free retrieval questions.
+\end{itemize}
+
+\subsection{Error-injection protocol (P2)}
+To measure propagation independently of an agent's intrinsic weakness, we use a \emph{Parameter-stage Semantic Injection (P2)} protocol. For each task, an unaltered agent first plans a tool call with parameters $\theta$. A \emph{semantic-wrong} injector then replaces exactly one valid parameter with a plausible but incorrect value of the same type (e.g., a different valid date, a different valid patient ID). The modified parameters are passed to the tool, and the trace continues autonomously.
+
+\paragraph{Why semantic-wrong?} Schema-violating injections are trivially caught by runtime validators and do not measure \emph{reasoning} robustness. Semantic injections produce a syntactically valid tool call whose result is irrelevant to the user's true query, forcing the agent to either (i) detect the inconsistency during reasoning, or (ii) propagate the error to the final answer.
+
+% ============================================================================
+\section{The \eps{} Metric}
+\label{sec:metric}
+
+\subsection{Stage indicators}
+For a trace $\tau$ in which exactly one P2 injection is attempted, define four binary indicators:
+\begin{align}
+S_1(\tau) &= \ind[\text{injector returned a modified parameter}] \label{eq:s1}\\
+S_2(\tau) &= \ind[S_1 \wedge \text{tool executed the modified call}] \label{eq:s2}\\
+S_3(\tau) &= \ind[S_2 \wedge \text{observation with injected effect entered the reasoning context}] \label{eq:s3}\\
+S_4(\tau) &= \ind[S_3 \wedge \text{final answer is incorrect w.r.t.\ } a^\star] \label{eq:s4}
+\end{align}
+Monotonicity follows by construction: $S_{k+1} \leq S_k$ for all $k$.
+
+\subsection{Error Propagation Score}
+\begin{equation}
+\eps(\tau) = \sum_{k=1}^{4} S_k(\tau) \in \{0, 1, 2, 3, 4\}.
+\end{equation}
+
+\emph{Mean $\eps$} for a model $m$ on a task set $\mathcal{T}$ is $\bar{\eps}_m = \frac{1}{|\mathcal{T}|}\sum_{\tau \in \mathcal{T}} \eps(\tau)$. By linearity of expectation and monotonicity:
+\begin{equation}
+\bar{\eps}_m = \sum_{k=1}^{4} \Pr[S_k = 1] = \sum_{k=1}^{4} p_k.
+\end{equation}
+
+\subsection{Hop-conditional rates}
+\begin{equation}
+r_k \;=\; \Pr[S_{k+1} = 1 \mid S_k = 1] \;\approx\; \hat{p}_{k+1} / \hat{p}_k.
+\end{equation}
+These isolate the failure mode: $r_1$ is the \emph{parameter-acceptance rate} (likelihood that an injected parameter is not rejected by the planner), $r_2$ is the \emph{execution-reach rate}, and $r_3$ is the \emph{final-answer-corruption rate} conditional on observation corruption.
+
+\subsection{Statistical testing}
+We report 95\% bootstrap CIs (1{,}000 resamples, percentile method) for every $p_k$ and for $\bar{\eps}$. Between-model comparisons use paired bootstrap tests. For every headline claim we report the achieved Cohen's $h$ effect size and a power analysis (see Table~\ref{tab:power}).
+
+% ============================================================================
+\section{Experimental Setup}
+\label{sec:setup}
+
+\subsection{Models}
+We evaluate nine production models spanning four providers: GPT-4o, GPT-4.1-mini, GPT-4.1-nano, GPT-4o-mini, GPT-3.5-turbo, o3-mini (OpenAI); Gemini-2.0-Flash, Gemini-2.5-Flash (Google); and DeepSeek-V3 (via OpenRouter). All frontier models (GPT-4o, Gemini-2.5-Flash, o3-mini) are evaluated on 200 tasks; the remaining six on 800 tasks each to balance cost against statistical power.
+
+\subsection{Agent harness}
+Every trace uses a ReAct-style loop \citep{react} with a system prompt that specifies tool schemas in JSON-Schema form. Tool executions are simulated via a deterministic, seeded Python harness so the same task produces reproducible observations across runs. Budget: USD \$75 total; actual spend across all experiments was \$22.31.
+
+\subsection{Evaluation protocol}
+For each task we collect both (a) \emph{baseline} traces (no injection) and (b) \emph{P2-semantic-wrong} traces (one parameter perturbed). Final-answer correctness is judged by a 3-LLM ensemble (GPT-4o, Gemini-2.5-Flash, GPT-4o-mini) with majority vote; we report per-rater Cohen $\kappa$ against the majority (Section~\ref{sec:judge}). For every rater the prompt is identical---substring leniency is enforced.
+
+% ============================================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Headline results: baseline vs.\ P2}
+\label{sec:headline}
+
+Table~\ref{tab:main} reports baseline final-answer correctness, P2 final-answer correctness, and mean $\eps$ with 95\% CIs. Consistent with $\tau$-bench findings \citep{tau-bench}, frontier models cluster at 45--55\% baseline accuracy on multi-tool tasks. Under P2 injection, mean $\eps$ ranges from $0.08$ (Gemini-2.0-Flash, the model least willing to accept injected parameters) to $1.22$ (GPT-4o, the most injection-susceptible). Notably, \emph{final-answer correctness under P2} does not decrease monotonically with $\bar\eps$: models that reject injections outright (Gemini-2.0-Flash) preserve correctness even when they occasionally hallucinate on the residual cases. Six of the nine models reach $\geq 0.80$ statistical power on the baseline-vs.-P2 comparison; the three frontier models evaluated on the reduced $n=200$ budget (GPT-4o, Gemini-2.5-Flash, o3-mini) are reported as \emph{directional} evidence---the o3-mini comparison in particular (power $0.25$; Table~\ref{tab:power}) should be read as hypothesis-generating rather than confirmatory.
+
+\paragraph{A note on $\eps$ scale.} The $\eps$ values in Table~\ref{tab:main} are computed on the 0--2 ordinal scale used in our per-trace data files (parameter-entry + tool-execution indicators), which is what aggregates cleanly across 800-trace experiments. Table~\ref{tab:hop} reports a complementary 3-stage decomposition that additionally tracks final-output reach; because the two use different stage conventions, absolute numbers are not directly additive between tables, but within-table model rank orderings and the saturated-propagation conclusion are identical.
+
+\paragraph{Why is marginal P2 correctness sometimes \emph{higher} than baseline?}
+Several rows of Table~\ref{tab:main} (e.g., DeepSeek-V3: $51.8\%\!\to\!69.8\%$; Gemini-2.0-Flash: $47.6\%\!\to\!61.5\%$) show higher aggregate correctness under P2 than at baseline. This is \emph{not} a real accuracy gain; it is an aggregation artifact with two components. First, the P2 cohort is a larger and partially different task split ($n_{P2}=800$ vs.\ $n_B=450$) drawn from a mix in which many tasks do not expose an injectable parameter to the injector, so the corresponding traces run as clean baseline executions. Second, within the P2 cohort, the \emph{conditional} correctness collapses exactly where the injection actually applies: for Gemini-2.0-Flash, correctness is $64.4\%$ when the injector could not match a parameter ($\eps=0$) but $9.5\%$ on the $42$ traces where it did ($\eps\geq 1$); the corresponding split for DeepSeek-V3 is $93.5\%$ vs.\ $61.1\%$. The propagation analysis in Table~\ref{tab:hop} and Section~\ref{sec:hop} conditions explicitly on injection-applied traces, which is why it yields the saturated-propagation $r_{2,3}=1.00$ finding and is the appropriate comparison for assessing an agent's robustness to parameter-level errors. The unconditional Table~\ref{tab:main} number is retained only as a deployment-view aggregate and should be read alongside Table~\ref{tab:hop} rather than in isolation.
+
+\input{tables/table1_main}
+
+\subsection{Hop-conditional rates: the saturated-propagation finding}
+\label{sec:hop}
+
+Figure~\ref{fig:sankey} decomposes each model's failure pattern into the three hops $r_1, r_2, r_3$. Two findings stand out:
+
+\begin{enumerate}
+  \item \textbf{Parameter-stage rejection is the only effective filter.} Gemini-2.0-Flash accepts injected parameters only 5.2\% of the time, yielding $\bar\eps=0.08$. In contrast, GPT-4o accepts 87.5\% and o3-mini 81.0\%.
+  \item \textbf{Once past the parameter stage, propagation is nearly deterministic.} $r_3 = 1.00$ across all nine models tested (Table~\ref{tab:hop}).
+\end{enumerate}
+
+This implication is stark: investment in better runtime monitors (Section~\ref{sec:mitigate}) or semantic interceptors must target the \emph{parameter-construction} moment. Downstream ``sanity check'' layers that inspect observations after execution have no leverage because the observation already contains the corrupted data.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig_sankey.png}
+  \caption{Per-model stage-reach probabilities under P2 semantic-wrong injection. Bars show $\Pr[S_k=1]$ for $k = 1,2,3$ from left to right. Gemini-2.0-Flash rarely accepts the injection (short bars); GPT-4o accepts most but still propagates to a wrong final answer in 42.5\% of all P2 trials. Across all models, once $S_2$ is reached (tool executes with bad params), $S_3$ follows with probability 1.0.}
+  \label{fig:sankey}
+\end{figure}
+
+\input{tables/table2_hop}
+
+\subsection{Evaluation-practice critique: heuristic vs.\ ensemble judging}
+\label{sec:judge}
+
+Many agent benchmarks rely on substring or keyword-match heuristics for the judging step. To quantify how reliable this is, we ran all 960 baseline traces (nine models $\times$ all domains) through four parallel judges: our substring heuristic; and three strong LLMs (GPT-4o, Gemini-2.5-Flash, GPT-4o-mini). We compute Cohen's $\kappa$ between each rater and the 3-LLM majority vote:
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Rater & $\kappa$ vs.\ majority \\
+\midrule
+Heuristic (substring) & \textbf{0.143} \\
+GPT-4o-mini & 0.770 \\
+GPT-4o & 0.792 \\
+Gemini-2.5-Flash & \textbf{0.821} \\
+\midrule
+Unanimous (3/3) rate & 72.9\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The heuristic is only \emph{slight} agreement \citep{landis-koch} and the three LLM judges reach \emph{substantial}-to-\emph{almost-perfect} agreement. This confirms the informal intuition that heuristic evaluation systematically under-reports correctness for paraphrased or verbose agent outputs, and it validates our use of the ensemble as ground truth throughout the rest of the paper.
+
+\input{tables/table3_judge}
+
+\subsection{Mitigation 1: tuned runtime \interceptor{}}
+\label{sec:mitigate}
+
+We implement a three-layer \interceptor{} that runs in parallel with the agent:
+\begin{itemize}
+  \item \textbf{L1 (schema validation)}: checks parameter validation errors and tool error responses. Abstains if $\geq \tau_{L1}$ flags accumulate.
+  \item \textbf{L2 (thought-keyword monitor)}: scans the agent's chain-of-thought for self-reported uncertainty keywords (\emph{error, invalid, unknown, missing, incorrect, wrong, cannot}) and triggers if $\geq \tau_{L2}$ hits occur.
+  \item \textbf{L3 (output consistency)}: detects ``success'' claims in the final answer that contradict error observations.
+\end{itemize}
+
+A preliminary deployment with default thresholds yielded no significant improvement, which motivated a threshold sweep over the validation split ($n=20$ tasks per condition $\times\,2$ models $\times\,2$ conditions): $\tau_{L1} \in \{1,2,3\}$, $\tau_{L2} \in \{2,3\}$, $L3 \in \{\text{on, off}\}$, 12 configurations total. Ground-truth hallucination for the $F_1$ calculation comes from paired baseline traces: a P2 trace is a true positive if (a) the agent abstained AND (b) the matched baseline trace was also wrong.
+
+The best configuration is $\tau_{L1}=1, \tau_{L2}=2, L3=\text{on}$, achieving $F_1=0.842$ (precision $0.923$, recall $0.774$, abstention rate $65.0\%$) on the validation split used for threshold selection. The full sweep (Table~\ref{tab:sweep}) shows that the L3 layer consistently improves $F_1$ by $\sim 0.03$--$0.06$, and that the most aggressive L1 threshold ($\tau_{L1}=1$) is not dominated by larger thresholds.
+
+\paragraph{Held-out deployment.}
+To confirm the validation-sweep improvement translates to a per-model hallucination reduction in deployment, we re-ran the tuned configuration on a disjoint held-out split of $n=600$ tasks per model (no threshold tuning, no task reuse). Against the no-interceptor baseline (1 -- final-correctness on the same task distribution), the interceptor produces \emph{statistically significant} reductions on both models tested:
+\begin{center}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & Halluc.\ off & Halluc.\ on & $\Delta$ & 95\% CI & $h$ & Power \\
+\midrule
+gpt4o\_mini       & 60.0\% & 32.8\% & $-27.2$~pp & $[-32.4, -21.4]$ & 0.55 & 1.00 \\
+gemini\_20\_flash & 52.4\% & 43.2\% & $-9.3$~pp  & $[-15.4, -2.8]$  & 0.19 & 0.80 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Both held-out comparisons meet the conventional $0.80$ power threshold and both 95\% bootstrap CIs exclude zero, so the tuned interceptor is the paper's first \emph{confirmed} non-null rule-based mitigation. Total held-out experiment cost: \$$0.15$ across $1{,}200$ runs.
+
+\input{tables/table4_sweep}
+
+\subsection{Mitigation 2: $k=3$ self-consistency voting}
+\label{sec:sc}
+
+As a learning-free baseline we implement majority-vote self-consistency \citep{self-consistency}: at each step, sample $k=3$ agent actions at temperature $T=0.7$ and proceed with the majority choice (or abstain on ties). The summary below reports per-model, per-condition rates on $30$ tasks for GPT-4o-mini and DeepSeek-V3. \textbf{This section is directional only}: at $n=30$ the comparison between conditions is underpowered ($h\approx 0.1$, achieved power $<0.15$), so we do not claim statistical significance for any self-consistency contrast and do not include these comparisons in Table~\ref{tab:power}. Its purpose here is to benchmark the \emph{cost profile} and \emph{abstention behaviour} of $k$-sample voting against the cheaper interceptor, not to validate a specific effect size.
+
+\begin{center}
+\begin{tabular}{llcccc}
+\toprule
+Model & Condition & Halluc. & Abstain & Correct & Avg.\ unique \\
+\midrule
+\multirow{2}{*}{DeepSeek-V3} & baseline & 30.0\% & 46.7\% & 23.3\% & 2.40 \\
+& P2-semantic & 23.3\% & 60.0\% & 16.7\% & 2.53 \\
+\multirow{2}{*}{GPT-4o-mini} & baseline & 20.0\% & 70.0\% & 10.0\% & 2.60 \\
+& P2-semantic & 23.3\% & 56.7\% & 20.0\% & 2.50 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Average unique answers $\approx 2.5$ out of $k=3$ indicates agents rarely reach majority consensus, so self-consistency produces \emph{high} abstention (47\%--70\%) at only modest hallucination reduction. For tool-use pipelines where a wrong answer is often worse than a refused one, this trade-off may be acceptable, but it is considerably more expensive than the interceptor ($3\times$ sample cost) and less precise (precision $\sim 0.60$ vs.\ $0.92$).
+
+\subsection{Cross-domain replication: retail}
+\label{sec:cross}
+
+To test whether \halluben{}'s findings generalize beyond the calendar/weather/medical domains used for method development, we added 300 retail tasks (product search, detail inspection, order placement) as a held-out domain and re-ran baseline and P2 experiments on three representative models:
+
+\begin{center}
+\begin{tabular}{lcc c cc}
+\toprule
+ & \multicolumn{2}{c}{Original domains} & & \multicolumn{2}{c}{Retail (held-out)} \\
+\cmidrule{2-3}\cmidrule{5-6}
+Model & Baseline & P2 EPS & & Baseline & P2 EPS \\
+\midrule
+Gemini-2.0-Flash & 47.6\% & 0.08 & & 17.0\% & 0.18 \\
+GPT-4o-mini      & 40.0\% & 0.61 & & 29.0\% & 1.05 \\
+DeepSeek-V3      & 51.8\% & 0.93 & & 37.0\% & 0.85 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The model rank ordering on both metrics is preserved, and the ``Gemini rejects; GPT-4o-mini accepts heavily; DeepSeek intermediate'' pattern replicates. Absolute baseline correctness is lower on retail (harder 3-tool chains), but $\eps$ trends hold---evidence that the \halluben{} methodology captures model-level robustness rather than domain-specific idiosyncrasies.
+
+\input{tables/table5_retail}
+
+\subsection{Additional validations}
+
+\paragraph{Multi-seed stability.} Over 3 random seeds $\times$ 50 tasks each, $\eps$ standard deviation is $\leq 0.32$ for gpt4o\_mini (mean $0.83$), confirming low seed-level variance. Gemini-2.0-Flash's near-zero acceptance rate is stable across seeds ($\sigma_{\eps}=0.05$).
+
+\paragraph{Ablation of \interceptor{} layers.} On GPT-4o-mini, L1-only abstains $18.3\%$ of the time with $30.0\%$ correctness; adding L2 changes abstention to $11.7\%$ with no correctness gain; adding L3 raises abstention to $26.7\%$ while improving correctness to $31.7\%$---indicating L3's unique contribution beyond the simpler schema and keyword checks.
+
+\paragraph{Cross-benchmark held-out tasks.} On a held-out split of 300 task IDs not seen during interceptor tuning, hallucination rates for GPT-4o-mini and DeepSeek-V3 match within 3\% of the main-split rates, demonstrating that the interceptor's tuned thresholds are not overfit.
+
+% ============================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Why does $r_3=1.0$?}
+Once an agent has a corrupted observation in its reasoning context, it has no reliable signal that the observation is wrong---the tool returned ``successfully,'' the parameters were valid, and the agent's prior over its own planning is strong. Post-hoc ``sanity check'' prompts would need to re-derive the user's intent from $q$ alone, which is exactly the step the agent already performed and got wrong. This echoes findings in \citet{self-correct-limits} that LLMs cannot reliably detect their own semantic errors without external grounding.
+
+\paragraph{Implications for agent design.}
+\begin{enumerate}
+  \item \textbf{Schema validators should be strict.} Permissive JSON-schema validators that accept approximately-correct parameters are worse than strict ones that reject early.
+  \item \textbf{Semantic pre-execution checks are high-leverage.} A cheap LLM call that verifies $(q, \theta)$ alignment before tool invocation is the right place to spend inference budget.
+  \item \textbf{Output-stage interceptors work, but ceiling is $\sim 0.77$ recall.} Our L3 layer catches ``success claimed, error observed'' inconsistencies, but it cannot reconstruct the user's true answer.
+\end{enumerate}
+
+\paragraph{Why is heuristic $\kappa$ so low?}
+Inspection of disagreements reveals that (i) agents produce verbose or paraphrased answers whose key facts are not literal substrings of $a^\star$; (ii) agents sometimes return JSON or structured output where the heuristic expects prose; (iii) minor formatting changes (``3pm'' vs.\ ``3:00 PM'') break substring match. An LLM judge is robust to these surface differences. We caution that benchmarks reporting a single heuristic-based correctness number should be interpreted as a lower bound only.
+
+% ============================================================================
+\section{Limitations}
+\label{sec:limitations}
+
+\halluben{} simulates tool execution deterministically; real deployments face noisy tool outputs, network failures, and adversarial users. Our error injector targets a single parameter per trace; multi-parameter or multi-step injections may produce different propagation patterns. We test 9 models on a fixed date, and model versions change. Our cross-domain replication covers retail but not safety-critical (financial, legal) or truly open-ended (code-writing) agent domains, which we leave to future work.
+
+\paragraph{Evaluation.} While we validate the heuristic-vs.-ensemble-judge gap quantitatively, the ensemble itself is an LLM-based approximation to human judgement. We release all candidate-reference pairs to enable a follow-up human-labeled validation study.
+
+\paragraph{Statistical power.} We transparently report achieved power for every headline claim in Table~\ref{tab:power}. Three residual comparisons remain under-powered and should be interpreted with care: (i) the o3-mini P2 effect is estimated on $n=200$ traces with achieved power $0.25$; and (ii) the weather and medical domain-difference contrasts reach only power $0.08$ and $0.79$ respectively, reflecting a small cross-domain effect size rather than a limitation of the injection protocol. The two per-model interceptor comparisons, previously under-powered on $n=100$ each, were re-run on a disjoint held-out split of $n=600$ per model; both now exceed the $0.80$ power threshold and the per-model hallucination reductions are statistically significant (Section~\ref{sec:mitigate}). Fully powering the o3-mini comparison would require roughly $n\geq 1{,}600$ traces at the observed effect size ($h=0.20$), which we defer to future work.
+
+\paragraph{Scope restrictions (P3, P4).} As stated in Section~\ref{sec:intro}, this paper measures only P2 parameter-stage semantic injections. Memory-accumulation propagation across turns (P3) and cross-agent propagation in multi-agent pipelines (P4) are scoped out; we expect the $\eps$ formalism to transfer but the task formats, stage indicators, and power budgets differ materially, so we defer those experiments rather than dilute the P2 claims with under-powered extensions.
+
+% ============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We introduced \halluben{}, a benchmark and methodology for measuring error propagation in tool-using LLM agents. By decomposing hallucination into a 4-stage cascade and reporting hop-conditional propagation rates, we showed that (i) parameter-stage rejection is the only effective error filter for the nine models tested, (ii) heuristic string-match evaluation is $\kappa=0.14$-unreliable and should not be used as a silent ground truth, (iii) a tuned runtime interceptor achieves $F_1=0.842$ on validation and cuts per-model hallucination rates by 9--27 pp on a held-out $n=600$ deployment (both comparisons statistically significant at $\alpha=0.05$, power $\geq 0.80$), and (iv) these findings replicate across a held-out retail domain. All code, data, and 2{,}300 agent traces are released.
+
+% ============================================================================
+%% Bibliography: elsarticle-num style for numbered references
+\bibliographystyle{elsarticle-num}
+\bibliography{refs}
+
+% ============================================================================
+\appendix
+
+\section{Benchmark domain details}
+\label{app:domains}
+Full task templates, tool schemas, and difficulty-stratification rules are in \texttt{benchmark/} in the code release.
+
+\section{Power analysis}
+\label{app:power}
+For every headline claim we report the number of tasks $n_a, n_b$, the observed proportions, Cohen's $h$ effect size, and the achieved power at $\alpha=0.05$. Six of nine per-model P2-vs.-baseline comparisons, the calendar-vs.-other-domain contrast, and both held-out interceptor-on vs.\ interceptor-off comparisons ($n=600$ per model) reach $\geq 0.80$ power. Three comparisons remain under-powered and are flagged explicitly in Table~\ref{tab:power} (o3-mini P2; weather and medical domain-differences); see the Limitations section for a discussion of how these are treated in our claims.
+
+\input{tables/tableA4_power}
+
+\section{Hyperparameters and prompts}
+\label{app:prompts}
+System prompts, tool schemas, and ensemble-judge templates are in \texttt{prompts/} in the code release.
+
+\end{document}

@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\small
+\caption{Per-rater Cohen's $\kappa$ agreement with 3-LLM ensemble majority on 960 baseline traces. Heuristic is substring/keyword match; LLM judges use identical prompts.}
+\label{tab:judge}
+\begin{tabular}{lcc}
+\toprule
+Rater & $\kappa$ vs.\ majority & Interpretation \\
+\midrule
+Heuristic (substring) & \textbf{0.143} & slight \\
+GPT-4o-mini & 0.770 & substantial \\
+GPT-4o & 0.792 & substantial \\
+Gemini-2.5-Flash & \textbf{0.821} & almost perfect \\
+\midrule
+Unanimous 3/3 rate & \multicolumn{2}{l}{72.9\% ($n$=960)} \\
+\bottomrule
+\end{tabular}
+\end{table}

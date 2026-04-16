@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering\small
+\caption{Baseline and P2-semantic-wrong results by model. $n_B$: baseline traces; $n_{P2}$: P2 traces. Values are point [95\% CI]. Correctness judged by 3-LLM ensemble.}
+\label{tab:main}
+\begin{tabular}{lrrccc}
+\toprule
+Model & $n_B$ & $n_{P2}$ & Baseline \% & P2 \% & P2 $\bar{\mathrm{EPS}}$ \\
+\midrule
+deepseek\_v3 & 450 & 800 & 51.8 [46.7, 56.4] & 69.8 [66.4, 73.2] & 0.93 [0.89, 0.98] \\
+gemini\_20\_flash & 450 & 800 & 47.6 [42.7, 52.2] & 61.5 [58.1, 64.6] & 0.08 [0.06, 0.10] \\
+gemini\_25\_flash & 0 & 200 & -- & 63.0 [56.5, 69.5] & 0.82 [0.73, 0.92] \\
+gpt35\_turbo & 450 & 800 & 50.4 [45.8, 54.9] & 67.1 [64.0, 70.6] & 0.67 [0.62, 0.72] \\
+gpt41\_mini & 450 & 800 & 54.7 [50.2, 59.3] & 68.2 [64.9, 71.6] & 0.90 [0.84, 0.94] \\
+gpt41\_nano & 450 & 800 & 45.3 [40.4, 50.0] & 57.0 [53.4, 60.2] & 1.19 [1.14, 1.24] \\
+gpt4o & 0 & 200 & -- & 57.5 [51.0, 64.0] & 1.22 [1.12, 1.31] \\
+gpt4o\_mini & 450 & 800 & 40.0 [35.3, 44.4] & 51.0 [47.8, 54.4] & 0.61 [0.55, 0.66] \\
+o3\_mini & 50 & 200 & 40.0 [28.0, 54.0] & 50.0 [43.0, 57.0] & 1.15 [1.04, 1.25] \\
+\bottomrule
+\end{tabular}
+\end{table}

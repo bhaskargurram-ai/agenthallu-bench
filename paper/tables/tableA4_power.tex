@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering\small
+\caption{Achieved statistical power for headline claims. $h$ = Cohen's effect size; 80\% is the conventional target. Both held-out interceptor comparisons (at $n\!=\!600$) now meet the threshold. Three residual rows remain under-powered (o3-mini P2 and the weather/medical domain contrasts) and are treated as directional in the text (see Limitations).}
+\label{tab:power}
+\begin{tabular}{p{5cm}rrccc}
+\toprule
+Claim & $n_A$ & $n_B$ & $h$ & Power & Underpwr? \\
+\midrule
+P2 increases error for deepseek\_v3 & 450 & 800 & 0.37 & 1.00 & no \\
+P2 increases error for gemini\_20\_flash & 450 & 800 & 0.28 & 1.00 & no \\
+P2 increases error for gpt35\_turbo & 450 & 800 & 0.34 & 1.00 & no \\
+P2 increases error for gpt41\_mini & 450 & 800 & 0.28 & 1.00 & no \\
+P2 increases error for gpt41\_nano & 450 & 800 & 0.23 & 0.98 & no \\
+P2 increases error for gpt4o\_mini & 450 & 800 & 0.22 & 0.96 & no \\
+P2 increases error for o3\_mini & 50 & 200 & 0.20 & 0.25 & yes \\
+Domain calendar differs from others (P2) & 3684 & 1716 & 0.10 & 0.92 & no \\
+Domain weather differs from others (P2) & 3444 & 1956 & 0.01 & 0.08 & yes \\
+Domain medical differs from others (P2) & 3672 & 1728 & 0.08 & 0.79 & yes \\
+Interceptor reduces halluc for gpt4o\_mini (held-out n=600) & 450 & 600 & 0.55 & 1.00 & no \\
+Interceptor reduces halluc for gemini\_20\_flash (held-out n=600) & 450 & 600 & 0.19 & 0.80 & no \\
+\bottomrule
+\end{tabular}
+\end{table}

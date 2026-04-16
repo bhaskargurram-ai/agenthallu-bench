@@ -1,0 +1,129 @@
+{
+  "claims": [
+    {
+      "claim": "P2 increases error for deepseek_v3",
+      "group_a_p": 0.482,
+      "group_b_p": 0.302,
+      "n_a": 450,
+      "n_b": 800,
+      "effect_h": 0.371,
+      "power": 1.0,
+      "underpowered": false
+    },
+    {
+      "claim": "P2 increases error for gemini_20_flash",
+      "group_a_p": 0.524,
+      "group_b_p": 0.385,
+      "n_a": 450,
+      "n_b": 800,
+      "effect_h": 0.281,
+      "power": 0.998,
+      "underpowered": false
+    },
+    {
+      "claim": "P2 increases error for gpt35_turbo",
+      "group_a_p": 0.496,
+      "group_b_p": 0.329,
+      "n_a": 450,
+      "n_b": 800,
+      "effect_h": 0.341,
+      "power": 1.0,
+      "underpowered": false
+    },
+    {
+      "claim": "P2 increases error for gpt41_mini",
+      "group_a_p": 0.453,
+      "group_b_p": 0.318,
+      "n_a": 450,
+      "n_b": 800,
+      "effect_h": 0.28,
+      "power": 0.997,
+      "underpowered": false
+    },
+    {
+      "claim": "P2 increases error for gpt41_nano",
+      "group_a_p": 0.547,
+      "group_b_p": 0.43,
+      "n_a": 450,
+      "n_b": 800,
+      "effect_h": 0.234,
+      "power": 0.978,
+      "underpowered": false
+    },
+    {
+      "claim": "P2 increases error for gpt4o_mini",
+      "group_a_p": 0.6,
+      "group_b_p": 0.49,
+      "n_a": 450,
+      "n_b": 800,
+      "effect_h": 0.221,
+      "power": 0.964,
+      "underpowered": false
+    },
+    {
+      "claim": "P2 increases error for o3_mini",
+      "group_a_p": 0.6,
+      "group_b_p": 0.5,
+      "n_a": 50,
+      "n_b": 200,
+      "effect_h": 0.201,
+      "power": 0.246,
+      "underpowered": true
+    },
+    {
+      "claim": "Domain calendar differs from others (P2)",
+      "group_a_p": 0.397,
+      "group_b_p": 0.35,
+      "n_a": 3684,
+      "n_b": 1716,
+      "effect_h": 0.098,
+      "power": 0.916,
+      "underpowered": false
+    },
+    {
+      "claim": "Domain weather differs from others (P2)",
+      "group_a_p": 0.379,
+      "group_b_p": 0.387,
+      "n_a": 3444,
+      "n_b": 1956,
+      "effect_h": 0.015,
+      "power": 0.076,
+      "underpowered": true
+    },
+    {
+      "claim": "Domain medical differs from others (P2)",
+      "group_a_p": 0.369,
+      "group_b_p": 0.409,
+      "n_a": 3672,
+      "n_b": 1728,
+      "effect_h": 0.081,
+      "power": 0.789,
+      "underpowered": true
+    },
+    {
+      "claim": "Interceptor reduces halluc for gpt4o_mini (held-out n=600)",
+      "group_a_p": 0.6,
+      "group_b_p": 0.328,
+      "n_a": 450,
+      "n_b": 600,
+      "effect_h": 0.552,
+      "power": 1.0,
+      "underpowered": false
+    },
+    {
+      "claim": "Interceptor reduces halluc for gemini_20_flash (held-out n=600)",
+      "group_a_p": 0.524,
+      "group_b_p": 0.432,
+      "n_a": 450,
+      "n_b": 600,
+      "effect_h": 0.186,
+      "power": 0.8,
+      "underpowered": false
+    }
+  ],
+  "summary": {
+    "total_claims": 12,
+    "underpowered": 5,
+    "well_powered": 7
+  }
+}

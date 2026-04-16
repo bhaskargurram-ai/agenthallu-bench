@@ -1,0 +1,14 @@
+\begin{table}[t]
+\centering\small
+\caption{Cross-domain replication on held-out retail tasks (300 tasks). Model rank ordering on baseline correctness and P2 $\bar{\eps}$ is preserved relative to the original-domain results in Table~\ref{tab:main}.}
+\label{tab:retail}
+\begin{tabular}{lrccc}
+\toprule
+Model & $n$ & Baseline \% & P2 \% & P2 $\bar{\mathrm{EPS}}$ \\
+\midrule
+deepseek\_v3 & 100 & 37.0 [27.0, 47.0] & 43.0 [33.0, 53.0] & 0.85 [0.69, 1.01] \\
+gemini\_20\_flash & 100 & 17.0 [10.0, 25.0] & 17.0 [10.0, 25.0] & 0.18 [0.08, 0.30] \\
+gpt4o\_mini & 100 & 29.0 [20.0, 38.0] & 33.0 [24.0, 42.0] & 1.05 [0.90, 1.22] \\
+\bottomrule
+\end{tabular}
+\end{table}
