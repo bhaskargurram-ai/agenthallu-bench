@@ -1,12 +1,18 @@
-"""Fix 2: Per-stage reach probabilities and hop-conditional propagation rates.
+"""Per-stage reach probabilities and hop-conditional propagation rates.
 
 Reads p2_all.csv (P2 injection results), computes for each model:
-  p_S1 = P(parameter stage reached)
-  p_S2 = P(observation stage reached | S1)   (from injection_applied + param_errors)
-  p_S3 = P(reasoning stage reached)           (derived from tool_steps post-injection)
-  p_S4 = P(final answer wrong)                (from final_correct)
+  S1 = injection applied          (eps >= 1)
+  S2 = injection executed visibly (eps >= 2, independent of final_correct)
+  S3 = final answer wrong         (final_correct == False, independent of eps)
 
-And hop-conditional rates r_k = p_{k+1} / p_k.
+Stage indicators are computed INDEPENDENTLY — S2 uses only the eps column,
+S3 uses only the final_correct column.  This avoids the prior bug where
+classify_stage() mapped reached_output→stage=3 and then S2=(stage>=2)
+included those rows, making p_S2 == p_S3 by construction.
+
+Hop-conditional rates:
+  r_12 = p_S2 / p_S1   (fraction of applied injections that executed visibly)
+  r_23 = P(S3 | S2)    (fraction of visibly-executed injections that caused wrong answer)
 
 Outputs:
   - analysis/hop_rates.md     (Markdown + LaTeX table)
@@ -32,26 +38,6 @@ from analysis.bootstrap import bootstrap_ci
 console = Console()
 
 
-def classify_stage(row) -> int:
-    """Map one P2 row to the deepest stage reached (0..3).
-      0 = injection did not apply
-      1 = parameter stage entered (eps>=1, injector modified the planned call)
-      2 = tool-execution stage reached (eps>=2, bad params actually executed)
-      3 = output stage corrupted (reached_output, injection effect visible in final)
-    """
-    stage = 0
-    eps = row.get("eps")
-    reached = bool(row.get("reached_output", False))
-
-    if pd.notna(eps) and int(eps) >= 1:
-        stage = 1
-    if pd.notna(eps) and int(eps) >= 2:
-        stage = max(stage, 2)
-    if reached:
-        stage = max(stage, 3)
-    return stage
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--p2", default="data/results/p2_all.csv")
@@ -64,12 +50,32 @@ def main():
     p = pd.read_csv(os.path.join(base, args.p2))
     console.print(f"Loaded {len(p)} P2 rows, models: {sorted(p['model'].unique())}")
 
-    # For this paper we focus on semantic_wrong as the canonical injection
-    if "injection_type" in p.columns:
-        p = p[p["injection_type"].isin(["semantic_wrong", "p2_semantic_wrong"])]
-    console.print(f"Semantic-wrong rows: {len(p)}")
+    # Filter to semantic_wrong only (column is 'error_type', not 'injection_type')
+    type_col = "error_type" if "error_type" in p.columns else "injection_type"
+    if type_col in p.columns:
+        before = len(p)
+        p = p[p[type_col].isin(["semantic_wrong", "p2_semantic_wrong"])]
+        console.print(f"Filtered {type_col}=semantic_wrong: {before} → {len(p)} rows")
+    else:
+        console.print("[yellow]No error_type or injection_type column — using all rows[/yellow]")
 
-    p["stage"] = p.apply(classify_stage, axis=1)
+    # ---------- Independent stage indicators ----------
+    # S1: injection applied (eps >= 1)
+    # S2: injection executed with observable effect (eps >= 2)
+    # S3: final answer wrong (final_correct == False)
+    #
+    # These are computed from SEPARATE columns with NO cross-reference.
+    # A row can have S3=True without S2=True (injection applied but
+    # no observable execution error, yet answer still wrong).
+    p["S1"] = (p["eps"].fillna(0).astype(int) >= 1).astype(int)
+    p["S2"] = (p["eps"].fillna(0).astype(int) >= 2).astype(int)
+    p["S3"] = (~p["final_correct"].astype(bool)).astype(int)
+
+    # Diagnostic: how many rows have S3 without S2?
+    s3_no_s2 = int(((p["S3"] == 1) & (p["S2"] == 0)).sum())
+    s2_no_s3 = int(((p["S2"] == 1) & (p["S3"] == 0)).sum())
+    console.print(f"[dim]Diagnostic: S3=1 & S2=0 (wrong answer w/o visible exec): {s3_no_s2}[/dim]")
+    console.print(f"[dim]Diagnostic: S2=1 & S3=0 (visible exec but correct answer): {s2_no_s3}[/dim]")
 
     # Per-model stage distributions
     metrics = {}
@@ -78,51 +84,78 @@ def main():
         sub = p[p["model"] == model]
         if len(sub) == 0:
             continue
-        # Reach indicators S_k = 1 iff stage >= k
-        S = {k: (sub["stage"].astype(int) >= k).astype(int).values for k in (1, 2, 3)}
+
         pt = {}
-        for k, arr in S.items():
+        for k in (1, 2, 3):
+            arr = sub[f"S{k}"].values
             m, lo, hi = bootstrap_ci(arr)
             pt[k] = {"point": m, "lo": lo, "hi": hi}
-        # Hop-conditional rates
-        r = {}
-        for k in (1, 2):
-            denom = pt[k]["point"]
-            numer = pt[k+1]["point"]
-            r[f"r_{k}_{k+1}"] = round(numer / denom, 4) if denom > 0 else None
+
+        # Hop-conditional rates (marginal)
+        r_12 = round(pt[2]["point"] / pt[1]["point"], 4) if pt[1]["point"] > 0 else None
+
+        # r_23: P(S3=1 | S2=1) — computed directly on the S2=1 subset
+        s2_rows = sub[sub["S2"] == 1]
+        if len(s2_rows) > 0:
+            r23_arr = s2_rows["S3"].values
+            r23_m, r23_lo, r23_hi = bootstrap_ci(r23_arr)
+        else:
+            r23_m, r23_lo, r23_hi = None, None, None
+
+        # Also compute: P(S3=1 | S1=1) — injection-to-error rate
+        s1_rows = sub[sub["S1"] == 1]
+        if len(s1_rows) > 0:
+            ite_arr = s1_rows["S3"].values
+            ite_m, ite_lo, ite_hi = bootstrap_ci(ite_arr)
+        else:
+            ite_m, ite_lo, ite_hi = None, None, None
+
         metrics[model] = {
             "n": len(sub),
+            "n_S1": int(sub["S1"].sum()),
+            "n_S2": int(sub["S2"].sum()),
+            "n_S3": int(sub["S3"].sum()),
             "p_S1": pt[1], "p_S2": pt[2], "p_S3": pt[3],
-            **r,
+            "r_1_2": r_12,
+            "r_2_3": {"point": r23_m, "lo": r23_lo, "hi": r23_hi} if r23_m is not None else None,
+            "injection_to_error": {"point": ite_m, "lo": ite_lo, "hi": ite_hi} if ite_m is not None else None,
         }
         rows.append({
             "model": model,
             "n": len(sub),
+            "n_S2": int(sub["S2"].sum()),
             "p_S1": f"{100*pt[1]['point']:.1f} [{100*pt[1]['lo']:.1f}, {100*pt[1]['hi']:.1f}]",
             "p_S2": f"{100*pt[2]['point']:.1f} [{100*pt[2]['lo']:.1f}, {100*pt[2]['hi']:.1f}]",
             "p_S3": f"{100*pt[3]['point']:.1f} [{100*pt[3]['lo']:.1f}, {100*pt[3]['hi']:.1f}]",
-            "r_12": f"{r['r_1_2']:.2f}" if r['r_1_2'] is not None else "—",
-            "r_23": f"{r['r_2_3']:.2f}" if r['r_2_3'] is not None else "—",
+            "r_12": f"{r_12:.2f}" if r_12 is not None else "—",
+            "r_23": f"{r23_m:.3f} [{r23_lo:.3f}, {r23_hi:.3f}]" if r23_m is not None else "—",
+            "inj_to_err": f"{ite_m:.3f} [{ite_lo:.3f}, {ite_hi:.3f}]" if ite_m is not None else "—",
         })
 
     # Rich table
-    tab = Table(title="Stage-Reach and Hop-Conditional Rates (P2 semantic_wrong)")
-    for c in ("model", "n", "p(S1) %", "p(S2) %", "p(S3) %", "r_12", "r_23"):
+    tab = Table(title="Stage-Reach and Hop-Conditional Rates (P2 semantic_wrong, independent indicators)")
+    for c in ("model", "n", "p(S1) %", "p(S2) %", "p(S3) %", "r_12", "r_23 [CI]", "n_S2", "inj→err [CI]"):
         tab.add_column(c, justify="right")
     for r_ in rows:
-        tab.add_row(r_["model"], str(r_["n"]), r_["p_S1"], r_["p_S2"], r_["p_S3"], r_["r_12"], r_["r_23"])
+        tab.add_row(r_["model"], str(r_["n"]), r_["p_S1"], r_["p_S2"], r_["p_S3"],
+                     r_["r_12"], r_["r_23"], str(r_["n_S2"]), r_["inj_to_err"])
     console.print(tab)
 
-    md = ["# Hop-Conditional Propagation Rates\n",
-          "Columns:",
-          "- `p(S_k)` = probability an injection reaches stage k (1=param, 2=obs, 3=final)",
-          "- `r_{k,k+1}` = conditional probability of advancing given stage k reached",
+    md = ["# Hop-Conditional Propagation Rates (Corrected)\n",
+          "Stage indicators are computed **independently**:",
+          "- `S1` = injection applied (`eps >= 1`)",
+          "- `S2` = injection executed with visible effect (`eps >= 2`, independent of final_correct)",
+          "- `S3` = final answer wrong (`final_correct == False`, independent of eps)",
+          "",
+          "- `r_12` = `p(S2) / p(S1)` — marginal",
+          "- `r_23` = `P(S3=1 | S2=1)` — conditional, computed on S2=1 subset only",
+          "- `inj→err` = `P(S3=1 | S1=1)` — injection-to-error rate",
           "- 95% CIs from 1,000-iter bootstrap.",
           "",
-          "| model | n | p(S1) % | p(S2) % | p(S3) % | r_12 | r_23 |",
-          "|-------|---|---------|---------|---------|------|------|"]
+          "| model | n | p(S1) % | p(S2) % | p(S3) % | r_12 | r_23 [CI] | n_S2 | inj→err [CI] |",
+          "|-------|---|---------|---------|---------|------|-----------|------|--------------|"]
     for r_ in rows:
-        md.append(f"| {r_['model']} | {r_['n']} | {r_['p_S1']} | {r_['p_S2']} | {r_['p_S3']} | {r_['r_12']} | {r_['r_23']} |")
+        md.append(f"| {r_['model']} | {r_['n']} | {r_['p_S1']} | {r_['p_S2']} | {r_['p_S3']} | {r_['r_12']} | {r_['r_23']} | {r_['n_S2']} | {r_['inj_to_err']} |")
     md.append("")
 
     os.makedirs(os.path.join(base, "analysis"), exist_ok=True)
@@ -132,30 +165,29 @@ def main():
     with open(os.path.join(base, args.output_json), "w") as f:
         json.dump(metrics, f, indent=2)
 
-    # ── Sankey figure ──
+    # ── Bar figure: independent stage reach + conditional r_23 ──
     try:
         import matplotlib.pyplot as plt
-        import matplotlib.patches as mpatches
         os.makedirs(os.path.dirname(os.path.join(base, args.figure)), exist_ok=True)
 
-        fig, axes = plt.subplots(1, len(rows), figsize=(4 * len(rows), 4), squeeze=False)
+        fig, axes = plt.subplots(1, len(rows), figsize=(4 * len(rows), 4.5), squeeze=False)
         axes = axes[0]
         for ax, model in zip(axes, sorted(metrics.keys())):
             m = metrics[model]
-            # 4 stages: S0=injected (always 100%), S1, S2, S3
-            stages = [1.0, m["p_S1"]["point"], m["p_S2"]["point"], m["p_S3"]["point"]]
-            labels = ["Inject", "Param", "Obs", "Final"]
-            colors = ["#4C72B0", "#55A868", "#C44E52", "#8172B2"]
-            for i, (s, lbl, col) in enumerate(zip(stages, labels, colors)):
-                ax.bar(i, s, color=col, edgecolor="black", linewidth=0.5)
+            stages = [m["p_S1"]["point"], m["p_S2"]["point"], m["p_S3"]["point"]]
+            r23_val = m["r_2_3"]["point"] if m["r_2_3"] is not None else 0
+            labels = ["S1\nApplied", "S2\nExecuted", "S3\nWrong"]
+            colors = ["#4C72B0", "#C44E52", "#8172B2"]
+            bars = ax.bar(range(3), stages, color=colors, edgecolor="black", linewidth=0.5)
+            for i, s in enumerate(stages):
                 ax.text(i, s + 0.02, f"{100*s:.0f}%", ha="center", fontsize=9)
-            ax.set_xticks(range(4))
-            ax.set_xticklabels(labels, rotation=0, fontsize=9)
+            ax.set_xticks(range(3))
+            ax.set_xticklabels(labels, rotation=0, fontsize=8)
             ax.set_ylim(0, 1.15)
-            ax.set_title(model, fontsize=10)
-            ax.set_ylabel("Reach probability")
+            ax.set_title(f"{model}\nr₂₃={r23_val:.2f}" if r23_val else model, fontsize=9)
+            ax.set_ylabel("Rate")
             ax.grid(axis="y", linestyle=":", alpha=0.4)
-        plt.suptitle("Error Propagation by Stage (semantic_wrong injection)", fontsize=12)
+        plt.suptitle("Independent Stage Reach Rates (semantic_wrong, error_type filter)", fontsize=11)
         plt.tight_layout()
         plt.savefig(os.path.join(base, args.figure), dpi=150, bbox_inches="tight")
         console.print(f"[green]Saved figure → {args.figure}[/green]")
