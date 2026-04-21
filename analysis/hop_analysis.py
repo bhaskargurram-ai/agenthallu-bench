@@ -40,7 +40,7 @@ console = Console()
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--p2", default="data/results/p2_all.csv")
+    parser.add_argument("--p2", default="data/results/p2_all_rejudged.csv")
     parser.add_argument("--output-md", default="analysis/hop_rates.md")
     parser.add_argument("--output-json", default="data/results/hop_rates.json")
     parser.add_argument("--figure", default="analysis/figures/fig_sankey.png")
@@ -62,14 +62,14 @@ def main():
     # ---------- Independent stage indicators ----------
     # S1: injection applied (eps >= 1)
     # S2: injection executed with observable effect (eps >= 2)
-    # S3: final answer wrong (final_correct == False)
+    # S3: final answer wrong (ensemble_correct == False)
     #
     # These are computed from SEPARATE columns with NO cross-reference.
     # A row can have S3=True without S2=True (injection applied but
     # no observable execution error, yet answer still wrong).
     p["S1"] = (p["eps"].fillna(0).astype(int) >= 1).astype(int)
     p["S2"] = (p["eps"].fillna(0).astype(int) >= 2).astype(int)
-    p["S3"] = (~p["final_correct"].astype(bool)).astype(int)
+    p["S3"] = (~p["ensemble_correct"].astype(bool)).astype(int)
 
     # Diagnostic: how many rows have S3 without S2?
     s3_no_s2 = int(((p["S3"] == 1) & (p["S2"] == 0)).sum())

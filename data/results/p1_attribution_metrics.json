@@ -1,0 +1,15 @@
+{
+  "overall_accuracy": {
+    "point": 0.6386506575185821,
+    "ci_lo": 0.616923956546598,
+    "ci_hi": 0.6620926243567753
+  },
+  "total_predictions": 1749,
+  "llm_judge_calls": 369,
+  "llm_judge_cost": 0.026713649999999967,
+  "method_counts": {
+    "llm_judge": 369,
+    "schema_check": 1225,
+    "heuristic": 155
+  }
+}

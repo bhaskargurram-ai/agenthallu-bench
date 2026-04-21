@@ -1,0 +1,10 @@
+{
+  "n": 192,
+  "raw_agreement": 0.5260416666666666,
+  "cohens_kappa": 0.16465863453815255,
+  "heuristic_yes_oracle_yes": 41,
+  "heuristic_yes_oracle_no": 82,
+  "heuristic_no_oracle_yes": 9,
+  "heuristic_no_oracle_no": 60,
+  "oracle_cost": 0.07700250000000002
+}

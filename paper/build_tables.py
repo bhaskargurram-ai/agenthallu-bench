@@ -82,7 +82,8 @@ for m in sorted(hop.keys()):
     def cell(d):
         return f"{100*d['point']:.1f} [{100*d['lo']:.1f}, {100*d['hi']:.1f}]"
     r1 = h.get("r_1_2"); r2 = h.get("r_2_3")
-    lines.append(f"{tex_escape(m)} & {h['n']} & {cell(h['p_S1'])} & {cell(h['p_S2'])} & {cell(h['p_S3'])} & {r1:.2f} & {r2:.2f} \\\\")
+    r2_val = r2["point"] if isinstance(r2, dict) else r2
+    lines.append(f"{tex_escape(m)} & {h['n']} & {cell(h['p_S1'])} & {cell(h['p_S2'])} & {cell(h['p_S3'])} & {r1:.2f} & {r2_val:.2f} \\\\")
 lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
 write("table2_hop.tex", "\n".join(lines))
 
