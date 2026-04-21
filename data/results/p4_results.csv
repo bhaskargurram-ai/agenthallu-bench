@@ -1,0 +1,541 @@
+session_id,task_id,model,domain,difficulty,injection_type,reached_agent2,reached_agent3,has_tool_errors,propagation_path,amplification_factor,final_correct,cost
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0003_e403df,toolbench_syn_0003,gpt4o_mini,calendar,hard,wrong_subtask,True,False,True,"[1, 2]",2,True,0.00030975
+p4_wrong_subtask_gpt4o_mini_weather_089_2415e3,weather_089,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002592
+p4_wrong_subtask_gpt4o_mini_weather_097_9c12bb,weather_097,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00030075
+p4_wrong_subtask_gpt4o_mini_medical_098_8fd892,medical_098,gpt4o_mini,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.0002362499999999
+p4_wrong_subtask_gpt4o_mini_weather_051_fd8bed,weather_051,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00024
+p4_wrong_subtask_gpt4o_mini_calendar_032_cf52e5,calendar_032,gpt4o_mini,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001605
+p4_wrong_subtask_gpt4o_mini_calendar_100_4f2ad5,calendar_100,gpt4o_mini,calendar,medium,wrong_subtask,True,True,True,"[1, 2, 3]",3,False,0.0005832
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0058_68519a,toolbench_syn_0058,gpt4o_mini,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001977
+p4_wrong_subtask_gpt4o_mini_calendar_021_2e4793,calendar_021,gpt4o_mini,calendar,easy,wrong_subtask,True,False,True,"[1, 2]",2,True,0.00038025
+p4_wrong_subtask_gpt4o_mini_weather_038_3cd2b6,weather_038,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00013455
+p4_wrong_subtask_gpt4o_mini_calendar_081_89deb8,calendar_081,gpt4o_mini,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0003369
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0070_e6c3c3,toolbench_syn_0070,gpt4o_mini,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001896
+p4_wrong_subtask_gpt4o_mini_weather_005_54d4ab,weather_005,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001408499999999
+p4_wrong_subtask_gpt4o_mini_calendar_061_fd4b27,calendar_061,gpt4o_mini,calendar,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0002983499999999
+p4_wrong_subtask_gpt4o_mini_weather_094_5a8c77,weather_094,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002716499999999
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0004_2f740e,toolbench_syn_0004,gpt4o_mini,weather,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00012735
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0074_74bd54,toolbench_syn_0074,gpt4o_mini,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001779
+p4_wrong_subtask_gpt4o_mini_calendar_089_dd4e14,calendar_089,gpt4o_mini,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00030015
+p4_wrong_subtask_gpt4o_mini_weather_095_ad8ed7,weather_095,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002178
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0040_e83aba,toolbench_syn_0040,gpt4o_mini,medical,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001896
+p4_wrong_subtask_gpt4o_mini_medical_093_e47354,medical_093,gpt4o_mini,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.00022935
+p4_wrong_subtask_gpt4o_mini_medical_014_76bc20,medical_014,gpt4o_mini,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00017745
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0034_4f95e3,toolbench_syn_0034,gpt4o_mini,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0003153
+p4_wrong_subtask_gpt4o_mini_calendar_088_9b3109,calendar_088,gpt4o_mini,calendar,medium,wrong_subtask,True,True,True,"[1, 2, 3]",3,False,0.00063225
+p4_wrong_subtask_gpt4o_mini_calendar_028_411def,calendar_028,gpt4o_mini,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001933499999999
+p4_wrong_subtask_gpt4o_mini_weather_007_a9e216,weather_007,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0002068499999999
+p4_wrong_subtask_gpt4o_mini_weather_012_4cde46,weather_012,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0002473499999999
+p4_wrong_subtask_gpt4o_mini_medical_047_0992b8,medical_047,gpt4o_mini,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00015975
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0045_fd9892,toolbench_syn_0045,gpt4o_mini,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001251
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0096_16e9ff,toolbench_syn_0096,gpt4o_mini,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0003284999999999
+p4_wrong_subtask_gpt4o_mini_weather_027_68f181,weather_027,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0002016
+p4_wrong_subtask_gpt4o_mini_weather_090_24b1d7,weather_090,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002705999999999
+p4_wrong_subtask_gpt4o_mini_weather_078_b8c5f8,weather_078,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00022455
+p4_wrong_subtask_gpt4o_mini_medical_063_00c95d,medical_063,gpt4o_mini,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.0002304
+p4_wrong_subtask_gpt4o_mini_calendar_085_6441e8,calendar_085,gpt4o_mini,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0003031499999999
+p4_wrong_subtask_gpt4o_mini_medical_008_b9998b,medical_008,gpt4o_mini,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.0001929
+p4_wrong_subtask_gpt4o_mini_calendar_083_49cc1b,calendar_083,gpt4o_mini,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0003144
+p4_wrong_subtask_gpt4o_mini_weather_096_23c918,weather_096,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002238
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0094_164b93,toolbench_syn_0094,gpt4o_mini,medical,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00015765
+p4_wrong_subtask_gpt4o_mini_calendar_001_7357d3,calendar_001,gpt4o_mini,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0002188499999999
+p4_wrong_subtask_gpt4o_mini_medical_031_dd8958,medical_031,gpt4o_mini,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00019545
+p4_wrong_subtask_gpt4o_mini_calendar_056_878775,calendar_056,gpt4o_mini,calendar,medium,wrong_subtask,True,True,True,"[1, 2, 3]",3,False,0.0007358999999999
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0062_aafa81,toolbench_syn_0062,gpt4o_mini,weather,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00033
+p4_wrong_subtask_gpt4o_mini_medical_038_7d7f3c,medical_038,gpt4o_mini,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.0001899
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0023_9ce834,toolbench_syn_0023,gpt4o_mini,medical,hard,wrong_subtask,False,False,False,[1],1,True,0.000138
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0053_434b43,toolbench_syn_0053,gpt4o_mini,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00017925
+p4_wrong_subtask_gpt4o_mini_weather_086_de9729,weather_086,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002186999999999
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0093_b579b5,toolbench_syn_0093,gpt4o_mini,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0001498499999999
+p4_wrong_subtask_gpt4o_mini_calendar_072_f3c3ed,calendar_072,gpt4o_mini,calendar,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00033315
+p4_wrong_subtask_gpt4o_mini_calendar_054_6cde6f,calendar_054,gpt4o_mini,calendar,medium,wrong_subtask,True,True,True,"[1, 2, 3]",3,False,0.0005988
+p4_wrong_subtask_gpt4o_mini_weather_039_8d3130,weather_039,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00017865
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0092_76a8ab,toolbench_syn_0092,gpt4o_mini,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001885499999999
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0013_fcc565,toolbench_syn_0013,gpt4o_mini,medical,medium,wrong_subtask,True,False,True,"[1, 2]",2,True,0.00067635
+p4_wrong_subtask_gpt4o_mini_toolbench_syn_0048_5784cb,toolbench_syn_0048,gpt4o_mini,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001885499999999
+p4_wrong_subtask_gpt4o_mini_weather_070_c37bae,weather_070,gpt4o_mini,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0003266999999999
+p4_wrong_subtask_gpt4o_mini_calendar_007_bc3294,calendar_007,gpt4o_mini,calendar,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.000237
+p4_wrong_subtask_gpt4o_mini_medical_045_955d0f,medical_045,gpt4o_mini,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.0001918499999999
+p4_wrong_subtask_gpt4o_mini_weather_032_e8f13c,weather_032,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00020145
+p4_wrong_subtask_gpt4o_mini_calendar_059_47c259,calendar_059,gpt4o_mini,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00032175
+p4_wrong_subtask_gpt4o_mini_weather_009_48e0ab,weather_009,gpt4o_mini,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0002031
+p4_wrong_tool_spec_gpt4o_mini_weather_089_0b79c8,weather_089,gpt4o_mini,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00023805
+p4_wrong_tool_spec_gpt4o_mini_weather_051_29d7e4,weather_051,gpt4o_mini,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002441999999999
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0003_cba847,toolbench_syn_0003,gpt4o_mini,calendar,hard,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.0005872499999999
+p4_wrong_tool_spec_gpt4o_mini_weather_097_81770e,weather_097,gpt4o_mini,weather,medium,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.00090615
+p4_wrong_tool_spec_gpt4o_mini_calendar_100_7838ba,calendar_100,gpt4o_mini,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00032355
+p4_wrong_tool_spec_gpt4o_mini_medical_098_754874,medical_098,gpt4o_mini,medical,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002854499999999
+p4_wrong_tool_spec_gpt4o_mini_calendar_032_31fe2e,calendar_032,gpt4o_mini,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00017565
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0058_689a47,toolbench_syn_0058,gpt4o_mini,weather,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001987499999999
+p4_wrong_tool_spec_gpt4o_mini_calendar_081_352a28,calendar_081,gpt4o_mini,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0003051
+p4_wrong_tool_spec_gpt4o_mini_calendar_021_02f4d6,calendar_021,gpt4o_mini,calendar,easy,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.0006452999999999
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0070_f3f92b,toolbench_syn_0070,gpt4o_mini,medical,hard,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.00032265
+p4_wrong_tool_spec_gpt4o_mini_weather_005_62b3f1,weather_005,gpt4o_mini,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.00015015
+p4_wrong_tool_spec_gpt4o_mini_weather_038_cac28d,weather_038,gpt4o_mini,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.00023145
+p4_wrong_tool_spec_gpt4o_mini_calendar_061_0ee025,calendar_061,gpt4o_mini,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00030735
+p4_wrong_tool_spec_gpt4o_mini_calendar_089_7a7cda,calendar_089,gpt4o_mini,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00028995
+p4_wrong_tool_spec_gpt4o_mini_weather_094_808250,weather_094,gpt4o_mini,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0003689999999999
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0074_e5fa0c,toolbench_syn_0074,gpt4o_mini,weather,medium,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.00032835
+p4_wrong_tool_spec_gpt4o_mini_weather_095_f804de,weather_095,gpt4o_mini,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002328
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0040_dcf0f6,toolbench_syn_0040,gpt4o_mini,medical,medium,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001330499999999
+p4_wrong_tool_spec_gpt4o_mini_medical_093_ff5664,medical_093,gpt4o_mini,medical,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0002316
+p4_wrong_tool_spec_gpt4o_mini_calendar_088_264b10,calendar_088,gpt4o_mini,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00031515
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0034_ca1b52,toolbench_syn_0034,gpt4o_mini,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0002786999999999
+p4_wrong_tool_spec_gpt4o_mini_medical_014_306948,medical_014,gpt4o_mini,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001855499999999
+p4_wrong_tool_spec_gpt4o_mini_weather_012_fe4007,weather_012,gpt4o_mini,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00017415
+p4_wrong_tool_spec_gpt4o_mini_calendar_028_bb6a6a,calendar_028,gpt4o_mini,calendar,easy,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.0007076999999999
+p4_wrong_tool_spec_gpt4o_mini_weather_007_40b5cf,weather_007,gpt4o_mini,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001872
+p4_wrong_tool_spec_gpt4o_mini_medical_047_1616d5,medical_047,gpt4o_mini,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001635
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0096_ec1b3c,toolbench_syn_0096,gpt4o_mini,weather,medium,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001967999999999
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0045_8aec26,toolbench_syn_0045,gpt4o_mini,weather,easy,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.000327
+p4_wrong_tool_spec_gpt4o_mini_weather_090_58f637,weather_090,gpt4o_mini,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.00025845
+p4_wrong_tool_spec_gpt4o_mini_weather_027_be4f42,weather_027,gpt4o_mini,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0001692
+p4_wrong_tool_spec_gpt4o_mini_weather_078_f7a6c1,weather_078,gpt4o_mini,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002598
+p4_wrong_tool_spec_gpt4o_mini_calendar_085_b7ef83,calendar_085,gpt4o_mini,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002982
+p4_wrong_tool_spec_gpt4o_mini_medical_063_e3b278,medical_063,gpt4o_mini,medical,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0002115
+p4_wrong_tool_spec_gpt4o_mini_calendar_083_a38a76,calendar_083,gpt4o_mini,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0003197999999999
+p4_wrong_tool_spec_gpt4o_mini_medical_008_c3200e,medical_008,gpt4o_mini,medical,easy,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.00075765
+p4_wrong_tool_spec_gpt4o_mini_weather_096_9ab5a7,weather_096,gpt4o_mini,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.00023055
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0004_f40bcd,toolbench_syn_0004,gpt4o_mini,weather,hard,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.0036548999999999
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0094_a2b2af,toolbench_syn_0094,gpt4o_mini,medical,medium,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001656
+p4_wrong_tool_spec_gpt4o_mini_calendar_001_ced38a,calendar_001,gpt4o_mini,calendar,easy,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.0007197
+p4_wrong_tool_spec_gpt4o_mini_medical_031_78bf96,medical_031,gpt4o_mini,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001775999999999
+p4_wrong_tool_spec_gpt4o_mini_calendar_056_e7ca10,calendar_056,gpt4o_mini,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00032655
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0053_b12cd0,toolbench_syn_0053,gpt4o_mini,weather,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0002283
+p4_wrong_tool_spec_gpt4o_mini_weather_086_17216d,weather_086,gpt4o_mini,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.00021915
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0062_584c16,toolbench_syn_0062,gpt4o_mini,weather,hard,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.0008650499999999
+p4_wrong_tool_spec_gpt4o_mini_medical_038_b842fb,medical_038,gpt4o_mini,medical,easy,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.0007984499999999
+p4_wrong_tool_spec_gpt4o_mini_calendar_072_d5a6c1,calendar_072,gpt4o_mini,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00032805
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0023_c14758,toolbench_syn_0023,gpt4o_mini,medical,hard,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.00026745
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0093_fd466f,toolbench_syn_0093,gpt4o_mini,calendar,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0002214
+p4_wrong_tool_spec_gpt4o_mini_weather_039_c6932a,weather_039,gpt4o_mini,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001774499999999
+p4_wrong_tool_spec_gpt4o_mini_calendar_054_f59500,calendar_054,gpt4o_mini,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00032145
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0092_07aa34,toolbench_syn_0092,gpt4o_mini,medical,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001330499999999
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0013_522fef,toolbench_syn_0013,gpt4o_mini,medical,medium,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.0006481499999999
+p4_wrong_tool_spec_gpt4o_mini_calendar_007_de4174,calendar_007,gpt4o_mini,calendar,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001503
+p4_wrong_tool_spec_gpt4o_mini_weather_070_538cf8,weather_070,gpt4o_mini,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00031725
+p4_wrong_tool_spec_gpt4o_mini_toolbench_syn_0048_881cc8,toolbench_syn_0048,gpt4o_mini,medical,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001503
+p4_wrong_tool_spec_gpt4o_mini_medical_045_b311de,medical_045,gpt4o_mini,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001211999999999
+p4_wrong_tool_spec_gpt4o_mini_weather_032_f171fd,weather_032,gpt4o_mini,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001938
+p4_wrong_tool_spec_gpt4o_mini_weather_009_4a0aaf,weather_009,gpt4o_mini,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001761
+p4_wrong_parameter_spec_gpt4o_mini_weather_089_549ebd,weather_089,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00027525
+p4_wrong_tool_spec_gpt4o_mini_calendar_059_45351a,calendar_059,gpt4o_mini,calendar,medium,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.00100815
+p4_wrong_parameter_spec_gpt4o_mini_weather_097_b1e336,weather_097,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00027795
+p4_wrong_parameter_spec_gpt4o_mini_weather_051_7018c5,weather_051,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002434499999999
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0003_b0c79f,toolbench_syn_0003,gpt4o_mini,calendar,hard,wrong_parameter_spec,True,False,True,"[1, 2]",2,True,0.00030375
+p4_wrong_parameter_spec_gpt4o_mini_calendar_032_ac4f23,calendar_032,gpt4o_mini,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001371
+p4_wrong_parameter_spec_gpt4o_mini_medical_098_4ef5e9,medical_098,gpt4o_mini,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002320499999999
+p4_wrong_parameter_spec_gpt4o_mini_calendar_100_a875c5,calendar_100,gpt4o_mini,calendar,medium,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.0004704
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0058_5b6448,toolbench_syn_0058,gpt4o_mini,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001899
+p4_wrong_parameter_spec_gpt4o_mini_calendar_021_dad3d9,calendar_021,gpt4o_mini,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0002004
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0070_2e9d06,toolbench_syn_0070,gpt4o_mini,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001881
+p4_wrong_parameter_spec_gpt4o_mini_calendar_081_cbbae6,calendar_081,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0003273
+p4_wrong_parameter_spec_gpt4o_mini_weather_038_37d319,weather_038,gpt4o_mini,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001614
+p4_wrong_parameter_spec_gpt4o_mini_weather_005_8d4451,weather_005,gpt4o_mini,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00015255
+p4_wrong_parameter_spec_gpt4o_mini_calendar_061_f2baf4,calendar_061,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0003247499999999
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0004_531634,toolbench_syn_0004,gpt4o_mini,weather,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001252499999999
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0074_87e877,toolbench_syn_0074,gpt4o_mini,weather,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001252499999999
+p4_wrong_parameter_spec_gpt4o_mini_weather_094_c8dc02,weather_094,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0005901
+p4_wrong_parameter_spec_gpt4o_mini_calendar_089_33a3b8,calendar_089,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0003157499999999
+p4_wrong_parameter_spec_gpt4o_mini_weather_095_d65a89,weather_095,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002276999999999
+p4_wrong_parameter_spec_gpt4o_mini_medical_093_4d3fae,medical_093,gpt4o_mini,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002232
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0040_ab0be3,toolbench_syn_0040,gpt4o_mini,medical,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001881
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0034_822329,toolbench_syn_0034,gpt4o_mini,calendar,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001575
+p4_wrong_parameter_spec_gpt4o_mini_medical_014_6cfa4f,medical_014,gpt4o_mini,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001617
+p4_wrong_parameter_spec_gpt4o_mini_calendar_088_d29a18,calendar_088,gpt4o_mini,calendar,medium,wrong_parameter_spec,True,True,True,"[1, 2, 3]",3,False,0.00058725
+p4_wrong_parameter_spec_gpt4o_mini_calendar_028_59c16b,calendar_028,gpt4o_mini,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00019215
+p4_wrong_parameter_spec_gpt4o_mini_weather_012_bfa4b5,weather_012,gpt4o_mini,weather,easy,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.00018345
+p4_wrong_parameter_spec_gpt4o_mini_weather_007_b1f4a5,weather_007,gpt4o_mini,weather,easy,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.0001773
+p4_wrong_parameter_spec_gpt4o_mini_medical_047_2abc80,medical_047,gpt4o_mini,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00016905
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0045_587964,toolbench_syn_0045,gpt4o_mini,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00012255
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0096_27b33b,toolbench_syn_0096,gpt4o_mini,weather,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0003226499999999
+p4_wrong_parameter_spec_gpt4o_mini_weather_090_bd5e45,weather_090,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00024945
+p4_wrong_parameter_spec_gpt4o_mini_weather_027_84df8f,weather_027,gpt4o_mini,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00025575
+p4_wrong_parameter_spec_gpt4o_mini_weather_078_f7f43f,weather_078,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002394
+p4_wrong_parameter_spec_gpt4o_mini_medical_063_981688,medical_063,gpt4o_mini,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00021495
+p4_wrong_parameter_spec_gpt4o_mini_calendar_085_e8ee39,calendar_085,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002996999999999
+p4_wrong_parameter_spec_gpt4o_mini_medical_008_dc24df,medical_008,gpt4o_mini,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001916999999999
+p4_wrong_parameter_spec_gpt4o_mini_calendar_083_47ab86,calendar_083,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0003078
+p4_wrong_parameter_spec_gpt4o_mini_calendar_001_003e19,calendar_001,gpt4o_mini,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0002002499999999
+p4_wrong_parameter_spec_gpt4o_mini_weather_096_e24144,weather_096,gpt4o_mini,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00026385
+p4_wrong_parameter_spec_gpt4o_mini_medical_031_dba729,medical_031,gpt4o_mini,medical,easy,wrong_parameter_spec,True,False,True,"[1, 2]",2,True,0.000285
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0094_3a38cd,toolbench_syn_0094,gpt4o_mini,medical,medium,wrong_parameter_spec,True,True,True,"[1, 2, 3]",3,False,0.00029505
+p4_wrong_parameter_spec_gpt4o_mini_calendar_056_1cc0be,calendar_056,gpt4o_mini,calendar,medium,wrong_parameter_spec,True,True,True,"[1, 2, 3]",3,False,0.00064665
+p4_wrong_parameter_spec_gpt4o_mini_medical_038_4039f2,medical_038,gpt4o_mini,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001916999999999
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0062_670a47,toolbench_syn_0062,gpt4o_mini,weather,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0003454499999999
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0053_1d639a,toolbench_syn_0053,gpt4o_mini,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00017865
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0023_fd43da,toolbench_syn_0023,gpt4o_mini,medical,hard,wrong_parameter_spec,False,False,False,[1],1,True,0.0001368
+p4_wrong_parameter_spec_gpt4o_mini_weather_086_803a10,weather_086,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002319
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0093_64d319,toolbench_syn_0093,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0001898999999999
+p4_wrong_parameter_spec_gpt4o_mini_calendar_054_705482,calendar_054,gpt4o_mini,calendar,medium,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.0004611
+p4_wrong_parameter_spec_gpt4o_mini_calendar_072_fd1de5,calendar_072,gpt4o_mini,calendar,medium,wrong_parameter_spec,True,True,True,"[1, 2, 3]",3,False,0.0006049499999999
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0092_f5f83b,toolbench_syn_0092,gpt4o_mini,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00016365
+p4_wrong_parameter_spec_gpt4o_mini_weather_039_1c5ff1,weather_039,gpt4o_mini,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0002736
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0013_a601fa,toolbench_syn_0013,gpt4o_mini,medical,medium,wrong_parameter_spec,True,False,True,"[1, 2]",2,True,0.00068175
+p4_wrong_parameter_spec_gpt4o_mini_weather_070_04b6cc,weather_070,gpt4o_mini,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00030075
+p4_wrong_parameter_spec_gpt4o_mini_toolbench_syn_0048_dfccb6,toolbench_syn_0048,gpt4o_mini,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00016365
+p4_wrong_parameter_spec_gpt4o_mini_calendar_007_5881de,calendar_007,gpt4o_mini,calendar,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002222999999999
+p4_wrong_parameter_spec_gpt4o_mini_medical_045_eda689,medical_045,gpt4o_mini,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001661999999999
+p4_wrong_parameter_spec_gpt4o_mini_weather_032_e5cebd,weather_032,gpt4o_mini,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001839
+p4_wrong_parameter_spec_gpt4o_mini_calendar_059_03ac72,calendar_059,gpt4o_mini,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00033795
+p4_wrong_subtask_gemini_20_flash_weather_089_a742b2,weather_089,gemini_20_flash,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0002251
+p4_wrong_parameter_spec_gpt4o_mini_weather_009_3a281d,weather_009,gpt4o_mini,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0002462999999999
+p4_wrong_subtask_gemini_20_flash_weather_097_9ecdbd,weather_097,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002867
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0003_d4debe,toolbench_syn_0003,gemini_20_flash,calendar,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001123
+p4_wrong_subtask_gemini_20_flash_calendar_100_d623ec,calendar_100,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0001926
+p4_wrong_subtask_gemini_20_flash_weather_051_f638ac,weather_051,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0003457
+p4_wrong_subtask_gemini_20_flash_medical_098_5889ec,medical_098,gemini_20_flash,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.0002143
+p4_wrong_subtask_gemini_20_flash_calendar_032_ab42b5,calendar_032,gemini_20_flash,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001073
+p4_wrong_subtask_gemini_20_flash_calendar_021_e7ddb0,calendar_021,gemini_20_flash,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001312
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0058_6c83bb,toolbench_syn_0058,gemini_20_flash,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001399
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0070_4bb935,toolbench_syn_0070,gemini_20_flash,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,9.36e-05
+p4_wrong_subtask_gemini_20_flash_calendar_081_030d3e,calendar_081,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0003001
+p4_wrong_subtask_gemini_20_flash_weather_038_f2466c,weather_038,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0002472
+p4_wrong_subtask_gemini_20_flash_calendar_061_f1a30f,calendar_061,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002989
+p4_wrong_subtask_gemini_20_flash_weather_094_90a3de,weather_094,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002768999999999
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0004_a6432c,toolbench_syn_0004,gemini_20_flash,weather,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001076
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0074_b6d427,toolbench_syn_0074,gemini_20_flash,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,9.3e-05
+p4_wrong_subtask_gemini_20_flash_weather_005_5e2bcc,weather_005,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0005541999999999
+p4_wrong_subtask_gemini_20_flash_calendar_089_6c749c,calendar_089,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002695
+p4_wrong_subtask_gemini_20_flash_weather_095_29ac45,weather_095,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0001857
+p4_wrong_subtask_gemini_20_flash_medical_093_d5b787,medical_093,gemini_20_flash,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.0001934
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0040_6a1a41,toolbench_syn_0040,gemini_20_flash,medical,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001363
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0034_3d2bfc,toolbench_syn_0034,gemini_20_flash,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001615
+p4_wrong_subtask_gemini_20_flash_medical_014_db264f,medical_014,gemini_20_flash,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.0001037
+p4_wrong_subtask_gemini_20_flash_calendar_088_6e034b,calendar_088,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002161
+p4_wrong_subtask_gemini_20_flash_calendar_028_6f543f,calendar_028,gemini_20_flash,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001406
+p4_wrong_subtask_gemini_20_flash_weather_012_f46196,weather_012,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001253
+p4_wrong_subtask_gemini_20_flash_weather_007_f17b41,weather_007,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001447
+p4_wrong_subtask_gemini_20_flash_medical_047_fa768a,medical_047,gemini_20_flash,medical,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001149
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0045_f1d676,toolbench_syn_0045,gemini_20_flash,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001122
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0096_e0726a,toolbench_syn_0096,gemini_20_flash,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0002443
+p4_wrong_subtask_gemini_20_flash_weather_027_059a49,weather_027,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001317
+p4_wrong_subtask_gemini_20_flash_weather_090_153ec6,weather_090,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002598
+p4_wrong_subtask_gemini_20_flash_weather_078_b480ee,weather_078,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0001584
+p4_wrong_subtask_gemini_20_flash_medical_063_df89aa,medical_063,gemini_20_flash,medical,medium,wrong_subtask,True,False,False,"[1, 2]",2,True,0.0001753
+p4_wrong_subtask_gemini_20_flash_calendar_085_6e4ad3,calendar_085,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002917
+p4_wrong_subtask_gemini_20_flash_medical_008_c249a1,medical_008,gemini_20_flash,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.000166
+p4_wrong_subtask_gemini_20_flash_calendar_001_98b68a,calendar_001,gemini_20_flash,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001434
+p4_wrong_subtask_gemini_20_flash_calendar_083_61d3fc,calendar_083,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002456
+p4_wrong_subtask_gemini_20_flash_weather_096_3c34b8,weather_096,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002328
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0094_7cbd40,toolbench_syn_0094,gemini_20_flash,medical,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001324
+p4_wrong_subtask_gemini_20_flash_medical_031_e9fce8,medical_031,gemini_20_flash,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.0001137
+p4_wrong_subtask_gemini_20_flash_calendar_056_e56759,calendar_056,gemini_20_flash,calendar,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001958
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0053_0176a4,toolbench_syn_0053,gemini_20_flash,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001082
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0062_d971e7,toolbench_syn_0062,gemini_20_flash,weather,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0002238
+p4_wrong_subtask_gemini_20_flash_medical_038_08fc8a,medical_038,gemini_20_flash,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.0001655
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0023_ac88e8,toolbench_syn_0023,gemini_20_flash,medical,hard,wrong_subtask,False,False,False,[1],1,True,0.0001483
+p4_wrong_subtask_gemini_20_flash_calendar_072_08fdeb,calendar_072,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0001985
+p4_wrong_subtask_gemini_20_flash_weather_086_5829fa,weather_086,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0002917
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0093_7d9b7a,toolbench_syn_0093,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0001838
+p4_wrong_subtask_gemini_20_flash_calendar_054_e5bf8b,calendar_054,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002259
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0013_ce1b8b,toolbench_syn_0013,gemini_20_flash,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.000164
+p4_wrong_subtask_gemini_20_flash_weather_039_7b1b7d,weather_039,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001785
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0092_d41721,toolbench_syn_0092,gemini_20_flash,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001534
+p4_wrong_subtask_gemini_20_flash_calendar_007_036bc8,calendar_007,gemini_20_flash,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.0001058
+p4_wrong_subtask_gemini_20_flash_weather_070_869ec4,weather_070,gemini_20_flash,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.0003107
+p4_wrong_subtask_gemini_20_flash_toolbench_syn_0048_1cb9b0,toolbench_syn_0048,gemini_20_flash,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0001237
+p4_wrong_subtask_gemini_20_flash_weather_032_8714ed,weather_032,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001324
+p4_wrong_subtask_gemini_20_flash_medical_045_a534c9,medical_045,gemini_20_flash,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.000174
+p4_wrong_subtask_gemini_20_flash_calendar_059_b67dad,calendar_059,gemini_20_flash,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0002946
+p4_wrong_subtask_gemini_20_flash_weather_009_1f893a,weather_009,gemini_20_flash,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0001468
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0003_72080a,toolbench_syn_0003,gemini_20_flash,calendar,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001069
+p4_wrong_tool_spec_gemini_20_flash_weather_089_b572e6,weather_089,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0003042999999999
+p4_wrong_tool_spec_gemini_20_flash_weather_097_c162ca,weather_097,gemini_20_flash,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.000364
+p4_wrong_tool_spec_gemini_20_flash_weather_051_c96b7e,weather_051,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001686
+p4_wrong_tool_spec_gemini_20_flash_calendar_100_d684e5,calendar_100,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002008
+p4_wrong_tool_spec_gemini_20_flash_medical_098_91baac,medical_098,gemini_20_flash,medical,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0002102
+p4_wrong_tool_spec_gemini_20_flash_calendar_021_5b1507,calendar_021,gemini_20_flash,calendar,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001398
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0058_bbc9a5,toolbench_syn_0058,gemini_20_flash,weather,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.000119
+p4_wrong_tool_spec_gemini_20_flash_calendar_032_a759c0,calendar_032,gemini_20_flash,calendar,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0002894
+p4_wrong_tool_spec_gemini_20_flash_calendar_081_abc985,calendar_081,gemini_20_flash,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0001995
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0070_478c6a,toolbench_syn_0070,gemini_20_flash,medical,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001245
+p4_wrong_tool_spec_gemini_20_flash_weather_038_3e7823,weather_038,gemini_20_flash,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0002543
+p4_wrong_tool_spec_gemini_20_flash_calendar_061_922b94,calendar_061,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002188
+p4_wrong_tool_spec_gemini_20_flash_weather_094_f04302,weather_094,gemini_20_flash,weather,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0002763
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0004_a39a9c,toolbench_syn_0004,gemini_20_flash,weather,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001148
+p4_wrong_tool_spec_gemini_20_flash_weather_005_aeb7dd,weather_005,gemini_20_flash,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0005577
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0074_0c0d76,toolbench_syn_0074,gemini_20_flash,weather,medium,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001161
+p4_wrong_tool_spec_gemini_20_flash_calendar_089_61f35c,calendar_089,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002284
+p4_wrong_tool_spec_gemini_20_flash_weather_095_8e7d22,weather_095,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001868
+p4_wrong_tool_spec_gemini_20_flash_medical_093_862e10,medical_093,gemini_20_flash,medical,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001617
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0040_8d53b1,toolbench_syn_0040,gemini_20_flash,medical,medium,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001245
+p4_wrong_tool_spec_gemini_20_flash_calendar_088_a379b5,calendar_088,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0001969
+p4_wrong_tool_spec_gemini_20_flash_medical_014_ada638,medical_014,gemini_20_flash,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,9.77e-05
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0034_bbd00c,toolbench_syn_0034,gemini_20_flash,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0002226
+p4_wrong_tool_spec_gemini_20_flash_calendar_028_4d77f8,calendar_028,gemini_20_flash,calendar,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.000142
+p4_wrong_tool_spec_gemini_20_flash_weather_012_51f2b8,weather_012,gemini_20_flash,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001353
+p4_wrong_tool_spec_gemini_20_flash_weather_007_27715f,weather_007,gemini_20_flash,weather,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001515
+p4_wrong_tool_spec_gemini_20_flash_medical_047_74a2cb,medical_047,gemini_20_flash,medical,easy,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0001383
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0096_c993e5,toolbench_syn_0096,gemini_20_flash,weather,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0001753
+p4_wrong_tool_spec_gemini_20_flash_weather_090_9dca1f,weather_090,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001673
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0045_cbbc3f,toolbench_syn_0045,gemini_20_flash,weather,easy,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.0001795
+p4_wrong_tool_spec_gemini_20_flash_weather_027_e4539e,weather_027,gemini_20_flash,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0001399
+p4_wrong_tool_spec_gemini_20_flash_weather_078_9df683,weather_078,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001812
+p4_wrong_tool_spec_gemini_20_flash_calendar_085_626042,calendar_085,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002349
+p4_wrong_tool_spec_gemini_20_flash_medical_063_da94d2,medical_063,gemini_20_flash,medical,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001604
+p4_wrong_tool_spec_gemini_20_flash_medical_008_6d9762,medical_008,gemini_20_flash,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001675
+p4_wrong_tool_spec_gemini_20_flash_weather_096_7aa12a,weather_096,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.000176
+p4_wrong_tool_spec_gemini_20_flash_calendar_083_508e04,calendar_083,gemini_20_flash,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0002106
+p4_wrong_tool_spec_gemini_20_flash_calendar_001_1c27a5,calendar_001,gemini_20_flash,calendar,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.000143
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0094_427fcd,toolbench_syn_0094,gemini_20_flash,medical,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0001522
+p4_wrong_tool_spec_gemini_20_flash_calendar_056_dc07b4,calendar_056,gemini_20_flash,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0001998
+p4_wrong_tool_spec_gemini_20_flash_medical_031_b2570a,medical_031,gemini_20_flash,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001077
+p4_wrong_tool_spec_gemini_20_flash_medical_038_8aec73,medical_038,gemini_20_flash,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001679
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0053_5f39db,toolbench_syn_0053,gemini_20_flash,weather,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001291
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0062_d1e165,toolbench_syn_0062,gemini_20_flash,weather,hard,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0003523
+p4_wrong_tool_spec_gemini_20_flash_weather_086_66bc08,weather_086,gemini_20_flash,weather,medium,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001847
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0023_4b86b2,toolbench_syn_0023,gemini_20_flash,medical,hard,wrong_tool_spec,False,False,False,[1],1,True,0.000144
+p4_wrong_tool_spec_gemini_20_flash_calendar_072_5f1518,calendar_072,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002018
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0093_077181,toolbench_syn_0093,gemini_20_flash,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0002368
+p4_wrong_tool_spec_gemini_20_flash_calendar_054_214f5f,calendar_054,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002432
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0013_786d67,toolbench_syn_0013,gemini_20_flash,medical,medium,wrong_tool_spec,False,False,False,[1],1,True,0.000162
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0092_417e81,toolbench_syn_0092,gemini_20_flash,medical,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001112
+p4_wrong_tool_spec_gemini_20_flash_weather_039_838a95,weather_039,gemini_20_flash,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.000157
+p4_wrong_tool_spec_gemini_20_flash_toolbench_syn_0048_1c55e3,toolbench_syn_0048,gemini_20_flash,medical,hard,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,False,0.0001055
+p4_wrong_tool_spec_gemini_20_flash_weather_070_4d86e4,weather_070,gemini_20_flash,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002916
+p4_wrong_tool_spec_gemini_20_flash_calendar_007_50fdcd,calendar_007,gemini_20_flash,calendar,easy,wrong_tool_spec,True,True,False,"[1, 2, 3]",3,True,0.0001719
+p4_wrong_tool_spec_gemini_20_flash_weather_032_9cd014,weather_032,gemini_20_flash,weather,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001454
+p4_wrong_tool_spec_gemini_20_flash_calendar_059_5cd55e,calendar_059,gemini_20_flash,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0002298
+p4_wrong_tool_spec_gemini_20_flash_medical_045_a2663e,medical_045,gemini_20_flash,medical,easy,wrong_tool_spec,True,False,False,"[1, 2]",2,True,0.0001146
+p4_wrong_tool_spec_gemini_20_flash_weather_009_f25b2b,weather_009,gemini_20_flash,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0001499
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0003_384370,toolbench_syn_0003,gemini_20_flash,calendar,hard,wrong_parameter_spec,False,False,False,[1],1,True,0.0001003
+p4_wrong_parameter_spec_gemini_20_flash_weather_089_dfe923,weather_089,gemini_20_flash,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.000309
+p4_wrong_parameter_spec_gemini_20_flash_weather_097_fc43e6,weather_097,gemini_20_flash,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0003655
+p4_wrong_parameter_spec_gemini_20_flash_weather_051_086c1a,weather_051,gemini_20_flash,weather,medium,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.0001706
+p4_wrong_parameter_spec_gemini_20_flash_calendar_100_6e3d04,calendar_100,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002063
+p4_wrong_parameter_spec_gemini_20_flash_medical_098_a73831,medical_098,gemini_20_flash,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002026
+p4_wrong_parameter_spec_gemini_20_flash_calendar_032_ec6af0,calendar_032,gemini_20_flash,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001266
+p4_wrong_parameter_spec_gemini_20_flash_calendar_021_5855bb,calendar_021,gemini_20_flash,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.000141
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0058_7f0d24,toolbench_syn_0058,gemini_20_flash,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001365
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0070_2c02e0,toolbench_syn_0070,gemini_20_flash,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001036
+p4_wrong_parameter_spec_gemini_20_flash_calendar_081_563cb6,calendar_081,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002834
+p4_wrong_parameter_spec_gemini_20_flash_weather_038_76cd51,weather_038,gemini_20_flash,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001352
+p4_wrong_parameter_spec_gemini_20_flash_calendar_061_4adcae,calendar_061,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002833
+p4_wrong_parameter_spec_gemini_20_flash_weather_094_bfd032,weather_094,gemini_20_flash,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0002895
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0004_e984ba,toolbench_syn_0004,gemini_20_flash,weather,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001049
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0074_1d80db,toolbench_syn_0074,gemini_20_flash,weather,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,9.93e-05
+p4_wrong_parameter_spec_gemini_20_flash_calendar_089_0d6dca,calendar_089,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002554
+p4_wrong_parameter_spec_gemini_20_flash_weather_005_2315ee,weather_005,gemini_20_flash,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0007921
+p4_wrong_parameter_spec_gemini_20_flash_medical_093_6d94cc,medical_093,gemini_20_flash,medical,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001498
+p4_wrong_parameter_spec_gemini_20_flash_weather_095_ee0567,weather_095,gemini_20_flash,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001961
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0040_3cd971,toolbench_syn_0040,gemini_20_flash,medical,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001207
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0034_8ef3c0,toolbench_syn_0034,gemini_20_flash,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001537
+p4_wrong_parameter_spec_gemini_20_flash_calendar_088_9088ee,calendar_088,gemini_20_flash,calendar,medium,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.0002144
+p4_wrong_parameter_spec_gemini_20_flash_medical_014_98a439,medical_014,gemini_20_flash,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.000125
+p4_wrong_parameter_spec_gemini_20_flash_calendar_028_2ba834,calendar_028,gemini_20_flash,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001398
+p4_wrong_parameter_spec_gemini_20_flash_weather_012_458680,weather_012,gemini_20_flash,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001565
+p4_wrong_parameter_spec_gemini_20_flash_weather_007_1ea509,weather_007,gemini_20_flash,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001299
+p4_wrong_parameter_spec_gemini_20_flash_medical_047_1e683f,medical_047,gemini_20_flash,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001179
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0045_293afc,toolbench_syn_0045,gemini_20_flash,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,8.47e-05
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0096_2352b8,toolbench_syn_0096,gemini_20_flash,weather,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002593
+p4_wrong_parameter_spec_gemini_20_flash_weather_090_ae2dfc,weather_090,gemini_20_flash,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001881
+p4_wrong_parameter_spec_gemini_20_flash_weather_027_6bea29,weather_027,gemini_20_flash,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001323
+p4_wrong_parameter_spec_gemini_20_flash_weather_078_a50259,weather_078,gemini_20_flash,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001887
+p4_wrong_parameter_spec_gemini_20_flash_medical_063_c6fc0a,medical_063,gemini_20_flash,medical,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001929
+p4_wrong_parameter_spec_gemini_20_flash_calendar_085_4fb61e,calendar_085,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.000268
+p4_wrong_parameter_spec_gemini_20_flash_medical_008_c9aedd,medical_008,gemini_20_flash,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001663
+p4_wrong_parameter_spec_gemini_20_flash_weather_096_24e630,weather_096,gemini_20_flash,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001896
+p4_wrong_parameter_spec_gemini_20_flash_calendar_001_bdbdee,calendar_001,gemini_20_flash,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001275
+p4_wrong_parameter_spec_gemini_20_flash_calendar_083_142ab1,calendar_083,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.000281
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0094_1e720f,toolbench_syn_0094,gemini_20_flash,medical,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001163
+p4_wrong_parameter_spec_gemini_20_flash_medical_031_e78dc8,medical_031,gemini_20_flash,medical,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0001326
+p4_wrong_parameter_spec_gemini_20_flash_calendar_056_826cfd,calendar_056,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002294
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0062_57a401,toolbench_syn_0062,gemini_20_flash,weather,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.000223
+p4_wrong_parameter_spec_gemini_20_flash_medical_038_ab4b16,medical_038,gemini_20_flash,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001652
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0053_76cea6,toolbench_syn_0053,gemini_20_flash,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,9.27e-05
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0023_0c132a,toolbench_syn_0023,gemini_20_flash,medical,hard,wrong_parameter_spec,False,False,False,[1],1,True,0.0001475
+p4_wrong_parameter_spec_gemini_20_flash_weather_086_31b89d,weather_086,gemini_20_flash,weather,medium,wrong_parameter_spec,True,True,False,"[1, 2, 3]",3,False,0.0001942
+p4_wrong_parameter_spec_gemini_20_flash_calendar_072_0c0888,calendar_072,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002232
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0013_399129,toolbench_syn_0013,gemini_20_flash,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0001478
+p4_wrong_parameter_spec_gemini_20_flash_calendar_054_a7d643,calendar_054,gemini_20_flash,calendar,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.0002471
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0093_5c36db,toolbench_syn_0093,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002548
+p4_wrong_parameter_spec_gemini_20_flash_weather_039_5f292d,weather_039,gemini_20_flash,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001564
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0092_407b13,toolbench_syn_0092,gemini_20_flash,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001246
+p4_wrong_parameter_spec_gemini_20_flash_calendar_007_dadd74,calendar_007,gemini_20_flash,calendar,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001301
+p4_wrong_parameter_spec_gemini_20_flash_toolbench_syn_0048_37107c,toolbench_syn_0048,gemini_20_flash,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0001253
+p4_wrong_parameter_spec_gemini_20_flash_weather_070_900d13,weather_070,gemini_20_flash,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0003563
+p4_wrong_parameter_spec_gemini_20_flash_weather_032_0794d4,weather_032,gemini_20_flash,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.000131
+p4_wrong_parameter_spec_gemini_20_flash_medical_045_9fbc64,medical_045,gemini_20_flash,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001258
+p4_wrong_parameter_spec_gemini_20_flash_calendar_059_245750,calendar_059,gemini_20_flash,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0002974
+p4_wrong_parameter_spec_gemini_20_flash_weather_009_b61cc1,weather_009,gemini_20_flash,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.0001545
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0003_00e3e5,toolbench_syn_0003,deepseek_v3,calendar,hard,wrong_subtask,False,False,False,[1],1,True,0.00033482
+p4_wrong_subtask_deepseek_v3_weather_097_07a4a6,weather_097,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00058647
+p4_wrong_subtask_deepseek_v3_weather_089_973090,weather_089,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00085352
+p4_wrong_subtask_deepseek_v3_weather_051_f3d0d7,weather_051,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00048673
+p4_wrong_subtask_deepseek_v3_calendar_100_407a56,calendar_100,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00053773
+p4_wrong_subtask_deepseek_v3_calendar_032_581941,calendar_032,deepseek_v3,calendar,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0005007
+p4_wrong_subtask_deepseek_v3_medical_098_f75a76,medical_098,deepseek_v3,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.00057594
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0058_ab0927,toolbench_syn_0058,deepseek_v3,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00038809
+p4_wrong_subtask_deepseek_v3_calendar_021_7ee3e2,calendar_021,deepseek_v3,calendar,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00041335
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0070_02d012,toolbench_syn_0070,deepseek_v3,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0002734
+p4_wrong_subtask_deepseek_v3_calendar_081_51a887,calendar_081,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.0006925
+p4_wrong_subtask_deepseek_v3_weather_038_041c40,weather_038,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00038909
+p4_wrong_subtask_deepseek_v3_calendar_061_0694c3,calendar_061,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00071222
+p4_wrong_subtask_deepseek_v3_weather_005_3b2307,weather_005,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00070896
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0004_af445f,toolbench_syn_0004,deepseek_v3,weather,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00026537
+p4_wrong_subtask_deepseek_v3_weather_094_36e625,weather_094,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00064575
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0074_302191,toolbench_syn_0074,deepseek_v3,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00026678
+p4_wrong_subtask_deepseek_v3_calendar_089_cf9912,calendar_089,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00070198
+p4_wrong_subtask_deepseek_v3_medical_093_658824,medical_093,deepseek_v3,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.00054634
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0040_c455c0,toolbench_syn_0040,deepseek_v3,medical,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00034964
+p4_wrong_subtask_deepseek_v3_weather_095_fe843b,weather_095,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00090983
+p4_wrong_subtask_deepseek_v3_calendar_088_701957,calendar_088,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00068222
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0034_784102,toolbench_syn_0034,deepseek_v3,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.00058165
+p4_wrong_subtask_deepseek_v3_medical_014_30b20d,medical_014,deepseek_v3,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00038047
+p4_wrong_subtask_deepseek_v3_weather_012_1e6256,weather_012,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00033954
+p4_wrong_subtask_deepseek_v3_calendar_028_2d336a,calendar_028,deepseek_v3,calendar,easy,wrong_subtask,False,False,False,[1],1,True,0.00039857
+p4_wrong_subtask_deepseek_v3_weather_007_bca7e8,weather_007,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0003916
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0045_857eb8,toolbench_syn_0045,deepseek_v3,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00023164
+p4_wrong_subtask_deepseek_v3_medical_047_a014ae,medical_047,deepseek_v3,medical,easy,wrong_subtask,True,False,True,"[1, 2]",2,True,0.00063703
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0096_37d661,toolbench_syn_0096,deepseek_v3,weather,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00055119
+p4_wrong_subtask_deepseek_v3_weather_027_7e3817,weather_027,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00033049
+p4_wrong_subtask_deepseek_v3_weather_090_d91a12,weather_090,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00051689
+p4_wrong_subtask_deepseek_v3_weather_078_d909da,weather_078,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00051969
+p4_wrong_subtask_deepseek_v3_medical_063_e4f06a,medical_063,deepseek_v3,medical,medium,wrong_subtask,True,True,False,"[1, 2, 3]",3,True,0.00040191
+p4_wrong_subtask_deepseek_v3_medical_008_4eddc5,medical_008,deepseek_v3,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00043527
+p4_wrong_subtask_deepseek_v3_calendar_085_810325,calendar_085,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00079051
+p4_wrong_subtask_deepseek_v3_calendar_001_069cd9,calendar_001,deepseek_v3,calendar,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00040102
+p4_wrong_subtask_deepseek_v3_weather_096_009b8a,weather_096,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00049688
+p4_wrong_subtask_deepseek_v3_calendar_083_35430f,calendar_083,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00069044
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0094_b76466,toolbench_syn_0094,deepseek_v3,medical,medium,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00033673
+p4_wrong_subtask_deepseek_v3_medical_031_7dfe88,medical_031,deepseek_v3,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00039119
+p4_wrong_subtask_deepseek_v3_calendar_056_a8337c,calendar_056,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00049057
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0062_1754d4,toolbench_syn_0062,deepseek_v3,weather,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.0005113
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0053_7ca957,toolbench_syn_0053,deepseek_v3,weather,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00026948
+p4_wrong_subtask_deepseek_v3_medical_038_1b1c51,medical_038,deepseek_v3,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00047311
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0023_0d13f8,toolbench_syn_0023,deepseek_v3,medical,hard,wrong_subtask,False,False,False,[1],1,True,0.00035969
+p4_wrong_subtask_deepseek_v3_weather_086_7de179,weather_086,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00050539
+p4_wrong_subtask_deepseek_v3_calendar_072_12e9cc,calendar_072,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00063718
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0093_c02346,toolbench_syn_0093,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00043579
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0013_1cf054,toolbench_syn_0013,deepseek_v3,medical,medium,wrong_subtask,False,False,False,[1],1,True,0.00034217
+p4_wrong_subtask_deepseek_v3_weather_039_856db9,weather_039,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00043023
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0092_083b27,toolbench_syn_0092,deepseek_v3,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00032502
+p4_wrong_subtask_deepseek_v3_calendar_054_e48757,calendar_054,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00062975
+p4_wrong_subtask_deepseek_v3_calendar_007_50d760,calendar_007,deepseek_v3,calendar,easy,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00025335
+p4_wrong_subtask_deepseek_v3_toolbench_syn_0048_9cb5ef,toolbench_syn_0048,deepseek_v3,medical,hard,wrong_subtask,False,True,False,"[1, 3]",2,False,0.00036446
+p4_wrong_subtask_deepseek_v3_weather_070_a0d6c2,weather_070,deepseek_v3,weather,medium,wrong_subtask,False,False,False,[1],1,True,0.00081314
+p4_wrong_subtask_deepseek_v3_weather_032_cfe876,weather_032,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.0004495099999999
+p4_wrong_subtask_deepseek_v3_calendar_059_d8baa7,calendar_059,deepseek_v3,calendar,medium,wrong_subtask,False,False,False,[1],1,True,0.00074925
+p4_wrong_subtask_deepseek_v3_weather_009_ee3ce7,weather_009,deepseek_v3,weather,easy,wrong_subtask,False,False,False,[1],1,True,0.00041508
+p4_wrong_subtask_deepseek_v3_medical_045_fa05fe,medical_045,deepseek_v3,medical,easy,wrong_subtask,False,False,False,[1],1,True,0.00041042
+p4_wrong_tool_spec_deepseek_v3_weather_089_408151,weather_089,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00063984
+p4_wrong_tool_spec_deepseek_v3_weather_097_49dd38,weather_097,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00063631
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0003_d16eb5,toolbench_syn_0003,deepseek_v3,calendar,hard,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.00094661
+p4_wrong_tool_spec_deepseek_v3_weather_051_7b788a,weather_051,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00053006
+p4_wrong_tool_spec_deepseek_v3_medical_098_c301b6,medical_098,deepseek_v3,medical,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00051753
+p4_wrong_tool_spec_deepseek_v3_calendar_100_aa16de,calendar_100,deepseek_v3,calendar,medium,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.00104695
+p4_wrong_tool_spec_deepseek_v3_calendar_032_69ea52,calendar_032,deepseek_v3,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00030987
+p4_wrong_tool_spec_deepseek_v3_calendar_021_62a820,calendar_021,deepseek_v3,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00049397
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0058_0395ea,toolbench_syn_0058,deepseek_v3,weather,easy,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.00058199
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0070_4dcf23,toolbench_syn_0070,deepseek_v3,medical,hard,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00026767
+p4_wrong_tool_spec_deepseek_v3_calendar_081_758d22,calendar_081,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00063222
+p4_wrong_tool_spec_deepseek_v3_weather_038_75fb51,weather_038,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00049768
+p4_wrong_tool_spec_deepseek_v3_calendar_061_e577c8,calendar_061,deepseek_v3,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00061578
+p4_wrong_tool_spec_deepseek_v3_weather_094_a8615f,weather_094,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00068347
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0004_b45944,toolbench_syn_0004,deepseek_v3,weather,hard,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00030352
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0074_250284,toolbench_syn_0074,deepseek_v3,weather,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00030456
+p4_wrong_tool_spec_deepseek_v3_calendar_089_a22171,calendar_089,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00070895
+p4_wrong_tool_spec_deepseek_v3_weather_005_64480e,weather_005,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00170758
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0040_b9d969,toolbench_syn_0040,deepseek_v3,medical,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00027431
+p4_wrong_tool_spec_deepseek_v3_weather_095_6f8adc,weather_095,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.0006056
+p4_wrong_tool_spec_deepseek_v3_medical_093_3f8dca,medical_093,deepseek_v3,medical,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00043178
+p4_wrong_tool_spec_deepseek_v3_medical_014_11c8fb,medical_014,deepseek_v3,medical,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0002685
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0034_5718cc,toolbench_syn_0034,deepseek_v3,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00053922
+p4_wrong_tool_spec_deepseek_v3_calendar_088_96c207,calendar_088,deepseek_v3,calendar,medium,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.00114441
+p4_wrong_tool_spec_deepseek_v3_weather_007_ecbf9d,weather_007,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00032285
+p4_wrong_tool_spec_deepseek_v3_calendar_028_53b0c5,calendar_028,deepseek_v3,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00050414
+p4_wrong_tool_spec_deepseek_v3_weather_012_e50852,weather_012,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00048808
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0045_91c01f,toolbench_syn_0045,deepseek_v3,weather,easy,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00033038
+p4_wrong_tool_spec_deepseek_v3_medical_047_7c2ff9,medical_047,deepseek_v3,medical,easy,wrong_tool_spec,True,False,True,"[1, 2]",2,True,0.00118627
+p4_wrong_tool_spec_deepseek_v3_weather_090_84a12e,weather_090,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00051757
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0096_ba4e54,toolbench_syn_0096,deepseek_v3,weather,medium,wrong_tool_spec,True,True,True,"[1, 2, 3]",3,False,0.00127391
+p4_wrong_tool_spec_deepseek_v3_weather_027_e8660a,weather_027,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00037306
+p4_wrong_tool_spec_deepseek_v3_weather_078_a8d534,weather_078,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00068192
+p4_wrong_tool_spec_deepseek_v3_medical_063_806451,medical_063,deepseek_v3,medical,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00043676
+p4_wrong_tool_spec_deepseek_v3_medical_008_e324e8,medical_008,deepseek_v3,medical,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00047946
+p4_wrong_tool_spec_deepseek_v3_calendar_085_a08031,calendar_085,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00087203
+p4_wrong_tool_spec_deepseek_v3_weather_096_133e03,weather_096,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00057258
+p4_wrong_tool_spec_deepseek_v3_calendar_083_c59d96,calendar_083,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00075635
+p4_wrong_tool_spec_deepseek_v3_calendar_001_bc1c02,calendar_001,deepseek_v3,calendar,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00050713
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0094_025973,toolbench_syn_0094,deepseek_v3,medical,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00045353
+p4_wrong_tool_spec_deepseek_v3_calendar_056_4e39e0,calendar_056,deepseek_v3,calendar,medium,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00058269
+p4_wrong_tool_spec_deepseek_v3_medical_031_9b3b6a,medical_031,deepseek_v3,medical,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00035265
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0053_d921bd,toolbench_syn_0053,deepseek_v3,weather,easy,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00028924
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0062_fc74dc,toolbench_syn_0062,deepseek_v3,weather,hard,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00053697
+p4_wrong_tool_spec_deepseek_v3_medical_038_2a413f,medical_038,deepseek_v3,medical,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00047483
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0023_629908,toolbench_syn_0023,deepseek_v3,medical,hard,wrong_tool_spec,False,False,False,[1],1,True,0.00042146
+p4_wrong_tool_spec_deepseek_v3_calendar_072_61ec92,calendar_072,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00059666
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0093_053cbc,toolbench_syn_0093,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00036878
+p4_wrong_tool_spec_deepseek_v3_weather_086_8cc3a1,weather_086,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00056955
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0013_01eef2,toolbench_syn_0013,deepseek_v3,medical,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00032303
+p4_wrong_tool_spec_deepseek_v3_calendar_054_9fcc99,calendar_054,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00059226
+p4_wrong_tool_spec_deepseek_v3_weather_039_a1f87e,weather_039,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00039475
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0092_562b0c,toolbench_syn_0092,deepseek_v3,medical,hard,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00038451
+p4_wrong_tool_spec_deepseek_v3_weather_070_d45388,weather_070,deepseek_v3,weather,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00054151
+p4_wrong_tool_spec_deepseek_v3_calendar_007_ed3bdb,calendar_007,deepseek_v3,calendar,easy,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.00049524
+p4_wrong_tool_spec_deepseek_v3_toolbench_syn_0048_fc8192,toolbench_syn_0048,deepseek_v3,medical,hard,wrong_tool_spec,False,True,False,"[1, 3]",2,False,0.0003081
+p4_wrong_tool_spec_deepseek_v3_weather_032_ac3b70,weather_032,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00032395
+p4_wrong_tool_spec_deepseek_v3_medical_045_4c40d8,medical_045,deepseek_v3,medical,easy,wrong_tool_spec,False,False,False,[1],1,True,0.0003354
+p4_wrong_tool_spec_deepseek_v3_calendar_059_388bf0,calendar_059,deepseek_v3,calendar,medium,wrong_tool_spec,False,False,False,[1],1,True,0.00065337
+p4_wrong_tool_spec_deepseek_v3_weather_009_3728c8,weather_009,deepseek_v3,weather,easy,wrong_tool_spec,False,False,False,[1],1,True,0.00037088
+p4_wrong_parameter_spec_deepseek_v3_weather_089_dafd88,weather_089,deepseek_v3,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0007487
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0003_fb0f61,toolbench_syn_0003,deepseek_v3,calendar,hard,wrong_parameter_spec,False,False,False,[1],1,True,0.00027724
+p4_wrong_parameter_spec_deepseek_v3_weather_097_ceb10a,weather_097,deepseek_v3,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00065366
+p4_wrong_parameter_spec_deepseek_v3_weather_051_6b6be8,weather_051,deepseek_v3,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00087804
+p4_wrong_parameter_spec_deepseek_v3_medical_098_ab9f84,medical_098,deepseek_v3,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0005255
+p4_wrong_parameter_spec_deepseek_v3_calendar_100_cdb095,calendar_100,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00055064
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0058_949911,toolbench_syn_0058,deepseek_v3,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00027614
+p4_wrong_parameter_spec_deepseek_v3_calendar_032_1b157c,calendar_032,deepseek_v3,calendar,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00051652
+p4_wrong_parameter_spec_deepseek_v3_calendar_021_069db8,calendar_021,deepseek_v3,calendar,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00039311
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0070_8ee260,toolbench_syn_0070,deepseek_v3,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00035055
+p4_wrong_parameter_spec_deepseek_v3_weather_038_030a14,weather_038,deepseek_v3,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00030265
+p4_wrong_parameter_spec_deepseek_v3_calendar_081_ae7db4,calendar_081,deepseek_v3,calendar,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00063828
+p4_wrong_parameter_spec_deepseek_v3_weather_005_760f19,weather_005,deepseek_v3,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00039074
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0004_f7d841,toolbench_syn_0004,deepseek_v3,weather,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002717
+p4_wrong_parameter_spec_deepseek_v3_calendar_061_78e24a,calendar_061,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00063172
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0074_af0e0c,toolbench_syn_0074,deepseek_v3,weather,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0002695
+p4_wrong_parameter_spec_deepseek_v3_weather_094_fa312b,weather_094,deepseek_v3,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00062987
+p4_wrong_parameter_spec_deepseek_v3_weather_095_86c31e,weather_095,deepseek_v3,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00050186
+p4_wrong_parameter_spec_deepseek_v3_calendar_089_b73280,calendar_089,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00074485
+p4_wrong_parameter_spec_deepseek_v3_medical_093_346574,medical_093,deepseek_v3,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00047919
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0040_cc2170,toolbench_syn_0040,deepseek_v3,medical,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00028994
+p4_wrong_parameter_spec_deepseek_v3_calendar_088_e47f81,calendar_088,deepseek_v3,calendar,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00059886
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0034_3fcbdf,toolbench_syn_0034,deepseek_v3,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00051777
+p4_wrong_parameter_spec_deepseek_v3_medical_014_d2324f,medical_014,deepseek_v3,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00034241
+p4_wrong_parameter_spec_deepseek_v3_weather_012_fa26a0,weather_012,deepseek_v3,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00035851
+p4_wrong_parameter_spec_deepseek_v3_calendar_028_1755b4,calendar_028,deepseek_v3,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00038053
+p4_wrong_parameter_spec_deepseek_v3_weather_007_dbcbf1,weather_007,deepseek_v3,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00032559
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0045_813d8d,toolbench_syn_0045,deepseek_v3,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00024098
+p4_wrong_parameter_spec_deepseek_v3_medical_047_8f4395,medical_047,deepseek_v3,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00038532
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0096_8d7fd0,toolbench_syn_0096,deepseek_v3,weather,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00066314
+p4_wrong_parameter_spec_deepseek_v3_weather_027_54b82e,weather_027,deepseek_v3,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.000316
+p4_wrong_parameter_spec_deepseek_v3_weather_090_bcbdd6,weather_090,deepseek_v3,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00053725
+p4_wrong_parameter_spec_deepseek_v3_weather_078_3db490,weather_078,deepseek_v3,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00053069
+p4_wrong_parameter_spec_deepseek_v3_calendar_085_37ebca,calendar_085,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0007205
+p4_wrong_parameter_spec_deepseek_v3_medical_063_aa9b6e,medical_063,deepseek_v3,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00043207
+p4_wrong_parameter_spec_deepseek_v3_medical_008_c104c1,medical_008,deepseek_v3,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00046273
+p4_wrong_parameter_spec_deepseek_v3_calendar_083_916279,calendar_083,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00065086
+p4_wrong_parameter_spec_deepseek_v3_calendar_001_9163d6,calendar_001,deepseek_v3,calendar,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00052685
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0094_f07261,toolbench_syn_0094,deepseek_v3,medical,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00038729
+p4_wrong_parameter_spec_deepseek_v3_weather_096_e87444,weather_096,deepseek_v3,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00094252
+p4_wrong_parameter_spec_deepseek_v3_calendar_056_06343c,calendar_056,deepseek_v3,calendar,medium,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00052868
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0062_ce9edb,toolbench_syn_0062,deepseek_v3,weather,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.0005284
+p4_wrong_parameter_spec_deepseek_v3_medical_031_3bb162,medical_031,deepseek_v3,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00045606
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0053_7d2af9,toolbench_syn_0053,deepseek_v3,weather,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00025086
+p4_wrong_parameter_spec_deepseek_v3_medical_038_30cea1,medical_038,deepseek_v3,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00047037
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0023_f27bc9,toolbench_syn_0023,deepseek_v3,medical,hard,wrong_parameter_spec,False,False,False,[1],1,True,0.00037621
+p4_wrong_parameter_spec_deepseek_v3_weather_086_3f366d,weather_086,deepseek_v3,weather,medium,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00054418
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0093_3d5754,toolbench_syn_0093,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00039973
+p4_wrong_parameter_spec_deepseek_v3_calendar_072_afc6fd,calendar_072,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00048374
+p4_wrong_parameter_spec_deepseek_v3_weather_039_b89ad1,weather_039,deepseek_v3,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00033794
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0013_7c46f9,toolbench_syn_0013,deepseek_v3,medical,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00036961
+p4_wrong_parameter_spec_deepseek_v3_calendar_054_f93f99,calendar_054,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0005632
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0092_dcdade,toolbench_syn_0092,deepseek_v3,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00035362
+p4_wrong_parameter_spec_deepseek_v3_toolbench_syn_0048_5b52be,toolbench_syn_0048,deepseek_v3,medical,hard,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00032099
+p4_wrong_parameter_spec_deepseek_v3_weather_070_cf4543,weather_070,deepseek_v3,weather,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.00061611
+p4_wrong_parameter_spec_deepseek_v3_calendar_007_b411fa,calendar_007,deepseek_v3,calendar,easy,wrong_parameter_spec,False,True,False,"[1, 3]",2,False,0.00082234
+p4_wrong_parameter_spec_deepseek_v3_weather_032_ed07da,weather_032,deepseek_v3,weather,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00034313
+p4_wrong_parameter_spec_deepseek_v3_medical_045_e01fdf,medical_045,deepseek_v3,medical,easy,wrong_parameter_spec,False,False,False,[1],1,True,0.00025096
+p4_wrong_parameter_spec_deepseek_v3_weather_009_6bcf1f,weather_009,deepseek_v3,weather,easy,wrong_parameter_spec,True,False,False,"[1, 2]",2,True,0.00041806
+p4_wrong_parameter_spec_deepseek_v3_calendar_059_3370d8,calendar_059,deepseek_v3,calendar,medium,wrong_parameter_spec,False,False,False,[1],1,True,0.0006695

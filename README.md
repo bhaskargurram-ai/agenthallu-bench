@@ -1,5 +1,10 @@
 # AgentHallu-Bench
 
+> Numbers in this README correspond to the AgentProp-Bench journal
+> submission (IPM-D-26-02511). Note that an earlier construction
+> artifact (r=1.00 from coupled stage indicators) was corrected
+> during revision; see paper §5.2 transparency note.
+
 **Measuring and Mitigating Error Propagation in Tool-Using Language Agents**
 
 Bhaskar Gurram · Zasti Inc. · [gurrambhaskar.ai@gmail.com](mailto:gurrambhaskar.ai@gmail.com)
@@ -14,9 +19,9 @@ Bhaskar Gurram · Zasti Inc. · [gurrambhaskar.ai@gmail.com](mailto:gurrambhaska
 
 | Finding | Detail |
 |---------|--------|
-| **Saturated propagation** | Once a parameter-level error passes the schema gate and executes as a tool call, it propagates to a wrong final answer with **~100% conditional probability** across all 9 models tested |
+| **Substantial propagation** | r_{2,3} ranges 0.43-0.97 across 9 models (ensemble-judged), human-calibrated 0.46-0.73 |
 | **Heuristic eval is broken** | Substring/keyword-match judging has only **κ = 0.14** agreement with a 3-LLM ensemble judge (κ = 0.77–0.82) |
-| **Interceptor works** | A tuned 3-layer runtime interceptor achieves **F₁ = 0.842** and cuts hallucination rates by **9–27 pp** on held-out deployment (both comparisons statistically significant, power ≥ 0.80) |
+| **Interceptor works** | A tuned 3-layer runtime interceptor achieves **F₁ = 0.842** and cuts GPT-4o-mini hallucination by **−23.0 pp** (concurrent n=600 control, p < 0.001). Gemini result is n.s. (−1.3 pp) |
 | **Self-consistency is expensive** | k=3 voting produces 47–70% abstention at only modest hallucination reduction |
 
 ### Models Evaluated
@@ -136,7 +141,7 @@ For a trace τ with one P2 injection, four binary stage indicators:
 
 Hop-conditional rate: **rₖ = P(Sₖ₊₁ | Sₖ)**
 
-Our key finding: **r₃ = 1.00** across all 9 models — once a bad tool call executes, the final answer is always wrong.
+Our key finding: **r_{2,3} ranges 0.43–0.97** across 9 models (ensemble-judged), human-calibrated 0.46–0.73.
 
 ---
 
@@ -151,8 +156,8 @@ Our key finding: **r₃ = 1.00** across all 9 models — once a bad tool call ex
 **Best config**: τ_L1=1, τ_L2=2, L3=on → **F₁ = 0.842** (Prec 0.923, Recall 0.774)
 
 **Held-out deployment** (n=600/model, disjoint from tuning):
-- GPT-4o-mini: 60.0% → 32.8% hallucination (−27.2 pp, h=0.55, power=1.00)
-- Gemini-2.0-Flash: 52.4% → 43.2% hallucination (−9.3 pp, h=0.19, power=0.80)
+- GPT-4o-mini: 55.8% -> 32.8% hallucination (-23.0 pp, concurrent n=600 control, p < 0.001)
+- Gemini-2.0-Flash: 44.5% -> 43.2% (-1.3 pp, n.s. — null result; Gemini's 95% rejection rate at the schema gate eliminates the target failure mode)
 
 ---
 
