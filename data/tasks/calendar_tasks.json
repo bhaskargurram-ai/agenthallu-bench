@@ -1,0 +1,6007 @@
+[
+  {
+    "task_id": "calendar_001",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Code Review Session' on 2024-07-03 at 16:00 for 90 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-03",
+          "time": "16:00",
+          "duration_minutes": 90
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Code Review Session' on 2024-07-03.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_002",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-08-12?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_003",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 45-minute 'Board Meeting' for 2024-08-05 at 13:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-08-05",
+          "time": "13:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Board Meeting' on 2024-08-05.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_004",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-10.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_005",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_5499.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_8206"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_006",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Sprint Review' on 2024-09-01 at 11:00 for 45 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-09-01",
+          "time": "11:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Sprint Review' on 2024-09-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_007",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-15?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-15"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_008",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 45-minute '1:1 with Manager' for 2024-07-08 at 13:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-08",
+          "time": "13:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled '1:1 with Manager' on 2024-07-08.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_009",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-22.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_010",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_7883.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_7381"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_011",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Retrospective' on 2024-08-12 at 15:00 for 30 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-12",
+          "time": "15:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Retrospective' on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_012",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-01?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_013",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 45-minute 'All Hands' for 2024-07-22 at 14:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-22",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'All Hands' on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_014",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-10.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_015",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_3704.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_8657"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_016",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Retrospective' on 2024-07-03 at 14:00 for 30 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-03",
+          "time": "14:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Retrospective' on 2024-07-03.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_017",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-08-12?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_018",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 90-minute 'Training Session' for 2024-07-22 at 10:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-22",
+          "time": "10:00",
+          "duration_minutes": 90
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Training Session' on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_019",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-10.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_020",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_5558.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_7906"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_021",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Client Call' on 2024-07-02 at 13:00 for 30 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-07-02",
+          "time": "13:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Client Call' on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_022",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-15?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-15"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_023",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 45-minute 'Strategy Meeting' for 2024-07-01 at 10:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-01",
+          "time": "10:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Strategy Meeting' on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_024",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-03.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-03.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_025",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_8619.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_5198"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_026",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Strategy Meeting' on 2024-07-15 at 10:00 for 30 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-15",
+          "time": "10:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Strategy Meeting' on 2024-07-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_027",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-02?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_028",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 90-minute 'Budget Review' for 2024-08-20 at 13:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-08-20",
+          "time": "13:00",
+          "duration_minutes": 90
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Budget Review' on 2024-08-20.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_029",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-08-12.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-08-12.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_030",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_1672.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_6688"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_031",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Product Demo' on 2024-07-22 at 15:00 for 60 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Product Demo",
+          "date": "2024-07-22",
+          "time": "15:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Product Demo' on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_032",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-08-20?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-08-20.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_033",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 90-minute 'All Hands' for 2024-08-01 at 09:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 90
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'All Hands' on 2024-08-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_034",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-08-01.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-08-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_035",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_9817.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_8921"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_036",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Code Review Session' on 2024-07-22 at 16:00 for 60 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-22",
+          "time": "16:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Code Review Session' on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_037",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-08?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_038",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 90-minute 'Retrospective' for 2024-08-01 at 10:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-01",
+          "time": "10:00",
+          "duration_minutes": 90
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Retrospective' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_039",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-01.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_040",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_6576.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_5581"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_041",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Retrospective' on 2024-08-12 at 15:00 for 60 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-12",
+          "time": "15:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Retrospective' on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_042",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-08?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_043",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 45-minute 'Code Review Session' for 2024-08-05 at 16:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-08-05",
+          "time": "16:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Code Review Session' on 2024-08-05.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_044",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-09-01.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-09-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-09-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_045",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_4986.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_6016"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_046",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Create a meeting called 'Training Session' on 2024-08-12 at 11:00 for 90 minutes.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-08-12",
+          "time": "11:00",
+          "duration_minutes": 90
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created event 'Training Session' on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_047",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "What meetings do I have on 2024-07-22?",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Events on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_048",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Schedule a 60-minute 'Interview' for 2024-08-01 at 11:00.",
+    "required_tools": [
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Scheduled 'Interview' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_049",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Show me my calendar for 2024-07-02.",
+    "required_tools": [
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Calendar for 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_050",
+    "domain": "calendar",
+    "difficulty": "easy",
+    "query": "Delete event EVT_4138.",
+    "required_tools": [
+      "delete_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_4545"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      }
+    ],
+    "correct_final_answer": "Event deleted.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_051",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Interview' meeting on 2024-08-01 at 11:00 for 60 minutes with eve@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "eve@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Interview' and listed all events on 2024-08-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_052",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-10 and if the 09:00 slot is free, create a 'Budget Review' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-10",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Budget Review' on 2024-07-10.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_053",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Lunch Meeting' meeting on 2024-07-03 at 11:00 for 30 minutes with frank@company.com and eve@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-07-03",
+          "time": "11:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "frank@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Lunch Meeting' and listed all events on 2024-07-03.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_054",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-10 and if the 09:00 slot is free, create a '1:1 with Manager' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-10",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled '1:1 with Manager' on 2024-07-10.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_055",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Interview' meeting on 2024-07-03 at 15:00 for 45 minutes with alice@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-07-03",
+          "time": "15:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "alice@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Interview' and listed all events on 2024-07-03.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_056",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-10 and if the 13:00 slot is free, create a 'Budget Review' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-10",
+          "time": "13:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Budget Review' on 2024-07-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_057",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a '1:1 with Manager' meeting on 2024-07-01 at 11:00 for 45 minutes with alice@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-01",
+          "time": "11:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "alice@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created '1:1 with Manager' and listed all events on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_058",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 09:00 slot is free, create a 'Board Meeting' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Board Meeting' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_059",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a '1:1 with Manager' meeting on 2024-07-03 at 16:00 for 60 minutes with carol@company.com and alice@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-03",
+          "time": "16:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "carol@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created '1:1 with Manager' and listed all events on 2024-07-03.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_060",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-02 and if the 14:00 slot is free, create a 'Design Review' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Design Review",
+          "date": "2024-07-02",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Design Review' on 2024-07-02.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_061",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Strategy Meeting' meeting on 2024-08-12 at 10:00 for 60 minutes with dave@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-08-12",
+          "time": "10:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "dave@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Strategy Meeting' and listed all events on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_062",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 11:00 slot is free, create a 'Retrospective' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Retrospective' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_063",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Budget Review' meeting on 2024-08-12 at 09:00 for 60 minutes with frank@company.com and alice@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-08-12",
+          "time": "09:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "frank@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Budget Review' and listed all events on 2024-08-12.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_064",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-08 and if the 15:00 slot is free, create a 'Strategy Meeting' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-08",
+          "time": "15:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Strategy Meeting' on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_065",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a '1:1 with Manager' meeting on 2024-07-08 at 10:00 for 60 minutes with alice@company.com and bob@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-08",
+          "time": "10:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "alice@company.com",
+            "bob@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created '1:1 with Manager' and listed all events on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_066",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-22 and if the 13:00 slot is free, create a 'Team Standup' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-07-22",
+          "time": "13:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Team Standup' on 2024-07-22.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_067",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Client Call' meeting on 2024-07-01 at 10:00 for 45 minutes with frank@company.com and carol@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-07-01",
+          "time": "10:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "frank@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Client Call' and listed all events on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_068",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 09:00 slot is free, create a 'Interview' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Interview' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_069",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Strategy Meeting' meeting on 2024-08-20 at 14:00 for 60 minutes with bob@company.com and dave@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-08-20",
+          "time": "14:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "bob@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Strategy Meeting' and listed all events on 2024-08-20.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_070",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-05 and if the 10:00 slot is free, create a 'Sprint Review' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-05"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-05",
+          "time": "10:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Sprint Review' on 2024-08-05.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_071",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'All Hands' meeting on 2024-07-03 at 09:00 for 30 minutes with bob@company.com and carol@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-03",
+          "time": "09:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "bob@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'All Hands' and listed all events on 2024-07-03.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_072",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-09-01 and if the 16:00 slot is free, create a 'Budget Review' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-09-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-09-01",
+          "time": "16:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Budget Review' on 2024-09-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_073",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Sprint Review' meeting on 2024-08-01 at 15:00 for 45 minutes with frank@company.com and dave@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-01",
+          "time": "15:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "frank@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Sprint Review' and listed all events on 2024-08-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_074",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-05 and if the 14:00 slot is free, create a 'Client Call' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-05"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-08-05",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Client Call' on 2024-08-05.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_075",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Budget Review' meeting on 2024-07-01 at 13:00 for 60 minutes with carol@company.com and eve@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-01",
+          "time": "13:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "carol@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Budget Review' and listed all events on 2024-07-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_076",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-01 and if the 09:00 slot is free, create a 'Client Call' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-07-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Client Call' on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_077",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Budget Review' meeting on 2024-07-01 at 16:00 for 60 minutes with carol@company.com and eve@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-01",
+          "time": "16:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "carol@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Budget Review' and listed all events on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_078",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-03 and if the 13:00 slot is free, create a 'Team Standup' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-07-03",
+          "time": "13:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Team Standup' on 2024-07-03.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_079",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Retrospective' meeting on 2024-07-10 at 10:00 for 60 minutes with dave@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-10",
+          "time": "10:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "dave@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Retrospective' and listed all events on 2024-07-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_080",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 11:00 slot is free, create a 'Sprint Review' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Sprint Review' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_081",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Training Session' meeting on 2024-07-02 at 16:00 for 30 minutes with carol@company.com and dave@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-02",
+          "time": "16:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "carol@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Training Session' and listed all events on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_082",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 11:00 slot is free, create a 'Interview' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Interview' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_083",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Team Standup' meeting on 2024-08-01 at 09:00 for 45 minutes with carol@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "carol@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Team Standup' and listed all events on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_084",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-22 and if the 16:00 slot is free, create a 'Sprint Review' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-07-22",
+          "time": "16:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Sprint Review' on 2024-07-22.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_085",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Code Review Session' meeting on 2024-07-22 at 09:00 for 30 minutes with eve@company.com and carol@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-22",
+          "time": "09:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "eve@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Code Review Session' and listed all events on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_086",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 15:00 slot is free, create a 'Budget Review' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-08-01",
+          "time": "15:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Budget Review' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_087",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Client Call' meeting on 2024-08-05 at 10:00 for 45 minutes with dave@company.com and frank@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-08-05",
+          "time": "10:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "dave@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-05"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Client Call' and listed all events on 2024-08-05.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_088",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-01 and if the 15:00 slot is free, create a 'Sprint Review' for 60 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-07-01",
+          "time": "15:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Sprint Review' on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_089",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Client Call' meeting on 2024-08-05 at 09:00 for 60 minutes with dave@company.com and alice@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-08-05",
+          "time": "09:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "dave@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-05"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Client Call' and listed all events on 2024-08-05.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_090",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-02 and if the 13:00 slot is free, create a 'Design Review' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Design Review",
+          "date": "2024-07-02",
+          "time": "13:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Design Review' on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_091",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Code Review Session' meeting on 2024-09-01 at 11:00 for 60 minutes with frank@company.com and carol@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-09-01",
+          "time": "11:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "frank@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-09-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Code Review Session' and listed all events on 2024-09-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_092",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 13:00 slot is free, create a 'Board Meeting' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-08-01",
+          "time": "13:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Board Meeting' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_093",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a '1:1 with Manager' meeting on 2024-07-22 at 10:00 for 60 minutes with eve@company.com and bob@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-22",
+          "time": "10:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "eve@company.com",
+            "bob@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created '1:1 with Manager' and listed all events on 2024-07-22.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_094",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-02 and if the 11:00 slot is free, create a 'All Hands' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-02",
+          "time": "11:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'All Hands' on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_095",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Client Call' meeting on 2024-07-01 at 11:00 for 60 minutes with carol@company.com and eve@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-07-01",
+          "time": "11:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "carol@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Client Call' and listed all events on 2024-07-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_096",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-20 and if the 13:00 slot is free, create a 'Budget Review' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-08-20",
+          "time": "13:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Budget Review' on 2024-08-20.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_097",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Code Review Session' meeting on 2024-07-15 at 11:00 for 60 minutes with eve@company.com and dave@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-15",
+          "time": "11:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "eve@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-15"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Code Review Session' and listed all events on 2024-07-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_098",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-07-15 and if the 16:00 slot is free, create a 'Code Review Session' for 30 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-15"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-15",
+          "time": "16:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Code Review Session' on 2024-07-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_099",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Create a 'Budget Review' meeting on 2024-07-22 at 10:00 for 45 minutes with alice@company.com and carol@company.com, then show me all events for that day.",
+    "required_tools": [
+      "create_event",
+      "get_events"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-22",
+          "time": "10:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "alice@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id",
+          "status"
+        ]
+      },
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created 'Budget Review' and listed all events on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_100",
+    "domain": "calendar",
+    "difficulty": "medium",
+    "query": "Check my schedule for 2024-08-01 and if the 15:00 slot is free, create a 'Interview' for 45 minutes.",
+    "required_tools": [
+      "get_events",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-01",
+          "time": "15:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Checked schedule and scheduled 'Interview' on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "calendar_101",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-01 schedule. First check what's there, then delete event EVT_9617, and create a new 'Code Review Session' at 10:00 for 60 minutes with alice@company.com, dave@company.com, and frank@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_9617"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-01",
+          "time": "10:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "alice@company.com",
+            "dave@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-01 schedule with new 'Code Review Session'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_102",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-01: 'Retrospective' at 09:00 for 30 min, 'Team Standup' at 11:00 for 60 min, and 'Sprint Review' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_103",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-10 schedule. First check what's there, then delete event EVT_9742, and create a new 'Strategy Meeting' at 11:00 for 90 minutes with frank@company.com, alice@company.com, and carol@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_9742"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-10",
+          "time": "11:00",
+          "duration_minutes": 90,
+          "attendees": [
+            "frank@company.com",
+            "alice@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-10 schedule with new 'Strategy Meeting'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_104",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-15: 'Board Meeting' at 09:00 for 30 min, 'Code Review Session' at 11:00 for 60 min, and 'Product Demo' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-07-15",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-15",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Product Demo",
+          "date": "2024-07-15",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-15.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_105",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-20 schedule. First check what's there, then delete event EVT_2612, and create a new 'Training Session' at 11:00 for 45 minutes with frank@company.com, alice@company.com, and dave@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_2612"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-08-20",
+          "time": "11:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "frank@company.com",
+            "alice@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-20 schedule with new 'Training Session'.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_106",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-20: 'Strategy Meeting' at 09:00 for 30 min, 'All Hands' at 11:00 for 60 min, and 'Retrospective' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-08-20",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-08-20",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-20",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-20.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_107",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-15 schedule. First check what's there, then delete event EVT_8056, and create a new 'Team Standup' at 16:00 for 30 minutes with carol@company.com, frank@company.com, and eve@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-15"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_8056"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-07-15",
+          "time": "16:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "carol@company.com",
+            "frank@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-15 schedule with new 'Team Standup'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_108",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-08: '1:1 with Manager' at 09:00 for 30 min, 'Design Review' at 11:00 for 60 min, and 'Client Call' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-08",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Design Review",
+          "date": "2024-07-08",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-07-08",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_109",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-12 schedule. First check what's there, then delete event EVT_3344, and create a new 'Sprint Review' at 16:00 for 90 minutes with eve@company.com, bob@company.com, and dave@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_3344"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-12",
+          "time": "16:00",
+          "duration_minutes": 90,
+          "attendees": [
+            "eve@company.com",
+            "bob@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-12 schedule with new 'Sprint Review'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_110",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-01: 'Design Review' at 09:00 for 30 min, 'Client Call' at 11:00 for 60 min, and 'Lunch Meeting' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Design Review",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-08-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_111",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-10 schedule. First check what's there, then delete event EVT_5901, and create a new 'Retrospective' at 15:00 for 45 minutes with alice@company.com, dave@company.com, and carol@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_5901"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-10",
+          "time": "15:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "alice@company.com",
+            "dave@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-10 schedule with new 'Retrospective'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_112",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-22: 'Training Session' at 09:00 for 30 min, 'Interview' at 11:00 for 60 min, and 'Strategy Meeting' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-22",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-07-22",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-22",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_113",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-01 schedule. First check what's there, then delete event EVT_5847, and create a new 'All Hands' at 09:00 for 45 minutes with dave@company.com, eve@company.com, and carol@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_5847"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "dave@company.com",
+            "eve@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-01 schedule with new 'All Hands'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_114",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-10: 'Interview' at 09:00 for 30 min, 'Strategy Meeting' at 11:00 for 60 min, and 'All Hands' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-07-10",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-10",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-10",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-10.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_115",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-10 schedule. First check what's there, then delete event EVT_4115, and create a new 'All Hands' at 16:00 for 45 minutes with eve@company.com, carol@company.com, and bob@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_4115"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-10",
+          "time": "16:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "eve@company.com",
+            "carol@company.com",
+            "bob@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-10 schedule with new 'All Hands'.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_116",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-10: 'Budget Review' at 09:00 for 30 min, 'Training Session' at 11:00 for 60 min, and 'Interview' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-10",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-10",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-07-10",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_117",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-01 schedule. First check what's there, then delete event EVT_5835, and create a new 'Strategy Meeting' at 09:00 for 60 minutes with frank@company.com, bob@company.com, and alice@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_5835"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "frank@company.com",
+            "bob@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-01 schedule with new 'Strategy Meeting'.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_118",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-09-01: 'Lunch Meeting' at 09:00 for 30 min, 'Board Meeting' at 11:00 for 60 min, and 'Code Review Session' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-09-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-09-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-09-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-09-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_119",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-10 schedule. First check what's there, then delete event EVT_6549, and create a new 'Product Demo' at 16:00 for 45 minutes with carol@company.com, dave@company.com, and frank@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-10"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_6549"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Product Demo",
+          "date": "2024-07-10",
+          "time": "16:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "carol@company.com",
+            "dave@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-10 schedule with new 'Product Demo'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_120",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-02: 'Strategy Meeting' at 09:00 for 30 min, 'All Hands' at 11:00 for 60 min, and 'Retrospective' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-02",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-02",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-02",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_121",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-22 schedule. First check what's there, then delete event EVT_7038, and create a new 'Sprint Review' at 09:00 for 60 minutes with eve@company.com, alice@company.com, and dave@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_7038"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-07-22",
+          "time": "09:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "eve@company.com",
+            "alice@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-22 schedule with new 'Sprint Review'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_122",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-09-01: 'Training Session' at 09:00 for 30 min, 'Interview' at 11:00 for 60 min, and 'Strategy Meeting' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-09-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-09-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-09-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-09-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_123",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-08 schedule. First check what's there, then delete event EVT_4626, and create a new 'Training Session' at 13:00 for 30 minutes with eve@company.com, frank@company.com, and carol@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_4626"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-08",
+          "time": "13:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "eve@company.com",
+            "frank@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-08 schedule with new 'Training Session'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_124",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-02: 'Training Session' at 09:00 for 30 min, 'Interview' at 11:00 for 60 min, and 'Strategy Meeting' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-02",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-07-02",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-02",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_125",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-01 schedule. First check what's there, then delete event EVT_4846, and create a new '1:1 with Manager' at 09:00 for 60 minutes with dave@company.com, alice@company.com, and eve@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_4846"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-01",
+          "time": "09:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "dave@company.com",
+            "alice@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-01 schedule with new '1:1 with Manager'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_126",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-05: 'Retrospective' at 09:00 for 30 min, 'Team Standup' at 11:00 for 60 min, and 'Sprint Review' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-05",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-08-05",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-05",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-05.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_127",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-22 schedule. First check what's there, then delete event EVT_5583, and create a new 'Retrospective' at 15:00 for 30 minutes with dave@company.com, eve@company.com, and frank@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-22"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_5583"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-22",
+          "time": "15:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "dave@company.com",
+            "eve@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-22 schedule with new 'Retrospective'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_128",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-09-01: 'Team Standup' at 09:00 for 30 min, 'Sprint Review' at 11:00 for 60 min, and '1:1 with Manager' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-09-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-09-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-09-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-09-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_129",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-20 schedule. First check what's there, then delete event EVT_4109, and create a new 'Sprint Review' at 11:00 for 60 minutes with alice@company.com, dave@company.com, and carol@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_4109"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-20",
+          "time": "11:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "alice@company.com",
+            "dave@company.com",
+            "carol@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-20 schedule with new 'Sprint Review'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_130",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-01: 'Sprint Review' at 09:00 for 30 min, '1:1 with Manager' at 11:00 for 60 min, and 'Design Review' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Design Review",
+          "date": "2024-08-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_131",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-15 schedule. First check what's there, then delete event EVT_4394, and create a new 'Strategy Meeting' at 10:00 for 45 minutes with eve@company.com, bob@company.com, and alice@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-15"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_4394"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-07-15",
+          "time": "10:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "eve@company.com",
+            "bob@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-15 schedule with new 'Strategy Meeting'.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_132",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-08: 'Budget Review' at 09:00 for 30 min, 'Training Session' at 11:00 for 60 min, and 'Interview' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-08",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-07-08",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-07-08",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_133",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-03 schedule. First check what's there, then delete event EVT_3159, and create a new 'All Hands' at 10:00 for 60 minutes with bob@company.com, alice@company.com, and eve@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-03"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_3159"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-03",
+          "time": "10:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "bob@company.com",
+            "alice@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-03 schedule with new 'All Hands'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_134",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-15: 'Team Standup' at 09:00 for 30 min, 'Sprint Review' at 11:00 for 60 min, and '1:1 with Manager' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-07-15",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Sprint Review",
+          "date": "2024-07-15",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "1:1 with Manager",
+          "date": "2024-07-15",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-15.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_135",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-01 schedule. First check what's there, then delete event EVT_8802, and create a new 'Client Call' at 10:00 for 90 minutes with eve@company.com, alice@company.com, and frank@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_8802"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-07-01",
+          "time": "10:00",
+          "duration_minutes": 90,
+          "attendees": [
+            "eve@company.com",
+            "alice@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-01 schedule with new 'Client Call'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_136",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-15: 'Code Review Session' at 09:00 for 30 min, 'Product Demo' at 11:00 for 60 min, and 'Budget Review' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-07-15",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Product Demo",
+          "date": "2024-07-15",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-07-15",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_137",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-20 schedule. First check what's there, then delete event EVT_8847, and create a new 'Interview' at 14:00 for 60 minutes with dave@company.com, alice@company.com, and eve@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_8847"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-20",
+          "time": "14:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "dave@company.com",
+            "alice@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-20 schedule with new 'Interview'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_138",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-22: 'All Hands' at 09:00 for 30 min, 'Retrospective' at 11:00 for 60 min, and 'Team Standup' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-22",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-22",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-07-22",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-22.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_139",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-12 schedule. First check what's there, then delete event EVT_7240, and create a new 'Lunch Meeting' at 10:00 for 30 minutes with bob@company.com, carol@company.com, and eve@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-12"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_7240"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-08-12",
+          "time": "10:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "bob@company.com",
+            "carol@company.com",
+            "eve@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-12 schedule with new 'Lunch Meeting'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_140",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-05: 'Budget Review' at 09:00 for 30 min, 'Training Session' at 11:00 for 60 min, and 'Interview' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-08-05",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Training Session",
+          "date": "2024-08-05",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Interview",
+          "date": "2024-08-05",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-05.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_141",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-09-01 schedule. First check what's there, then delete event EVT_7779, and create a new 'Strategy Meeting' at 09:00 for 45 minutes with dave@company.com, frank@company.com, and bob@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-09-01"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_7779"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Strategy Meeting",
+          "date": "2024-09-01",
+          "time": "09:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "dave@company.com",
+            "frank@company.com",
+            "bob@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-09-01 schedule with new 'Strategy Meeting'.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_142",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-01: 'Lunch Meeting' at 09:00 for 30 min, 'Board Meeting' at 11:00 for 60 min, and 'Code Review Session' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-08-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-08-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-08-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-01.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_143",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-20 schedule. First check what's there, then delete event EVT_2494, and create a new 'Lunch Meeting' at 11:00 for 60 minutes with bob@company.com, dave@company.com, and alice@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-20"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_2494"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-08-20",
+          "time": "11:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "bob@company.com",
+            "dave@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-20 schedule with new 'Lunch Meeting'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_144",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-07-02: 'All Hands' at 09:00 for 30 min, 'Retrospective' at 11:00 for 60 min, and 'Team Standup' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-07-02",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-07-02",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-07-02",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-07-02.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_145",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-05 schedule. First check what's there, then delete event EVT_6793, and create a new 'Budget Review' at 14:00 for 60 minutes with frank@company.com, alice@company.com, and dave@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-05"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_6793"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Budget Review",
+          "date": "2024-08-05",
+          "time": "14:00",
+          "duration_minutes": 60,
+          "attendees": [
+            "frank@company.com",
+            "alice@company.com",
+            "dave@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-05 schedule with new 'Budget Review'.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_146",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-20: 'All Hands' at 09:00 for 30 min, 'Retrospective' at 11:00 for 60 min, and 'Team Standup' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-08-20",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Retrospective",
+          "date": "2024-08-20",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Team Standup",
+          "date": "2024-08-20",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-20.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_147",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-07-02 schedule. First check what's there, then delete event EVT_2773, and create a new 'Lunch Meeting' at 14:00 for 45 minutes with bob@company.com, dave@company.com, and frank@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-07-02"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_2773"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-07-02",
+          "time": "14:00",
+          "duration_minutes": 45,
+          "attendees": [
+            "bob@company.com",
+            "dave@company.com",
+            "frank@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-07-02 schedule with new 'Lunch Meeting'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_148",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-08-05: 'Lunch Meeting' at 09:00 for 30 min, 'Board Meeting' at 11:00 for 60 min, and 'Code Review Session' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-08-05",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-08-05",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Code Review Session",
+          "date": "2024-08-05",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-08-05.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  },
+  {
+    "task_id": "calendar_149",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "I need to reorganize my 2024-08-05 schedule. First check what's there, then delete event EVT_3955, and create a new 'All Hands' at 16:00 for 30 minutes with eve@company.com, carol@company.com, and alice@company.com.",
+    "required_tools": [
+      "get_events",
+      "delete_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_events",
+        "params": {
+          "date": "2024-08-05"
+        },
+        "expected_result_keys": [
+          "events"
+        ]
+      },
+      {
+        "tool": "delete_event",
+        "params": {
+          "event_id": "EVT_3955"
+        },
+        "expected_result_keys": [
+          "success"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "All Hands",
+          "date": "2024-08-05",
+          "time": "16:00",
+          "duration_minutes": 30,
+          "attendees": [
+            "eve@company.com",
+            "carol@company.com",
+            "alice@company.com"
+          ]
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Reorganized 2024-08-05 schedule with new 'All Hands'.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "calendar_000",
+      "calendar_001"
+    ]
+  },
+  {
+    "task_id": "calendar_150",
+    "domain": "calendar",
+    "difficulty": "hard",
+    "query": "Create three meetings on 2024-09-01: 'Client Call' at 09:00 for 30 min, 'Lunch Meeting' at 11:00 for 60 min, and 'Board Meeting' at 14:00 for 45 min.",
+    "required_tools": [
+      "create_event",
+      "create_event",
+      "create_event"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Client Call",
+          "date": "2024-09-01",
+          "time": "09:00",
+          "duration_minutes": 30
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Lunch Meeting",
+          "date": "2024-09-01",
+          "time": "11:00",
+          "duration_minutes": 60
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      },
+      {
+        "tool": "create_event",
+        "params": {
+          "title": "Board Meeting",
+          "date": "2024-09-01",
+          "time": "14:00",
+          "duration_minutes": 45
+        },
+        "expected_result_keys": [
+          "event_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Created three meetings on 2024-09-01.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "calendar_002"
+    ]
+  }
+]

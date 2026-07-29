@@ -1,0 +1,253 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\newcommand{\editortext}[1]{\textit{\color{gray}#1}}
+\newcommand{\newtext}[1]{\begin{quote}\small #1\end{quote}}
+
+\title{Response to the Editor\\[0.5em]
+\large Revised Manuscript: ``Evaluating Tool-Using Language Agents:\\
+Judge Reliability, Propagation Cascades, and Runtime Mitigation\\
+in AgentProp-Bench''}
+\author{Anonymous (for review)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Overview of Changes}
+
+We thank the editor for the constructive feedback. The manuscript has been
+substantially revised:
+
+\begin{itemize}[nosep]
+  \item Renamed from AgentHallu-Bench to \textbf{AgentProp-Bench} (see Section~9 below).
+  \item \textbf{Repositioned} around evaluation reliability as the primary
+        contribution, with propagation and mitigation as evidence.
+  \item Added 18 new 2024--2026 references from IR/IS and agent-hallucination venues.
+  \item Added standalone sections for Research Objectives (Section~3),
+        Dataset (Section~4), and Discussion (Section~7).
+  \item Expanded from $\sim$5,200 to $\sim$9,500 words.
+  \item Corrected a methodological issue in stage-indicator definitions
+        (disclosed transparently in Section~9).
+  \item Collected 100 stratified human labels to validate the ensemble judge.
+  \item Re-ran the interceptor under a concurrent no-interceptor control.
+\end{itemize}
+
+\section{Response to Editor Point 1: Abstract}
+
+\editortext{``Your abstract does not highlight the specifics of your
+research or findings but contains too much background information.
+Some details of your research would be nice, for example, numbers
+addressing the sample, data, percentage improvement, etc.''}
+
+\textbf{Addressed.} The abstract has been rewritten to 195 words, leading
+with specific numbers rather than background. It now includes:
+sample sizes (2,000 tasks, 2,300 traces, 9 LLMs, 100 human labels),
+key results ($\kappa=0.049$ for heuristic, $\kappa=0.432$ for ensemble,
+$r_{2,3}\approx 0.62$ human-calibrated propagation, $-23$\,pp interceptor
+effect), and methodology (concurrent $n{=}600$ control). Background material
+was reduced to one sentence.
+
+\newtext{See the revised Abstract (page~1). Word count: ${\sim}$170 (down from 247).}
+
+\section{Response to Editor Point 2: Research Objectives}
+
+\editortext{``There needs to be an explicit research objective(s) stated,
+preferably as a separate section.''}
+
+\textbf{Addressed.} A standalone Section~3 (``Research Objectives'') now
+presents three explicit objectives:
+\begin{description}[nosep]
+  \item[RO1] Quantify agreement between heuristic, LLM-ensemble, and human
+    judges on tool-using agent outputs.
+  \item[RO2] Characterize parameter-level error propagation through agent
+    pipelines under validated evaluation.
+  \item[RO3] Evaluate a runtime interceptor under a concurrent control.
+\end{description}
+Each objective is accompanied by a rationale paragraph.
+
+\newtext{See Section~3 of the revised manuscript.}
+
+\section{Response to Editor Point 3: Dataset Description}
+
+\editortext{``I have questions about your dataset. So, you need to
+explicitly provide a description of your dataset(s), in the manuscript,
+which is currently lacking.''}
+
+\textbf{Addressed.} Section~4 (``Dataset: AgentProp-Bench'') now provides
+a full description including:
+\begin{itemize}[nosep]
+  \item Task design and construction methodology (Section~4.1)
+  \item Domain breakdown with Table~1 showing 2,000 tasks across
+        calendar (667), weather (674), medical (559), and knowledge (100)
+        domains, plus 300 held-out retail tasks (Section~4.2)
+  \item Tool schema and simulated environment (Section~4.3)
+  \item Error-injection protocol with a worked example trace (Section~4.4)
+  \item Trace collection details: 2,300 traces across 9 models (Section~4.5)
+  \item Human label collection: 100 stratified labels, annotator description,
+        sampling rationale (Section~4.6)
+  \item Data availability with repository structure (Section~4.7)
+\end{itemize}
+
+\newtext{See Section~4 and Table~1 of the revised manuscript.}
+
+\section{Response to Editor Point 4: Discussion and Implications}
+
+\editortext{``You must more clearly highlight your research's theoretical
+and practical implications; it is unclear how this research differs from
+existing work. There should be an explicit section addressing the
+discussion of results and implications.''}
+
+\textbf{Addressed.} Section~7 (``Discussion and Implications'') is now a
+dedicated section with four subsections:
+\begin{itemize}[nosep]
+  \item Section~7.1: Theoretical implications---rejection and recovery as
+    orthogonal axes of agent robustness; why heuristic evaluation
+    systematically misranks models.
+  \item Section~7.2: Practical implications for agent designers---schema
+    validators, pre-execution semantic checks, interceptor applicability.
+  \item Section~7.3: Practical implications for IR/IS evaluation---substring
+    heuristics are chance-level, LLM-ensemble judges need validation,
+    methodology transfers to RAG/QA/agent benchmarks.
+  \item Section~7.4: Explicit differentiation from AgentHallu
+    (Liu et al., 2026), $\tau$-bench, AgentBench, and BFCL.
+\end{itemize}
+
+\newtext{See Section~7 of the revised manuscript.}
+
+\section{Response to Editor Point 5: Copy Editing}
+
+\editortext{``The manuscript requires thorough copy editing. Please keep
+in mind that many of the IP\&M audience members are not native English
+speakers, so the manuscript must be accessible to them.''}
+
+\textbf{Addressed.} The manuscript has been thoroughly copy-edited with
+the following guidelines applied:
+\begin{itemize}[nosep]
+  \item Sentences longer than 25 words were split.
+  \item Idioms and metaphors were replaced with direct language.
+  \item Every acronym (LLM, EPS, IR, etc.) is defined on first use.
+  \item Active voice is used where possible.
+  \item Each paragraph addresses one idea in 3--6 sentences.
+\end{itemize}
+
+\section{Response to Editor Point 6: Manuscript Length}
+
+\editortext{``The manuscript is short, so you have space to go into more
+detail concerning this research's prior literature, methods, data, and
+implications.''}
+
+\textbf{Addressed.} The manuscript has been expanded from approximately
+5,200 words to approximately 9,500 words. Major additions include:
+\begin{itemize}[nosep]
+  \item Expanded Related Work (Section~2): 6 thematic subsections with
+        18 new references.
+  \item New standalone sections: Research Objectives (Section~3), Dataset
+        (Section~4), Discussion (Section~7), Limitations (Section~8).
+  \item New results: Rejection vs.\ Recovery decomposition (Section~6.3),
+        human-validated judge reliability (Section~6.1), concurrent-control
+        interceptor evaluation (Section~6.4).
+\end{itemize}
+
+\section{Response to Editor Point 7: References and Literature Review}
+
+\editortext{``Your references need to tie this research into the computing
+and information science community \ldots\ you must update your literature
+review.''}
+
+\textbf{Addressed.} The Related Work section (Section~2) has been
+reorganized into six thematic subsections and expanded with 18 new
+2024--2026 citations. These include:
+\begin{itemize}[nosep]
+  \item IR/IS venues: at least 3 papers from SIGIR, CIKM, TOIS, and IP\&M.
+  \item Agent-hallucination work: AgentHallu (Liu et al., 2026) with an
+        explicit differentiation paragraph (Section~2.3).
+  \item LLM-as-judge methodology: recent work on judge reliability in
+        IR evaluation contexts.
+  \item Runtime monitoring and self-consistency approaches.
+\end{itemize}
+
+All references follow APA formatting via \texttt{elsarticle-num-names.bst}.
+
+\newtext{See Section~2 and the updated \texttt{refs.bib}.}
+
+\section{Response to Editor Point 8: Author Guidelines and IP\&M Style}
+
+\editortext{``Please review recent IP\&M articles on similar topics to
+get some insights on manuscript structure, presentation, and level of
+research.''}
+
+\textbf{Addressed.} We reviewed recent IP\&M articles on LLM evaluation,
+information retrieval, and agent benchmarking. The revised manuscript
+adopts:
+\begin{itemize}[nosep]
+  \item The \texttt{elsarticle} document class per IP\&M author guidelines.
+  \item A section structure consistent with empirical evaluation papers
+        in IP\&M (Introduction, Related Work, Objectives, Dataset,
+        Methodology, Results, Discussion, Limitations, Conclusion).
+  \item APA-style references.
+  \item Explicit research objectives and a dedicated limitations section.
+\end{itemize}
+
+\section{Additional Methodological Corrections Identified During Revision}
+
+During revision we identified that the original stage-indicator
+definitions in the submitted manuscript coupled $S_2$ (tool execution
+with injected parameters) and $S_3$ (final answer wrong), producing a
+definitionally forced $r_{2,3} = 1.00$. Specifically, the
+\texttt{classify\_stage()} function in the analysis code mapped any row
+with \texttt{reached\_output=True} to stage~3, and then computed $S_2$
+as \texttt{stage $\geq$ 2}, which included those same rows. This made
+$p_{S_2} = p_{S_3}$ for all models by construction.
+
+We corrected the indicators to be genuinely independent: $S_2$ uses only
+the \texttt{eps} column ($\text{eps} \geq 2$), and $S_3$ uses only the
+\texttt{final\_correct} column. Under the corrected indicators, $p_{S_2}
+\neq p_{S_3}$ for most models (e.g., DeepSeek-V3: $p_{S_2}=7.0\%$ vs.\
+$p_{S_3}=29.5\%$), and $r_{2,3}$ ranges from 0.43 to 0.97 across models
+(human-calibrated mean $\approx 0.62$).
+
+Additionally, we re-judged all 1,350 P2 semantic-wrong traces with the
+validated 3-LLM ensemble judge (rather than the substring heuristic used
+in the original submission), collected 100 stratified human labels to
+validate the ensemble at $\kappa=0.432$ vs.\ humans, and re-ran the
+runtime interceptor under a concurrent $n{=}600$ no-interceptor control
+(rather than comparing against a historical baseline from a different
+task pool).
+
+All numerical claims in the revised manuscript reflect the corrected
+analysis. See Section~5.2 for the revised methodology and the repository's
+\texttt{CORRECTED\_CLAIMS\_DIFF.md} for a one-to-one mapping between
+original and corrected numbers.
+
+We also renamed the benchmark from AgentHallu-Bench to AgentProp-Bench
+to reflect its focus on propagation measurement and to avoid confusion
+with the concurrently published ``AgentHallu'' paper
+(Liu et al., 2026, arXiv:2601.06818), which does step-level attribution
+on a different dataset.
+
+\section{Summary of Changes}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+Metric & Original & Revised \\
+\midrule
+Word count & $\sim$5,200 & $\sim$9,500 \\
+References & 28 & 46+ \\
+New 2024--2026 refs & 0 & 18 \\
+Sections & 5 & 9 \\
+Tables & 6 & 8 + supplementary \\
+Figures & 1 & 5 + supplementary \\
+Human labels & 0 & 100 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

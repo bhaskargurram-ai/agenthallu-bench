@@ -1,0 +1,87 @@
+\documentclass[preprint,review,12pt]{elsarticle}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Evaluating Tool-Using Language Agents: Judge Reliability,\\
+Propagation Cascades, and Runtime Mitigation in AgentProp-Bench}
+
+\author[zasti]{Bhaskar Gurram\corref{cor1}}
+\ead{gurrambhaskar.ai@gmail.com}
+%% ORCID: [to be added]
+
+\cortext[cor1]{Corresponding author}
+
+\affiliation[zasti]{organization={Zasti Inc.},
+  city={Ashburn},
+  state={VA},
+  country={USA}}
+
+\end{frontmatter}
+
+% ============================================================================
+\section*{CRediT Author Statement}
+
+\textbf{Bhaskar Gurram}: Conceptualization, Methodology, Software,
+Validation, Data curation, Writing --- original draft,
+Writing --- review \& editing.
+
+% ============================================================================
+\section*{Declaration of Competing Interests}
+
+The author declares no competing interests.
+Zasti Inc.\ is the author's employer; no external funder influenced
+the research design, data collection, analysis, or interpretation of results.
+
+% ============================================================================
+\section*{Funding}
+
+This research was self-funded with employer support from Zasti Inc.
+No external grants or funding agencies were involved.
+
+% ============================================================================
+\section*{Data Availability}
+
+All code, data, agent traces, and human annotation labels are publicly
+available at:
+\url{https://github.com/bhaskargurram-ai/agenthallu-bench}
+(repository previously published as AgentHallu-Bench; see CHANGELOG.md).
+
+The repository contains:
+\begin{itemize}
+  \item \texttt{data/results/} --- All result CSVs and analysis JSONs
+  \item \texttt{data/tasks/} --- 2,000 benchmark task specifications
+  \item \texttt{experiments/} --- Experiment runner scripts
+  \item \texttt{analysis/} --- Statistical analysis scripts
+  \item \texttt{metrics/} --- EPS scorer and cascade detector
+  \item \texttt{agent/} --- ReAct agent, model router, tool executor
+  \item \texttt{benchmark/} --- Task generator and 4 domain API simulators
+  \item \texttt{interceptor/} --- Runtime interceptor implementation
+\end{itemize}
+
+% ============================================================================
+\section*{Code Availability}
+
+Same repository as above.
+All numerical claims in the manuscript are reproducible from the released
+CSV and JSON files using the provided analysis scripts.
+
+% ============================================================================
+\section*{Ethics Statement}
+
+This research involves no human subjects beyond the author and one
+voluntary annotator who labeled 100 non-sensitive LLM output samples
+(tool-use agent final answers on synthetic calendar, weather, and medical
+scheduling tasks). No personally identifiable information was collected
+or used. The annotator (Yoshitha C.) consented to acknowledgment by
+first name.
+
+% ============================================================================
+\section*{Acknowledgments}
+
+The author thanks Yoshitha C.\ for providing independent human
+annotations used to validate the ensemble judge methodology.
+
+\end{document}

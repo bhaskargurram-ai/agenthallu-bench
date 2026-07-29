@@ -1,0 +1,18 @@
+% Source: data/tasks/full_2000_tasks.json
+\begin{table}[t]
+\centering
+\caption{Dataset composition of \textsc{AgentProp-Bench}. The benchmark comprises 2000 core tasks across four domains plus 300 held-out retail tasks. Difficulty was assigned during task creation based on required tool-chain length and reasoning depth. $N = 2{,}000$ core + 300 retail.}
+\label{tab:dataset}
+\begin{tabular}{l r r r r l}
+\toprule
+Domain & Tasks & Easy & Medium & Hard & Example query (truncated) \\
+\midrule
+Calendar & 667 & 192 & 282 & 193 & \texttt{Create a '1:1 with Manager' meeting on 2024-07-08 at...} \\
+Weather & 674 & 215 & 248 & 211 & \texttt{What is the weather in Dubai on 2024-10-12?} \\
+Medical & 559 & 106 & 237 & 216 & \texttt{Schedule a checkup appointment for patient P003.} \\
+Knowledge & 100 & 0 & 46 & 54 & \texttt{Use the search\_knowledge tool to answer:  What natio...} \\
+\midrule
+Retail (held-out) & 300 & --- & --- & --- & \texttt{Search product catalog for...} \\
+\bottomrule
+\end{tabular}
+\end{table}

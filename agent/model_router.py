@@ -46,6 +46,8 @@ class ModelRouter:
             return self._call_google(messages, **kwargs)
         elif self.api == "openrouter":
             return self._call_openrouter(messages, **kwargs)
+        elif self.api == "local":
+            return self._call_local(messages, **kwargs)
         else:
             raise ValueError(f"Unknown API backend: '{self.api}'")
 
@@ -133,6 +135,34 @@ class ModelRouter:
             "input_tokens": input_tokens,
             "output_tokens": output_tokens,
             "cost": cost,
+            "latency_ms": latency_ms,
+        }
+
+    def _call_local(self, messages: list[dict], **kwargs) -> dict:
+        """Local open-weight model served by vLLM (OpenAI-compatible endpoint).
+
+        No API key or network cost: base_url points at the vLLM server (default
+        localhost:8000). Cost is 0.0 so the BudgetGuard never trips on local runs.
+        Uses the identical prompted-ReAct message format as the API backends, so
+        open-weight results are directly comparable to the closed-model results.
+        """
+        import openai
+        base_url = os.getenv("VLLM_BASE_URL", "http://localhost:8000/v1")
+        client = openai.OpenAI(api_key="EMPTY", base_url=base_url)
+        start = time.time()
+        response = client.chat.completions.create(
+            model=self.model["model_id"],
+            messages=messages,
+            max_tokens=kwargs.get("max_tokens", self.model.get("max_tokens", 2048)),
+            temperature=kwargs.get("temperature", 0.0),
+        )
+        latency_ms = (time.time() - start) * 1000
+        usage = response.usage
+        return {
+            "text": response.choices[0].message.content or "",
+            "input_tokens": getattr(usage, "prompt_tokens", 0) or 0,
+            "output_tokens": getattr(usage, "completion_tokens", 0) or 0,
+            "cost": 0.0,
             "latency_ms": latency_ms,
         }
 

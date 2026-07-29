@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10}
+}
+
+\title{Supplementary Materials\\[0.5em]
+\large Evaluating Tool-Using Language Agents: Judge Reliability,
+Propagation Cascades, and Runtime Mitigation in AgentProp-Bench}
+\date{}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+% ============================================================================
+\section{Code and Data Availability}
+
+All code, data, and agent traces are publicly available at:
+\url{https://github.com/bhaskargurram-ai/agenthallu-bench}
+
+\noindent (Repository previously published as AgentHallu-Bench; see CHANGELOG.md.)
+
+The repository contains:
+\begin{itemize}
+    \item \texttt{data/results/} --- Result CSVs and analysis JSONs
+    \item \texttt{data/tasks/} --- 2,000 benchmark task specifications
+    \item \texttt{experiments/} --- Experiment runner scripts
+    \item \texttt{analysis/} --- Statistical analysis scripts
+    \item \texttt{metrics/} --- EPS scorer and cascade detector
+    \item \texttt{agent/} --- ReAct agent, model router, tool executor
+    \item \texttt{benchmark/} --- Task generator and 4 domain API simulators
+    \item \texttt{interceptor/} --- Runtime interceptor implementation
+    \item \texttt{tests/} --- Unit tests
+\end{itemize}
+
+% ============================================================================
+\section{Interceptor Threshold Sweep}
+
+Table~\ref{tab:sweep} reports the full 12-configuration sweep on the
+validation split ($n{=}40$ P2 rows, 2 models $\times$ 2 conditions
+$\times$ 10 tasks).
+
+\input{tables/tableS1_sweep}
+
+% ============================================================================
+\section{Self-Consistency Baseline ($k{=}3$)}
+
+Table~\ref{tab:sc} reports per-model, per-condition results for $k{=}3$
+self-consistency voting on 30 tasks per condition.
+This section is directional only: at $n{=}30$ the comparison is
+underpowered.
+
+\input{tables/tableS2_selfconsistency}
+
+% ============================================================================
+\section{Cross-Domain Replication: Retail}
+
+Table~\ref{tab:retail} reports baseline correctness and mean EPS on the
+300 held-out retail tasks for three representative models.
+
+\input{tables/tableS3_retail}
+
+% ============================================================================
+\section{Interceptor Layer Ablation}
+
+Table~\ref{tab:ablation} reports the ablation of interceptor layers on
+GPT-4o-mini.
+
+\input{tables/tableS4_ablation}
+
+% ============================================================================
+\section{Power Analysis}
+
+Table~\ref{tab:power} reports Cohen's $h$ and achieved power for each
+statistical claim in the paper.
+
+\input{tables/table8_power}
+
+% ============================================================================
+\section{Per-Domain Propagation Rates}
+
+Figure~\ref{fig:domain} shows per-domain stage-reach rates under P2
+semantic-wrong injection.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/fig_domain_breakdown.png}
+  \caption{Per-domain $S_1$, $S_2$, $S_3$ rates under P2 semantic-wrong
+    injection (ensemble-judged). Calendar and weather domains show higher
+    injection application rates than medical.}
+  \label{fig:domain}
+\end{figure}
+
+% ============================================================================
+\section{Human-Calibration Procedure}
+
+Figure~\ref{fig:cal} visualizes the calibration relationship between
+ensemble verdicts and human labels.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/fig_calibration.png}
+  \caption{Calibration of ensemble judge against 100 human labels.
+    $P(\text{human=correct} \mid \text{ensemble=correct}) = 0.76$;
+    $P(\text{human=correct} \mid \text{ensemble=wrong}) = 0.25$.
+    The ensemble has a conservative bias (underreports correctness).}
+  \label{fig:cal}
+\end{figure}
+
+% ============================================================================
+\section{Ensemble Judge Prompt}
+
+The following prompt is used identically for all three LLM judges
+(GPT-4o, Gemini-2.5-Flash, GPT-4o-mini):
+
+\begin{lstlisting}
+You are an impartial judge evaluating whether an agent's
+final answer is correct.
+
+QUESTION: {query}
+REFERENCE ANSWER: {reference}
+AGENT ANSWER: {candidate}
+
+Respond with a single token: YES if the agent answer
+substantively matches the reference, NO otherwise.
+Accept minor wording differences, units expressed
+differently, or extra explanation as long as the core
+fact is correct.
+
+YOUR VERDICT (YES or NO):
+\end{lstlisting}
+
+% ============================================================================
+\section{Confusion Matrix: Ensemble vs Human}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/fig_confusion_matrix.png}
+  \caption{Confusion matrix: ensemble judge vs.\ 100 human labels.
+    The dominant disagreement is the ensemble rejecting answers that
+    humans accept (19 traces).}
+  \label{fig:confusion}
+\end{figure}
+
+% ============================================================================
+\section{Dataset Statistics}
+
+\begin{table}[h]
+\centering
+\caption{Dataset statistics by domain and split.}
+\begin{tabular}{lrrrl}
+\toprule
+Domain & Tasks & Baseline traces & P2 traces & Role \\
+\midrule
+Calendar & 667 & 450 & 800 & Training/evaluation \\
+Weather & 674 & 450 & 800 & Training/evaluation \\
+Medical & 559 & 450 & 800 & Training/evaluation \\
+Retail & 300 & 300 & 300 & Held-out replication \\
+Knowledge & 100 & 100 & --- & Ablation only \\
+\midrule
+\textbf{Total} & \textbf{2,300} & \textbf{1,750} & \textbf{2,700} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

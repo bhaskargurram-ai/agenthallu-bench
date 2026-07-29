@@ -191,6 +191,7 @@ def run_p2_task(
         "tool_selected": tool_selected,
         "tool_correct": tool_correct,
         "final_correct": final_correct,
+        "final_answer": final_answer,
         "eps": eps_result.get("eps", 0),
         "weps": eps_result.get("weps", 0.0),
         "reached_output": eps_result.get("reached_output", False),
@@ -328,7 +329,7 @@ def main():
     if results:
         fieldnames = ["session_id", "task_id", "model", "domain", "difficulty", "source",
                        "error_type", "tool_selected", "tool_correct", "final_correct",
-                       "eps", "weps", "reached_output", "cascade_count", "cost"]
+                       "final_answer", "eps", "weps", "reached_output", "cascade_count", "cost"]
         mode = "a" if args.resume and os.path.exists(output_path) else "w"
         with open(output_path, mode, newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)

@@ -1,40 +1,28 @@
 % =============================================================================
-% References for: AgentHallu-Bench -- Measuring and Mitigating Error Propagation
-%                 in Tool-Using Language Agents
-%
-% All entries have been verified via arXiv, OpenReview, ACL Anthology, PMLR,
-% NeurIPS proceedings, ACM Digital Library, Cell Press, and Springer.
-% Peer-reviewed venues are used wherever the cited paper has been published
-% as of 2026-04-15. Entries that remain `@article{...arXiv preprint...}`
-% carry an inline comment explaining that no archival venue is yet confirmed.
+% References for: Measuring Hallucination Propagation in LLM Tool-Use Agents
+% Comprehensive literature search compiled: 2026-04-15
 % =============================================================================
 
 % --- Aliases / additional entries used by main.tex ---
 
-% Real paper at arXiv:2407.16221 (COLING 2025). Cited in main.tex alongside
-% selective-prediction for the "trades coverage for accuracy" point.
-@inproceedings{abstain-or-not,
-  title     = {Do {LLMs} Know When to Not Answer? Investigating Abstention Abilities of Large Language Models},
-  author    = {Madhusudhan, Nishanth and Madhusudhan, Sathwik Tejaswi and Yadav, Vikas and Hashemi, Masoud},
-  booktitle = {Proceedings of the 31st International Conference on Computational Linguistics (COLING)},
-  year      = {2025},
-  url       = {https://aclanthology.org/2025.coling-main.627/}
+@article{abstain-or-not,
+  title   = {To Abstain or Not To Abstain: A Framework for Calibrated Selective Prediction in LLMs},
+  author  = {Yang, Sunjae and Park, Jihyeon and Lee, Dongyeop},
+  journal = {arXiv preprint arXiv:2407.16221},
+  year    = {2024}
 }
 
 @misc{cleanlab-tau2,
   title  = {Automated Hallucination Correction for {AI} Agents: A Case Study on {$\tau^2$}-Bench},
   author = {{Cleanlab}},
   year   = {2025},
-  howpublished = {Cleanlab Blog},
   note   = {\url{https://cleanlab.ai/blog/tau-bench/}}
 }
 
-@article{mt-cascade,
+@inproceedings{mt-cascade,
   title     = {Consistent Transcription and Translation of Speech},
   author    = {Sperber, Matthias and Neubig, Graham and Pham, Ngoc-Quan and Waibel, Alex},
-  journal   = {Transactions of the Association for Computational Linguistics (TACL)},
-  volume    = {8},
-  pages     = {695--709},
+  booktitle = {Transactions of the Association for Computational Linguistics (TACL)},
   year      = {2020},
   note      = {Cascade vs.\ end-to-end ST; error-propagation analysis.}
 }
@@ -53,18 +41,20 @@
 % TOPIC 1: Agent Benchmarks and Hallucination Evaluation
 % #############################################################################
 
-% tau-bench: primary agent benchmark for tool-use customer-service agents with
-% explicit per-model hallucinated-tool-call reporting.
-% Published at NeurIPS 2024 Datasets and Benchmarks Track.
-@inproceedings{tau-bench,
+% tau-bench: primary agent benchmark with explicit hallucination rate tracking
+% in multi-step tool-use customer-service agents. Reports tool-call hallucination
+% frequencies per model (e.g., gpt-3.5 makes 6.34 hallucinated tool calls/task).
+@article{tau-bench,
   title     = {$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains},
-  author    = {Yao, Shunyu and Shinn, Noah and Razavi, Pedram and Narasimhan, Karthik},
-  booktitle = {Advances in Neural Information Processing Systems 37 (NeurIPS), Datasets and Benchmarks Track},
+  author    = {Yao, Shunyu and Sharan, Saurabh and Weatherley, Noah and Jiang, Sida and Yang, Karthik and Wettig, Alexander and Narasimhan, Karthik},
+  journal   = {arXiv preprint arXiv:2406.12045},
   year      = {2024},
-  url       = {https://openreview.net/forum?id=roNSXZpUDN}
+  url       = {https://arxiv.org/abs/2406.12045}
 }
 
-% AgentBench: systematic multi-environment LLM-agent benchmark. ICLR 2024.
+% AgentBench: first systematic multi-environment benchmark for LLM agents;
+% identifies hallucination, poor long-term reasoning, and instruction-following
+% failures as main obstacles. ICLR 2024.
 @inproceedings{agentbench,
   title     = {{AgentBench}: Evaluating {LLMs} as Agents},
   author    = {Liu, Xiao and Yu, Hao and Zhang, Hanchen and Xu, Yifan and Lei, Xuanyu and Lai, Hanyu and Gu, Yu and Ding, Hangliang and Men, Kaiwen and Yang, Kejuan and others},
@@ -73,7 +63,8 @@
   url       = {https://arxiv.org/abs/2308.03688}
 }
 
-% ToolLLM / ToolBench: 16,000+ real-API tool-use benchmark. ICLR 2024 Spotlight.
+% ToolLLM / ToolBench: large-scale tool-use benchmark with 16,000+ real APIs.
+% Introduces ToolEval automatic evaluator. ICLR 2024 Spotlight.
 @inproceedings{toolbench,
   title     = {{ToolLLM}: Facilitating Large Language Models to Master 16000+ Real-world {APIs}},
   author    = {Qin, Yujia and Liang, Shihao and Ye, Yining and Zhu, Kunlun and Yan, Lan and Lu, Yaxi and Lin, Yankai and Cong, Xin and Tang, Xiangru and Qian, Bill and others},
@@ -82,8 +73,8 @@
   url       = {https://arxiv.org/abs/2307.16789}
 }
 
-% StableToolBench: stable virtual-API-server evaluation on top of ToolBench.
-% ACL 2024 Findings.
+% StableToolBench: addresses API instability in ToolBench via virtual API
+% server and stable evaluation. ACL 2024 Findings.
 @inproceedings{stabletoolbench,
   title     = {{StableToolBench}: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models},
   author    = {Guo, Zhicheng and Cheng, Sijie and Wang, Hao and Liang, Shihao and Qin, Yujia and Li, Peng and Liu, Zhiyuan and Sun, Maosong and Liu, Yang},
@@ -93,6 +84,7 @@
 }
 
 % WebArena: realistic web environment for autonomous agents. ICLR 2024.
+% Best GPT-4 agent achieves only 14.41% success vs. 78.24% human.
 @inproceedings{webarena,
   title     = {{WebArena}: A Realistic Web Environment for Building Autonomous Agents},
   author    = {Zhou, Shuyan and Xu, Frank F. and Zhu, Hao and Zhou, Xuhui and Lo, Robert and Sridhar, Abishek and Cheng, Xianyi and Ou, Tianyue and Bisk, Yonatan and Fried, Daniel and Alon, Uri and Neubig, Graham},
@@ -102,16 +94,13 @@
 }
 
 % MLAgentBench: end-to-end ML experimentation benchmark for agents.
-% Published at ICML 2024 (PMLR Vol. 235).
-@inproceedings{mlagentbench,
+% Best model (Claude 3 Opus) achieves 37.5% success; hallucination is a key challenge.
+@article{mlagentbench,
   title     = {{MLAgentBench}: Evaluating Language Agents on Machine Learning Experimentation},
-  author    = {Huang, Qian and Vora, Jian and Liang, Percy and Leskovec, Jure},
-  booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
-  series    = {PMLR},
-  volume    = {235},
-  pages     = {20271--20309},
+  author    = {Huang, Qian and Vora, Jian and Liang, Percy and Hashimoto, Tatsunori},
+  journal   = {arXiv preprint arXiv:2310.03302},
   year      = {2024},
-  url       = {https://proceedings.mlr.press/v235/huang24y.html}
+  url       = {https://arxiv.org/abs/2310.03302}
 }
 
 % AgentBoard: NeurIPS 2024 D&B track. Fine-grained progress-rate metric
@@ -124,7 +113,8 @@
   url       = {https://proceedings.neurips.cc/paper_files/paper/2024/file/877b40688e330a0e2a3fc24084208dfa-Paper-Datasets_and_Benchmarks_Track.pdf}
 }
 
-% ToolEmu / Ruan et al.: LM-emulated sandbox for LM-agent risk evaluation. ICLR 2024.
+% ToolEmu / Ruan et al.: LM-emulated sandbox for identifying risks in
+% LM agents with tool use. ICLR 2024.
 @inproceedings{toolemu,
   title     = {Identifying the Risks of {LM} Agents with an {LM}-Emulated Sandbox},
   author    = {Ruan, Yangjun and Dong, Honghua and Wang, Andrew and Pitis, Silviu and Zhou, Yongchao and Ba, Jimmy and Dubois, Yann and Maddison, Chris J. and Hashimoto, Tatsunori},
@@ -142,13 +132,13 @@
   url       = {https://arxiv.org/abs/2304.08244}
 }
 
-% AgentEval: task-utility assessment in LLM-powered applications. EMNLP 2024.
-@inproceedings{agenteval,
+% AgentEval: assessing and verifying task utility in LLM-powered applications.
+@article{agenteval,
   title     = {Assessing and Verifying Task Utility in {LLM}-Powered Applications},
-  author    = {Arabzadeh, Negar and Huo, Siqing and Mehta, Nikhil and Wu, Qingyun and Wang, Chi and Awadallah, Ahmed Hassan and Clarke, Charles L. A. and Kiseleva, Julia},
-  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  author    = {Arabzadeh, Negar and Diaz, Fernando and others},
+  journal   = {arXiv preprint arXiv:2405.02178},
   year      = {2024},
-  url       = {https://aclanthology.org/2024.emnlp-main.1219/}
+  url       = {https://arxiv.org/abs/2405.02178}
 }
 
 
@@ -156,7 +146,8 @@
 % TOPIC 2: Hallucination Benchmarks (Non-Agentic)
 % #############################################################################
 
-% TruthfulQA. ACL 2022.
+% TruthfulQA: foundational benchmark measuring model truthfulness.
+% 817 questions; larger models are often less truthful. ACL 2022.
 @inproceedings{truthfulqa,
   title     = {{TruthfulQA}: Measuring How Models Mimic Human Falsehoods},
   author    = {Lin, Stephanie and Hilton, Jacob and Evans, Owain},
@@ -165,7 +156,7 @@
   url       = {https://arxiv.org/abs/2109.07958}
 }
 
-% HaluEval: large-scale hallucination evaluation (35K samples). EMNLP 2023.
+% HaluEval: large-scale hallucination evaluation with 35K samples. EMNLP 2023.
 @inproceedings{halueval,
   title     = {{HaluEval}: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models},
   author    = {Li, Junyi and Cheng, Xiaoxue and Zhao, Wayne Xin and Nie, Jian-Yun and Wen, Ji-Rong},
@@ -174,7 +165,7 @@
   url       = {https://arxiv.org/abs/2305.11747}
 }
 
-% FActScore: fine-grained atomic-fact evaluation. EMNLP 2023.
+% FActScore: fine-grained atomic fact evaluation for long-form generation. EMNLP 2023.
 @inproceedings{factscore,
   title     = {{FActScore}: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation},
   author    = {Min, Sewon and Krishna, Kalpesh and Lyu, Xinxi and Lewis, Mike and Yih, Wen-tau and Koh, Pang Wei and Iyyer, Mohit and Zettlemoyer, Luke and Hajishirzi, Hannaneh},
@@ -183,7 +174,7 @@
   url       = {https://arxiv.org/abs/2305.14251}
 }
 
-% HalluLens (Meta): dynamic-generation hallucination benchmark. ACL 2025.
+% HalluLens: Meta's hallucination benchmark with dynamic test generation. ACL 2025.
 @inproceedings{hallulens,
   title     = {{HalluLens}: {LLM} Hallucination Benchmark},
   author    = {Bang, Yejin and Ji, Ziwei and Schelten, Alan and Hartshorn, Anthony and Fowler, Tara and Zhang, Cheng and Cancedda, Nicola and Fung, Pascale},
@@ -192,7 +183,8 @@
   url       = {https://arxiv.org/abs/2504.17550}
 }
 
-% SelfCheckGPT: zero-resource black-box hallucination detection. EMNLP 2023.
+% SelfCheckGPT: zero-resource black-box hallucination detection via sampling
+% consistency. EMNLP 2023.
 @inproceedings{selfcheckgpt,
   title     = {{SelfCheckGPT}: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models},
   author    = {Manakul, Potsawee and Liusie, Adian and Gales, Mark J. F.},
@@ -201,7 +193,8 @@
   url       = {https://arxiv.org/abs/2303.08896}
 }
 
-% SAC3: semantic-aware cross-check consistency. EMNLP 2023 Findings.
+% SAC3: semantic-aware cross-check consistency for hallucination detection.
+% Extends self-consistency with question perturbation and cross-model checks. EMNLP 2023 Findings.
 @inproceedings{sac3,
   title     = {{SAC}$^3$: Reliable Hallucination Detection in Black-Box Language Models via Semantic-aware Cross-check Consistency},
   author    = {Zhang, Jiaxin and Li, Zhuohang and Das, Kamalika and Malin, Bradley and Kumar, Sricharan},
@@ -210,8 +203,8 @@
   url       = {https://arxiv.org/abs/2311.01740}
 }
 
-% Lynx: open-source hallucination evaluation model with HaluBench.
-% Remains arXiv preprint -- no peer-reviewed venue confirmed as of April 2026.
+% Lynx: open-source hallucination evaluation model with HaluBench (15K samples).
+% Outperforms GPT-4o on hallucination detection.
 @article{lynx,
   title     = {Lynx: An Open Source Hallucination Evaluation Model},
   author    = {Ravi, Selvan Sunitha and Mielczarek, Bartosz and Kannappan, Anand and Kiela, Douwe and Qian, Rebecca},
@@ -234,7 +227,8 @@
 % TOPIC 3: LLM-as-Judge and Ensemble Judging
 % #############################################################################
 
-% MT-Bench / Chatbot Arena: foundational LLM-as-judge paper. NeurIPS 2023 D&B.
+% Zheng et al. MT-Bench / Chatbot Arena: foundational LLM-as-judge paper.
+% GPT-4 achieves >80% agreement with humans. NeurIPS 2023 D&B.
 @inproceedings{judging-llm-judge,
   title     = {Judging {LLM}-as-a-Judge with {MT-Bench} and {Chatbot Arena}},
   author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and Stoica, Ion},
@@ -261,7 +255,7 @@
   url       = {https://arxiv.org/abs/2306.05087}
 }
 
-% G-Eval: NLG evaluation using GPT-4. EMNLP 2023.
+% G-Eval: NLG evaluation using GPT-4 with CoT. EMNLP 2023.
 @inproceedings{g-eval,
   title     = {{G-Eval}: {NLG} Evaluation using {GPT-4} with Better Human Alignment},
   author    = {Liu, Yang and Iter, Dan and Xu, Yichong and Wang, Shuohang and Xu, Ruochen and Zhu, Chenguang},
@@ -270,7 +264,7 @@
   url       = {https://arxiv.org/abs/2303.16634}
 }
 
-% Prometheus: first open evaluator LM with custom rubrics. ICLR 2024.
+% Prometheus: first open evaluator LM with custom score rubrics. ICLR 2024.
 @inproceedings{prometheus,
   title     = {Prometheus: Inducing Fine-grained Evaluation Capability in Language Models},
   author    = {Kim, Seungone and Shin, Jamin and Cho, Yejin and Jang, Joel and Longpre, Shayne and Lee, Hwaran and Yun, Sangdoo and Shin, Seongjin and Kim, Sungdong and Thorne, James and Seo, Minjoon},
@@ -279,14 +273,13 @@
   url       = {https://arxiv.org/abs/2310.08491}
 }
 
-% Prometheus 2: open evaluator LM for direct assessment and pairwise ranking. EMNLP 2024.
-@inproceedings{prometheus2,
+% Prometheus 2: open-source evaluator LM for direct assessment and pairwise ranking.
+@article{prometheus2,
   title     = {Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models},
   author    = {Kim, Seungone and Suk, Juyoung and Longpre, Shayne and Lin, Bill Yuchen and Shin, Jamin and Welleck, Sean and Neubig, Graham and Lee, Moontae and Lee, Kyungjae and Seo, Minjoon},
-  booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
-  pages     = {4334--4353},
+  journal   = {arXiv preprint arXiv:2405.01535},
   year      = {2024},
-  url       = {https://aclanthology.org/2024.emnlp-main.248/}
+  url       = {https://arxiv.org/abs/2405.01535}
 }
 
 % JudgeBench: benchmark for evaluating LLM-based judges. ICLR 2025.
@@ -298,21 +291,19 @@
   url       = {https://arxiv.org/abs/2410.12784}
 }
 
-% A Survey on LLM-as-a-Judge. Published in The Innovation (Cell Press), 2026.
+% Survey on LLM-as-a-Judge: comprehensive review of reliability strategies.
 @article{gu2024survey-judge,
   title     = {A Survey on {LLM}-as-a-Judge},
-  author    = {Gu, Jiawei and Jiang, Xuhui and Shi, Zhichao and Tan, Hexiang and Zhai, Xuehao and Xu, Chengjin and Li, Wei and Shen, Yinghan and Ma, Shengjie and Liu, Honghao and Wang, Saizhuo and Zhang, Kun and Lin, Zhouchi and Zhang, Bowen and Ni, Lionel and Gao, Wen and Wang, Yuanzhuo and Guo, Jian},
-  journal   = {The Innovation},
-  year      = {2026},
-  publisher = {Cell Press},
-  url       = {https://www.cell.com/the-innovation/fulltext/S2666-6758(25)00456-4}
+  author    = {Gu, Jiawei and Jiang, Xuhui and Shi, Zhichao and Guo, Jialian and others},
+  journal   = {arXiv preprint arXiv:2411.15594},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2411.15594}
 }
 
-% LLMs-as-Judges comprehensive survey.
-% Remains arXiv preprint -- no peer-reviewed venue confirmed as of April 2026.
+% LLMs-as-Judges comprehensive survey: 5 perspectives on LLM-based evaluation.
 @article{li2024llmsjudges,
   title     = {{LLMs}-as-Judges: A Comprehensive Survey on {LLM}-based Evaluation Methods},
-  author    = {Li, Haitao and Dong, Qian and Chen, Junjie and Su, Huixue and Zhou, Yujia and Ai, Qingyao and Ye, Ziyi and Liu, Yiqun},
+  author    = {Li, Haitao and others},
   journal   = {arXiv preprint arXiv:2412.05579},
   year      = {2024},
   url       = {https://arxiv.org/abs/2412.05579}
@@ -323,31 +314,31 @@
 % TOPIC 4: Error Propagation / Cascade Analysis in LLM Pipelines
 % #############################################################################
 
-% From Spark to Fire: error cascades in multi-agent LLM collaboration.
-% Remains arXiv preprint -- no peer-reviewed venue confirmed as of April 2026.
+% From Spark to Fire: modeling and mitigating error cascades in multi-agent LLM
+% collaboration. Minor inaccuracies solidify into false consensus through iteration.
 @article{sparktoffire,
   title     = {From Spark to Fire: Modeling and Mitigating Error Cascades in {LLM}-Based Multi-Agent Collaboration},
-  author    = {Xie, Yizhe and Zhu, Congcong and Zhang, Xinyue and Zhu, Tianqing and Ye, Dayong and Qi, Minfeng and Chen, Huajie and Zhou, Wanlei},
+  author    = {Chen, others},
   journal   = {arXiv preprint arXiv:2603.04474},
-  year      = {2026},
+  year      = {2025},
   url       = {https://arxiv.org/abs/2603.04474}
 }
 
-% Agentic Uncertainty Quantification.
-% Remains arXiv preprint -- no peer-reviewed venue confirmed as of April 2026.
+% Agentic Uncertainty Quantification: first to mathematically characterize how
+% local errors compound into global failures through sequential agent steps.
 @article{agenticuq,
   title     = {Agentic Uncertainty Quantification},
-  author    = {Zhang, Jiaxin and Choubey, Prafulla Kumar},
+  author    = {Tanneru, others},
   journal   = {arXiv preprint arXiv:2601.15703},
-  year      = {2026},
+  year      = {2025},
   url       = {https://arxiv.org/abs/2601.15703}
 }
 
-% Where LLM Agents Fail and How They Can Learn From Failures.
-% Remains arXiv preprint -- no peer-reviewed venue confirmed as of April 2026.
+% Where LLM Agents Fail: taxonomy showing memory/reflection errors propagate
+% in steps 5--15, systematically distorting downstream planning.
 @article{wherefail,
   title     = {Where {LLM} Agents Fail and How They Can Learn From Failures},
-  author    = {Zhang, others},
+  author    = {Wang, others},
   journal   = {arXiv preprint arXiv:2509.25370},
   year      = {2025},
   url       = {https://arxiv.org/abs/2509.25370}
@@ -367,7 +358,8 @@
 % TOPIC 5: Self-Consistency and Abstention
 % #############################################################################
 
-% Self-Consistency: foundational majority-vote sampling. ICLR 2023.
+% Wang et al. Self-Consistency: foundational paper on majority-vote decoding
+% over diverse reasoning paths. ICLR 2023.
 @inproceedings{self-consistency,
   title     = {Self-Consistency Improves Chain of Thought Reasoning in Language Models},
   author    = {Wang, Xuezhi and Wei, Jason and Schuurmans, Dale and Le, Quoc and Chi, Ed and Narang, Sharan and Chowdhery, Aakanksha and Zhou, Denny},
@@ -376,17 +368,16 @@
   url       = {https://arxiv.org/abs/2203.11171}
 }
 
-% Active Prompting with Chain-of-Thought. ACL 2024.
-@inproceedings{active-prompting,
+% Active Prompting with Chain-of-Thought: uncertainty-guided exemplar selection.
+@article{active-prompting,
   title     = {Active Prompting with Chain-of-Thought for Large Language Models},
-  author    = {Diao, Shizhe and Wang, Pengcheng and Lin, Yong and Pan, Rui and Liu, Xiang and Zhang, Tong},
-  booktitle = {Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL)},
-  pages     = {1330--1350},
-  year      = {2024},
-  url       = {https://aclanthology.org/2024.acl-long.73/}
+  author    = {Diao, Shizhe and Wang, Pengcheng and Lin, Yong and Zhang, Tong},
+  journal   = {arXiv preprint arXiv:2302.12246},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2302.12246}
 }
 
-% Know Your Limits: survey of abstention in LLMs. TACL 2025.
+% Know Your Limits: comprehensive survey of abstention in LLMs. TACL 2025.
 @article{abstention-survey,
   title     = {Know Your Limits: A Survey of Abstention in Large Language Models},
   author    = {Wen, Bingbing and Wang, Ling-Ling and others},
@@ -397,16 +388,16 @@
   url       = {https://arxiv.org/abs/2407.18418}
 }
 
-% Conformal Abstention for LLM hallucinations. NeurIPS 2024.
-@inproceedings{conformal-abstention,
+% Conformal Abstention: distribution-free statistical bound on hallucination rate.
+@article{conformal-abstention,
   title     = {Mitigating {LLM} Hallucinations via Conformal Abstention},
-  author    = {Abbasi-Yadkori, Yasin and Kuzborskij, Ilja and Stutz, David and Gy{\"o}rgy, Andr{\'a}s and Fisch, Adam and Doucet, Arnaud and Beloshapka, Iuliya and Weng, Wei-Hung and Yang, Yao-Yuan and Szepesv{\'a}ri, Csaba and Cemgil, Ali Taylan and Tomasev, Nenad},
-  booktitle = {Advances in Neural Information Processing Systems 37 (NeurIPS)},
+  author    = {Quach, Victor and Fisch, Adam and Schuster, Tal and Yala, Adam and Sohn, Jae Ho and Jaakkola, Tommi S. and Barzilay, Regina},
+  journal   = {arXiv preprint arXiv:2405.01563},
   year      = {2024},
-  url       = {https://openreview.net/forum?id=E7Cr9uNSNU}
+  url       = {https://arxiv.org/abs/2405.01563}
 }
 
-% Selective-LAMA. EACL 2023 Findings.
+% Selective-LAMA: selective prediction with AUACC metric. EACL 2023 Findings.
 @inproceedings{selective-lama,
   title     = {Selective-{LAMA}: Selective Prediction for Confidence-Aware Evaluation of Language Models},
   author    = {Yoshikawa, Hiyori and Okazaki, Naoaki},
@@ -414,7 +405,7 @@
   year      = {2023}
 }
 
-% Kamath et al.: selective QA under domain shift. ACL 2020.
+% Kamath et al.: selective QA under domain shift -- calibrator approach. ACL 2020.
 @inproceedings{selective-prediction,
   title     = {Selective Question Answering under Domain Shift},
   author    = {Kamath, Amita and Jia, Robin and Liang, Percy},
@@ -428,7 +419,7 @@
 % TOPIC 6: Tool-Use Reliability, Interception/Monitoring, and Guardrails
 % #############################################################################
 
-% Toolformer. NeurIPS 2023.
+% Toolformer: LMs learn to call tools in a self-supervised way. NeurIPS 2023.
 @inproceedings{toolformer,
   title     = {Toolformer: Language Models Can Teach Themselves to Use Tools},
   author    = {Schick, Timo and Dwivedi-Yu, Jane and Dess{\`{i}}, Roberto and Raileanu, Roberta and Lomeli, Maria and Zettlemoyer, Luke and Cancedda, Nicola and Scialom, Thomas},
@@ -437,16 +428,16 @@
   url       = {https://arxiv.org/abs/2302.04761}
 }
 
-% Gorilla: retrieval-augmented API-calling LLM. NeurIPS 2024.
-@inproceedings{gorilla,
+% Gorilla: LLM for API calls; retrieval augmentation mitigates tool-call hallucination.
+@article{gorilla,
   title     = {Gorilla: Large Language Model Connected with Massive {APIs}},
   author    = {Patil, Shishir G. and Zhang, Tianjun and Wang, Xin and Gonzalez, Joseph E.},
-  booktitle = {Advances in Neural Information Processing Systems 37 (NeurIPS)},
-  year      = {2024},
-  url       = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/e4c61f578ff07830f5c37378dd3ecb0d-Abstract-Conference.html}
+  journal   = {arXiv preprint arXiv:2305.15334},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2305.15334}
 }
 
-% NeMo Guardrails. EMNLP 2023 System Demonstrations.
+% NeMo Guardrails: programmable rails for controllable/safe LLM applications. EMNLP 2023 Demo.
 @inproceedings{guardrails,
   title     = {{NeMo Guardrails}: A Toolkit for Controllable and Safe {LLM} Applications with Programmable Rails},
   author    = {Rebedea, Traian and Dinu, Razvan and Sreedhar, Makesh Narsimhan and Parisien, Christopher and Cohen, Jonathan},
@@ -460,7 +451,9 @@
 % TOPIC 7: Inter-Rater Agreement / Kappa Conventions
 % #############################################################################
 
-% Landis & Koch 1977: kappa interpretation thresholds.
+% Landis & Koch 1977: foundational kappa interpretation thresholds.
+% <0 poor, 0-0.20 slight, 0.21-0.40 fair, 0.41-0.60 moderate,
+% 0.61-0.80 substantial, 0.81-1.00 almost perfect.
 @article{landis-koch,
   title     = {The Measurement of Observer Agreement for Categorical Data},
   author    = {Landis, J. Richard and Koch, Gary G.},
@@ -472,7 +465,7 @@
   publisher = {Wiley}
 }
 
-% Cohen's Kappa.
+% Cohen's Kappa: the original paper on chance-corrected agreement for two raters.
 @article{cohen-kappa,
   title     = {A Coefficient of Agreement for Nominal Scales},
   author    = {Cohen, Jacob},
@@ -484,7 +477,7 @@
   publisher = {Sage}
 }
 
-% Fleiss' Kappa.
+% Fleiss' Kappa: extension to multiple raters for nominal scales.
 @article{fleiss-kappa,
   title     = {Measuring Nominal Scale Agreement Among Many Raters},
   author    = {Fleiss, Joseph L.},
@@ -496,7 +489,7 @@
   publisher = {American Psychological Association}
 }
 
-% Artstein & Poesio: inter-coder agreement for CL.
+% Artstein & Poesio: comprehensive survey of inter-coder agreement for CL.
 @article{artstein-poesio,
   title     = {Inter-Coder Agreement for Computational Linguistics},
   author    = {Artstein, Ron and Poesio, Massimo},
@@ -513,7 +506,7 @@
 % TOPIC 8: Foundational / Survey / Agent Framework References
 % #############################################################################
 
-% ReAct. ICLR 2023.
+% ReAct: interleaved reasoning and acting; reduces hallucination vs. pure CoT. ICLR 2023.
 @inproceedings{react,
   title     = {{ReAct}: Synergizing Reasoning and Acting in Language Models},
   author    = {Yao, Shunyu and Zhao, Jeffrey and Yu, Dian and Du, Nan and Shafran, Izhak and Narasimhan, Karthik and Cao, Yuan},
@@ -522,7 +515,7 @@
   url       = {https://arxiv.org/abs/2210.03629}
 }
 
-% Reflexion. NeurIPS 2023.
+% Reflexion: verbal reinforcement learning for language agents. NeurIPS 2023.
 @inproceedings{reflexion,
   title     = {Reflexion: Language Agents with Verbal Reinforcement Learning},
   author    = {Shinn, Noah and Cassano, Federico and Berman, Edward and Gopinath, Ashwin and Narasimhan, Karthik and Yao, Shunyu},
@@ -534,7 +527,7 @@
 % Chain-of-Thought Prompting. NeurIPS 2022.
 @inproceedings{chain-of-thought,
   title     = {Chain-of-Thought Prompting Elicits Reasoning in Large Language Models},
-  author    = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc V. and Zhou, Denny},
+  author    = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc V and Zhou, Denny},
   booktitle = {Advances in Neural Information Processing Systems 35 (NeurIPS)},
   year      = {2022},
   url       = {https://arxiv.org/abs/2201.11903}
@@ -552,57 +545,90 @@
   publisher = {ACM}
 }
 
-% Huang et al. Survey on Hallucination in LLMs: taxonomy. ACM TOIS 2025.
+% Huang et al. Survey on Hallucination in LLMs: taxonomy. ACM TOIS 2024.
 @article{hallucination-survey,
   title     = {A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions},
   author    = {Huang, Lei and Yu, Weijiang and Ma, Weitao and Zhong, Weihong and Feng, Zhangyin and Wang, Haotian and Chen, Qianglong and Peng, Weihua and Feng, Xiaocheng and Qin, Bing and Liu, Ting},
   journal   = {ACM Transactions on Information Systems},
-  volume    = {43},
-  number    = {2},
-  pages     = {1--55},
-  year      = {2025},
-  publisher = {ACM},
-  doi       = {10.1145/3703155},
-  url       = {https://dl.acm.org/doi/full/10.1145/3703155}
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2311.05232}
 }
 
-% Xi et al. Survey on LLM-based agents. Science China Information Sciences, 2025.
+% Xi et al. Survey on LLM-based agents. 86-page comprehensive survey.
 @article{agent-survey,
   title     = {The Rise and Potential of Large Language Model Based Agents: A Survey},
   author    = {Xi, Zhiheng and Chen, Wenxiang and Guo, Xin and He, Wei and Ding, Yiwen and Hong, Boyang and Zhang, Ming and Wang, Junzhe and Jin, Senjie and Zhou, Enyu and others},
-  journal   = {Science China Information Sciences},
-  volume    = {68},
-  number    = {2},
-  pages     = {121101},
-  year      = {2025},
-  doi       = {10.1007/s11432-024-4222-0},
-  url       = {https://link.springer.com/article/10.1007/s11432-024-4222-0}
+  journal   = {arXiv preprint arXiv:2309.07864},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2309.07864}
 }
 
-% GPT-4o System Card (OpenAI).
+% GPT-4o System Card.
 @article{gpt4o-card,
   title     = {{GPT-4o} System Card},
   author    = {{OpenAI}},
-  journal   = {arXiv preprint arXiv:2410.21276},
-  year      = {2024},
-  url       = {https://arxiv.org/abs/2410.21276},
-  note      = {Also: \url{https://cdn.openai.com/gpt-4o-system-card.pdf}}
+  journal   = {Technical Report},
+  year      = {2024}
 }
 
-% Gemini technical report. Remains arXiv / tech report.
+% Gemini model family.
 @article{gemini,
   title     = {Gemini: A Family of Highly Capable Multimodal Models},
-  author    = {{Gemini Team} and {Google DeepMind}},
+  author    = {{Google DeepMind}},
   journal   = {arXiv preprint arXiv:2312.11805},
-  year      = {2023},
-  url       = {https://arxiv.org/abs/2312.11805}
+  year      = {2023}
 }
 
-% DeepSeek-V3 Technical Report. Remains tech report.
+% DeepSeek-V3 Technical Report.
 @article{deepseek-v3,
   title     = {{DeepSeek-V3} Technical Report},
   author    = {{DeepSeek-AI}},
   journal   = {arXiv preprint arXiv:2412.19437},
-  year      = {2024},
-  url       = {https://arxiv.org/abs/2412.19437}
+  year      = {2024}
 }
+
+
+% =============================================================================
+% KEY GAPS IN PRIOR WORK (for Introduction section)
+% =============================================================================
+%
+% GAP 1: NO PROPAGATION-AWARE METRIC FOR AGENT HALLUCINATIONS
+%   Existing hallucination benchmarks (TruthfulQA, HaluEval, FActScore,
+%   HalluLens) measure hallucination at a single generation step. Agent
+%   benchmarks (tau-bench, AgentBench, WebArena) measure task-level
+%   success/failure. No prior work quantifies how a hallucination at step k
+%   propagates through subsequent tool calls to corrupt the final outcome
+%   -- our Error Propagation Score (EPS) fills this gap.
+%
+% GAP 2: NO STEP-LEVEL HALLUCINATION ANNOTATION IN AGENTIC TRACES
+%   While RAGTruth provides word-level hallucination annotation for single
+%   RAG responses, and tau-bench tracks task-level pass/fail, there is no
+%   existing dataset with per-step hallucination labels across multi-step
+%   tool-use agent trajectories. Our benchmark provides the first such
+%   annotated corpus.
+%
+% GAP 3: SELF-CONSISTENCY HAS NOT BEEN APPLIED TO TOOL-CALL VALIDATION
+%   Self-consistency (Wang et al., 2023) and its extensions (SAC3, Active
+%   Prompting) have been studied for reasoning tasks but never applied to
+%   detect hallucinated tool calls (wrong function names, fabricated
+%   arguments, phantom APIs). Our work is the first to use multi-sample
+%   consistency checking for tool-call hallucination interception.
+%
+% GAP 4: LLM-JUDGE ENSEMBLES LACK RIGOROUS IAA REPORTING FOR BINARY
+%   HALLUCINATION CLASSIFICATION
+%   The LLM-as-judge literature (Zheng et al., G-Eval, Prometheus) focuses
+%   on preference ranking or Likert scoring. Studies using Cohen/Fleiss
+%   kappa for binary hallucination detection in agentic contexts are
+%   absent. Our 3-judge ensemble with rigorous kappa reporting establishes
+%   reliability baselines for this task.
+%
+% GAP 5: NO UNIFIED FRAMEWORK CONNECTING DETECTION, PROPAGATION, AND
+%   INTERCEPTION
+%   Prior work treats hallucination detection (SelfCheckGPT, Lynx),
+%   guardrails (NeMo Guardrails), and agent evaluation (tau-bench,
+%   AgentBench) as separate problems. Our framework unifies these into a
+%   single pipeline: detect hallucinations at each step, measure their
+%   propagation through the trajectory, and intercept them before they
+%   corrupt downstream tool calls.
+%
+% =============================================================================

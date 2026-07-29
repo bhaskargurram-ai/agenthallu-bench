@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "agenthallu-bench"
+version = "0.1.0"
+description = "A Unified Empirical Framework for Stage-Attributed Hallucination Detection in RAG-Based LLM Agents"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "AgentHallu-Bench Authors"},
+]
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,25 @@
+% Source: data/results/baseline_all.csv, data/results/p2_all_rejudged.csv
+\begin{table}[t]
+\centering
+\caption{Baseline vs.\ P2 (semantic-wrong injection) task correctness per model. Correctness is judged by the 3-LLM ensemble for P2 and by heuristic match for baseline. 95\% CIs via 1{,}000-iteration nonparametric bootstrap.}
+\label{tab:main}
+\small
+\begin{tabular}{l r r l r r l r}
+\toprule
+Model & $n_{\mathrm{BL}}$ & BL\% & 95\% CI & $n_{\mathrm{P2}}$ & P2\% & 95\% CI & Heur.\% \\
+\midrule
+DeepSeek-V3 & 450 & 51.8 & [46.7, 56.4] & 200 & 37.5 & [31.0, 44.0] & 70.5 \\
+GPT-3.5-Turbo & 450 & 50.4 & [45.8, 54.9] & 200 & 32.5 & [26.5, 39.5] & 67.5 \\
+GPT-4.1-mini & 450 & 54.7 & [50.2, 59.3] & 200 & 34.5 & [28.5, 41.5] & 70.0 \\
+GPT-4.1-nano & 450 & 45.3 & [40.4, 50.0] & 200 & 15.5 & [10.5, 21.0] & 67.5 \\
+GPT-4o & --- & 0.0 & --- & 50 & 26.0 & [14.0, 38.0] & 62.0 \\
+GPT-4o-mini & 450 & 40.0 & [35.3, 44.4] & 200 & 29.0 & [23.0, 35.5] & 49.0 \\
+Gemini-2.0-Flash & 450 & 47.6 & [42.7, 52.2] & 200 & 33.0 & [27.0, 39.5] & 61.0 \\
+Gemini-2.5-Flash & --- & 0.0 & --- & 50 & 24.0 & [14.0, 36.0] & 64.0 \\
+Qwen2.5-14B & 450 & 55.6 & [51.3, 60.0] & 200 & 37.5 & [30.5, 44.5] & 70.5 \\
+Qwen2.5-3B & 450 & 54.2 & [49.6, 58.7] & 200 & 17.5 & [12.0, 23.0] & 67.5 \\
+Qwen2.5-7B & 450 & 49.1 & [44.2, 53.8] & 200 & 28.5 & [22.0, 34.5] & 57.0 \\
+o3-mini & 50 & 40.0 & [28.0, 54.0] & 50 & 30.0 & [18.0, 42.0] & 54.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

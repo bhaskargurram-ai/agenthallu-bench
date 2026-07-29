@@ -1,0 +1,68 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\signature{Bhaskar Gurram\\Zasti Inc., Ashburn, VA, USA\\gurrambhaskar.ai@gmail.com}
+\address{Bhaskar Gurram\\Zasti Inc.\\Ashburn, VA 20147\\USA}
+
+\begin{document}
+
+\begin{letter}{Dr.\ Jim Jansen\\Editor-in-Chief\\Information Processing \& Management}
+
+\opening{Dear Dr.\ Jansen,}
+
+Thank you for the constructive feedback on our submission
+``AgentHallu-Bench: Measuring and Mitigating Error Propagation in
+Tool-Using Language Agents.''
+We have made substantial revisions to address every point in your letter,
+and we are pleased to resubmit the revised manuscript, now titled
+\textbf{``Evaluating Tool-Using Language Agents: Judge Reliability,
+Propagation Cascades, and Runtime Mitigation in AgentProp-Bench.''}
+
+We renamed the benchmark from AgentHallu-Bench to AgentProp-Bench to
+reflect its focus on propagation measurement and to avoid confusion with
+the concurrently published ``AgentHallu'' paper (Liu et al., 2026,
+arXiv:2601.06818), which pursues step-level attribution on a different
+dataset.
+
+Specific changes addressing your eight requests are detailed in the
+accompanying Response to the Editor and summarized here:
+(1)~the abstract now leads with specific numbers rather than background
+(Abstract, ${\sim}$170 words);
+(2)~explicit research objectives appear as a standalone Section~3;
+(3)~a full dataset description is provided in Section~4 with domain
+breakdown, difficulty distribution, and example tasks;
+(4)~a dedicated Discussion and Implications section (Section~7) addresses
+theoretical implications, practical guidance for agent designers, and
+relevance to IR/IS evaluation methodology;
+(5)~the manuscript has undergone thorough copy editing for accessibility
+to non-native English speakers;
+(6)~the paper has been expanded from approximately 5,200 to 9,500 words;
+(7)~the literature review (Section~2) now includes 18 new 2024--2026
+references from IR/IS and agent-hallucination venues, with at least
+three from SIGIR, CIKM, IP\&M, and TOIS;
+(8)~all references follow APA formatting via \texttt{elsarticle-num-names.bst}.
+
+During revision, we also identified and corrected a methodological issue:
+the original stage-indicator definitions coupled two stages, producing a
+forced $r_{2,3}=1.00$. We corrected the indicators, re-judged all traces
+with a validated 3-LLM ensemble, collected 100 stratified human labels
+($\kappa=0.432$ vs.\ ensemble), and re-ran the runtime interceptor under
+a concurrent no-interceptor control. All corrections are transparently
+disclosed in the Response to the Editor (Section~9) and in Section~5.2
+of the revised manuscript.
+
+We believe the revised manuscript is a strong fit for IP\&M's audience,
+as the primary contribution---demonstrating that substring-based evaluation
+of agent outputs is at chance-level agreement with human annotation
+($\kappa=0.049$), while a validated LLM-ensemble judge reaches moderate
+agreement ($\kappa=0.432$)---has direct implications for evaluation
+methodology in information retrieval and information science.
+
+Per your request, we are willing to serve as reviewers for two manuscripts
+submitted to IP\&M.
+
+\closing{Best regards,}
+
+\end{letter}
+\end{document}

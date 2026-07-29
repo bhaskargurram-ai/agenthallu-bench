@@ -1,0 +1,5977 @@
+[
+  {
+    "task_id": "medical_001",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P002.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_002",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if metformin and warfarin interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "warfarin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_003",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a specialist appointment for patient P004 with doctor D004 on 2024-09-15.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D002",
+          "date": "2024-09-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_004",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P003 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P003 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_005",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P001 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P001 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_006",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P001.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_007",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if atorvastatin and warfarin interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "warfarin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_008",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a emergency appointment for patient P005 with doctor D001 on 2024-09-01.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D001",
+          "date": "2024-08-20",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_009",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P005 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P005 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_010",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P004 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P004 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_011",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P002.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_012",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if metformin and cetirizine interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "cetirizine"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_013",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a emergency appointment for patient P004 with doctor D002 on 2024-08-10.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D005",
+          "date": "2024-12-01",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_014",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P005 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P005 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_015",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P001 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P001 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_016",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P004.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_017",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if omeprazole and sumatriptan interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "sumatriptan"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_018",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a checkup appointment for patient P003 with doctor D001 on 2024-09-10.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D003",
+          "date": "2024-08-10",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_019",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P003 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P003 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_020",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P002 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P002 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_021",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P005.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P005.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_022",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if metformin and amlodipine interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_023",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a specialist appointment for patient P005 with doctor D005 on 2024-08-15.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D003",
+          "date": "2024-12-01",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_024",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P002 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P002 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_025",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P002 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P002 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_026",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P001.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_027",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if omeprazole and fluticasone interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_028",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a checkup appointment for patient P003 with doctor D002 on 2024-09-15.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_029",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P003 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P003 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_030",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P005 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P005 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_031",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P004.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_032",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if sertraline and sumatriptan interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "sumatriptan"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_033",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a checkup appointment for patient P004 with doctor D005 on 2024-10-01.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D004",
+          "date": "2024-10-15",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_034",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P003 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P003 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_035",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P001 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P001 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_036",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P001.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_037",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if albuterol and metoprolol interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "albuterol",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_038",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a emergency appointment for patient P003 with doctor D003 on 2024-08-20.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-09-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_039",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P003 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P003 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_040",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P005 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P005 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_041",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P005.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_042",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if omeprazole and sumatriptan interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "sumatriptan"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_043",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a checkup appointment for patient P002 with doctor D005 on 2024-12-01.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D003",
+          "date": "2024-10-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_044",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P003 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P003 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_045",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P004 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P004 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_046",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Get the medical record for patient P003.",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "dob",
+          "conditions",
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved record for patient P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_047",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Check if lisinopril and metoprolol interact with each other.",
+    "required_tools": [
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "lisinopril",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Drug interaction check completed.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_048",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "Schedule a checkup appointment for patient P001 with doctor D003 on 2024-08-05.",
+    "required_tools": [
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D003",
+          "date": "2024-10-15",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id",
+          "status"
+        ]
+      }
+    ],
+    "correct_final_answer": "Appointment scheduled for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_049",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What conditions does patient P005 have?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      }
+    ],
+    "correct_final_answer": "Conditions for patient P005 retrieved.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_050",
+    "domain": "medical",
+    "difficulty": "easy",
+    "query": "What medications is patient P002 currently taking?",
+    "required_tools": [
+      "get_patient_record"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medications for patient P002 retrieved.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_051",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P001's record and check if their medications albuterol and aspirin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "albuterol",
+          "drug_b": "aspirin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P001 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_052",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a follow_up with doctor D002 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D002",
+          "date": "2024-09-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_053",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P004's record and check if their medications lisinopril and warfarin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "lisinopril",
+          "drug_b": "warfarin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P004 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_054",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P005's conditions and schedule a checkup with doctor D002 on 2024-08-20.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D003",
+          "date": "2024-10-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_055",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P005's record and check if their medications levothyroxine and metoprolol have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P005 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_056",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a follow_up with doctor D004 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D001",
+          "date": "2024-08-15",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_057",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P003's record and check if their medications albuterol and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "albuterol",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P003 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_058",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P002's conditions and schedule a specialist with doctor D004 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D003",
+          "date": "2024-08-05",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_059",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P002's record and check if their medications levothyroxine and cetirizine have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "cetirizine"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P002 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_060",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P002's conditions and schedule a checkup with doctor D004 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D003",
+          "date": "2024-08-15",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_061",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P005's record and check if their medications metformin and aspirin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "aspirin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P005 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_062",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P002's conditions and schedule a checkup with doctor D003 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D005",
+          "date": "2024-09-15",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_063",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P001's record and check if their medications omeprazole and warfarin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "warfarin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P001 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_064",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P002's conditions and schedule a checkup with doctor D003 on 2024-09-10.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D002",
+          "date": "2024-10-15",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_065",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P002's record and check if their medications metformin and ibuprofen have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "ibuprofen"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P002 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_066",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a emergency with doctor D004 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D001",
+          "date": "2024-09-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_067",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P003's record and check if their medications levothyroxine and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P003 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_068",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P002's conditions and schedule a specialist with doctor D001 on 2024-09-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D004",
+          "date": "2024-12-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_069",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P002's record and check if their medications metformin and aspirin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "aspirin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P002 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_070",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P002's conditions and schedule a checkup with doctor D001 on 2024-08-15.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D005",
+          "date": "2024-09-10",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_071",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P003's record and check if their medications atorvastatin and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P003 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_072",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P001's conditions and schedule a checkup with doctor D003 on 2024-08-20.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D004",
+          "date": "2024-09-10",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_073",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P004's record and check if their medications omeprazole and cetirizine have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "cetirizine"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P004 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_074",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a checkup with doctor D005 on 2024-08-20.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D001",
+          "date": "2024-09-10",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_075",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P005's record and check if their medications metformin and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P005 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_076",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a emergency with doctor D003 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D003",
+          "date": "2024-09-15",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_077",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P003's record and check if their medications omeprazole and ibuprofen have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "ibuprofen"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P003 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_078",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P001's conditions and schedule a follow_up with doctor D004 on 2024-09-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D005",
+          "date": "2024-11-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_079",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P001's record and check if their medications levothyroxine and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P001 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_080",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a checkup with doctor D004 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-09-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_081",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P004's record and check if their medications sertraline and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P004 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_082",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a specialist with doctor D003 on 2024-11-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D001",
+          "date": "2024-12-01",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_083",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P004's record and check if their medications atorvastatin and aspirin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "aspirin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P004 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_084",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a specialist with doctor D002 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D002",
+          "date": "2024-08-05",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_085",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P001's record and check if their medications metformin and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P001 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_086",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a specialist with doctor D001 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D002",
+          "date": "2024-09-01",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_087",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P001's record and check if their medications levothyroxine and cetirizine have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "cetirizine"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P001 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_088",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P001's conditions and schedule a specialist with doctor D003 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D005",
+          "date": "2024-08-05",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_089",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P003's record and check if their medications sertraline and sumatriptan have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "sumatriptan"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P003 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_090",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a follow_up with doctor D005 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D004",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_091",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P002's record and check if their medications levothyroxine and metoprolol have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P002 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_092",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a checkup with doctor D005 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D003",
+          "date": "2024-08-10",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_093",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P003's record and check if their medications levothyroxine and amlodipine have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "levothyroxine",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P003 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_094",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a specialist with doctor D002 on 2024-11-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D005",
+          "date": "2024-10-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_095",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P005's record and check if their medications lisinopril and fluticasone have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "lisinopril",
+          "drug_b": "fluticasone"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P005 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_096",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P005's conditions and schedule a checkup with doctor D001 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D002",
+          "date": "2024-10-15",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P005.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_097",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P005's record and check if their medications omeprazole and aspirin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "omeprazole",
+          "drug_b": "aspirin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P005 record and drug interaction check complete.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_098",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P004's conditions and schedule a emergency with doctor D002 on 2024-11-01.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D001",
+          "date": "2024-12-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_099",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Get patient P002's record and check if their medications albuterol and warfarin have any interactions.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "albuterol",
+          "drug_b": "warfarin"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      }
+    ],
+    "correct_final_answer": "Patient P002 record and drug interaction check complete.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_100",
+    "domain": "medical",
+    "difficulty": "medium",
+    "query": "Look up patient P003's conditions and schedule a specialist with doctor D005 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "conditions"
+          ]
+        },
+        "expected_result_keys": [
+          "conditions"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D003",
+          "date": "2024-09-10",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Retrieved conditions and scheduled appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "medical_101",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P003's full record, check interactions between all their medications, and schedule a checkup follow-up with D005 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D005",
+          "date": "2024-10-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_102",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P002 is being prescribed fluticasone. Check their current medications, verify no interactions with fluticasone, and schedule a specialist appointment with D004 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "lisinopril",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D004",
+          "date": "2024-08-05",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_103",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P001's full record, check interactions between all their medications, and schedule a emergency follow-up with D001 on 2024-08-20.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D001",
+          "date": "2024-08-20",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_104",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed cetirizine. Check their current medications, verify no interactions with cetirizine, and schedule a specialist appointment with D002 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D002",
+          "date": "2024-08-10",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_105",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a emergency follow-up with D004 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D004",
+          "date": "2024-10-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_106",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P003 is being prescribed aspirin. Check their current medications, verify no interactions with aspirin, and schedule a specialist appointment with D004 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-08-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_107",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a specialist follow-up with D002 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D002",
+          "date": "2024-10-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_108",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P001 is being prescribed metoprolol. Check their current medications, verify no interactions with metoprolol, and schedule a specialist appointment with D003 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "omeprazole"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D003",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P001.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_109",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P001's full record, check interactions between all their medications, and schedule a specialist follow-up with D004 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D004",
+          "date": "2024-08-10",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_110",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed omeprazole. Check their current medications, verify no interactions with omeprazole, and schedule a specialist appointment with D003 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D003",
+          "date": "2024-08-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_111",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a specialist follow-up with D003 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D003",
+          "date": "2024-10-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_112",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed cetirizine. Check their current medications, verify no interactions with cetirizine, and schedule a specialist appointment with D005 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "omeprazole"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D005",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_113",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a specialist follow-up with D001 on 2024-09-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D001",
+          "date": "2024-09-10",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_114",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P005 is being prescribed cetirizine. Check their current medications, verify no interactions with cetirizine, and schedule a specialist appointment with D003 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D003",
+          "date": "2024-08-10",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_115",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P005's full record, check interactions between all their medications, and schedule a checkup follow-up with D001 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D001",
+          "date": "2024-08-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P005.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_116",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P003 is being prescribed ibuprofen. Check their current medications, verify no interactions with ibuprofen, and schedule a specialist appointment with D004 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-10-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_117",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a specialist follow-up with D003 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D003",
+          "date": "2024-10-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_118",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed cetirizine. Check their current medications, verify no interactions with cetirizine, and schedule a specialist appointment with D005 on 2024-12-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D005",
+          "date": "2024-12-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_119",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P005's full record, check interactions between all their medications, and schedule a specialist follow-up with D005 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D005",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_120",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P001 is being prescribed aspirin. Check their current medications, verify no interactions with aspirin, and schedule a specialist appointment with D003 on 2024-09-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "ibuprofen"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D003",
+          "date": "2024-09-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_121",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P001's full record, check interactions between all their medications, and schedule a specialist follow-up with D005 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D005",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P001.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_122",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P005 is being prescribed cetirizine. Check their current medications, verify no interactions with cetirizine, and schedule a specialist appointment with D002 on 2024-12-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "albuterol",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D002",
+          "date": "2024-12-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_123",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P005's full record, check interactions between all their medications, and schedule a follow_up follow-up with D005 on 2024-09-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D005",
+          "date": "2024-09-10",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_124",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P001 is being prescribed amlodipine. Check their current medications, verify no interactions with amlodipine, and schedule a specialist appointment with D005 on 2024-12-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D005",
+          "date": "2024-12-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_125",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P003's full record, check interactions between all their medications, and schedule a emergency follow-up with D004 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-08-10",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_126",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed omeprazole. Check their current medications, verify no interactions with omeprazole, and schedule a specialist appointment with D005 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "lisinopril",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D005",
+          "date": "2024-10-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_127",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a emergency follow-up with D005 on 2024-09-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D005",
+          "date": "2024-09-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_128",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed sumatriptan. Check their current medications, verify no interactions with sumatriptan, and schedule a specialist appointment with D003 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D003",
+          "date": "2024-08-10",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_129",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P003's full record, check interactions between all their medications, and schedule a emergency follow-up with D003 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D003",
+          "date": "2024-10-15",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_130",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P002 is being prescribed amlodipine. Check their current medications, verify no interactions with amlodipine, and schedule a specialist appointment with D003 on 2024-10-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "ibuprofen"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D003",
+          "date": "2024-10-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_131",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a emergency follow-up with D004 on 2024-09-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D004",
+          "date": "2024-09-01",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_132",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P005 is being prescribed cetirizine. Check their current medications, verify no interactions with cetirizine, and schedule a specialist appointment with D003 on 2024-08-20.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D003",
+          "date": "2024-08-20",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_133",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P004's full record, check interactions between all their medications, and schedule a specialist follow-up with D003 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D003",
+          "date": "2024-08-10",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_134",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P003 is being prescribed metoprolol. Check their current medications, verify no interactions with metoprolol, and schedule a specialist appointment with D001 on 2024-09-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "albuterol",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D001",
+          "date": "2024-09-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_135",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a specialist follow-up with D005 on 2024-08-20.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D005",
+          "date": "2024-08-20",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_136",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P001 is being prescribed amlodipine. Check their current medications, verify no interactions with amlodipine, and schedule a specialist appointment with D005 on 2024-12-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D005",
+          "date": "2024-12-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_137",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P002's full record, check interactions between all their medications, and schedule a checkup follow-up with D002 on 2024-08-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P002"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P002",
+          "doctor_id": "D002",
+          "date": "2024-08-01",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P002.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_138",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P003 is being prescribed omeprazole. Check their current medications, verify no interactions with omeprazole, and schedule a specialist appointment with D004 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-08-05",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_139",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P004's full record, check interactions between all their medications, and schedule a follow_up follow-up with D004 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D004",
+          "date": "2024-09-15",
+          "appointment_type": "follow_up"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_140",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P003 is being prescribed levothyroxine. Check their current medications, verify no interactions with levothyroxine, and schedule a specialist appointment with D003 on 2024-11-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D003",
+          "date": "2024-11-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P003.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_141",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P005's full record, check interactions between all their medications, and schedule a emergency follow-up with D001 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D001",
+          "date": "2024-08-10",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_142",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P001 is being prescribed metoprolol. Check their current medications, verify no interactions with metoprolol, and schedule a specialist appointment with D004 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P001",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "omeprazole"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P001",
+          "doctor_id": "D004",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P001.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_143",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P003's full record, check interactions between all their medications, and schedule a checkup follow-up with D005 on 2024-10-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D005",
+          "date": "2024-10-15",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_144",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P003 is being prescribed ibuprofen. Check their current medications, verify no interactions with ibuprofen, and schedule a specialist appointment with D004 on 2024-11-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "sertraline",
+          "drug_b": "amlodipine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D004",
+          "date": "2024-11-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_145",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P003's full record, check interactions between all their medications, and schedule a specialist follow-up with D002 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P003"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P003",
+          "doctor_id": "D002",
+          "date": "2024-08-05",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P003.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_146",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed omeprazole. Check their current medications, verify no interactions with omeprazole, and schedule a specialist appointment with D003 on 2024-12-01.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "ibuprofen"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D003",
+          "date": "2024-12-01",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_147",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P005's full record, check interactions between all their medications, and schedule a emergency follow-up with D002 on 2024-08-10.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D002",
+          "date": "2024-08-10",
+          "appointment_type": "emergency"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_148",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P005 is being prescribed levothyroxine. Check their current medications, verify no interactions with levothyroxine, and schedule a specialist appointment with D003 on 2024-08-05.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P005",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "lisinopril",
+          "drug_b": "levothyroxine"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P005",
+          "doctor_id": "D003",
+          "date": "2024-08-05",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P005.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  },
+  {
+    "task_id": "medical_149",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Review patient P004's full record, check interactions between all their medications, and schedule a checkup follow-up with D003 on 2024-08-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004"
+        },
+        "expected_result_keys": [
+          "name",
+          "conditions",
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "metformin",
+          "drug_b": "lisinopril"
+        },
+        "expected_result_keys": [
+          "interaction",
+          "severity"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D003",
+          "date": "2024-08-15",
+          "appointment_type": "checkup"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Full review and follow-up scheduled for P004.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "medical_000",
+      "medical_001"
+    ]
+  },
+  {
+    "task_id": "medical_150",
+    "domain": "medical",
+    "difficulty": "hard",
+    "query": "Patient P004 is being prescribed warfarin. Check their current medications, verify no interactions with warfarin, and schedule a specialist appointment with D002 on 2024-09-15.",
+    "required_tools": [
+      "get_patient_record",
+      "check_drug_interaction",
+      "schedule_appointment"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_patient_record",
+        "params": {
+          "patient_id": "P004",
+          "fields": [
+            "medications"
+          ]
+        },
+        "expected_result_keys": [
+          "medications"
+        ]
+      },
+      {
+        "tool": "check_drug_interaction",
+        "params": {
+          "drug_a": "atorvastatin",
+          "drug_b": "metoprolol"
+        },
+        "expected_result_keys": [
+          "interaction"
+        ]
+      },
+      {
+        "tool": "schedule_appointment",
+        "params": {
+          "patient_id": "P004",
+          "doctor_id": "D002",
+          "date": "2024-09-15",
+          "appointment_type": "specialist"
+        },
+        "expected_result_keys": [
+          "appointment_id"
+        ]
+      }
+    ],
+    "correct_final_answer": "Medication review and specialist appointment for P004.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "medical_002",
+      "medical_003"
+    ]
+  }
+]

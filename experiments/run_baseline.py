@@ -167,6 +167,7 @@ def run_single_baseline_task(
         "tool_selected": tool_selected,
         "tool_correct": tool_correct,
         "final_correct": final_correct,
+        "final_answer": final_answer,
         "cost": total_cost,
         "input_tokens": total_input,
         "output_tokens": total_output,
@@ -280,7 +281,7 @@ def main():
     if results:
         csv_path = os.path.join(os.path.dirname(__file__), "..", args.output)
         fieldnames = ["session_id", "task_id", "model", "domain", "difficulty", "source",
-                       "tool_selected", "tool_correct", "final_correct", "cost",
+                       "tool_selected", "tool_correct", "final_correct", "final_answer", "cost",
                        "input_tokens", "output_tokens", "steps"]
 
         # If resuming, append

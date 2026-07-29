@@ -102,12 +102,50 @@ MODELS = {
         "tier": "open",
         "task_limit": 300,
     },
+    # TIER 4: Open-weight, served locally via vLLM (OpenAI-compatible endpoint).
+    # model_id == served-model-name given to vLLM; hf_repo is the download source.
+    # cost=0 (local GPU). Same prompted-ReAct harness as all other tiers.
+    "qwen25_3b": {
+        "api": "local", "model_id": "qwen25_3b", "hf_repo": "Qwen/Qwen2.5-3B-Instruct",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "",
+    },
+    "qwen25_7b": {
+        "api": "local", "model_id": "qwen25_7b", "hf_repo": "Qwen/Qwen2.5-7B-Instruct",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "",
+    },
+    "qwen25_14b": {
+        "api": "local", "model_id": "qwen25_14b", "hf_repo": "Qwen/Qwen2.5-14B-Instruct-AWQ",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "--quantization awq_marlin",
+    },
+    "phi35_mini": {
+        "api": "local", "model_id": "phi35_mini", "hf_repo": "microsoft/Phi-3.5-mini-instruct",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "--max-model-len 16384",
+    },
+    "mistral_7b": {
+        "api": "local", "model_id": "mistral_7b", "hf_repo": "mistralai/Mistral-7B-Instruct-v0.2",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "",
+    },
+    # Gated on HuggingFace — requires HF_TOKEN with accepted license. Served only if token present.
+    "llama31_8b": {
+        "api": "local", "model_id": "llama31_8b", "hf_repo": "meta-llama/Llama-3.1-8B-Instruct",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "", "gated": True,
+    },
 }
 
 # Model sets for different experiment phases (10 models total)
 FULL_MODELS = ["gpt4o_mini", "gemini_20_flash", "deepseek_v3", "gpt35_turbo", "gpt41_mini", "gpt41_nano"]
 FRONTIER_MODELS = ["gpt4o", "gemini_25_flash", "o3_mini"]
 DEV_MODELS = ["gemini_20_flash"]
+# Open-weight models served locally via vLLM. Ungated set runs without an HF token;
+# llama31_8b is added only when HF_TOKEN (with accepted Meta license) is available.
+LOCAL_MODELS = ["qwen25_3b", "qwen25_7b", "qwen25_14b", "mistral_7b"]
+LOCAL_MODELS_GATED = ["llama31_8b"]
 
 # Budget
 BUDGET_LIMIT_USD = float(os.getenv("BUDGET_LIMIT_USD", "50.0"))

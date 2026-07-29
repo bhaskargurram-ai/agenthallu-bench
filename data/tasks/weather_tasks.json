@@ -1,0 +1,6024 @@
+[
+  {
+    "task_id": "weather_001",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in Paris on 2024-01-15?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Paris",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in Paris on 2024-01-15 includes temperature, humidity, and condition data.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_002",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in S\u00e3o Paulo on 2024-04-05 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-04-05",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in S\u00e3o Paulo on 2024-04-05 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_003",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 3-day forecast for Sydney.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Sydney.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_004",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Beijing's weather station for 2024-02-20? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Beijing on 2024-02-20.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_005",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Singapore for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Singapore.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_006",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in Tokyo on 2024-04-05?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Tokyo",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in Tokyo on 2024-04-05 includes temperature, humidity, and condition data.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_007",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Istanbul on 2024-10-12 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-10-12",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Istanbul on 2024-10-12 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_008",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 7-day forecast for Beijing.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Beijing.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_009",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Beijing's weather station for 2024-07-08? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Beijing on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_010",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Bangkok for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Bangkok.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_011",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in New York on 2024-03-10?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "New York",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in New York on 2024-03-10 includes temperature, humidity, and condition data.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_012",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Singapore on 2024-06-15 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-06-15",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Singapore on 2024-06-15 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_013",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 5-day forecast for Sydney.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Sydney.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_014",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Tokyo's weather station for 2024-07-08? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Tokyo",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Tokyo on 2024-07-08.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_015",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Moscow for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Moscow.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_016",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in S\u00e3o Paulo on 2024-01-15?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in S\u00e3o Paulo on 2024-01-15 includes temperature, humidity, and condition data.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_017",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Bangkok on 2024-09-30 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-09-30",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Bangkok on 2024-09-30 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_018",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 7-day forecast for Dubai.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Dubai",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Dubai.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_019",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Lagos's weather station for 2024-06-15? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Lagos",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Lagos on 2024-06-15.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_020",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Berlin for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Berlin",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Berlin.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_021",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in London on 2024-11-25?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in London on 2024-11-25 includes temperature, humidity, and condition data.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_022",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Cairo on 2024-02-20 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Cairo",
+          "date": "2024-02-20",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Cairo on 2024-02-20 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_023",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 5-day forecast for Paris.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Paris",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Paris.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_024",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Moscow's weather station for 2024-03-10? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Moscow on 2024-03-10.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_025",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Moscow for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Moscow.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_026",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in S\u00e3o Paulo on 2024-12-01?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in S\u00e3o Paulo on 2024-12-01 includes temperature, humidity, and condition data.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_027",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Tokyo on 2024-10-12 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Tokyo",
+          "date": "2024-10-12",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Tokyo on 2024-10-12 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_028",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 7-day forecast for Mumbai.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Mumbai.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_029",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Mumbai's weather station for 2024-08-19? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Mumbai on 2024-08-19.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_030",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for S\u00e3o Paulo for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for S\u00e3o Paulo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_031",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in Beijing on 2024-04-05?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in Beijing on 2024-04-05 includes temperature, humidity, and condition data.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_032",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Seoul on 2024-01-15 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-01-15",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Seoul on 2024-01-15 in fahrenheit.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_033",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 5-day forecast for London.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for London.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_034",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Tokyo's weather station for 2024-04-05? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Tokyo",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Tokyo on 2024-04-05.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_035",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Seoul for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Seoul.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_036",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in Rome on 2024-07-08?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in Rome on 2024-07-08 includes temperature, humidity, and condition data.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_037",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Bangkok on 2024-03-10 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-03-10",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Bangkok on 2024-03-10 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_038",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 7-day forecast for Sydney.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Sydney.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_039",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Beijing's weather station for 2024-05-22? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Beijing on 2024-05-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_040",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Mexico City for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Mexico City.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_041",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in Dubai on 2024-06-15?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Dubai",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in Dubai on 2024-06-15 includes temperature, humidity, and condition data.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_042",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Sydney on 2024-09-30 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-09-30",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Sydney on 2024-09-30 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_043",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 3-day forecast for Tokyo.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Tokyo",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for Tokyo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_044",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Mumbai's weather station for 2024-11-25? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Mumbai on 2024-11-25.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_045",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Lagos for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Lagos",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Lagos.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_046",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What is the weather in Dubai on 2024-10-12?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Dubai",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The weather in Dubai on 2024-10-12 includes temperature, humidity, and condition data.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_047",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What's the temperature in Istanbul on 2024-05-22 in fahrenheit?",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-05-22",
+          "unit": "fahrenheit"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "The temperature in Istanbul on 2024-05-22 in fahrenheit.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_048",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Give me a 7-day forecast for New York.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "New York",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Forecast for New York.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_049",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "What events are on Beijing's weather station for 2024-05-22? I mean weather conditions.",
+    "required_tools": [
+      "get_weather"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather conditions in Beijing on 2024-05-22.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_050",
+    "domain": "weather",
+    "difficulty": "easy",
+    "query": "Show me the hourly forecast for Seoul for the next day.",
+    "required_tools": [
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 1,
+          "include_hourly": true
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Hourly forecast for Seoul.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_051",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Singapore on 2024-03-10, and also give me a 5-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Singapore.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_052",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in S\u00e3o Paulo (2024-09-30) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for S\u00e3o Paulo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_053",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Istanbul on 2024-02-20 and check if it will change in the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Istanbul.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_054",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Istanbul on 2024-10-12, and also give me a 3-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Istanbul.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_055",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Moscow (2024-03-10) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Moscow",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Moscow.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_056",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Istanbul on 2024-01-15 and check if it will change in the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Istanbul.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_057",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Rome on 2024-01-15, and also give me a 3-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Rome.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_058",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Cairo (2024-04-05) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Cairo",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Cairo",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Cairo.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_059",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Toronto on 2024-10-12 and check if it will change in the next 3 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Toronto",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Toronto",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Toronto.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_060",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Rome on 2024-02-20, and also give me a 7-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Rome.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_061",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Sydney (2024-11-25) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Sydney",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Sydney.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_062",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Beijing on 2024-03-10 and check if it will change in the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Beijing.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_063",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Berlin on 2024-09-30, and also give me a 7-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Berlin",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Berlin",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Berlin.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_064",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Berlin (2024-12-01) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Berlin",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Berlin",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Berlin.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_065",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Dubai on 2024-11-25 and check if it will change in the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Dubai",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Dubai",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Dubai.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_066",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Bangkok on 2024-09-30, and also give me a 5-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Bangkok.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_067",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Toronto (2024-04-05) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Toronto",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Toronto",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Toronto.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_068",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Seoul on 2024-01-15 and check if it will change in the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Seoul.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_069",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Mexico City on 2024-04-05, and also give me a 3-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Mexico City.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_070",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in London (2024-04-05) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "London",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for London.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_071",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for London on 2024-06-15 and check if it will change in the next 3 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for London.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_072",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in S\u00e3o Paulo on 2024-11-25, and also give me a 5-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for S\u00e3o Paulo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_073",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Beijing (2024-03-10) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Beijing",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Beijing.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_074",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Mexico City on 2024-10-12 and check if it will change in the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Mexico City.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_075",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Rome on 2024-07-08, and also give me a 3-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Rome.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_076",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Paris (2024-11-25) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Paris",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Paris",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Paris.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_077",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Moscow on 2024-07-08 and check if it will change in the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Moscow.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_078",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in London on 2024-11-25, and also give me a 7-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for London.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_079",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Paris (2024-01-15) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Paris",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Paris",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Paris.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_080",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Seoul on 2024-02-20 and check if it will change in the next 3 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Seoul.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_081",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Berlin on 2024-09-30, and also give me a 5-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Berlin",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Berlin",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Berlin.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_082",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Singapore (2024-03-10) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Singapore",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Singapore.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_083",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Bangkok on 2024-04-05 and check if it will change in the next 3 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Bangkok.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_084",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Beijing on 2024-02-20, and also give me a 3-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Beijing.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_085",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Beijing (2024-01-15) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Beijing",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Beijing.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_086",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Toronto on 2024-03-10 and check if it will change in the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Toronto",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Toronto",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Toronto.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_087",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Rome on 2024-04-05, and also give me a 5-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Rome.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_088",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Mumbai (2024-07-08) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Mumbai",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Mumbai.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_089",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Dubai on 2024-05-22 and check if it will change in the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Dubai",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Dubai",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Dubai.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_090",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Singapore on 2024-12-01, and also give me a 7-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Singapore.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_091",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Rome (2024-03-10) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Rome",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Rome.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_092",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Cairo on 2024-04-05 and check if it will change in the next 3 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Cairo",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Cairo",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Cairo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_093",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Seoul on 2024-01-15, and also give me a 3-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Seoul.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_094",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Rome (2024-09-30) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Rome",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Rome.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_095",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Mumbai on 2024-01-15 and check if it will change in the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Mumbai.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_096",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Mumbai on 2024-02-20, and also give me a 7-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Mumbai.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_097",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Toronto (2024-07-08) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Toronto",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Toronto",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Toronto.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_098",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Get the weather for Mexico City on 2024-04-05 and check if it will change in the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 3
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Weather analysis for Mexico City.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_099",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "What's the weather in Lagos on 2024-02-20, and also give me a 5-day forecast?",
+    "required_tools": [
+      "get_weather",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Lagos",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "humidity",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Lagos",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current weather and forecast for Lagos.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_100",
+    "domain": "weather",
+    "difficulty": "medium",
+    "query": "Compare today's weather in Mexico City (2024-10-12) with the historical average from 2023-01-01 to 2023-01-07.",
+    "required_tools": [
+      "get_weather",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Mexico City",
+          "start_date": "2023-01-01",
+          "end_date": "2023-01-07"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Current vs historical weather for Mexico City.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": []
+  },
+  {
+    "task_id": "weather_101",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Seoul. Get today's weather (2024-05-22), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Seoul",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Seoul.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_102",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Seoul and Moscow on 2024-04-05, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Seoul and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_103",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Cairo. Get today's weather (2024-08-19), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Cairo",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Cairo",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Cairo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Cairo.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_104",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in New York and London on 2024-08-19, then get forecasts for both cities for the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "New York",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "New York",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for New York and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_105",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Istanbul. Get today's weather (2024-05-22), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Istanbul",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Istanbul.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_106",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Tokyo and Paris on 2024-04-05, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Tokyo",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Paris",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Tokyo",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Paris",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Tokyo and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_107",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Bangkok. Get today's weather (2024-09-30), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Bangkok",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Bangkok.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_108",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Istanbul and Beijing on 2024-01-15, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Istanbul and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_109",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to S\u00e3o Paulo. Get today's weather (2024-02-20), a 5-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to S\u00e3o Paulo.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_110",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Beijing and Mexico City on 2024-03-10, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Beijing and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_111",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Seoul. Get today's weather (2024-04-05), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Seoul",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Seoul",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Seoul",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Seoul.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_112",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Rome and Istanbul on 2024-05-22, then get forecasts for both cities for the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Rome and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_113",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to S\u00e3o Paulo. Get today's weather (2024-01-15), a 5-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to S\u00e3o Paulo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_114",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Sydney and Mumbai on 2024-11-25, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Sydney and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_115",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Beijing. Get today's weather (2024-12-01), a 14-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Beijing",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Beijing.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_116",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in New York and London on 2024-02-20, then get forecasts for both cities for the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "New York",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "New York",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for New York and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_117",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Moscow. Get today's weather (2024-10-12), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Moscow",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Moscow.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_118",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Sydney and Mumbai on 2024-01-15, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Sydney and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_119",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Moscow. Get today's weather (2024-04-05), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Moscow",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Moscow.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_120",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Paris and Sydney on 2024-06-15, then get forecasts for both cities for the next 14 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Paris",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Paris",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Paris and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_121",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Mumbai. Get today's weather (2024-03-10), a 14-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Mumbai",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Mumbai.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_122",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Mumbai and Berlin on 2024-12-01, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Berlin",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Berlin",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Mumbai and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_123",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to S\u00e3o Paulo. Get today's weather (2024-03-10), a 5-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to S\u00e3o Paulo.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_124",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in London and Tokyo on 2024-08-19, then get forecasts for both cities for the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Tokyo",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Tokyo",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for London and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_125",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Moscow. Get today's weather (2024-05-22), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Moscow",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Moscow",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Moscow",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Moscow.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_126",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in New York and London on 2024-11-25, then get forecasts for both cities for the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "New York",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "London",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "New York",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "London",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for New York and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_127",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to S\u00e3o Paulo. Get today's weather (2024-02-20), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to S\u00e3o Paulo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_128",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Istanbul and Beijing on 2024-07-08, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Istanbul and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_129",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to S\u00e3o Paulo. Get today's weather (2024-03-10), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-03-10"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to S\u00e3o Paulo.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_130",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Paris and Sydney on 2024-10-12, then get forecasts for both cities for the next 14 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Paris",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Paris",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Paris and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_131",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Singapore. Get today's weather (2024-10-12), a 5-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Singapore",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Singapore.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_132",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Mexico City and Lagos on 2024-04-05, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Lagos",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Lagos",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Mexico City and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_133",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to New York. Get today's weather (2024-09-30), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "New York",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "New York",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "New York",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to New York.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_134",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Singapore and Bangkok on 2024-02-20, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-02-20"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Singapore and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_135",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Cairo. Get today's weather (2024-09-30), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Cairo",
+          "date": "2024-09-30"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Cairo",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Cairo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Cairo.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_136",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Singapore and Bangkok on 2024-06-15, then get forecasts for both cities for the next 14 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-06-15"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Singapore and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_137",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Berlin. Get today's weather (2024-07-08), a 14-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Berlin",
+          "date": "2024-07-08"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Berlin",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Berlin",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Berlin.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_138",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Mumbai and Berlin on 2024-10-12, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mumbai",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Berlin",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mumbai",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Berlin",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Mumbai and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_139",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Cairo. Get today's weather (2024-05-22), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Cairo",
+          "date": "2024-05-22"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Cairo",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Cairo",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Cairo.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_140",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Mexico City and Lagos on 2024-10-12, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Lagos",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Lagos",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Mexico City and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_141",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Bangkok. Get today's weather (2024-11-25), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Bangkok",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Bangkok",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Bangkok",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Bangkok.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_142",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Rome and Istanbul on 2024-12-01, then get forecasts for both cities for the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-12-01"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Rome and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_143",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Istanbul. Get today's weather (2024-11-25), a 10-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Istanbul",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Istanbul.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_144",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Toronto and S\u00e3o Paulo on 2024-11-25, then get forecasts for both cities for the next 10 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Toronto",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "date": "2024-11-25"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Toronto",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "S\u00e3o Paulo",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Toronto and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_145",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Sydney. Get today's weather (2024-01-15), a 5-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Sydney",
+          "date": "2024-01-15"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Sydney",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Sydney",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Sydney.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_146",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Rome and Istanbul on 2024-10-12, then get forecasts for both cities for the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Rome",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-10-12"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Rome",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 7
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Rome and another city.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_147",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Mexico City. Get today's weather (2024-04-05), a 14-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Mexico City",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Mexico City",
+          "days": 10
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Mexico City",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Mexico City.",
+    "multi_turn": true,
+    "num_turns": 6,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_148",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Dubai and Singapore on 2024-04-05, then get forecasts for both cities for the next 7 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Dubai",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Dubai",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Dubai and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  },
+  {
+    "task_id": "weather_149",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "I'm planning a trip to Singapore. Get today's weather (2024-04-05), a 7-day forecast, and historical data for last January to understand climate patterns.",
+    "required_tools": [
+      "get_weather",
+      "get_forecast",
+      "get_historical"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Singapore",
+          "date": "2024-04-05"
+        },
+        "expected_result_keys": [
+          "temperature",
+          "condition"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Singapore",
+          "days": 14
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_historical",
+        "params": {
+          "city": "Singapore",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-31"
+        },
+        "expected_result_keys": [
+          "data"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comprehensive weather analysis for trip to Singapore.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_000",
+      "weather_001"
+    ]
+  },
+  {
+    "task_id": "weather_150",
+    "domain": "weather",
+    "difficulty": "hard",
+    "query": "Compare the current weather in Istanbul and Beijing on 2024-08-19, then get forecasts for both cities for the next 5 days.",
+    "required_tools": [
+      "get_weather",
+      "get_weather",
+      "get_forecast",
+      "get_forecast"
+    ],
+    "correct_tool_sequence": [
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Istanbul",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_weather",
+        "params": {
+          "city": "Beijing",
+          "date": "2024-08-19"
+        },
+        "expected_result_keys": [
+          "temperature"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Istanbul",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      },
+      {
+        "tool": "get_forecast",
+        "params": {
+          "city": "Beijing",
+          "days": 5
+        },
+        "expected_result_keys": [
+          "forecast"
+        ]
+      }
+    ],
+    "correct_final_answer": "Comparative weather analysis for Istanbul and another city.",
+    "multi_turn": false,
+    "num_turns": 1,
+    "rag_docs_needed": [
+      "weather_002",
+      "weather_003"
+    ]
+  }
+]
