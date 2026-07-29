@@ -130,6 +130,17 @@ MODELS = {
         "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
         "tier": "open_local", "task_limit": 500, "vllm_extra": "",
     },
+    # Non-Qwen open-weight candidates (different labs) for cross-family generalization.
+    "hermes3_llama8b": {
+        "api": "local", "model_id": "hermes3_llama8b", "hf_repo": "NousResearch/Hermes-3-Llama-3.1-8B",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "--max-model-len 8192",
+    },
+    "internlm25_7b": {
+        "api": "local", "model_id": "internlm25_7b", "hf_repo": "internlm/internlm2_5-7b-chat",
+        "max_tokens": 2048, "cost_per_1m_input": 0.0, "cost_per_1m_output": 0.0,
+        "tier": "open_local", "task_limit": 500, "vllm_extra": "--max-model-len 8192 --trust-remote-code",
+    },
     # Gated on HuggingFace — requires HF_TOKEN with accepted license. Served only if token present.
     "llama31_8b": {
         "api": "local", "model_id": "llama31_8b", "hf_repo": "meta-llama/Llama-3.1-8B-Instruct",

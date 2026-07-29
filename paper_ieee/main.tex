@@ -423,8 +423,12 @@ the reference answer.
 The labeling criterion matched the ensemble judge prompt: accept minor
 wording differences and extra explanation as long as the core fact is
 correct.
-A second annotator (acknowledged) independently labeled 7 overlapping
-traces; inter-annotator agreement on this small overlap was 6/7.
+A second annotator (acknowledged) independently labeled all 100 traces using
+the same criterion, blind to the first annotator's labels. Inter-annotator
+agreement is Cohen's $\kappa{=}0.835$ (92\% raw agreement), indicating
+almost-perfect agreement (Landis--Koch \cite{landis1977kappa}) and establishing
+the human labels as a reliable reference for the judge comparison.
+% Source: data/results/interannotator_kappa.json (100 items, both annotators)
 
 % 4.7 Data availability
 \subsection{Data availability}
@@ -1005,8 +1009,10 @@ Concurrent control & \texttimes & \texttimes & \texttimes & \checkmark \\
     The human-vs-ensemble $\kappa{=}0.432$ has a 95\% CI of approximately
     $[0.28, 0.58]$ by bootstrap.
     This is moderate, not definitive, validation.
-    The annotator was the first author; a second annotator independently
-    labeled 7 overlapping traces with 6/7 agreement.
+    The primary annotator was the first author; a second annotator
+    independently labeled all 100 traces with almost-perfect agreement
+    (Cohen's $\kappa{=}0.835$), mitigating single-annotator bias, though both
+    annotators share a similar background.
     Future work should use a larger non-author annotator pool to
     eliminate any potential annotator bias.
 
