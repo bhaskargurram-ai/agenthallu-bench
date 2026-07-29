@@ -39,8 +39,9 @@ assumed to be reliable, yet this assumption has rarely been validated against
 human annotation. We present AgentProp-Bench, a benchmark of 2,000 tasks across
 four domains with a 100-label human-validated subset, and use it to study three
 questions: judge reliability, error propagation, and runtime mitigation. We
-evaluate nine proprietary LLMs and three open-weight Qwen2.5 models (3B, 7B,
-14B) served locally, all through an identical prompted tool-use harness.
+evaluate nine proprietary LLMs and four open-weight models (Qwen2.5 3B/7B/14B
+and Hermes-3-Llama-3.1-8B) served locally through an identical prompted tool-use
+harness.
 Substring-based judging agrees with human annotation at kappa = 0.049
 (chance level), whereas a three-LLM ensemble judge reaches kappa = 0.432
 (moderate) with a conservative bias. Under validated evaluation, a
@@ -115,7 +116,7 @@ Our contributions are:
   \item \textbf{Rejection--recovery decomposition.}
     Rejection rate (catching bad parameters) and recovery rate (producing
     a correct answer despite accepting bad parameters) are statistically
-    independent across twelve models (Spearman $\rho{=}{-}0.007$),
+    independent across thirteen models (Spearman $\rho{=}0.041$),
     revealing that models vary on two orthogonal axes of
     robustness (Section~\ref{sec:rejrec}).
   \item \textbf{Tool-call adherence and fabricated tool use.}
@@ -125,9 +126,10 @@ Our contributions are:
     A low stage-one rate can therefore reflect tool-call avoidance rather
     than robustness (Section~\ref{sec:toolcall}).
   \item \textbf{Generalization to open-weight models.}
-    The Qwen2.5 family (3B/7B/14B), served locally under the identical
-    harness, shows the same substantial propagation (injection-to-error
-    0.63--0.74), confirming the effect is not specific to proprietary APIs
+    Four open-weight models across two families (Qwen2.5 3B/7B/14B and
+    Hermes-3-Llama-3.1-8B), served locally under the identical harness, show
+    the same substantial propagation (injection-to-error 0.63--0.74),
+    confirming the effect is not specific to proprietary APIs
     (Section~\ref{sec:openweight}).
   \item \textbf{Runtime interceptor under concurrent control.}
     A tuned three-layer \interceptor{} reduces hallucination on
@@ -137,7 +139,7 @@ Our contributions are:
     (Section~\ref{sec:interceptor}).
     % Source: interceptor_control_600.csv + interceptor_heldout_600.csv
   \item \textbf{Open benchmark release.}
-    All 2{,}000 tasks, 13{,}500 agent traces, 100 human labels, analysis
+    All 2{,}000 tasks, 14{,}750 agent traces, 100 human labels, analysis
     scripts, and agent source code are publicly released.
 \end{enumerate}
 
@@ -395,17 +397,19 @@ of the pipeline.
 
 We collected agent traces across nine proprietary LLMs---GPT-4o, GPT-4o-mini,
 GPT-4.1-mini, GPT-4.1-nano, GPT-3.5-turbo, o3-mini (OpenAI); Gemini-2.0-Flash,
-Gemini-2.5-Flash (Google); and DeepSeek-V3 (via OpenRouter)---and three
-open-weight Qwen2.5 models (3B, 7B, 14B) served locally with vLLM through the
-identical prompted-ReAct harness.
-% Source: p2_all_rejudged.csv (12 models), baseline_all.csv
+Gemini-2.5-Flash (Google); and DeepSeek-V3 (via OpenRouter)---and four
+open-weight models spanning two families (Qwen2.5 3B/7B/14B and
+Hermes-3-Llama-3.1-8B) served locally with vLLM through the identical
+prompted-ReAct harness.
+% Source: p2_all_rejudged.csv (13 models), baseline_all.csv
 For the P2 semantic-wrong condition, we evaluated 200 unique tasks per model for
-the six main proprietary models and all three open-weight models (800 rows each
+the six main proprietary models and all four open-weight models (800 rows each
 across four error types) and 50 tasks for three frontier proprietary models. The
-propagation analysis therefore covers 1{,}950 semantic-wrong traces across
-twelve models (1{,}350 proprietary, 600 open-weight); the no-injection baseline
-covers 4{,}100 traces. Including all four injection types and the interceptor
-experiment, the released benchmark comprises over 13{,}000 agent traces.
+propagation analysis therefore covers 2{,}150 semantic-wrong traces across
+thirteen models (1{,}350 proprietary, 800 open-weight); the no-injection
+baseline covers 4{,}550 traces. Including all four injection types and the
+interceptor experiment, the released benchmark comprises over 14{,}000 agent
+traces.
 Proprietary models were accessed via their official APIs and open-weight models
 via a local vLLM server, all with temperature 0.
 
@@ -692,8 +696,8 @@ Figure~\ref{fig:stages} visualizes the per-model stage-reach rates.
 \label{sec:rejrec}
 
 Table~\ref{tab:rejection_recovery} and Figure~\ref{fig:rejrec} present the
-rejection--recovery decomposition across the twelve models (nine proprietary
-and three open-weight Qwen2.5 models; Section~\ref{sec:openweight}).
+rejection--recovery decomposition across the thirteen models (nine proprietary
+and four open-weight models; Section~\ref{sec:openweight}).
 
 \input{tables/table6_rejection_recovery}
 
@@ -701,8 +705,8 @@ and three open-weight Qwen2.5 models; Section~\ref{sec:openweight}).
   \centering
   \includegraphics[width=\columnwidth]{figures/fig_rejection_vs_recovery.png}
   \caption{Rejection rate ($1{-}p_{S_1}$) vs.\ recovery rate
-    ($1{-}r_{2,3}$) for twelve models. Point size proportional to
-    $n_{S_2}$. Spearman $\rho{=}{-}0.007$, $p{=}0.983$: axes are
+    ($1{-}r_{2,3}$) for thirteen models. Point size proportional to
+    $n_{S_2}$. Spearman $\rho{=}0.041$, $p{=}0.893$: axes are
     statistically independent.}
   \label{fig:rejrec}
 \end{figure}
@@ -834,26 +838,49 @@ Gemini-2.0-Flash & 5.0 & 42.5 \\
 Qwen2.5-7B & 99.5 & --- \\
 Qwen2.5-3B & 70.0 & --- \\
 Qwen2.5-14B & 61.0 & --- \\
+Hermes-3-Llama-3.1-8B & 37.0 & --- \\
 Mistral-7B-v0.2 & 21.5 & --- \\
 Phi-3.5-mini & 0.0 & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+\paragraph{Native function-calling versus prompted tool use.}
+The rates in Table~\ref{tab:toolcall} are measured under a prompted-ReAct
+harness applied identically to all models. To test whether a low rate is
+harness-specific, we re-measured the tool-call rate under vLLM's \emph{native}
+function-calling interface (\texttt{tools=}, \texttt{tool\_choice=auto}) for the
+open-weight models that support it. For Qwen2.5-7B the rate is essentially
+unchanged (99.5\% prompted vs.\ 98.5\% native), but for Qwen2.5-14B it rises
+substantially (61.0\% to 93.5\%). Thus, for a model that supports native
+tool-calling, a low prompted rate partly reflects the harness rather than an
+inability to use tools. This avenue is not universal, however:
+Mistral-7B-v0.2 and Phi-3.5-mini expose no native tool-calling interface in
+vLLM (the server cannot locate a tool-call token in the tokenizer), so their
+near-absent tool use is a genuine capability gap, not a harness artifact. We
+therefore treat the tool-call rate as harness-conditional, and note that
+fabricated tool use remains most consequential in the text-based (prompted)
+agent loops that are still common in deployment and in which models without
+native tool interfaces must operate.
+
 % 6.6 Generalization to open-weight models
 \subsection{Generalization to open-weight models}
 \label{sec:openweight}
 
 To test whether the propagation findings generalize beyond proprietary APIs, we
-evaluated the Qwen2.5 open-weight family at three scales (3B, 7B, 14B) served
-locally with vLLM under the identical prompted-ReAct harness. All three are
-competent tool users (tool-call rate 61--99.5\%). Their injection-to-error
-rates $\Pr[S_3{=}1 \mid S_1{=}1]$ are 0.74 (3B), 0.63 (7B), and 0.65 (14B),
-with hop-conditional rates $r_{2,3}$ of 0.86, 0.80, and 0.89
-respectively---within the proprietary-model ensemble range (0.57--0.90) and
-consistent with the human-calibrated proprietary estimate ($\approx 0.62$).
-Propagation is thus substantial and approximately scale-invariant across the
-open family, confirming it is not an artifact of proprietary model APIs.
+evaluated four open-weight models spanning two families, served locally with
+vLLM under the identical prompted-ReAct harness: the Qwen2.5 series at three
+scales (3B, 7B, 14B) and Hermes-3-Llama-3.1-8B (a Llama-3.1 derivative). Their
+injection-to-error rates $\Pr[S_3{=}1 \mid S_1{=}1]$ are 0.74 (Qwen-3B), 0.63
+(Qwen-7B), 0.65 (Qwen-14B), and 0.67 (Hermes-3-Llama-8B), with hop-conditional
+rates $r_{2,3}$ of 0.86, 0.80, 0.89, and 0.80 respectively---all within the
+proprietary-model ensemble range (0.57--0.90) and consistent with the
+human-calibrated proprietary estimate ($\approx 0.62$). Propagation is thus
+substantial across model scale and across two open families, confirming it is
+not an artifact of proprietary model APIs. (The Qwen models are competent tool
+users at 61--99.5\%; Hermes-3-Llama emits tool calls in 37\% of traces, enough
+to yield a stable estimate at $n_{S_2}{=}10$, and its low rate is the same
+tool-call-avoidance phenomenon discussed in Section~\ref{sec:toolcall}.)
 
 We also attempted two other open families. Mistral-7B-Instruct-v0.2 and
 Phi-3.5-mini did not reliably follow the zero-shot ReAct tool-use protocol
@@ -895,7 +922,7 @@ EPS, consistent with the original-domain results.
 
 \paragraph{Rejection and recovery as orthogonal axes.}
 The finding that rejection rate and recovery rate are statistically
-independent (Spearman $\rho{=}{-}0.007$, $p{=}0.983$) suggests that agent
+independent (Spearman $\rho{=}0.041$, $p{=}0.893$) suggests that agent
 robustness to tool-use errors is at least two-dimensional.
 A model's ability to reject bad parameters at the schema gate is
 architecturally distinct from its ability to reason through corrupted
@@ -984,8 +1011,8 @@ Controlled injection & \texttimes & \texttimes & \texttimes & \checkmark \\
 Human-validated judge & \texttimes & \texttimes & \texttimes & \checkmark \\
 Runtime mitigation & \texttimes & \texttimes & \texttimes & \checkmark \\
 Concurrent control & \texttimes & \texttimes & \texttimes & \checkmark \\
-\# Models evaluated & 6 & 25 & 14 & 12 \\
-\# Traces & 1{,}280 & 7{,}000+ & 693 & 13{,}500 \\
+\# Models evaluated & 6 & 25 & 14 & 13 \\
+\# Traces & 1{,}280 & 7{,}000+ & 693 & 14{,}750 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1023,12 +1050,13 @@ Concurrent control & \texttimes & \texttimes & \texttimes & \checkmark \\
     Future work should apply human labeling to the interceptor arms.
 
   \item \textbf{Model selection.}
-    We evaluated nine proprietary models and three open-weight Qwen2.5 models
-    (3B, 7B, 14B). Injection operates at the prompted tool-call layer, which is
-    model-agnostic, so the same harness applies to locally-served open-weight
-    models without modification. Two further open families (Mistral-7B-v0.2,
-    Phi-3.5-mini) were evaluated but did not reliably emit tool calls
-    (Section~\ref{sec:toolcall}), precluding propagation measurement. We did not
+    We evaluated nine proprietary models and four open-weight models across two
+    families (Qwen2.5 3B/7B/14B and Hermes-3-Llama-3.1-8B). Injection operates
+    at the prompted tool-call layer, which is model-agnostic, so the same
+    harness applies to locally-served open-weight models without modification.
+    Two further open families (Mistral-7B-v0.2, Phi-3.5-mini) were evaluated but
+    did not reliably emit tool calls (Section~\ref{sec:toolcall}), precluding
+    propagation measurement. We did not
     evaluate very large open-weight models ($\geq$70B) that exceed a single
     24\,GB GPU, nor Claude models (to avoid potential evaluation conflicts);
     both are natural extensions.
@@ -1065,7 +1093,7 @@ Concurrent control & \texttimes & \texttimes & \texttimes & \checkmark \\
     With this sample size, only strong monotonic relationships
     ($|\rho| \gtrsim 0.6$) would be detectable at conventional significance
     levels.
-    Our finding ($\rho{=}{-}0.007$, $p{=}0.983$) is consistent with
+    Our finding ($\rho{=}0.041$, $p{=}0.893$) is consistent with
     genuine independence but also with a moderate underlying relationship
     the test cannot detect.
     We report it as \emph{no evidence of correlation} rather than
@@ -1092,11 +1120,12 @@ methodology against human labels before reporting comparative claims.
 \paragraph{RO2 (Propagation).}
 Under validated evaluation, a parameter-level injection propagates to a
 wrong final answer with human-calibrated probability ${\approx}\,0.62$
-(range 0.46--0.73 across models); the open-weight Qwen2.5 models (3B/7B/14B)
-reproduce this (injection-to-error 0.63--0.74), confirming it is not an
+(range 0.46--0.73 across models); four open-weight models across two families
+(Qwen2.5 3B/7B/14B and Hermes-3-Llama-3.1-8B) reproduce this (injection-to-error
+0.63--0.74), confirming it is not an
 artifact of proprietary APIs.
 Rejection rate and recovery rate are independent capabilities
-(Spearman $\rho{=}{-}0.007$, $p{=}0.983$), indicating that model
+(Spearman $\rho{=}0.041$, $p{=}0.893$), indicating that model
 robustness to tool-use errors is at least two-dimensional. We also find
 that models fabricate tool use---asserting tool results they never
 obtained---so a low injection rate can reflect tool-call avoidance rather
@@ -1109,7 +1138,7 @@ The effect is model-dependent: Gemini-2.0-Flash shows no effect because it
 rarely emits an injectable tool call (5\%), leaving a tool-call-validating
 interceptor with almost nothing to catch.
 
-All code, data, 13{,}500 agent traces, and 100 human labels are released at
+All code, data, 14{,}750 agent traces, and 100 human labels are released at
 \url{https://github.com/bhaskargurram-ai/agenthallu-bench} to support
 reproducible agent evaluation research.
 

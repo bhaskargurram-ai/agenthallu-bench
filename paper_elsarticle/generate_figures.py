@@ -71,7 +71,7 @@ def bootstrap_kappa(a, b, n=1000, seed=42):
 MODEL_ORDER = [
     "gpt35_turbo", "gpt4o_mini", "gpt41_mini", "gpt41_nano",
     "gpt4o", "o3_mini", "gemini_20_flash", "gemini_25_flash", "deepseek_v3",
-    "qwen25_3b", "qwen25_7b", "qwen25_14b",
+    "qwen25_3b", "qwen25_7b", "qwen25_14b", "hermes3_llama8b",
 ]
 MODEL_LABELS = {
     "gpt35_turbo": "GPT-3.5",
@@ -86,6 +86,7 @@ MODEL_LABELS = {
     "qwen25_3b": "Qwen2.5-3B",
     "qwen25_7b": "Qwen2.5-7B",
     "qwen25_14b": "Qwen2.5-14B",
+    "hermes3_llama8b": "Hermes-3-Llama-8B",
 }
 
 # ---------------------------------------------------------------------------

@@ -14,7 +14,7 @@ BASE = os.path.join(os.path.dirname(__file__), "..", "data", "results")
 # the Qwen2.5 3B/7B/14B scale ladder. Mistral-7B-v0.2 (~20% tool-call rate) and
 # Phi-3.5-mini (0%) did not reliably follow the protocol, so they are reported
 # separately as a protocol-adherence observation (see analysis/tool_call_rates).
-LOCAL = ["qwen25_3b", "qwen25_7b", "qwen25_14b"]
+LOCAL = ["qwen25_3b", "qwen25_7b", "qwen25_14b", "hermes3_llama8b"]
 
 
 def _base(name: str) -> str:

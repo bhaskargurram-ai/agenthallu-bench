@@ -1,0 +1,7 @@
+{
+  "model": "qwen25_7b",
+  "n": 200,
+  "native_tool_call_rate_pct": 98.5,
+  "tool_calls": 197,
+  "errors": 0
+}
