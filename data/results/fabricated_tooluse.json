@@ -1,47 +1,15 @@
 {
-  "deepseek_v3": {
-    "tool_call_pct": 86.0,
-    "fabricated_pct": 7.0,
-    "n": 200
-  },
-  "gemini_20_flash": {
-    "tool_call_pct": 5.0,
-    "fabricated_pct": 42.5,
-    "n": 200
-  },
-  "gemini_25_flash": {
-    "tool_call_pct": 76.0,
-    "fabricated_pct": 18.0,
-    "n": 50
-  },
-  "gpt35_turbo": {
-    "tool_call_pct": 59.5,
-    "fabricated_pct": 21.5,
-    "n": 200
-  },
-  "gpt41_mini": {
-    "tool_call_pct": 85.0,
-    "fabricated_pct": 12.0,
-    "n": 200
-  },
-  "gpt41_nano": {
-    "tool_call_pct": 99.0,
-    "fabricated_pct": 0.5,
-    "n": 200
-  },
-  "gpt4o": {
-    "tool_call_pct": 100.0,
-    "fabricated_pct": 0.0,
-    "n": 50
-  },
-  "gpt4o_mini": {
-    "tool_call_pct": 40.0,
-    "fabricated_pct": 24.0,
-    "n": 200
-  },
-  "o3_mini": {
-    "tool_call_pct": 88.0,
-    "fabricated_pct": 8.0,
-    "n": 50
-  }
+  "deepseek_v3": 7.0,
+  "gemini_20_flash": 37.5,
+  "gemini_25_flash": 16.0,
+  "gpt35_turbo": 14.5,
+  "gpt41_mini": 12.0,
+  "gpt41_nano": 0.5,
+  "gpt4o": 0.0,
+  "gpt4o_mini": 12.0,
+  "hermes3_llama8b": 34.5,
+  "o3_mini": 8.0,
+  "qwen25_14b": 16.0,
+  "qwen25_3b": 4.0,
+  "qwen25_7b": 0.0
 }

@@ -60,10 +60,10 @@ GPT-4.1-nano      & proprietary & 99.0\%  & 0.5\% \\
 o3-mini           & proprietary & 88.0\%  & 8.0\% \\
 DeepSeek-V3       & proprietary & 86.0\%  & 7.0\% \\
 GPT-4.1-mini      & proprietary & 85.0\%  & 12.0\% \\
-Gemini-2.5-Flash  & proprietary & 76.0\%  & 18.0\% \\
-GPT-3.5-Turbo     & proprietary & 59.5\%  & 21.5\% \\
-GPT-4o-mini       & proprietary & 40.0\%  & 24.0\% \\
-Gemini-2.0-Flash  & proprietary & 5.0\%   & 42.5\% \\
+Gemini-2.5-Flash  & proprietary & 76.0\%  & 16.0\% \\
+GPT-3.5-Turbo     & proprietary & 59.5\%  & 14.5\% \\
+GPT-4o-mini       & proprietary & 40.0\%  & 12.0\% \\
+Gemini-2.0-Flash  & proprietary & 5.0\%   & 37.5\% \\
 \midrule
 Qwen2.5-7B        & open-weight & 99.5\%  & --- \\
 Qwen2.5-3B        & open-weight & 70.0\%  & --- \\
@@ -141,14 +141,14 @@ Medical  & 559 & per model & train/eval \\
 Knowledge & 100 & per model & ablation (no injection) \\
 Retail (held-out) & 300 & 300 & cross-domain replication \\
 \midrule
-\multicolumn{4}{l}{\textbf{Models:} 9 proprietary + 3 open-weight (Qwen2.5
-3B/7B/14B).} \\
-\multicolumn{4}{l}{\textbf{Baseline traces:} 4{,}100. \textbf{P2 traces
-(all types):} 9{,}400.} \\
-\multicolumn{4}{l}{\textbf{Propagation analysis (semantic-wrong):} 1{,}950
-across 12 models.} \\
+\multicolumn{4}{l}{\textbf{Models:} 9 proprietary + 4 open-weight (Qwen2.5
+3B/7B/14B and Hermes-3-Llama-3.1-8B).} \\
+\multicolumn{4}{l}{\textbf{Baseline traces:} 4{,}550. \textbf{P2 traces
+(all types):} 10{,}200.} \\
+\multicolumn{4}{l}{\textbf{Propagation analysis (semantic-wrong):} 2{,}150
+across 13 models.} \\
 \multicolumn{4}{l}{\textbf{Human labels:} 100. \textbf{Released agent traces:}
-$>$13{,}000.} \\
+$>$14{,}000.} \\
 \bottomrule
 \end{tabular}
 \end{table}
