@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{xcolor}
+\providecommand{\citep}{\cite}
+\providecommand{\citet}{\cite}
+\lstset{basicstyle=\ttfamily\small, breaklines=true, frame=single,
+  backgroundcolor=\color{gray!10}}
+
+\title{Supplementary Material\\[0.4em]
+\large Evaluating Tool-Using Language Agents: Judge Reliability,
+Propagation Cascades, and Runtime Mitigation in AgentProp-Bench}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Code, Data, and Trace Availability}
+All code, data, agent traces, and human labels are public at
+\url{https://github.com/bhaskargurram-ai/agenthallu-bench}.
+The repository contains: \texttt{data/results/} (result CSVs and analysis
+JSONs, including per-open-model baseline/P2 and ensemble re-judgements),
+\texttt{data/tasks/} (2{,}000 task specifications), \texttt{experiments/}
+(runners), \texttt{analysis/} (statistics, merge, tool-call-rate scripts),
+\texttt{metrics/} (EPS scorer, cascade detector), \texttt{agent/} (ReAct agent,
+model router with the local vLLM backend, tool executor),
+\texttt{benchmark/} (task generator and four domain simulators),
+\texttt{interceptor/}, and \texttt{tests/}. The command
+\texttt{bash analysis/finalize\_openmodels.sh} regenerates every table and
+figure and recompiles the manuscript.
+
+\section{Open-Weight Model Serving and Tool-Call Adherence}
+Open-weight models were served locally with vLLM through an OpenAI-compatible
+endpoint and driven by the \emph{same} prompted-ReAct harness as the
+proprietary models (the injection acts on the parsed tool call, which is
+model-agnostic). Table~\ref{tab:toolcallS} reports the tool-call rate---the
+fraction of P2 semantic-wrong traces containing a parseable tool call---for
+every model evaluated. Only models that reliably emit tool calls yield
+measurable propagation; Mistral-7B-Instruct-v0.2 and Phi-3.5-mini did not and
+are therefore excluded from the propagation tables.
+
+\begin{table}[h]
+\centering
+\caption{Tool-call rate and fabricated-tool-use rate on P2 semantic-wrong
+traces. Fabricated tool use = no tool call emitted, yet the final answer
+asserts a completed tool-derived result.}
+\label{tab:toolcallS}
+\begin{tabular}{llrr}
+\toprule
+Model & Type & Tool-call rate & Fabricated \\
+\midrule
+GPT-4o            & proprietary & 100.0\% & 0.0\% \\
+GPT-4.1-nano      & proprietary & 99.0\%  & 0.5\% \\
+o3-mini           & proprietary & 88.0\%  & 8.0\% \\
+DeepSeek-V3       & proprietary & 86.0\%  & 7.0\% \\
+GPT-4.1-mini      & proprietary & 85.0\%  & 12.0\% \\
+Gemini-2.5-Flash  & proprietary & 76.0\%  & 18.0\% \\
+GPT-3.5-Turbo     & proprietary & 59.5\%  & 21.5\% \\
+GPT-4o-mini       & proprietary & 40.0\%  & 24.0\% \\
+Gemini-2.0-Flash  & proprietary & 5.0\%   & 42.5\% \\
+\midrule
+Qwen2.5-7B        & open-weight & 99.5\%  & --- \\
+Qwen2.5-3B        & open-weight & 70.0\%  & --- \\
+Qwen2.5-14B       & open-weight & 61.0\%  & --- \\
+Mistral-7B-v0.2   & open-weight & 21.5\%  & --- \\
+Phi-3.5-mini      & open-weight & 0.0\%   & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Interceptor Threshold Sweep}
+Table~\ref{tab:sweep} reports the 12-configuration sweep on the validation
+split ($n{=}40$ P2 rows). The reported $F_1{=}0.842$ is a sweep-internal
+optimum, not a held-out estimate.
+\input{tables/tableS1_sweep}
+
+\section{Self-Consistency Baseline ($k{=}3$)}
+Table~\ref{tab:selfconsistency} reports $k{=}3$ self-consistency voting on 30 tasks per
+condition; at $n{=}30$ this comparison is directional only.
+\input{tables/tableS2_selfconsistency}
+
+\section{Cross-Domain Replication: Retail}
+Table~\ref{tab:retail} reports baseline correctness and mean EPS on the 300
+held-out retail tasks.
+\input{tables/tableS3_retail}
+
+\section{Interceptor Layer Ablation}
+Table~\ref{tab:ablation} ablates the interceptor layers on GPT-4o-mini.
+\input{tables/tableS4_ablation}
+
+\section{Power Analysis}
+Table~\ref{tab:power} reports Cohen's $h$ and achieved power for each
+statistical claim.
+\input{tables/table8_power}
+
+\section{Per-Domain Propagation and Human Calibration}
+\begin{figure}[h]\centering
+  \includegraphics[width=0.8\textwidth]{figures/fig_domain_breakdown.png}
+  \caption{Per-domain $S_1$, $S_2$, $S_3$ rates under P2 semantic-wrong
+    injection (ensemble-judged).}
+\end{figure}
+\begin{figure}[h]\centering
+  \includegraphics[width=0.6\textwidth]{figures/fig_calibration.png}
+  \caption{Calibration of the ensemble judge against 100 human labels:
+    $P(\text{human=correct}\mid\text{ensemble=correct}){=}0.76$;
+    $P(\text{human=correct}\mid\text{ensemble=wrong}){=}0.25$.}
+\end{figure}
+
+\section{Ensemble Judge Prompt}
+The identical prompt used for all three LLM judges (GPT-4o, Gemini-2.5-Flash,
+GPT-4o-mini):
+\begin{lstlisting}
+You are an impartial judge evaluating whether an agent's final answer is correct.
+QUESTION: {query}
+REFERENCE ANSWER: {reference}
+AGENT ANSWER: {candidate}
+Respond with a single token: YES if the agent answer substantively matches the
+reference, NO otherwise. Accept minor wording differences, units expressed
+differently, or extra explanation as long as the core fact is correct.
+YOUR VERDICT (YES or NO):
+\end{lstlisting}
+
+\section{Dataset Statistics}
+\begin{table}[h]\centering
+\caption{Dataset and trace statistics. P2 counts are across all four injection
+types; the propagation analysis uses the semantic-wrong subset.}
+\begin{tabular}{lrrl}
+\toprule
+Domain & Tasks & Baseline traces & Role \\
+\midrule
+Calendar & 667 & per model & train/eval \\
+Weather  & 674 & per model & train/eval \\
+Medical  & 559 & per model & train/eval \\
+Knowledge & 100 & per model & ablation (no injection) \\
+Retail (held-out) & 300 & 300 & cross-domain replication \\
+\midrule
+\multicolumn{4}{l}{\textbf{Models:} 9 proprietary + 3 open-weight (Qwen2.5
+3B/7B/14B).} \\
+\multicolumn{4}{l}{\textbf{Baseline traces:} 4{,}100. \textbf{P2 traces
+(all types):} 9{,}400.} \\
+\multicolumn{4}{l}{\textbf{Propagation analysis (semantic-wrong):} 1{,}950
+across 12 models.} \\
+\multicolumn{4}{l}{\textbf{Human labels:} 100. \textbf{Released agent traces:}
+$>$13{,}000.} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

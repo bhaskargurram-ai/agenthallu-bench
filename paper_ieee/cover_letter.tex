@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{url}
+\begin{document}
+\thispagestyle{empty}
+
+\noindent Bhaskar Gurram\\
+Zasti Inc., Ashburn, VA 20147, USA\\
+gurrambhaskar.ai@gmail.com
+
+\vspace{1em}
+\noindent To the Editor-in-Chief and Associate Editors,\\
+\textit{IEEE Access}
+
+\vspace{1em}
+\noindent Dear Editors,
+
+\vspace{0.5em}
+I am pleased to submit the manuscript ``Evaluating Tool-Using Language Agents:
+Judge Reliability, Propagation Cascades, and Runtime Mitigation in
+AgentProp-Bench'' for consideration as a \textbf{Research Article} in
+\emph{IEEE Access}.
+
+Automated evaluation of tool-using large language model (LLM) agents is widely
+assumed to be reliable, yet this assumption is rarely validated against human
+annotation. This work quantifies that gap and its consequences. Our main
+findings, each backed by released code and data, are:
+
+\begin{itemize}
+  \item Substring-based judging---the de facto standard in agent
+  benchmarks---agrees with human annotation at only $\kappa = 0.049$
+  (chance level), whereas a validated three-LLM ensemble reaches
+  $\kappa = 0.432$.
+  \item Under validated evaluation, a parameter-level injection propagates to a
+  wrong final answer with human-calibrated probability $\approx 0.62$, and this
+  holds across nine proprietary and three open-weight (Qwen2.5 3B/7B/14B)
+  models run under an identical harness.
+  \item Models vary by more than an order of magnitude in how often they emit a
+  real tool call (5--100\%), and several \emph{fabricate} tool use---asserting
+  results they never obtained. This distinguishes genuine robustness from
+  tool-call avoidance and explains why a runtime interceptor helps one model
+  ($-23$ pp) but not another.
+\end{itemize}
+
+We believe the work fits \emph{IEEE Access} well: it is a technically complete,
+fully reproducible empirical study with direct implications for how the
+community evaluates and deploys LLM agents. All 2{,}000 tasks, $>$13{,}000
+agent traces, 100 human labels, analysis scripts, and agent source code are
+publicly released at \url{https://github.com/bhaskargurram-ai/agenthallu-bench};
+every numerical claim in the manuscript is traceable to a specific file.
+
+This manuscript is original, has not been published previously, and is not
+under consideration at any other venue. The author has no conflicts of interest
+to declare. Suggested keywords and manuscript type are provided in the
+submission.
+
+\vspace{0.5em}
+\noindent Thank you for your consideration.
+
+\vspace{1em}
+\noindent Sincerely,\\
+Bhaskar Gurram
+
+\end{document}
