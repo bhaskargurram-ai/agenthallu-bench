@@ -2,6 +2,7 @@
 \usepackage[preprint]{tmlr}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{textcomp}
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -1012,9 +1013,11 @@ reproducible agent evaluation research.
 \bibliography{refs}
 
 
+\clearpage
 \appendix
 \section{Figures}
-\begin{figure}[t]
+This appendix collects the four result figures referenced in the main text.
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.92\textwidth]{figures/fig_stage_reach.png}
   \caption{Per-model stage-reach rates under P2 semantic-wrong injection
@@ -1024,7 +1027,7 @@ reproducible agent evaluation research.
   \label{fig:stages}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\columnwidth]{figures/fig_rejection_vs_recovery.png}
   \caption{Rejection rate ($1{-}p_{S_1}$) vs.\ recovery rate
@@ -1034,7 +1037,7 @@ reproducible agent evaluation research.
   \label{fig:rejrec}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\columnwidth]{figures/fig_interceptor_effect.png}
   \caption{Interceptor effect under concurrent $n{=}600$ control.
@@ -1043,7 +1046,7 @@ reproducible agent evaluation research.
   \label{fig:interceptor}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\columnwidth]{figures/fig_judge_agreement.png}
   \caption{Cohen's $\kappa$ vs.\ 100 human labels for each judge method.
@@ -1067,13 +1070,19 @@ EPS, consistent with the original-domain results.
 
 
 \section{Ensemble--Human Confusion Matrix}
+Table~\ref{tab:confusion} gives the full cell counts behind the
+ensemble-versus-human agreement reported in Section~\ref{sec:results}.
 \input{tables/table3_confusion}
 
 \section{Dataset Breakdown}
+Table~\ref{tab:dataset} details the composition of \bench{} by domain and
+difficulty, with a truncated example query per domain.
 \input{tables/table1_dataset}
 
 \section{Comparison with Related Benchmarks}
-\begin{table}[h]
+Table~\ref{tab:diff} positions \bench{} against four closely related
+benchmarks on the evaluation dimensions this paper introduces.
+\begin{table}[H]
 \centering\small
 \caption{Comparison with related benchmarks.}
 \label{tab:diff}
