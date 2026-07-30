@@ -1,17 +1,41 @@
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "agenthallu-bench"
-version = "0.1.0"
-description = "A Unified Empirical Framework for Stage-Attributed Hallucination Detection in RAG-Based LLM Agents"
+name = "agentprop-bench"
+version = "1.0.0"
+description = "AgentProp-Bench: evaluating tool-using language agents for judge reliability, error propagation, tool-call fabrication, and runtime mitigation"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
-    {name = "AgentHallu-Bench Authors"},
+    {name = "Bhaskar Gurram"},
 ]
 readme = "README.md"
+dependencies = [
+    "openai>=1.30.0",
+    "google-generativeai",
+    "datasets>=2.19.0",
+    "huggingface_hub>=0.24.0",
+    "pandas>=2.0.0",
+    "numpy>=1.26.0",
+    "pydantic>=2.0.0",
+    "sqlalchemy>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+    "tenacity>=8.0.0",
+    "click>=8.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/bhaskargurram-ai/agenthallu-bench"
+Paper = "https://arxiv.org/abs/2604.16706"
+
+[project.scripts]
+agentprop = "agentprop.cli:main"
+
+[tool.setuptools]
+packages = ["agentprop", "agent", "injector", "interceptor", "metrics", "benchmark", "benchmark.domains", "experiments", "tracer", "analysis"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

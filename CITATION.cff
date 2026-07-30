@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: AgentProp-Bench
+message: "If you use this benchmark (tasks, traces, human labels, the interceptor, or the eval harness), please cite the paper."
+type: dataset
+authors:
+  - family-names: Gurram
+    given-names: Bhaskar
+    affiliation: Zasti Inc.
+repository-code: "https://github.com/bhaskargurram-ai/agenthallu-bench"
+url: "https://arxiv.org/abs/2604.16706"
+preferred-citation:
+  type: article
+  title: "Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench"
+  authors:
+    - family-names: Gurram
+      given-names: Bhaskar
+  year: 2026
+  journal: "arXiv preprint"
+  identifiers:
+    - type: other
+      value: "arXiv:2604.16706"

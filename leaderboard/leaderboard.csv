@@ -1,0 +1,14 @@
+model,kind,n,propagation_eps,reached_output_rate,fabrication_pct,tool_call_pct,acc_validated_judge,acc_substring_judge
+Qwen2.5-7B,open-weight,200,1.01,0.425,0.0,99.5,0.285,0.57
+GPT-4o,proprietary,50,0.96,0.38,0.0,100.0,0.26,0.62
+o3-mini,proprietary,50,0.9,0.46,8.0,88.0,0.3,0.54
+GPT-4.1-nano,proprietary,200,0.8,0.32,0.5,99.0,0.155,0.675
+Qwen2.5-3B,open-weight,200,0.635,0.23,4.0,70.0,0.175,0.675
+GPT-4o-mini,proprietary,200,0.625,0.23,12.0,40.0,0.29,0.49
+GPT-4.1-mini,proprietary,200,0.61,0.29,12.0,85.0,0.345,0.7
+DeepSeek-V3,proprietary,200,0.59,0.27,7.0,86.0,0.375,0.705
+Gemini-2.5-Flash,proprietary,50,0.56,0.3,16.0,76.0,0.24,0.64
+Qwen2.5-14B,open-weight,200,0.52,0.25,16.0,61.0,0.375,0.705
+GPT-3.5-turbo,proprietary,200,0.47,0.215,14.5,59.5,0.325,0.675
+Hermes-3-Llama-3.1-8B,open-weight,200,0.32,0.125,34.5,,0.38,0.715
+Gemini-2.0-Flash,proprietary,200,0.06,0.05,37.5,5.0,0.33,0.61

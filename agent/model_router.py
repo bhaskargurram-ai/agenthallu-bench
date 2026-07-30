@@ -181,7 +181,7 @@ class ModelRouter:
             temperature=kwargs.get("temperature", 0.0),
             extra_headers={
                 "HTTP-Referer": "https://github.com/agenthallu-bench",
-                "X-Title": "AgentHallu-Bench Research",
+                "X-Title": "AgentProp-Bench Research",
             },
         )
         latency_ms = (time.time() - start) * 1000

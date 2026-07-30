@@ -1,0 +1,298 @@
+\begin{thebibliography}{32}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alaofi et~al.(2024)Alaofi, Thomas, Scholer, and
+  Sanderson]{alaofi2024fooled}
+Marwah Alaofi, Paul Thomas, Falk Scholer, and Mark Sanderson.
+\newblock {LLMs} can be fooled into labelling a document as relevant.
+\newblock In \emph{Proceedings of the 3rd International ACM SIGIR Conference on
+  Information Retrieval in the Asia Pacific (SIGIR-AP)}, 2024.
+\newblock URL \url{https://dl.acm.org/doi/10.1145/3673791.3698410}.
+
+\bibitem[Balog et~al.(2025)Balog, Metzler, and Qin]{balog2025rankers}
+Krisztian Balog, Donald Metzler, and Zhen Qin.
+\newblock Rankers, judges, and assistants: Towards understanding the interplay
+  of {LLMs} in information retrieval evaluation.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.19092}.
+\newblock arXiv:2503.19092.
+
+\bibitem[Barres et~al.(2025)Barres, Dong, Ray, Si, and
+  Narasimhan]{barres2025tau2}
+Victor Barres, Hao Dong, Shubham Ray, Xin Si, and Karthik Narasimhan.
+\newblock $\tau^2$-bench: Evaluating conversational agents in a dual-control
+  environment.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.07982}.
+\newblock arXiv:2506.07982.
+
+\bibitem[Bavaresco et~al.(2024)Bavaresco, Testoni, Poesio, Paun, Uma,
+  Fornaciari, Hovy, Plank, and Bernardi]{bavaresco2024llmsjudges}
+Anna Bavaresco, Alberto Testoni, Massimo Poesio, Silviu Paun, Alexandra Uma,
+  Tommaso Fornaciari, Dirk Hovy, Barbara Plank, and Raffaella Bernardi.
+\newblock {LLMs} instead of human judges? a large scale empirical study across
+  20 {NLP} evaluation tasks.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.18403}.
+\newblock arXiv:2406.18403.
+
+\bibitem[Cohen(1960)]{cohen1960kappa}
+Jacob Cohen.
+\newblock A coefficient of agreement for nominal scales.
+\newblock \emph{Educational and Psychological Measurement}, 20\penalty0
+  (1):\penalty0 37--46, 1960.
+\newblock \doi{10.1177/001316446002000104}.
+
+\bibitem[Es et~al.(2024)Es, James, Espinosa-Anke, and Schockaert]{es2024ragas}
+Shahul Es, Jithin James, Luis Espinosa-Anke, and Steven Schockaert.
+\newblock {RAGAS}: Automated evaluation of retrieval augmented generation.
+\newblock In \emph{Proceedings of the 18th Conference of the European Chapter
+  of the Association for Computational Linguistics: System Demonstrations
+  (EACL)}, 2024.
+\newblock URL \url{https://aclanthology.org/2024.eacl-demo.16/}.
+\newblock arXiv:2309.15217.
+
+\bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and
+  Gal]{farquhar2024semantic}
+Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, and Yarin Gal.
+\newblock Semantic entropy for detecting confabulations in large language
+  models.
+\newblock \emph{Nature}, 2024.
+\newblock \doi{10.1038/s41586-024-07421-0}.
+\newblock URL \url{https://www.nature.com/articles/s41586-024-07421-0}.
+
+\bibitem[Fu et~al.(2025)]{fu2025multilingual}
+Xiang Fu et~al.
+\newblock How reliable is multilingual {LLM}-as-a-judge?
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP 2025}, 2025.
+\newblock URL \url{https://aclanthology.org/2025.findings-emnlp.587/}.
+\newblock arXiv:2505.12434.
+
+\bibitem[Gu et~al.(2024)Gu, Jiang, Shi, Tan, Zhai, Xu, Li, Shen, Ma, Liu, Wang,
+  Zhang, Wang, Gao, Ni, and Guo]{gu2024surveyjudge}
+Jiawei Gu, Xuhui Jiang, Zhichao Shi, Hexiang Tan, Xuehao Zhai, Chengjin Xu, Wei
+  Li, Yinghan Shen, Shengjie Ma, Honghao Liu, Saizhuo Wang, Kun Zhang, Yuanzhuo
+  Wang, Wen Gao, Lionel Ni, and Jian Guo.
+\newblock A survey on {LLM}-as-a-judge.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2411.15594}.
+\newblock arXiv:2411.15594.
+
+\bibitem[Huang et~al.(2024)Huang, Yu, Ma, Zhong, Feng, Wang, Chen, Peng, Feng,
+  Qin, and Liu]{huang2024hallucination}
+Lei Huang, Weijiang Yu, Weitao Ma, Weihong Zhong, Zhangyin Feng, Haotian Wang,
+  Qianglong Chen, Weihua Peng, Xiaocheng Feng, Bing Qin, and Ting Liu.
+\newblock A survey on hallucination in large language models: Principles,
+  taxonomy, challenges, and open questions.
+\newblock \emph{ACM Transactions on Information Systems}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2311.05232}.
+\newblock arXiv:2311.05232.
+
+\bibitem[Landis \& Koch(1977)Landis and Koch]{landis1977kappa}
+J.~Richard Landis and Gary~G. Koch.
+\newblock The measurement of observer agreement for categorical data.
+\newblock \emph{Biometrics}, 33\penalty0 (1):\penalty0 159--174, 1977.
+\newblock \doi{10.2307/2529310}.
+
+\bibitem[Lin et~al.(2025)]{lin2025agenthallusurvey}
+Xiaotian Lin et~al.
+\newblock {LLM}-based agents suffer from hallucinations: A survey of taxonomy,
+  methods, and directions.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2509.18970}.
+\newblock arXiv:2509.18970.
+
+\bibitem[Liu et~al.(2024)Liu, Yu, Zhang, Xu, Lei, Lai, Gu, Ding, Men, Yang,
+  Zhang, Deng, Zeng, Du, Zhang, Shen, Zhang, Su, Sun, Huang, Dong, and
+  Tang]{liu2024agentbench}
+Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu~Gu,
+  Hangliang Ding, Kaiwen Men, Kejuan Yang, Shudan Zhang, Xiang Deng, Aohan
+  Zeng, Zhengxiao Du, Chenhui Zhang, Sheng Shen, Tianjun Zhang, Yu~Su, Huan
+  Sun, Minlie Huang, Yuxiao Dong, and Jie Tang.
+\newblock {AgentBench}: Evaluating {LLMs} as agents.
+\newblock In \emph{Proceedings of the Twelfth International Conference on
+  Learning Representations (ICLR)}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2308.03688}.
+\newblock arXiv:2308.03688.
+
+\bibitem[Liu et~al.(2026)Liu, Yang, Li, Li, and He]{liu2026agenthallu}
+Xiao Liu, Xinyue Yang, Zhanhui Li, Peng Li, and Ruifeng He.
+\newblock {AgentHallu}: Benchmarking automated hallucination attribution of
+  {LLM}-based agents.
+\newblock \emph{arXiv preprint}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2601.06818}.
+\newblock arXiv:2601.06818.
+
+\bibitem[Manakul et~al.(2023)Manakul, Liusie, and
+  Gales]{manakul2023selfcheckgpt}
+Potsawee Manakul, Adian Liusie, and Mark J.~F. Gales.
+\newblock {SelfCheckGPT}: Zero-resource black-box hallucination detection for
+  generative large language models.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2303.08896}.
+\newblock arXiv:2303.08896.
+
+\bibitem[{MCPAgentBench Team}(2026)]{mcpagentbench2026}
+{MCPAgentBench Team}.
+\newblock {MCPAgentBench}: A real-world task benchmark for evaluating {LLM}
+  agent {MCP} tool use.
+\newblock \emph{arXiv preprint}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2512.24565}.
+\newblock arXiv:2512.24565.
+
+\bibitem[Niu et~al.(2024)Niu, Wu, Zhu, Xu, Shum, Zhong, Song, and
+  Zhang]{niu2024ragtruth}
+Cheng Niu, Yuanhao Wu, Juno Zhu, Siliang Xu, KaShun Shum, Randy Zhong, Juntong
+  Song, and Tong Zhang.
+\newblock {RAGTruth}: A hallucination corpus for developing trustworthy
+  retrieval-augmented language models.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.00396}.
+\newblock arXiv:2401.00396.
+
+\bibitem[Rahmani et~al.(2024)Rahmani, Craswell, Yilmaz, Mitra, and
+  Campos]{rahmani2024synthetic}
+Hossein~A. Rahmani, Nick Craswell, Emine Yilmaz, Bhaskar Mitra, and Daniel
+  Campos.
+\newblock Synthetic test collections for retrieval evaluation.
+\newblock In \emph{Proceedings of the 47th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval (SIGIR)}, 2024.
+\newblock \doi{10.1145/3626772.3657942}.
+\newblock URL \url{https://dl.acm.org/doi/10.1145/3626772.3657942}.
+
+\bibitem[Salemi \& Zamani(2024)Salemi and Zamani]{salemi2024retrieval}
+Alireza Salemi and Hamed Zamani.
+\newblock Evaluating retrieval quality in retrieval-augmented generation.
+\newblock In \emph{Proceedings of the 47th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval (SIGIR)}, 2024.
+\newblock \doi{10.1145/3626772.3657957}.
+\newblock URL \url{https://dl.acm.org/doi/10.1145/3626772.3657957}.
+
+\bibitem[Schroeder \& Wood-Doughty(2024)Schroeder and
+  Wood-Doughty]{schroeder2024trust}
+Kayla Schroeder and Zach Wood-Doughty.
+\newblock Can you trust {LLM} judgments? reliability of {LLM}-as-a-judge.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2412.12509}.
+\newblock arXiv:2412.12509.
+
+\bibitem[Soboroff(2024)]{soboroff2024dont}
+Ian Soboroff.
+\newblock Don't use {LLMs} to make relevance judgments.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2409.15133}.
+\newblock arXiv:2409.15133.
+
+\bibitem[Thakur et~al.(2025)Thakur, Choudhary, Srinik, and
+  Hupkes]{thakur2025judging}
+Aman~Singh Thakur, Kartik Choudhary, Venkat Srinik, and Dieuwke Hupkes.
+\newblock Judging the judges: Evaluating alignment and vulnerabilities in
+  {LLMs}-as-judges.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2025}, 2025.
+\newblock URL \url{https://aclanthology.org/2025.gem-1.33/}.
+\newblock arXiv:2406.12624.
+
+\bibitem[Thomas et~al.(2024)Thomas, Spielman, Craswell, and
+  Mitra]{thomas2024searcher}
+Paul Thomas, Seth Spielman, Nick Craswell, and Bhaskar Mitra.
+\newblock Large language models can accurately predict searcher preferences.
+\newblock In \emph{Proceedings of the 47th International ACM SIGIR Conference
+  on Research and Development in Information Retrieval (SIGIR)}, 2024.
+\newblock \doi{10.1145/3626772.3657707}.
+\newblock URL \url{https://dl.acm.org/doi/10.1145/3626772.3657707}.
+
+\bibitem[Wang et~al.(2026)]{wang2026agentspec}
+Haoyu Wang et~al.
+\newblock {AgentSpec}: Customizable runtime enforcement for safe and reliable
+  {LLM} agents.
+\newblock In \emph{Proceedings of the 48th International Conference on Software
+  Engineering (ICSE)}, 2026.
+\newblock URL \url{https://arxiv.org/html/2503.18666v1}.
+\newblock arXiv:2503.18666.
+
+\bibitem[Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou]{wang2023selfconsistency}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc~V. Le, Ed~H. Chi, Sharan Narang,
+  Aakanksha Chowdhery, and Denny Zhou.
+\newblock Self-consistency improves chain of thought reasoning in language
+  models.
+\newblock In \emph{Proceedings of the Eleventh International Conference on
+  Learning Representations (ICLR)}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2203.11171}.
+\newblock arXiv:2203.11171.
+
+\bibitem[Xie et~al.(2025)Xie, Li, Wang, Yang, Lv, and Yu]{xie2025agentir}
+Xiao Xie, Xinle Li, Hanyu Wang, Zhiyu Yang, Qin Lv, and Li~Yu.
+\newblock A survey of large language model empowered agents for recommendation
+  and search: Towards next-generation information retrieval.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.05659}.
+\newblock arXiv:2503.05659.
+
+\bibitem[Yan et~al.(2025)Yan, Mao, Ji, Zhang, Patil, Stoica, and
+  Gonzalez]{yan2025bfcl}
+Fanjia Yan, Huanzhi Mao, Charlie Cheng-Jie Ji, Tianjun Zhang, Shishir~G. Patil,
+  Ion Stoica, and Joseph~E. Gonzalez.
+\newblock The {Berkeley} function calling leaderboard ({BFCL}): From tool use
+  to agentic evaluation of large language models.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}, 2025.
+\newblock \doi{10.48550/arXiv.2502.19557}.
+\newblock URL \url{https://openreview.net/forum?id=2GmDdhBdDk}.
+
+\bibitem[Yao et~al.(2024)Yao, Shinn, Razavi, and Narasimhan]{yao2024tau}
+Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan.
+\newblock $\tau$-bench: A benchmark for tool-agent-user interaction in
+  real-world domains.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.12045}.
+\newblock arXiv:2406.12045.
+
+\bibitem[Yehudai et~al.(2025)Yehudai, Eden, Li, Uziel, Zhao, Bar-Haim, Cohan,
+  and Shmueli-Scheuer]{yehudai2025surveyeval}
+Asaf Yehudai, Lilach Eden, Alon Li, Guy Uziel, Yilun Zhao, Roy Bar-Haim, Arman
+  Cohan, and Michal Shmueli-Scheuer.
+\newblock Survey on evaluation of {LLM}-based agents.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.16416}.
+\newblock arXiv:2503.16416.
+
+\bibitem[Zhang et~al.(2024)Zhang, Bo, Ma, Li, Chen, Dai, Zhu, Dong, and
+  Wen]{zhu2024llmir}
+Zechen Zhang, Xiaoguang Bo, Chen Ma, Rui Li, Xu~Chen, Quanyu Dai, Jian Zhu,
+  Zhenhua Dong, and Ji-Rong Wen.
+\newblock Large language models for information retrieval: A survey.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2308.07107}.
+\newblock arXiv:2308.07107.
+
+\bibitem[Zhang et~al.(2025)Zhang, Bo, Ma, Li, Chen, Dai, Zhu, Dong, and
+  Wen]{zhang2025memory}
+Zeyu Zhang, Xiaohe Bo, Chen Ma, Rui Li, Xu~Chen, Quanyu Dai, Jieming Zhu,
+  Zhenhua Dong, and Ji-Rong Wen.
+\newblock A survey on the memory mechanism of large language model-based
+  agents.
+\newblock \emph{ACM Transactions on Information Systems}, 2025.
+\newblock \doi{10.1145/3748302}.
+\newblock URL \url{https://dl.acm.org/doi/10.1145/3748302}.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li,
+  Li, Xing, Zhang, Gonzalez, and Stoica]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao
+  Zhuang, Zi~Lin, Zhuohan Li, Dacheng Li, Eric~P. Xing, Hao Zhang, Joseph~E.
+  Gonzalez, and Ion Stoica.
+\newblock Judging {LLM}-as-a-judge with {MT-Bench} and {Chatbot Arena}.
+\newblock In \emph{Advances in Neural Information Processing Systems 36
+  (NeurIPS)}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.05685}.
+\newblock arXiv:2306.05685.
+
+\end{thebibliography}
