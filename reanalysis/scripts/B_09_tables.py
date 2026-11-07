@@ -1,6 +1,7 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Assemble results.json and LaTeX booktabs tables from the B_0x outputs."""
 import sys
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 
 L = lambda n: json.load(open(os.path.join(OUT, n)))
@@ -218,7 +219,7 @@ results = {
     "round1_calibration_factors": r1f,
     "api_spend_usd": {"B03_rejudge": b4["total_cost_usd"], "B08_strong_judge": b8["strong_judge_cost_usd"],
                       "total": b4["total_cost_usd"] + b8["strong_judge_cost_usd"]},
-    "provenance": {"scripts": "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts/B_*.py",
+    "provenance": {"scripts": _REPO + "/reanalysis/scripts/B_*.py",
                    "bootstrap": f"percentile, B={N_BOOT}, seed={SEED}, resampling traces"},
 }
 p2 = load_p2()

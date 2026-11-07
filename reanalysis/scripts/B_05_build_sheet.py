@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Critique 5: build a blind, stratified sheet for an additional human-labeling round.
 
 Strata (sizes fixed a priori):
@@ -11,7 +12,7 @@ No judge verdicts are written to the annotator sheet; they live in the private k
 import random
 import sys
 from collections import defaultdict
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 
 OPEN = ["qwen25_3b", "qwen25_7b", "qwen25_14b", "hermes3_llama8b"]

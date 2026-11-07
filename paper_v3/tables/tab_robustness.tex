@@ -1,0 +1,21 @@
+% Selected rows of V_validator/tab_V4_robustness.tex (all rows in the released file)
+\begin{table}[!tbp]
+\centering
+\caption{Sensitivity of the validator to rubric and normalisation choices, one switch at a time. Accuracy pooled over verifiable baseline and P2 traces (\%); flips: share of CORRECT labels that change; $\tau$: Kendall rank correlation of the per-model baseline ranking with the default. Twenty switches were tested; the rows shown include every switch that changed any label by 1\% or more.}
+\label{tab:robustness}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Variant & Baseline & P2 & Flips & $\tau$ \\
+\midrule
+Default & 46.8 & 39.0 & 0.0 & 1.00 \\
+No time normalisation & 44.1 & 37.6 & 1.6 & 1.00 \\
+Temperature tolerance 0 & 45.0 & 38.0 & 1.1 & 1.00 \\
+No derived aggregates & 45.0 & 36.8 & 1.9 & 1.00 \\
+Recall $\geq 0.5$ instead of 1 & 49.3 & 41.1 & 2.0 & 1.00 \\
+Precision ignored & 47.3 & 39.3 & 0.4 & 1.00 \\
+\midrule
+Gold = raw task-file sequence & 27.5 & 23.4 & 16.4 & 0.90 \\
+\bottomrule
+\end{tabular}
+\end{table}

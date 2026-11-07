@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """V_traces.py -- read-only loaders that turn every available AgentProp trace into one record format.
 
 Record: {session_id, task_id, model, source, condition, final_answer, calls:[call_record], mode, n_exec_hint}
@@ -21,11 +22,11 @@ import V_core as V  # noqa: E402
 import C_tools as SIM  # noqa: E402
 
 csv.field_size_limit(sys.maxsize)
-ROOT = "/Users/challagullayoshitha/Desktop/LifeNavigator/agenthallu_bench/data"
+ROOT = _REPO + "/data"
 TRACES = f"{ROOT}/traces"
 RESULTS = f"{ROOT}/results"
 TASKS = f"{ROOT}/tasks"
-REV = "/Users/challagullayoshitha/Downloads/agentprop_revision"
+REV = _REPO + "/reanalysis"
 
 FULL_DBS = {  # db -> source label
     "baseline_day6": "baseline", "p2_day6": "p2", "interceptor_day8": "interceptor",

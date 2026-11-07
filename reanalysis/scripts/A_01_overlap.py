@@ -1,4 +1,5 @@
-import sys; sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
+import sys; sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from A_common import *
 from collections import Counter, defaultdict
 p2 = read("p2_all_rejudged.csv"); bl = read("baseline_all_rejudged.csv")

@@ -1,9 +1,10 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Shared loaders for A_* analyses (AgentProp-Bench revision, propagation stats)."""
 import csv, os, sys
 csv.field_size_limit(sys.maxsize)
-REPO = "/Users/challagullayoshitha/Downloads/agentprop_repo/src"
+REPO = _REPO + ""
 RES = os.path.join(REPO, "data", "results")
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/A_propagation"
+OUT = _REPO + "/reanalysis/A_propagation"
 P2_FILES = ["p2_all_rejudged.csv", "p2_qwen25_3b_rejudged.csv", "p2_qwen25_7b_rejudged.csv",
             "p2_qwen25_14b_rejudged.csv", "p2_hermes3_llama8b_rejudged.csv"]
 BL_FILES = ["baseline_all_rejudged.csv", "baseline_qwen25_3b_rejudged.csv", "baseline_qwen25_7b_rejudged.csv",

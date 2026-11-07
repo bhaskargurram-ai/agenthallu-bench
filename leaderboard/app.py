@@ -22,9 +22,10 @@ Tool-using LLM agents scored on what answer-only benchmarks miss:
   propagates toward a wrong final answer. Higher = less robust.
 - **Fabrication %** — traces where the model emits a tool *result* it never obtained.
 - **Acc (validated judge)** vs **Acc (substring judge)** — the same runs scored by a
-  validated 3-LLM ensemble vs. naive substring matching. The gap is why judge
-  choice, not the model, often decides the leaderboard (substring κ=0.049 vs
-  ensemble κ=0.432 against 100 human labels).
+  3-LLM ensemble vs. naive substring matching. Both compare answers with
+  descriptive references; the v3 paper replaces them with a gold-grounded
+  structured validator (see `reanalysis/` in the code repository), under which
+  rankings change substantially.
 
 📄 [Paper (arXiv:2604.16706)](https://arxiv.org/abs/2604.16706) ·
 💻 [Code](https://github.com/bhaskargurram-ai/agenthallu-bench) ·

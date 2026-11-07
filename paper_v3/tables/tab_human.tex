@@ -1,0 +1,24 @@
+% Sources: V_validator/human_agreement.json, adjudication_summary.json; B_judge/results.json (B01, B02, B04)
+\begin{table}[!tbp]
+\centering
+\caption{Agreement with human labels on the 100 annotated P2 traces. Humans and LLM judges saw only the descriptive reference; the validator uses the gold observations. Cohen's $\kappa$ against the three-annotator majority with 95\% bootstrap CIs ($B=10{,}000$). The validator is compared on the 85 verifiable traces; the 18 disagreements were adjudicated against the replayed gold observations.}
+\label{tab:human}
+\small
+\begin{tabular}{@{}llc@{}}
+\toprule
+Instrument & $n$ & $\kappa$ vs majority [95\% CI] \\
+\midrule
+Three annotators, Fleiss' $\kappa$ & 100 & 0.877 [0.79, 0.95] \\
+Substring heuristic & 100 & $-0.011$ [$-0.19$, 0.17] \\
+GPT-4o judge & 100 & 0.274 [0.09, 0.46] \\
+Gemini-2.5-Flash judge & 100 & 0.372 [0.22, 0.54] \\
+GPT-4o-mini judge & 100 & 0.536 [0.36, 0.69] \\
+Three-LLM ensemble (majority) & 100 & 0.413 [0.24, 0.58] \\
+LLM judges, 17 prompt/judge configurations & 100 & 0.21 to 0.72 (range) \\
+Structured validator & 85 & 0.53 [0.32, 0.70] \\
+\midrule
+\multicolumn{3}{@{}l}{Validator/majority confusion: YES/YES 19, YES/NO 5, NO/YES 13, NO/NO 48} \\
+\multicolumn{3}{@{}l}{Adjudication of the 18 disagreements: validator supported 16, humans 0, ambiguous 2} \\
+\bottomrule
+\end{tabular}
+\end{table}

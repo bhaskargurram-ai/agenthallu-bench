@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Reviewer 1, point 1: causal (paired) effect of semantic_wrong injection on final-answer error.
 
 Pairing: every P2 semantic_wrong trace (model m, task t) is matched to THE baseline trace of the same
@@ -24,7 +25,7 @@ Strata (all defined from the P2 trace; see REPORT.md Sec. 3 for derivations from
 Judges: ensemble_correct (primary), heuristic_correct, gpt4o_mini_verdict (+ gpt4o, gemini_25_flash).
 """
 import sys, json, re
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from datetime import datetime, timedelta
 from collections import defaultdict
 import numpy as np

@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Critique 4: self-preference (own-family leniency) of LLM judges.
 
 (A) Human-anchored, n=100: for each judge, bias = judge YES-rate - human(majority3) YES-rate,
@@ -10,7 +11,7 @@
 """
 import sys
 from collections import defaultdict
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 
 ann = load_annotators()

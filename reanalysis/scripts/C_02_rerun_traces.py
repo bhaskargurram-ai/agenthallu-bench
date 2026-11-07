@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """C_02: Re-run GPT-4o-mini on the interceptor task set WITHOUT any interceptor, logging FULL traces
 (every thought, action, params, validation errors, tool result, final answer, per-call latency), so the
 Interceptor's three layers can be replayed offline at any threshold.
@@ -19,18 +20,17 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import C_tools as T
 
 csv.field_size_limit(sys.maxsize)
-REPO = "/Users/challagullayoshitha/Downloads/agentprop_repo/src"
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/C_interceptor/traces"
+REPO = _REPO + ""
+OUT = _REPO + "/reanalysis/C_interceptor/traces"
 PRICE_IN, PRICE_OUT = 0.15 / 1e6, 0.60 / 1e6
 BUDGET = 3.0
 
 
 def load_key():
-    with open("/Users/challagullayoshitha/Downloads/caliche-landman-ai/.env") as f:
-        for line in f:
-            if line.startswith("OPENAI_API_KEY="):
-                return line.split("=", 1)[1].strip().strip('"').strip("'")
-    raise SystemExit("no key")
+    key = _os.environ.get("OPENAI_API_KEY")
+    if not key:
+        raise SystemExit("OPENAI_API_KEY not set")
+    return key
 
 
 def heuristic_correct(gt, final_answer):

@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """W_03: the runtime-monitor experiment re-scored with the structured validator (proprietary models with traces).
 Pairs the interceptor arm (early_interceptor) with the task-matched control arm (no_interceptor) on verifiable tasks
 (first trace per task, infra errors excluded). Abstention = interceptor-arm outcome 'refused'.
@@ -8,7 +9,7 @@ Run: python3 -I W_03_monitor_validator.py  -> ../W_writeup/W03_monitor_validator
 import csv, sys, json
 from scipy.stats import hypergeom
 csv.field_size_limit(sys.maxsize)
-ROOT = "/Users/challagullayoshitha/Downloads/agentprop_revision"
+ROOT = _REPO + "/reanalysis"
 R = list(csv.DictReader(open(ROOT + "/V_validator/labels_all.csv")))
 ok = lambda r: r["verifiable"].lower() in ("true", "1") and r["outcome"] != "infra_error"
 out = {}

@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Critique 3: re-judge the 100 calibration traces with alternative prompts and judges.
 
 Inputs to every judge are identical to the original ensemble run
@@ -16,7 +17,7 @@ import sys
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 from B_openai_key import get_key
 

@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """C2_07: rescore all five interceptor models with V_validator/labels_all.csv (if present).
 Joins on session_id (both arms carry unique session ids). Label column auto-detected; a row's label = True means CORRECT.
 Abstained interceptor-arm rows are never relabelled (abstention != hallucination). NOT yet run: labels file absent at analysis time."""
@@ -5,7 +6,7 @@ import csv, sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from C2_common import *  # noqa
 from C2_01_open_interceptor import analyse, arms
-LAB = "/Users/challagullayoshitha/Downloads/agentprop_revision/V_validator/labels_all.csv"
+LAB = _REPO + "/reanalysis/V_validator/labels_all.csv"
 if not os.path.exists(LAB):
     sys.exit("labels_all.csv not found")
 rows = list(csv.DictReader(open(LAB, newline="", encoding="utf-8")))

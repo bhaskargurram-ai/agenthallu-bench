@@ -1,0 +1,877 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{48}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Yao et~al.}{2023}]{yao2023react}
+\begin{bchapter}
+\bauthor{\bsnm{Yao}, \binits{S.}},
+\bauthor{\bsnm{Zhao}, \binits{J.}},
+\bauthor{\bsnm{Yu}, \binits{D.}},
+\bauthor{\bsnm{Du}, \binits{N.}},
+\bauthor{\bsnm{Shafran}, \binits{I.}},
+\bauthor{\bsnm{Narasimhan}, \binits{K.}},
+\bauthor{\bsnm{Cao}, \binits{Y.}}:
+\bctitle{{ReAct: Synergizing Reasoning and Acting in Language Models}}.
+In: \bbtitle{International Conference on Learning Representations (ICLR)}
+(\byear{2023})
+\end{bchapter}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Schick et~al.}{2023}]{schick2023toolformer}
+\begin{bchapter}
+\bauthor{\bsnm{Schick}, \binits{T.}},
+\bauthor{\bsnm{Dwivedi-Yu}, \binits{J.}},
+\bauthor{\bsnm{Dess{\`i}}, \binits{R.}},
+\bauthor{\bsnm{Raileanu}, \binits{R.}},
+\bauthor{\bsnm{Lomeli}, \binits{M.}},
+\bauthor{\bsnm{Zettlemoyer}, \binits{L.}},
+\bauthor{\bsnm{Cancedda}, \binits{N.}},
+\bauthor{\bsnm{Scialom}, \binits{T.}}:
+\bctitle{{Toolformer: Language Models Can Teach Themselves to Use Tools}}.
+In: \bbtitle{Advances in Neural Information Processing Systems 36 (NeurIPS)}
+(\byear{2023})
+\end{bchapter}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Zheng et~al.}{2023}]{zheng2023judging}
+\begin{bchapter}
+\bauthor{\bsnm{Zheng}, \binits{L.}},
+\bauthor{\bsnm{Chiang}, \binits{W.-L.}},
+\bauthor{\bsnm{Sheng}, \binits{Y.}},
+\bauthor{\bsnm{Zhuang}, \binits{S.}},
+\bauthor{\bsnm{Wu}, \binits{Z.}},
+\bauthor{\bsnm{Zhuang}, \binits{Y.}},
+\bauthor{\bsnm{Lin}, \binits{Z.}},
+\bauthor{\bsnm{Li}, \binits{Z.}},
+\bauthor{\bsnm{Li}, \binits{D.}},
+\bauthor{\bsnm{Xing}, \binits{E.P.}},
+\bauthor{\bsnm{Zhang}, \binits{H.}},
+\bauthor{\bsnm{Gonzalez}, \binits{J.E.}},
+\bauthor{\bsnm{Stoica}, \binits{I.}}:
+\bctitle{{Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena}}.
+In: \bbtitle{Advances in Neural Information Processing Systems 36 (NeurIPS),
+  Datasets and Benchmarks Track}
+(\byear{2023})
+\end{bchapter}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Gu et~al.}{2024}]{gu2024surveyjudge}
+\begin{botherref}
+\oauthor{\bsnm{Gu}, \binits{J.}},
+\oauthor{\bsnm{Jiang}, \binits{X.}},
+\oauthor{\bsnm{Shi}, \binits{Z.}},
+\oauthor{\bsnm{Tan}, \binits{H.}},
+\oauthor{\bsnm{Zhai}, \binits{X.}},
+\oauthor{\bsnm{Xu}, \binits{C.}},
+\oauthor{\bsnm{Li}, \binits{W.}},
+\oauthor{\bsnm{Shen}, \binits{Y.}},
+\oauthor{\bsnm{Ma}, \binits{S.}},
+\oauthor{\bsnm{Liu}, \binits{H.}}, et al.:
+{A Survey on LLM-as-a-Judge}.
+arXiv preprint arXiv:2411.15594
+(2024)
+\end{botherref}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Liu et~al.}{2024}]{liu2024agentbench}
+\begin{bchapter}
+\bauthor{\bsnm{Liu}, \binits{X.}},
+\bauthor{\bsnm{Yu}, \binits{H.}},
+\bauthor{\bsnm{Zhang}, \binits{H.}},
+\bauthor{\bsnm{Xu}, \binits{Y.}},
+\bauthor{\bsnm{Lei}, \binits{X.}},
+\bauthor{\bsnm{Lai}, \binits{H.}},
+\bauthor{\bsnm{Gu}, \binits{Y.}},
+\bauthor{\bsnm{Ding}, \binits{H.}},
+\bauthor{\bsnm{Men}, \binits{K.}},
+\bauthor{\bsnm{Yang}, \binits{K.}}, \betal:
+\bctitle{{AgentBench: Evaluating LLMs as Agents}}.
+In: \bbtitle{International Conference on Learning Representations (ICLR)}
+(\byear{2024})
+\end{bchapter}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Yao et~al.}{2025}]{yao2025taubench}
+\begin{bchapter}
+\bauthor{\bsnm{Yao}, \binits{S.}},
+\bauthor{\bsnm{Shinn}, \binits{N.}},
+\bauthor{\bsnm{Razavi}, \binits{P.}},
+\bauthor{\bsnm{Narasimhan}, \binits{K.}}:
+\bctitle{{$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in
+  Real-World Domains}}.
+In: \bbtitle{International Conference on Learning Representations (ICLR)}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Barres et~al.}{2025}]{barres2025tau2}
+\begin{botherref}
+\oauthor{\bsnm{Barres}, \binits{V.}},
+\oauthor{\bsnm{Dong}, \binits{H.}},
+\oauthor{\bsnm{Ray}, \binits{S.}},
+\oauthor{\bsnm{Si}, \binits{X.}},
+\oauthor{\bsnm{Narasimhan}, \binits{K.}}:
+{$\tau^2$-Bench: Evaluating Conversational Agents in a Dual-Control
+  Environment}.
+arXiv preprint arXiv:2506.07982
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Patil et~al.}{2025}]{patil2025bfcl}
+\begin{bchapter}
+\bauthor{\bsnm{Patil}, \binits{S.G.}},
+\bauthor{\bsnm{Mao}, \binits{H.}},
+\bauthor{\bsnm{Yan}, \binits{F.}},
+\bauthor{\bsnm{Ji}, \binits{C.C.-J.}},
+\bauthor{\bsnm{Suresh}, \binits{V.}},
+\bauthor{\bsnm{Stoica}, \binits{I.}},
+\bauthor{\bsnm{Gonzalez}, \binits{J.E.}}:
+\bctitle{{The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to
+  Agentic Evaluation of Large Language Models}}.
+In: \bbtitle{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{267},
+pp. \bfpage{48371}--\blpage{48392}
+(\byear{2025}).
+\burl{https://proceedings.mlr.press/v267/patil25a.html}
+\end{bchapter}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Lu et~al.}{2025}]{lu2025toolsandbox}
+\begin{bchapter}
+\bauthor{\bsnm{Lu}, \binits{J.}},
+\bauthor{\bsnm{Holleis}, \binits{T.}},
+\bauthor{\bsnm{Zhang}, \binits{Y.}},
+\bauthor{\bsnm{Aumayer}, \binits{B.}},
+\bauthor{\bsnm{Nan}, \binits{F.}},
+\bauthor{\bsnm{Bai}, \binits{F.}},
+\bauthor{\bsnm{Ma}, \binits{S.}},
+\bauthor{\bsnm{Ma}, \binits{S.}},
+\bauthor{\bsnm{Li}, \binits{M.}},
+\bauthor{\bsnm{Yin}, \binits{G.}}, \betal:
+\bctitle{{ToolSandbox: A Stateful, Conversational, Interactive Evaluation
+  Benchmark for LLM Tool Use Capabilities}}.
+In: \bbtitle{Findings of the Association for Computational Linguistics: NAACL
+  2025},
+pp. \bfpage{1160}--\blpage{1183}
+(\byear{2025}).
+\doiurl{10.18653/v1/2025.findings-naacl.65}
+\end{bchapter}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2025}]{wang2025mcpbench}
+\begin{botherref}
+\oauthor{\bsnm{Wang}, \binits{Z.}},
+\oauthor{\bsnm{Chang}, \binits{Q.}},
+\oauthor{\bsnm{Patel}, \binits{H.}},
+\oauthor{\bsnm{Biju}, \binits{S.}},
+\oauthor{\bsnm{Wu}, \binits{C.-E.}},
+\oauthor{\bsnm{Liu}, \binits{Q.}},
+\oauthor{\bsnm{Ding}, \binits{A.}},
+\oauthor{\bsnm{Rezazadeh}, \binits{A.}},
+\oauthor{\bsnm{Shah}, \binits{A.}},
+\oauthor{\bsnm{Bao}, \binits{Y.}}, et al.:
+{MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks
+  via MCP Servers}.
+arXiv preprint arXiv:2508.20453
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Mo et~al.}{2026}]{mo2026livemcpbench}
+\begin{bchapter}
+\bauthor{\bsnm{Mo}, \binits{G.}},
+\bauthor{\bsnm{Zhong}, \binits{W.}},
+\bauthor{\bsnm{Chen}, \binits{J.}},
+\bauthor{\bsnm{Yuan}, \binits{Q.}},
+\bauthor{\bsnm{Chen}, \binits{X.}},
+\bauthor{\bsnm{Lu}, \binits{Y.}},
+\bauthor{\bsnm{Lin}, \binits{H.}},
+\bauthor{\bsnm{He}, \binits{B.}},
+\bauthor{\bsnm{Han}, \binits{X.}},
+\bauthor{\bsnm{Sun}, \binits{L.}}:
+\bctitle{{LiveMCPBench: Can Agents Navigate an Ocean of MCP Tools?}}
+In: \bbtitle{Proceedings of the 32nd ACM SIGKDD Conference on Knowledge
+  Discovery and Data Mining (KDD)}
+(\byear{2026}).
+\doiurl{10.1145/3770855.3817478}
+\end{bchapter}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Thakur et~al.}{2025}]{thakur2025judging}
+\begin{bchapter}
+\bauthor{\bsnm{Thakur}, \binits{A.S.}},
+\bauthor{\bsnm{Choudhary}, \binits{K.}},
+\bauthor{\bsnm{Ramayapally}, \binits{V.S.}},
+\bauthor{\bsnm{Vaidyanathan}, \binits{S.}},
+\bauthor{\bsnm{Hupkes}, \binits{D.}}:
+\bctitle{{Judging the Judges: Evaluating Alignment and Vulnerabilities in
+  LLMs-as-Judges}}.
+In: \bbtitle{Proceedings of the Fourth Workshop on Generation, Evaluation and
+  Metrics (GEM2)},
+pp. \bfpage{404}--\blpage{430}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Ruan et~al.}{2024}]{ruan2024toolemu}
+\begin{bchapter}
+\bauthor{\bsnm{Ruan}, \binits{Y.}},
+\bauthor{\bsnm{Dong}, \binits{H.}},
+\bauthor{\bsnm{Wang}, \binits{A.}},
+\bauthor{\bsnm{Pitis}, \binits{S.}},
+\bauthor{\bsnm{Zhou}, \binits{Y.}},
+\bauthor{\bsnm{Ba}, \binits{J.}},
+\bauthor{\bsnm{Dubois}, \binits{Y.}},
+\bauthor{\bsnm{Maddison}, \binits{C.J.}},
+\bauthor{\bsnm{Hashimoto}, \binits{T.}}:
+\bctitle{{Identifying the Risks of LM Agents with an LM-Emulated Sandbox}}.
+In: \bbtitle{International Conference on Learning Representations (ICLR)}
+(\byear{2024})
+\end{bchapter}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Zhuge et~al.}{2025}]{zhuge2025agentasajudge}
+\begin{bchapter}
+\bauthor{\bsnm{Zhuge}, \binits{M.}},
+\bauthor{\bsnm{Zhao}, \binits{C.}},
+\bauthor{\bsnm{Ashley}, \binits{D.}},
+\bauthor{\bsnm{Wang}, \binits{W.}},
+\bauthor{\bsnm{Khizbullin}, \binits{D.}},
+\bauthor{\bsnm{Xiong}, \binits{Y.}},
+\bauthor{\bsnm{Liu}, \binits{Z.}},
+\bauthor{\bsnm{Chang}, \binits{E.}},
+\bauthor{\bsnm{Krishnamoorthi}, \binits{R.}},
+\bauthor{\bsnm{Tian}, \binits{Y.}}, \betal:
+\bctitle{{Agent-as-a-Judge: Evaluate Agents with Agents}}.
+In: \bbtitle{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{267}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{L{\`u} et~al.}{2025}]{lu2025agentrewardbench}
+\begin{bchapter}
+\bauthor{\bsnm{L{\`u}}, \binits{X.H.}},
+\bauthor{\bsnm{Kazemnejad}, \binits{A.}},
+\bauthor{\bsnm{Meade}, \binits{N.}},
+\bauthor{\bsnm{Patel}, \binits{A.}},
+\bauthor{\bsnm{Shin}, \binits{D.}},
+\bauthor{\bsnm{Zambrano}, \binits{A.}},
+\bauthor{\bsnm{Sta{\'n}czak}, \binits{K.}},
+\bauthor{\bsnm{Shaw}, \binits{P.}},
+\bauthor{\bsnm{Pal}, \binits{C.J.}},
+\bauthor{\bsnm{Reddy}, \binits{S.}}:
+\bctitle{{AgentRewardBench: Evaluating Automatic Evaluations of Web Agent
+  Trajectories}}.
+In: \bbtitle{Conference on Language Modeling (COLM)}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Xue et~al.}{2025}]{xue2025illusion}
+\begin{bchapter}
+\bauthor{\bsnm{Xue}, \binits{T.}},
+\bauthor{\bsnm{Qi}, \binits{W.}},
+\bauthor{\bsnm{Shi}, \binits{T.}},
+\bauthor{\bsnm{Song}, \binits{C.H.}},
+\bauthor{\bsnm{Gou}, \binits{B.}},
+\bauthor{\bsnm{Song}, \binits{D.}},
+\bauthor{\bsnm{Sun}, \binits{H.}},
+\bauthor{\bsnm{Su}, \binits{Y.}}:
+\bctitle{{An Illusion of Progress? Assessing the Current State of Web Agents}}.
+In: \bbtitle{Conference on Language Modeling (COLM)}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Bhat
+  et~al.}{2026}]{bhat2026benchmarkingbenchmarks}
+\begin{botherref}
+\oauthor{\bsnm{Bhat}, \binits{V.}},
+\oauthor{\bsnm{Vaghasiya}, \binits{J.}},
+\oauthor{\bsnm{Mohsin}, \binits{M.A.}},
+\oauthor{\bsnm{Aali}, \binits{A.}}:
+{Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation}.
+arXiv preprint arXiv:2607.02577
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Sun et~al.}{2024}]{sun2024toolsfail}
+\begin{bchapter}
+\bauthor{\bsnm{Sun}, \binits{J.}},
+\bauthor{\bsnm{Min}, \binits{S.Y.}},
+\bauthor{\bsnm{Chang}, \binits{Y.}},
+\bauthor{\bsnm{Bisk}, \binits{Y.}}:
+\bctitle{{Tools Fail: Detecting Silent Errors in Faulty Tools}}.
+In: \bbtitle{Proceedings of the 2024 Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)},
+pp. \bfpage{14272}--\blpage{14289}
+(\byear{2024}).
+\doiurl{10.18653/v1/2024.emnlp-main.790}
+\end{bchapter}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Ye et~al.}{2024}]{ye2024rotbench}
+\begin{bchapter}
+\bauthor{\bsnm{Ye}, \binits{J.}},
+\bauthor{\bsnm{Wu}, \binits{Y.}},
+\bauthor{\bsnm{Gao}, \binits{S.}},
+\bauthor{\bsnm{Huang}, \binits{C.}},
+\bauthor{\bsnm{Li}, \binits{S.}},
+\bauthor{\bsnm{Li}, \binits{G.}},
+\bauthor{\bsnm{Fan}, \binits{X.}},
+\bauthor{\bsnm{Zhang}, \binits{Q.}},
+\bauthor{\bsnm{Gui}, \binits{T.}},
+\bauthor{\bsnm{Huang}, \binits{X.}}:
+\bctitle{{RoTBench: A Multi-Level Benchmark for Evaluating the Robustness of
+  Large Language Models in Tool Learning}}.
+In: \bbtitle{Proceedings of the 2024 Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)},
+pp. \bfpage{313}--\blpage{333}
+(\byear{2024}).
+\doiurl{10.18653/v1/2024.emnlp-main.19}
+\end{bchapter}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Huang et~al.}{2025}]{huang2025critictool}
+\begin{bchapter}
+\bauthor{\bsnm{Huang}, \binits{S.}},
+\bauthor{\bsnm{Fang}, \binits{Z.}},
+\bauthor{\bsnm{Chen}, \binits{Z.}},
+\bauthor{\bsnm{Yuan}, \binits{S.}},
+\bauthor{\bsnm{Ye}, \binits{J.}},
+\bauthor{\bsnm{Zeng}, \binits{Y.}},
+\bauthor{\bsnm{Chen}, \binits{L.}},
+\bauthor{\bsnm{Mao}, \binits{Q.}},
+\bauthor{\bsnm{Zhao}, \binits{F.}}:
+\bctitle{{CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language
+  Models in Tool-Calling Error Scenarios}}.
+In: \bbtitle{Proceedings of the 2025 Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)},
+pp. \bfpage{26672}--\blpage{26704}
+(\byear{2025}).
+\doiurl{10.18653/v1/2025.emnlp-main.1355}
+\end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Zhang et~al.}{2025}]{zhang2025whowhen}
+\begin{bchapter}
+\bauthor{\bsnm{Zhang}, \binits{S.}},
+\bauthor{\bsnm{Yin}, \binits{M.}},
+\bauthor{\bsnm{Zhang}, \binits{J.}},
+\bauthor{\bsnm{Liu}, \binits{J.}},
+\bauthor{\bsnm{Han}, \binits{Z.}},
+\bauthor{\bsnm{Zhang}, \binits{J.}},
+\bauthor{\bsnm{Li}, \binits{B.}},
+\bauthor{\bsnm{Wang}, \binits{C.}},
+\bauthor{\bsnm{Wang}, \binits{H.}},
+\bauthor{\bsnm{Chen}, \binits{Y.}}, \betal:
+\bctitle{{Which Agent Causes Task Failures and When? On Automated Failure
+  Attribution of LLM Multi-Agent Systems}}.
+In: \bbtitle{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{267}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Zhu et~al.}{2025}]{zhu2025whereagentsfail}
+\begin{botherref}
+\oauthor{\bsnm{Zhu}, \binits{K.}},
+\oauthor{\bsnm{Liu}, \binits{Z.}},
+\oauthor{\bsnm{Li}, \binits{B.}},
+\oauthor{\bsnm{Tian}, \binits{M.}},
+\oauthor{\bsnm{Yang}, \binits{Y.}},
+\oauthor{\bsnm{Zhang}, \binits{J.}},
+\oauthor{\bsnm{Han}, \binits{P.}},
+\oauthor{\bsnm{Xie}, \binits{Q.}},
+\oauthor{\bsnm{Cui}, \binits{F.}},
+\oauthor{\bsnm{Zhang}, \binits{W.}}, et al.:
+{Where LLM Agents Fail and How They can Learn From Failures}.
+arXiv preprint arXiv:2509.25370
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Liu et~al.}{2026}]{liu2026agenthallu}
+\begin{botherref}
+\oauthor{\bsnm{Liu}, \binits{X.}},
+\oauthor{\bsnm{Yang}, \binits{X.}}, et al.:
+{AgentHallu: Benchmarking Automated Hallucination Attribution of LLM-based
+  Agents}.
+arXiv preprint arXiv:2601.06818
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{Jia et~al.}{2026}]{jia2026masfire}
+\begin{botherref}
+\oauthor{\bsnm{Jia}, \binits{J.}},
+\oauthor{\bsnm{Deng}, \binits{Z.}},
+\oauthor{\bsnm{Chen}, \binits{Z.}},
+\oauthor{\bsnm{Wang}, \binits{Y.}},
+\oauthor{\bsnm{Zheng}, \binits{Z.}}:
+{MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent
+  Systems}.
+arXiv preprint arXiv:2602.19843
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Zheng et~al.}{2026}]{zheng2026toolrobustbench}
+\begin{botherref}
+\oauthor{\bsnm{Zheng}, \binits{Y.}},
+\oauthor{\bsnm{Wu}, \binits{Y.}},
+\oauthor{\bsnm{Chang}, \binits{Y.}}:
+{ToolRobustBench: Stage-Wise Perturbation Evaluation and Failure Diagnosis for
+  Tool-Calling Agents}.
+arXiv preprint arXiv:2608.23635
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Guan et~al.}{2026}]{guan2026pararecover}
+\begin{botherref}
+\oauthor{\bsnm{Guan}, \binits{B.}},
+\oauthor{\bsnm{Yin}, \binits{Z.}},
+\oauthor{\bsnm{Shen}, \binits{Y.}}:
+{ParaRecover: A Process-Level Benchmark for Error Localization and Recovery in
+  Parallel Tool-Use Agents}.
+arXiv preprint arXiv:2609.12345.
+Accepted to EMNLP 2026 according to the authors
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{He et~al.}{2026}]{he2026sscbench}
+\begin{botherref}
+\oauthor{\bsnm{He}, \binits{X.}},
+\oauthor{\bsnm{Dong}, \binits{W.}},
+\oauthor{\bsnm{Guo}, \binits{Z.}},
+\oauthor{\bsnm{Liu}, \binits{Y.}},
+\oauthor{\bsnm{Xu}, \binits{L.}}:
+{SSCBench: Evaluating the Evidential Validity of Fault-Injection Tests for
+  Tool-Using LLM Agents}.
+arXiv preprint arXiv:2610.11514
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{Zhang et~al.}{2024}]{zhang2024toolbehonest}
+\begin{bchapter}
+\bauthor{\bsnm{Zhang}, \binits{Y.}},
+\bauthor{\bsnm{Chen}, \binits{J.}},
+\bauthor{\bsnm{Wang}, \binits{J.}},
+\bauthor{\bsnm{Liu}, \binits{Y.}},
+\bauthor{\bsnm{Yang}, \binits{C.}},
+\bauthor{\bsnm{Shi}, \binits{C.}},
+\bauthor{\bsnm{Zhu}, \binits{X.}},
+\bauthor{\bsnm{Lin}, \binits{Z.}},
+\bauthor{\bsnm{Wan}, \binits{H.}},
+\bauthor{\bsnm{Yang}, \binits{Y.}}, \betal:
+\bctitle{{ToolBeHonest: A Multi-level Hallucination Diagnostic Benchmark for
+  Tool-Augmented Large Language Models}}.
+In: \bbtitle{Proceedings of the 2024 Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)},
+pp. \bfpage{11388}--\blpage{11422}
+(\byear{2024}).
+\doiurl{10.18653/v1/2024.emnlp-main.637}
+\end{bchapter}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{Xu et~al.}{2025}]{xu2025relign}
+\begin{bchapter}
+\bauthor{\bsnm{Xu}, \binits{H.}},
+\bauthor{\bsnm{Zhu}, \binits{Z.}},
+\bauthor{\bsnm{Pan}, \binits{L.}},
+\bauthor{\bsnm{Wang}, \binits{Z.}},
+\bauthor{\bsnm{Zhu}, \binits{S.}},
+\bauthor{\bsnm{Ma}, \binits{D.}},
+\bauthor{\bsnm{Cao}, \binits{R.}},
+\bauthor{\bsnm{Chen}, \binits{L.}},
+\bauthor{\bsnm{Yu}, \binits{K.}}:
+\bctitle{{Reducing Tool Hallucination via Reliability Alignment}}.
+In: \bbtitle{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{267}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{Yin et~al.}{2026}]{yin2026reasoningtrap}
+\begin{botherref}
+\oauthor{\bsnm{Yin}, \binits{C.}},
+\oauthor{\bsnm{Sha}, \binits{Z.}},
+\oauthor{\bsnm{Cui}, \binits{S.}},
+\oauthor{\bsnm{Meng}, \binits{C.}},
+\oauthor{\bsnm{Li}, \binits{Z.}}:
+{The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination}.
+arXiv preprint arXiv:2510.22977.
+Accepted to ACL 2026 according to the authors
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 31
+\bibitem[\protect\citeauthoryear{Lin et~al.}{2025}]{lin2025agenthallucsurvey}
+\begin{botherref}
+\oauthor{\bsnm{Lin}, \binits{X.}},
+\oauthor{\bsnm{Ning}, \binits{Y.}},
+\oauthor{\bsnm{Zhang}, \binits{J.}},
+\oauthor{\bsnm{Dong}, \binits{Y.}},
+\oauthor{\bsnm{Liu}, \binits{Y.}},
+\oauthor{\bsnm{Wu}, \binits{Y.}},
+\oauthor{\bsnm{Qi}, \binits{X.}},
+\oauthor{\bsnm{Sun}, \binits{N.}},
+\oauthor{\bsnm{Shang}, \binits{Y.}},
+\oauthor{\bsnm{Wang}, \binits{K.}}, et al.:
+{LLM-based Agents Suffer from Hallucinations: A Survey of Taxonomy, Methods,
+  and Directions}.
+arXiv preprint arXiv:2509.18970
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 32
+\bibitem[\protect\citeauthoryear{Zhang et~al.}{2025}]{zhang2025miragebench}
+\begin{botherref}
+\oauthor{\bsnm{Zhang}, \binits{W.}},
+\oauthor{\bsnm{Sun}, \binits{Y.}},
+\oauthor{\bsnm{Huang}, \binits{P.}},
+\oauthor{\bsnm{Pu}, \binits{J.}},
+\oauthor{\bsnm{Lin}, \binits{H.}},
+\oauthor{\bsnm{Song}, \binits{D.}}:
+{MIRAGE-Bench: LLM Agent is Hallucinating and Where to Find Them}.
+arXiv preprint arXiv:2507.21017
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem[\protect\citeauthoryear{Basu}{2026}]{basu2026toolreceipts}
+\begin{botherref}
+\oauthor{\bsnm{Basu}, \binits{A.}}:
+{Tool Receipts, Not Zero-Knowledge Proofs: Practical Hallucination Detection
+  for AI Agents}.
+arXiv preprint arXiv:2603.10060
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 34
+\bibitem[\protect\citeauthoryear{Soni}{2026}]{soni2026toolfailbench}
+\begin{botherref}
+\oauthor{\bsnm{Soni}, \binits{H.}}:
+{ToolFailBench: Diagnosing Tool-Use Failures in LLM Agents}.
+arXiv preprint arXiv:2607.04686.
+ICML 2026 workshop paper according to the authors
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 35
+\bibitem[\protect\citeauthoryear{Sethi et~al.}{2026}]{sethi2026fabrication}
+\begin{botherref}
+\oauthor{\bsnm{Sethi}, \binits{A.}},
+\oauthor{\bsnm{Kenzhebayev}, \binits{A.}},
+\oauthor{\bsnm{Paturi}, \binits{S.}},
+\oauthor{\bsnm{Raina}, \binits{V.}},
+\oauthor{\bsnm{Raina}, \binits{V.}},
+\oauthor{\bsnm{Sheth}, \binits{I.}}:
+{Fabrication After Tool Failure: Tool-Augmented Agents Assert Values Their
+  Tools Did Not Return}.
+arXiv preprint arXiv:2609.14758
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2026}]{wang2026agentspec}
+\begin{bchapter}
+\bauthor{\bsnm{Wang}, \binits{H.}},
+\bauthor{\bsnm{Poskitt}, \binits{C.M.}},
+\bauthor{\bsnm{Sun}, \binits{J.}}:
+\bctitle{{AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM
+  Agents}}.
+In: \bbtitle{Proceedings of the IEEE/ACM 48th International Conference on
+  Software Engineering (ICSE)}
+(\byear{2026}).
+\doiurl{10.1145/3744916.3764546}
+\end{bchapter}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Chen et~al.}{2025}]{chen2025shieldagent}
+\begin{bchapter}
+\bauthor{\bsnm{Chen}, \binits{Z.}},
+\bauthor{\bsnm{Kang}, \binits{M.}},
+\bauthor{\bsnm{Li}, \binits{B.}}:
+\bctitle{{ShieldAgent: Shielding Agents via Verifiable Safety Policy
+  Reasoning}}.
+In: \bbtitle{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{267}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 38
+\bibitem[\protect\citeauthoryear{Xiang et~al.}{2025}]{xiang2025guardagent}
+\begin{bchapter}
+\bauthor{\bsnm{Xiang}, \binits{Z.}},
+\bauthor{\bsnm{Zheng}, \binits{L.}},
+\bauthor{\bsnm{Li}, \binits{Y.}},
+\bauthor{\bsnm{Hong}, \binits{J.}},
+\bauthor{\bsnm{Li}, \binits{Q.}},
+\bauthor{\bsnm{Xie}, \binits{H.}},
+\bauthor{\bsnm{Zhang}, \binits{J.}},
+\bauthor{\bsnm{Xiong}, \binits{Z.}},
+\bauthor{\bsnm{Xie}, \binits{C.}},
+\bauthor{\bsnm{Yang}, \binits{C.}}, \betal:
+\bctitle{{GuardAgent: Safeguard LLM Agents by a Guard Agent via
+  Knowledge-Enabled Reasoning}}.
+In: \bbtitle{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{267}
+(\byear{2025})
+\end{bchapter}
+\endbibitem
+
+%%% 39
+\bibitem[\protect\citeauthoryear{Debenedetti
+  et~al.}{2026}]{debenedetti2026camel}
+\begin{bchapter}
+\bauthor{\bsnm{Debenedetti}, \binits{E.}},
+\bauthor{\bsnm{Shumailov}, \binits{I.}},
+\bauthor{\bsnm{Fan}, \binits{T.}},
+\bauthor{\bsnm{Hayes}, \binits{J.}},
+\bauthor{\bsnm{Carlini}, \binits{N.}},
+\bauthor{\bsnm{Fabian}, \binits{D.}},
+\bauthor{\bsnm{Kern}, \binits{C.}},
+\bauthor{\bsnm{Shi}, \binits{C.}},
+\bauthor{\bsnm{Terzis}, \binits{A.}},
+\bauthor{\bsnm{Tram{\`e}r}, \binits{F.}}:
+\bctitle{{Defeating Prompt Injections by Design}}.
+In: \bbtitle{2026 IEEE Conference on Secure and Trustworthy Machine Learning
+  (SaTML)},
+pp. \bfpage{587}--\blpage{618}
+(\byear{2026}).
+\doiurl{10.1109/SaTML68715.2026.00040}
+\end{bchapter}
+\endbibitem
+
+%%% 40
+\bibitem[\protect\citeauthoryear{Debenedetti
+  et~al.}{2024}]{debenedetti2024agentdojo}
+\begin{bchapter}
+\bauthor{\bsnm{Debenedetti}, \binits{E.}},
+\bauthor{\bsnm{Zhang}, \binits{J.}},
+\bauthor{\bsnm{Balunovi{\'c}}, \binits{M.}},
+\bauthor{\bsnm{Beurer-Kellner}, \binits{L.}},
+\bauthor{\bsnm{Fischer}, \binits{M.}},
+\bauthor{\bsnm{Tram{\`e}r}, \binits{F.}}:
+\bctitle{{AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks
+  and Defenses for LLM Agents}}.
+In: \bbtitle{Advances in Neural Information Processing Systems 37 (NeurIPS),
+  Datasets and Benchmarks Track}
+(\byear{2024})
+\end{bchapter}
+\endbibitem
+
+%%% 41
+\bibitem[\protect\citeauthoryear{Wen et~al.}{2025}]{wen2025knowyourlimits}
+\begin{barticle}
+\bauthor{\bsnm{Wen}, \binits{B.}},
+\bauthor{\bsnm{Yao}, \binits{J.}},
+\bauthor{\bsnm{Feng}, \binits{S.}},
+\bauthor{\bsnm{Xu}, \binits{C.}},
+\bauthor{\bsnm{Tsvetkov}, \binits{Y.}},
+\bauthor{\bsnm{Howe}, \binits{B.}},
+\bauthor{\bsnm{Wang}, \binits{L.L.}}:
+\batitle{{Know Your Limits: A Survey of Abstention in Large Language Models}}.
+\bjtitle{Transactions of the Association for Computational Linguistics}
+\bvolume{13},
+\bfpage{529}--\blpage{556}
+(\byear{2025})
+\doiurl{10.1162/tacl_a_00754}
+{\href{https://arxiv.org/abs/2407.18418}{{arXiv:2407.18418}}}
+\end{barticle}
+\endbibitem
+
+%%% 42
+\bibitem[\protect\citeauthoryear{Fleiss}{1971}]{fleiss1971kappa}
+\begin{barticle}
+\bauthor{\bsnm{Fleiss}, \binits{J.L.}}:
+\batitle{Measuring nominal scale agreement among many raters}.
+\bjtitle{Psychological Bulletin}
+\bvolume{76}(\bissue{5}),
+\bfpage{378}--\blpage{382}
+(\byear{1971})
+\doiurl{10.1037/h0031619}
+\end{barticle}
+\endbibitem
+
+%%% 43
+\bibitem[\protect\citeauthoryear{Cohen}{1960}]{cohen1960kappa}
+\begin{barticle}
+\bauthor{\bsnm{Cohen}, \binits{J.}}:
+\batitle{A coefficient of agreement for nominal scales}.
+\bjtitle{Educational and Psychological Measurement}
+\bvolume{20}(\bissue{1}),
+\bfpage{37}--\blpage{46}
+(\byear{1960})
+\doiurl{10.1177/001316446002000104}
+\end{barticle}
+\endbibitem
+
+%%% 44
+\bibitem[\protect\citeauthoryear{McNemar}{1947}]{mcnemar1947}
+\begin{barticle}
+\bauthor{\bsnm{McNemar}, \binits{Q.}}:
+\batitle{Note on the sampling error of the difference between correlated
+  proportions or percentages}.
+\bjtitle{Psychometrika}
+\bvolume{12}(\bissue{2}),
+\bfpage{153}--\blpage{157}
+(\byear{1947})
+\doiurl{10.1007/BF02295996}
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem[\protect\citeauthoryear{Schuirmann}{1987}]{schuirmann1987tost}
+\begin{barticle}
+\bauthor{\bsnm{Schuirmann}, \binits{D.J.}}:
+\batitle{A comparison of the two one-sided tests procedure and the power
+  approach for assessing the equivalence of average bioavailability}.
+\bjtitle{Journal of Pharmacokinetics and Biopharmaceutics}
+\bvolume{15}(\bissue{6}),
+\bfpage{657}--\blpage{680}
+(\byear{1987})
+\doiurl{10.1007/BF01068419}
+\end{barticle}
+\endbibitem
+
+%%% 46
+\bibitem[\protect\citeauthoryear{Newcombe}{1998}]{newcombe1998paired}
+\begin{barticle}
+\bauthor{\bsnm{Newcombe}, \binits{R.G.}}:
+\batitle{Improved confidence intervals for the difference between binomial
+  proportions based on paired data}.
+\bjtitle{Statistics in Medicine}
+\bvolume{17}(\bissue{22}),
+\bfpage{2635}--\blpage{2650}
+(\byear{1998})
+\doiurl{10.1002/(SICI)1097-0258(19981130)17:22<2635::AID-SIM954>3.0.CO;2-C}
+\end{barticle}
+\endbibitem
+
+%%% 47
+\bibitem[\protect\citeauthoryear{Wilson}{1927}]{wilson1927}
+\begin{barticle}
+\bauthor{\bsnm{Wilson}, \binits{E.B.}}:
+\batitle{Probable inference, the law of succession, and statistical inference}.
+\bjtitle{Journal of the American Statistical Association}
+\bvolume{22}(\bissue{158}),
+\bfpage{209}--\blpage{212}
+(\byear{1927})
+\doiurl{10.1080/01621459.1927.10502953}
+\end{barticle}
+\endbibitem
+
+%%% 48
+\bibitem[\protect\citeauthoryear{Landis and Koch}{1977}]{landis1977kappa}
+\begin{barticle}
+\bauthor{\bsnm{Landis}, \binits{J.R.}},
+\bauthor{\bsnm{Koch}, \binits{G.G.}}:
+\batitle{The measurement of observer agreement for categorical data}.
+\bjtitle{Biometrics}
+\bvolume{33}(\bissue{1}),
+\bfpage{159}--\blpage{174}
+(\byear{1977})
+\doiurl{10.2307/2529310}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}

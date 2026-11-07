@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """W_01: extensions of X_paired_validator.py for the JIIS manuscript.
 
 Reproduces the X_paired_validator.py pairing exactly (same filters, same first-row-per-(task, model) rule,
@@ -14,8 +15,8 @@ import csv, sys, json, random, collections
 from scipy.stats import binomtest
 csv.field_size_limit(sys.maxsize)
 
-ROOT = "/Users/challagullayoshitha/Downloads/agentprop_revision"
-REPO = "/Users/challagullayoshitha/Downloads/agentprop_repo/src/data/results/"
+ROOT = _REPO + "/reanalysis"
+REPO = _REPO + "/data/results/"
 OUT = ROOT + "/W_writeup"
 
 R = list(csv.DictReader(open(ROOT + "/V_validator/labels_all.csv")))

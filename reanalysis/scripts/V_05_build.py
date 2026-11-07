@@ -1,8 +1,9 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """V_05: merge all validator outputs into V_validator/results.json and write LaTeX booktabs tables."""
 import json
 import os
 
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/V_validator"
+OUT = _REPO + "/reanalysis/V_validator"
 J = lambda f: json.load(open(f"{OUT}/{f}"))
 
 MODEL_NAMES = {"deepseek_v3": "DeepSeek-V3", "gemini_20_flash": "Gemini-2.0-Flash", "gpt35_turbo": "GPT-3.5-Turbo",

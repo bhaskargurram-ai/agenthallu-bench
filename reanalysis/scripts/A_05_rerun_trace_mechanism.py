@@ -1,11 +1,12 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Corroborate the EPS/S2 mechanism on full-trace re-runs produced by workstream C
 (C_interceptor/traces/p2sem_r1.jsonl: GPT-4o-mini, same agent loop + semantic_wrong injector as run_p2_experiment.py,
 full step logging). These are NOT the paper's P2 traces (the original trace DB p2_day6.db is not in the repo);
 they are used only to observe the mechanism. Snapshot is whatever is on disk when this script runs."""
 import sys, json, os
 from collections import Counter, defaultdict
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/A_propagation"
-TR = "/Users/challagullayoshitha/Downloads/agentprop_revision/C_interceptor/traces"
+OUT = _REPO + "/reanalysis/A_propagation"
+TR = _REPO + "/reanalysis/C_interceptor/traces"
 TOOLS = {'get_weather','get_forecast','get_historical','create_event','get_events','delete_event',
          'get_patient_record','check_drug_interaction','schedule_appointment','search_products','get_product','place_order'}
 res = {}

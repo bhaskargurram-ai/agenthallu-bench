@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Reviewer 1, points 3-4: per-model r23 with Wilson and bootstrap CIs; rejection/admission vs recovery Spearman
 with bootstrap CI and power.
 
@@ -6,7 +7,7 @@ Definitions (paper): S1 = eps>=1, S2 = eps>=2, S3 = judge says wrong; r23 = P(S3
 Renamed axis: 'tool-call admission' = P(first Action names a valid tool) = P(injector actually invoked).
 """
 import sys, json
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 import numpy as np
 from scipy import stats
 from A_common import *

@@ -3778,7 +3778,7 @@
     "total": 0.7454649000000001
   },
   "provenance": {
-    "scripts": "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts/B_*.py",
+    "scripts": "reanalysis/scripts/B_*.py",
     "bootstrap": "percentile, B=10000, seed=20261030, resampling traces"
   },
   "input_artifacts": {

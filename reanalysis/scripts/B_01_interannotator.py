@@ -1,6 +1,7 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Critique 1: precise inter-annotator agreement on the 100 calibration traces."""
 import sys
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from itertools import combinations
 from B_common import *  # noqa
 

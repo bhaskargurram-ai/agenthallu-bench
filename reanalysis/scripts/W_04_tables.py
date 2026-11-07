@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """W_04: LaTeX tables for the JIIS manuscript generated from result files (writes JIIS_submission/tables/).
   tab_accuracy.tex  per-model baseline accuracy: validator vs heuristic vs ensemble on the same traces
                     (V_validator/results.json; Wilson CIs from W_writeup/W02_numbers.json)
@@ -8,7 +9,7 @@
 Run: python3 -I W_04_tables.py
 """
 import json
-ROOT = "/Users/challagullayoshitha/Downloads/agentprop_revision"
+ROOT = _REPO + "/reanalysis"
 T = ROOT + "/JIIS_submission/tables/"
 NAME = {"o3_mini": "o3-mini", "deepseek_v3": "DeepSeek-V3", "gpt41_mini": "GPT-4.1-mini", "gpt41_nano": "GPT-4.1-nano",
         "gpt35_turbo": "GPT-3.5-Turbo", "gpt4o_mini": "GPT-4o-mini", "gemini_20_flash": "Gemini-2.0-Flash",

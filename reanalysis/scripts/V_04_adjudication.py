@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """V_04: case-by-case adjudication of every validator-vs-human-majority disagreement (100-trace set).
 
 The adjudicator (analysis author) read, for each case, the query, the executed calls with their logged
@@ -10,7 +11,7 @@ import csv
 import collections
 import json
 
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/V_validator"
+OUT = _REPO + "/reanalysis/V_validator"
 
 ADJ = {
     "p2_semantic_wrong_gemini_20_flash_calendar_045_9f7e1c": (

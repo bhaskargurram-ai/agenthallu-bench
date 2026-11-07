@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Score the round-2 human labels and compute calibration factors.
 
 Usage:
@@ -31,7 +32,7 @@ import math
 import sys
 from collections import defaultdict
 from itertools import combinations
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 from B_slot import slot_verdicts
 

@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Reviewer 1, point 2: why is baseline accuracy so low? Audit references, tool adherence, answer form, judges.
 
 Reference classes (rule-based, auditable):
@@ -12,7 +13,7 @@ Answer forms: no_tool (no Action executed), placeholder ('[...]' bracketed templ
 'ERROR:'), substantive (anything else).
 """
 import sys, json, re
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from collections import Counter, defaultdict
 import numpy as np
 from A_common import *

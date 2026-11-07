@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Shared loaders + agreement statistics for the B_judge (RQ1) revision analyses.
 
 All inputs are read as data (csv module; multi-line quoted fields safe).
@@ -8,16 +9,15 @@ import json
 import os
 import random
 
-REPO = "/Users/challagullayoshitha/Downloads/agentprop_repo/src"
+REPO = _REPO + ""
 RES = os.path.join(REPO, "data/results")
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/B_judge"
+OUT = _REPO + "/reanalysis/B_judge"
 os.makedirs(OUT, exist_ok=True)
 
 ANNOT_FILES = {
     "bhaskar": os.path.join(RES, "human_labeling_sheet_Bhaskar_labeled.csv"),
     "yoshitha": os.path.join(RES, "human_labeling_sheet_Yoshitha_labeled.csv"),
-    "third": "/Users/challagullayoshitha/Downloads/AgentProp_Bench_final_bhaskar/"
-             "agent_paper_bhaskar/annotation/annotation_sheet_100.csv",
+    "third": _REPO + "/data/results/human_labels_third_annotator.csv",
 }
 YOSHITHA_COMPLETED = os.path.join(REPO, "human_labeling_sheet_Yoshitha_completed.csv")
 

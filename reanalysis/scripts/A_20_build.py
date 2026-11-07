@@ -1,7 +1,8 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Assemble results.json and LaTeX (booktabs) tables from the A_* JSON outputs.
 Run order: A_02, A_04, A_05, A_10, A_11, A_12, A_13, then this script."""
 import sys, json, os
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from A_common import OUT
 from A_10_paired import MODEL_ORDER
 

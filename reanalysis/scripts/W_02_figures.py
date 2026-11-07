@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """W_02: figures for the JIIS manuscript (vector PDF). Reads only result files; writes JIIS_submission/figures/.
   fig_accuracy.pdf      baseline accuracy per model: validator (Wilson CI) vs substring heuristic vs 3-LLM ensemble,
                         all three on the same verifiable baseline traces (V_validator/results.json).
@@ -15,7 +16,7 @@ matplotlib.use("pdf")
 import matplotlib.pyplot as plt
 from scipy.stats import kendalltau
 csv.field_size_limit(sys.maxsize)
-ROOT = "/Users/challagullayoshitha/Downloads/agentprop_revision"
+ROOT = _REPO + "/reanalysis"
 FIG = ROOT + "/JIIS_submission/figures"
 plt.rcParams.update({"font.size": 8.5, "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42,
                      "axes.edgecolor": "#52514e", "axes.labelcolor": "#0b0b0b", "xtick.color": "#52514e",

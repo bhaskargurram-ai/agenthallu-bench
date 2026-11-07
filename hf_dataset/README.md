@@ -42,22 +42,26 @@ fabrication** — plus a runtime interceptor that mitigates them.
 |---|---|---|---|
 | `tasks` | `tasks.json` | 2,000 | Agent tasks across **weather, calendar, medical, knowledge** domains — query, required tools, correct tool sequence, gold answer, difficulty, split. (A supplementary e-commerce/retail set ships in the GitHub repo.) |
 | `traces` | `traces.csv` | 2,150 | Full agent traces under parameter injection for **13 models** (9 proprietary + 4 open-weight), each scored by a validated 3-LLM ensemble judge **and** a naive substring judge, with EPS / propagation / cascade fields. |
-| `human_labels` | `human_labels.csv` | 100 | Human correctness labels used to validate the judges (inter-annotator Cohen's κ = 0.835). |
+| `human_labels` | `human_labels.csv` | 100 | Human correctness labels from three annotators (Fleiss' κ = 0.877), used as a sanity check of the judges and the structured validator. |
 
-## Headline findings
+## Headline findings (paper v3, structured validator)
 
-- **The judge, not the model, often decides the leaderboard.** Substring/keyword
-  judging agrees with human labels at chance (κ = 0.049); a validated 3-LLM
-  ensemble reaches κ = 0.432.
-- **Error propagation is near-universal.** One injected wrong tool parameter
-  reaches a wrong final answer ~62% of the time, roughly constant across all 13
-  models — capability does not confer robustness to upstream error.
-- **Fabrication is common and invisible to answer-only scoring.** Several models
-  emit tool results they never obtained (Gemini-2.0-Flash: 37.5% of traces;
-  classifier precision 92.5%).
-- **A 3-layer runtime interceptor** cuts GPT-4o-mini hallucination by 23 points
-  (55.8%→32.8%, p<0.001), with no effect on models that rarely emit an
-  injectable call.
+- **The instrument changes conclusions.** A deterministic, gold-grounded
+  validator (tools, executed parameters, state, answer grounding) replaces
+  reference-based judging. On the same 306 traces, Gemini-2.0-Flash scores 63.4%
+  under the substring heuristic and 5.6% under the validator.
+- **One wrong argument causes errors.** In paired runs (same task and model, with
+  and without injection) the error rate rises from 52.4% to 74.5% (+22.0 pp,
+  95% CI 18.4–25.5; 1,085 pairs, 7 models), and by 44.7 pp where the corrupted
+  call executed without errors. An LLM-judge ensemble sees +2.5 pp.
+- **Fabricated tool use** occurs in 0–42.5% of traces depending on the model
+  (rule-based lower bounds), largely because the harness accepts an action and a
+  final answer in one completion.
+- **The runtime monitor** lowers wrong answers mainly by abstaining; it is not
+  better than random abstention under the validator.
+
+Claims in arXiv v1–v2 that were withdrawn (≈0.62 propagation probability, the
+interceptor working on every model) are listed in Section 8 of the v3 paper.
 
 ## Usage
 
@@ -73,8 +77,8 @@ labels = load_dataset("<user>/AgentProp-Bench", "human_labels")
 
 ```bibtex
 @article{gurram2026agentprop,
-  title   = {Evaluating Tool-Using Language Agents: Judge Reliability,
-             Propagation Cascades, and Runtime Mitigation in AgentProp-Bench},
+  title   = {Measuring What Tool-Using {LLM} Agents Actually Do: Structured
+             Validation, Causal Error Propagation, and Fabricated Tool Use},
   author  = {Gurram, Bhaskar},
   journal = {arXiv preprint arXiv:2604.16706},
   year    = {2026},

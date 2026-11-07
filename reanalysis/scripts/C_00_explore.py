@@ -1,6 +1,7 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 import csv, collections, re, sys
 csv.field_size_limit(10**9)
-R='/Users/challagullayoshitha/Downloads/agentprop_repo/src/data/results/'
+R=_REPO + '/data/results/'
 def load(f): return list(csv.DictReader(open(R+f, newline='')))
 for f in ['interceptor_control_600.csv','interceptor_heldout_600.csv','interceptor_results.csv','ablation_results.csv']:
     rows=load(f); print('==',f,len(rows), list(rows[0].keys()))

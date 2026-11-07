@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """V_03: sensitivity of validator scores to each normalisation / rubric choice (one switch at a time).
 
 For each variant: per-model baseline accuracy, pooled baseline accuracy, pooled P2 accuracy, fraction of CORRECT
@@ -13,7 +14,7 @@ import V_core as V  # noqa: E402
 import V_traces as L  # noqa: E402
 import V_02_human_agreement as H  # noqa: E402
 
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/V_validator"
+OUT = _REPO + "/reanalysis/V_validator"
 VARIANTS = {
     "default": {},
     "no_casefold": {"casefold": False},

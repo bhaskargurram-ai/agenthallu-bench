@@ -1,0 +1,31 @@
+% Adapted from E_lit_journal/related_work_comparison.tex (model counts verified there); rows trimmed.
+\begin{table}[!tbp]
+\centering
+\caption{Closest prior and concurrent work. Inj.: controlled error or fault injection; Eval.: automated evaluator checked against human labels or adjudication; Fab.: fabricated tool use or output provenance; Mitig.: a runtime safeguard is evaluated; Paired: paired control arm on identical task instances. \cmark{} core contribution, \pmark{} partial or different granularity, \xmark{} not reported. Works marked $^{\dagger}$ appeared after the first preprint of this study (April 2026).}
+\label{tab:related}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+Work & Venue & Models & Inj. & Eval. & Fab. & Mitig. & Paired \\
+\midrule
+$\tau$-bench \cite{yao2025taubench} & ICLR 2025 & 12 & \xmark & \xmark & \xmark & \xmark & \xmark \\
+AgentBench \cite{liu2024agentbench} & ICLR 2024 & 27 & \xmark & \xmark & \xmark & \xmark & \xmark \\
+BFCL \cite{patil2025bfcl} & ICML 2025 & -- & \xmark & \xmark & \xmark & \xmark & \xmark \\
+ToolEmu \cite{ruan2024toolemu} & ICLR 2024 & -- & \xmark & \cmark & \xmark & \xmark & \xmark \\
+AgentRewardBench \cite{lu2025agentrewardbench} & COLM 2025 & 12 judges & \xmark & \cmark & \xmark & \xmark & \xmark \\
+Validity audit$^{\dagger}$ \cite{bhat2026benchmarkingbenchmarks} & arXiv 2026 & -- & \xmark & \cmark & \pmark & \xmark & \xmark \\
+Tools Fail \cite{sun2024toolsfail} & EMNLP 2024 & -- & \cmark & \xmark & \xmark & \pmark & \xmark \\
+AgentHallu \cite{liu2026agenthallu} & arXiv 2026 & 13 & \xmark & \pmark & \pmark & \xmark & \xmark \\
+ToolRobustBench$^{\dagger}$ \cite{zheng2026toolrobustbench} & arXiv 2026 & 7 & \cmark & \xmark & \xmark & \xmark & \cmark \\
+ToolBeHonest \cite{zhang2024toolbehonest} & EMNLP 2024 & -- & \pmark & \xmark & \pmark & \xmark & \xmark \\
+Tool receipts \cite{basu2026toolreceipts} & arXiv 2026 & -- & \cmark & \xmark & \cmark & \cmark & \xmark \\
+ToolFailBench$^{\dagger}$ \cite{soni2026toolfailbench} & arXiv 2026 & 19 & \xmark & \pmark & \cmark & \xmark & \pmark \\
+Fabrication after failure$^{\dagger}$ \cite{sethi2026fabrication} & arXiv 2026 & -- & \cmark & \xmark & \cmark & \pmark & \pmark \\
+AgentDojo \cite{debenedetti2024agentdojo} & NeurIPS 2024 & -- & \pmark & \xmark & \xmark & \cmark & \cmark \\
+AgentSpec \cite{wang2026agentspec} & ICSE 2026 & -- & \xmark & \xmark & \xmark & \cmark & \pmark \\
+\midrule
+This study & -- & 13 & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\bottomrule
+\end{tabular}
+\end{table}

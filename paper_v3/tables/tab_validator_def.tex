@@ -1,0 +1,20 @@
+% Adapted from V_validator/tab_V1_validator_definition.tex
+\begin{table}[!tbp]
+\centering
+\caption{Components of the structured validator (version 1.0). Every component is computed from the query-grounded gold specification, deterministic simulator replay and the logged trace; no LLM or human judgement is involved.}
+\label{tab:validator}
+\small
+\begin{tabular}{@{}lp{0.72\linewidth}@{}}
+\toprule
+Component & Definition \\
+\midrule
+$T$ (tools) & Every required gold call is matched one-to-one by an executed (schema-valid) call of the same tool, and per-template order constraints hold (e.g.\ \texttt{get\_events} before a conditional \texttt{create\_event}). \\
+$P$ (parameters) & Every matched call agrees with its gold call on every scored slot, using the parameters actually executed (after injection). Normalisation: case, whitespace and accents; ISO dates; 24-hour times; unordered sets for attendees and drug pairs; enum spelling. \\
+$S$ (state) & Write tasks only. The multiset of successful state-changing writes equals the gold writes. Conditional writes (slot free, in stock, cheaper item) are resolved from the simulator or the received observation. \\
+$A$ (answer) & Typed values in the final answer (temperatures, humidity, sky condition, identifiers, prices, dates, times, drugs, conditions, severity, product and event names) are compared with the gold observation: every required value present and every typed mention grounded (derived aggregates and unit conversions allowed; $\pm1^{\circ}$). Claims about writes must match $S$. \\
+CORRECT & $T\wedge P\wedge S\wedge A$; $S$ is vacuous for read-only tasks. \\
+\midrule
+Outcome code & First matching rule: \texttt{infra\_error} (API error text, excluded) $\to$ \texttt{correct} $\to$ \texttt{fabricated} (asserts values or a successful write although no call was executed, or claims a write that never succeeded) $\to$ \texttt{schema\_error} (every call failed validation, nothing asserted) $\to$ \texttt{refused} $\to$ \texttt{incomplete} ($\neg T$) $\to$ \texttt{wrong\_params} ($\neg P$) $\to$ \texttt{wrong\_state} ($\neg S$) $\to$ \texttt{wrong\_answer\_values} ($\neg A$). Tasks without a recoverable gold are \texttt{not\_verifiable} and excluded. \\
+\bottomrule
+\end{tabular}
+\end{table}

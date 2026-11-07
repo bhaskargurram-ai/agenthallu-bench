@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """V_01: re-score EVERY available AgentProp trace with the structured validator (default config V1.0).
 
 Outputs (V_validator/):
@@ -15,7 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import V_core as V  # noqa: E402
 import V_traces as L  # noqa: E402
 
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/V_validator"
+OUT = _REPO + "/reanalysis/V_validator"
 EXCLUDE_FROM_ACC = {"not_verifiable", "not_verifiable_answer_only", "infra_error"}
 
 

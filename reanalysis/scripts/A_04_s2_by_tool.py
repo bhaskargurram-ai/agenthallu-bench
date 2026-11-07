@@ -1,6 +1,7 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Tool-error indicator T (inferred: T = eps - [heuristic wrong], valid on applied traces) by first tool,
 to locate where EPS>=2 comes from. Also: which semantic_wrong substitution each first tool receives (from code)."""
-import sys, json; sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+import sys, json; sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from A_common import *
 from collections import Counter, defaultdict
 TOOLS = {'get_weather','get_forecast','get_historical','create_event','get_events','delete_event',

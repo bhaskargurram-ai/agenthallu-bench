@@ -1,0 +1,30 @@
+% Sources: D_fabrication/tables.tex (tab:fab_all) for Tool-call, Rule, LLM-adj., P(fab|no call);
+% validator column: W_writeup/W02_numbers.json outcome_composition_paired (injected arm of the paired set) for the
+% seven paired models, W_writeup/W01_results.json p2_outcomes_by_model for GPT-4o and Gemini-2.5-Flash.
+\begin{table}[!tbp]
+\centering
+\caption{Fabricated tool use on P2 semantic-wrong traces (\%, Wilson 95\% CIs). Rule: rule-based classifier (no tool output obtained and the answer asserts a tool-derived result); a lower bound, with recall 66--73\% against LLM judges. LLM-adj.: GPT-4.1-mini judge with pure placeholders counted as not fabricated (provisional). No call: fabricated among traces without a tool call (LLM-adj.). Validator: share of verifiable injected-arm traces with outcome \texttt{fabricated}; open-weight runs have no step logs.}
+\label{tab:fabrication}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrllrr@{}}
+\toprule
+Model & Type & $n$ & Tool call & Rule [95\% CI] & LLM-adj.\ [95\% CI] & No call & Validator \\
+\midrule
+Gemini-2.0-Flash & prop. & 200 & 5.0 & 38.5 [32.0, 45.4] & 65.5 [58.7, 71.7] & 131/190 & 89/175 \\
+GPT-3.5-Turbo & prop. & 200 & 59.5 & 18.0 [13.3, 23.9] & 23.0 [17.7, 29.3] & 46/81 & 27/175 \\
+Gemini-2.5-Flash & prop. & 50 & 76.0 & 18.0 [9.8, 30.8] & 18.0 [9.8, 30.8] & 9/12 & 8/41 \\
+GPT-4o-mini & prop. & 200 & 40.0 & 14.5 [10.3, 20.0] & 14.5 [10.3, 20.0] & 29/120 & 21/175 \\
+GPT-4.1-mini & prop. & 200 & 85.0 & 11.0 [7.4, 16.1] & 14.0 [9.9, 19.5] & 28/30 & 25/175 \\
+DeepSeek-V3 & prop. & 200 & 86.0 & 10.5 [7.0, 15.5] & 12.0 [8.2, 17.2] & 24/28 & 22/175 \\
+o3-mini & prop. & 50 & 88.0 & 8.0 [3.2, 18.8] & 8.0 [3.2, 18.8] & 4/6 & 1/35 \\
+GPT-4.1-nano & prop. & 200 & 99.0 & 0.5 [0.1, 2.8] & 0.5 [0.1, 2.8] & 1/2 & 0/175 \\
+GPT-4o & prop. & 50 & 100.0 & 0.0 [0.0, 7.1] & 0.0 [0.0, 7.1] & -- & 0/41 \\
+\midrule
+Hermes-3-Llama-3.1-8B & open & 200 & 37.0 & 42.5 [35.9, 49.4] & 48.5 [41.7, 55.4] & 97/126 & -- \\
+Qwen2.5-14B & open & 200 & 61.0 & 17.0 [12.4, 22.8] & 26.0 [20.4, 32.5] & 52/78 & -- \\
+Qwen2.5-3B & open & 200 & 70.0 & 6.5 [3.8, 10.8] & 8.0 [5.0, 12.6] & 16/60 & -- \\
+Qwen2.5-7B & open & 200 & 99.5 & 0.0 [0.0, 1.9] & 0.0 [0.0, 1.9] & 0/1 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Verify empirically the EPS decomposition derived from metrics/eps_scorer.py + experiments/run_p2_experiment.py.
 
 Code-derived claim (see REPORT.md, Sec. 3):
@@ -8,7 +9,7 @@ Code-derived claim (see REPORT.md, Sec. 3):
   reached_output = applied * W_h
 Checks every row of the P2 semantic_wrong data against these identities.
 """
-import sys, json; sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+import sys, json; sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from A_common import *
 from collections import Counter, defaultdict
 TOOLS = {'get_weather','get_forecast','get_historical','create_event','get_events','delete_event',

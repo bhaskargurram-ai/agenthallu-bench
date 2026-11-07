@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Reviewer 1, point 5: propagate human-calibration uncertainty.
 
 Calibration model (as in the paper): a = P(human correct | ensemble correct), b = P(human correct | ensemble wrong),
@@ -10,7 +11,7 @@ Uncertainty: joint bootstrap -- resample the 100 labels (-> a*, b*) AND the targ
 Primary labels: Bhaskar (as in paper). Sensitivity: Yoshitha; consensus (both YES); either YES.
 """
 import sys, json
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 import numpy as np
 from A_common import *
 from A_stats import *

@@ -1,9 +1,10 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Shared helpers for C_* interceptor analyses."""
 import csv, os, sys, math, random
 csv.field_size_limit(sys.maxsize)
-REPO = "/Users/challagullayoshitha/Downloads/agentprop_repo/src"
+REPO = _REPO + ""
 RES = os.path.join(REPO, "data", "results")
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/C_interceptor"
+OUT = _REPO + "/reanalysis/C_interceptor"
 
 
 def read(fn):

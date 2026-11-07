@@ -3,7 +3,7 @@
 > Repository previously published as AgentHallu-Bench; see CHANGELOG.md for rename.
 
 Submission-ready LaTeX source for the paper
-**"Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench"**,
+**"Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench"** (superseded by arXiv v3, see `paper_v3/`),
 formatted with the Elsevier `elsarticle` document class, targeting
 Information Processing & Management (IP&M).
 

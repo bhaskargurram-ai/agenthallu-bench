@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Critique 5 (provisional, no new human labels): does the ensemble's error profile differ on
 open-weight vs proprietary traces?
 
@@ -14,7 +15,7 @@ import argparse
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 from B_slot import slot_verdicts
 import B_03_rejudge as R

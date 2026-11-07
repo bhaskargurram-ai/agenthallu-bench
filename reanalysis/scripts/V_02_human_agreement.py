@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """V_02: agreement of the structured validator with the 100-trace human labels (3 annotators, majority vote).
 
 Humans saw only query + descriptive reference + final answer.  The validator sees gold observations.
@@ -14,12 +15,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import V_core as V  # noqa: E402
 import V_traces as L  # noqa: E402
 
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/V_validator"
+OUT = _REPO + "/reanalysis/V_validator"
 RES = L.RESULTS
 SHEETS = {
     "bhaskar": f"{RES}/human_labeling_sheet_Bhaskar_labeled.csv",
     "yoshitha": f"{RES}/human_labeling_sheet_Yoshitha_labeled.csv",
-    "third": "/Users/challagullayoshitha/Downloads/AgentProp_Bench_final_bhaskar/agent_paper_bhaskar/annotation/annotation_sheet_100.csv",
+    "third": _REPO + "/data/results/human_labels_third_annotator.csv",
 }
 
 

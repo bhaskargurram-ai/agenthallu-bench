@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Critique 2: is the substring heuristic a strawman?
 
 Implements, on the same 100 calibration traces:
@@ -12,7 +13,7 @@ import re
 import string
 import sys
 import unicodedata
-sys.path.insert(0, "/Users/challagullayoshitha/Downloads/agentprop_revision/scripts")
+sys.path.insert(0, _REPO + "/reanalysis/scripts")
 from B_common import *  # noqa
 
 p2 = load_p2()

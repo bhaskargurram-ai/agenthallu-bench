@@ -1,3 +1,4 @@
+import os as _os; _REPO = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 """Shared helpers for C2_* (open-weight interceptor) analyses. Reads the ORIGINAL project as data only."""
 import csv, os, sys, json, random
 csv.field_size_limit(sys.maxsize)
@@ -5,8 +6,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from C_common import tf, mcnemar_exact, hypergeom_sf, wilson  # noqa: F401
 ORIG = os.path.expanduser("~/Desktop/LifeNavigator/agenthallu_bench")
 ORIG_RES = f"{ORIG}/data/results"
-REPO = "/Users/challagullayoshitha/Downloads/agentprop_repo/src"
-OUT = "/Users/challagullayoshitha/Downloads/agentprop_revision/C2_openweight"
+REPO = _REPO + ""
+OUT = _REPO + "/reanalysis/C2_openweight"
 OPEN = ["qwen25_7b", "qwen25_14b", "hermes3_llama8b"]
 PRETTY = {"gpt4o_mini": "GPT-4o-mini", "gemini_20_flash": "Gemini-2.0-Flash", "qwen25_7b": "Qwen2.5-7B",
           "qwen25_14b": "Qwen2.5-14B", "hermes3_llama8b": "Hermes-3-Llama-8B"}
