@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Causal effect of semantic-wrong injection on final-answer error. Each P2 trace is paired 1:1 with the baseline (no-injection) run of the same model on the same task ($n=2{,}041$ pairs, 11 models; GPT-4o and Gemini-2.5-Flash have no baseline runs). RD $=P(\text{wrong}\mid\text{injected})-P(\text{wrong}\mid\text{not injected})$ in percentage points; 95\% CI: Newcombe hybrid-score interval for paired proportions; $p$: exact McNemar test. Strata are defined on the P2 trace.}
+\label{tab:paired_rd}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l r r r l r r l r l}
+\toprule
+ & & \multicolumn{4}{c}{Ensemble judge (primary)} & \multicolumn{2}{c}{GPT-4o-mini judge} & \multicolumn{2}{c}{Heuristic} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+Stratum & $n$ & Inj.\% & Base\% & RD [95\% CI] & $p$ & RD [95\% CI] & $p$ & RD [95\% CI] & $p$ \\
+\midrule
+All paired traces & 2041 & 69.7 & 66.2 & +3.4 [+1.7, +5.2] & $1.9\times10^{-4}$ & +5.2 [+3.2, +7.2] & $<10^{-4}$ & $-$1.3 [$-$3.0, +0.3] & 0.129 \\
+Placebo: no tool call in either arm$^{a}$ & 587 & 56.7 & 57.2 & $-$0.5 [$-$2.8, +1.7] & 0.766 & $-$0.3 [$-$2.9, +2.2] & 0.896 & $-$0.3 [$-$2.2, +1.5] & 0.851 \\
+Injector invoked (valid first tool call) & 1320 & 77.6 & 70.1 & +7.5 [+5.2, +9.8] & $<10^{-4}$ & +9.9 [+7.2, +12.6] & $<10^{-4}$ & $-$2.1 [$-$4.4, +0.2] & 0.084 \\
+\quad corrupted call executed, no error ($T{=}0$) & 652 & 90.3 & 79.8 & +10.6 [+7.3, +13.9] & $<10^{-4}$ & +13.7 [+9.5, +17.8] & $<10^{-4}$ & $-$6.3 [$-$9.6, $-$2.9] & $3.1\times10^{-4}$ \\
+\quad trace contains a tool/validator error ($T{=}1$) & 668 & 65.1 & 60.6 & +4.5 [+1.2, +7.8] & 0.010 & +6.3 [+2.8, +9.7] & $5.3\times10^{-4}$ & +1.9 [$-$1.3, +5.1] & 0.271 \\
+Paper's $S_1$ ($\varepsilon\geq1$) & 910 & 70.5 & 64.3 & +6.3 [+3.4, +9.1] & $<10^{-4}$ & +8.5 [+5.4, +11.5] & $<10^{-4}$ & +6.0 [+3.3, +8.7] & $<10^{-4}$ \\
+Paper's $S_2$ ($\varepsilon\geq2$)$^{b}$ & 257 & 80.2 & 68.9 & +11.3 [+5.7, +16.8] & $1.1\times10^{-4}$ & +15.2 [+9.0, +21.2] & $<10^{-4}$ & +25.7 [+20.5, +31.4] & $<10^{-4}$ \\
+\midrule
+\multicolumn{10}{l}{\emph{Judge-free check: final answer contains the injected substitute value (e.g.\ the swapped city), injected vs.\ baseline}} \\
+All paired traces & 2041 & 7.6 & 0.0 & +7.6 [+6.5, +8.8] & $<10^{-4}$ & & & & \\
+\quad corrupted call executed, no error ($T{=}0$) & 652 & 22.1 & 0.0 & +22.1 [+19.0, +25.4] & $<10^{-4}$ & & & & \\
+\quad trace contains an error ($T{=}1$) & 668 & 1.6 & 0.0 & +1.6 [+0.7, +2.9] & $9.8\times10^{-4}$ & & & & \\
+Paper's $S_2$ & 257 & 1.9 & 0.0 & +1.9 [+0.1, +4.5] & 0.062 & & & & \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize $^{a}$Neither arm executed a tool, so the injector could not act; rows whose P2 re-judging received an empty question are excluded (with them: RD $-$2.3 pp, [$-$4.7, +0.1]). $^{b}$$S_2$ requires the heuristic to mark the P2 answer wrong (Sec.~\ref{sec:eps_def}), so the heuristic RD in this row is inflated by construction and the ensemble RD is subject to the same selection. Pooled task-cluster bootstrap CIs (tasks recur across models) are in the supplementary JSON and agree to within 1 pp.
+\end{table}

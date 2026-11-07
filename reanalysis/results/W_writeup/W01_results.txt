@@ -1,0 +1,275 @@
+pairs 1085; old-label join 1085
+
+== validator ==
+ALL                                n= 1085 err_base= 52.4 err_inj= 74.5 RD=+22.0pp CI[+18.4,+25.5] disc 286/47 p=6.3e-43
+executed clean                     n=  376 err_base= 26.3 err_inj= 71.0 RD=+44.7pp CI[+38.4,+51.0] disc 186/18 p=2.3e-36
+placebo                            n=  351 err_base=100.0 err_inj=100.0 RD= +0.0pp CI[+0.0,+0.0] disc 0/0 p=1
+  deepseek_v3                      n=  175 err_base= 29.7 err_inj= 62.3 RD=+32.6pp CI[+22.9,+41.1] disc 71/14 p=2.4e-10
+  gemini_20_flash                  n=  175 err_base= 94.9 err_inj= 95.4 RD= +0.6pp CI[-1.1,+2.9] disc 2/1 p=1
+  gpt35_turbo                      n=  175 err_base= 53.1 err_inj= 89.1 RD=+36.0pp CI[+28.0,+44.0] disc 67/4 p=8.7e-16
+  gpt41_mini                       n=  175 err_base= 33.7 err_inj= 58.3 RD=+24.6pp CI[+16.0,+33.1] disc 56/13 p=1.7e-07
+  gpt41_nano                       n=  175 err_base= 42.3 err_inj= 75.4 RD=+33.1pp CI[+24.6,+41.7] disc 65/7 p=7e-13
+  gpt4o_mini                       n=  175 err_base= 66.9 err_inj= 69.7 RD= +2.9pp CI[-2.3,+8.0] disc 13/8 p=0.38
+  o3_mini                          n=   35 err_base= 22.9 err_inj= 57.1 RD=+34.3pp CI[+20.0,+51.4] disc 12/0 p=0.00049
+  clean deepseek_v3                n=  100 err_base= 27.0 err_inj= 61.0 RD=+34.0pp CI[+22.0,+46.0] disc 42/8 p=1.2e-06
+  clean gemini_20_flash            n=    9 err_base= 11.1 err_inj= 11.1 RD= +0.0pp CI[-33.3,+33.3] disc 1/1 p=1
+  clean gpt35_turbo                n=   63 err_base= 25.4 err_inj=100.0 RD=+74.6pp CI[+63.5,+85.7] disc 47/0 p=1.4e-14
+  clean gpt41_mini                 n=   97 err_base= 22.7 err_inj= 53.6 RD=+30.9pp CI[+19.6,+42.3] disc 36/6 p=2.8e-06
+  clean gpt41_nano                 n=   94 err_base= 33.0 err_inj= 83.0 RD=+50.0pp CI[+38.3,+60.6] disc 50/3 p=5.5e-12
+  clean gpt4o_mini                 n=    1 err_base=100.0 err_inj=100.0 RD= +0.0pp CI[+0.0,+0.0] disc 0/0 p=1
+  clean o3_mini                    n=   12 err_base=  8.3 err_inj= 91.7 RD=+83.3pp CI[+58.3,+100.0] disc 10/0 p=0.002
+
+== ensemble ==
+ALL                                n= 1085 err_base= 67.2 err_inj= 69.7 RD= +2.5pp CI[-0.2,+5.6] disc 118/91 p=0.072
+executed clean                     n=  376 err_base= 80.1 err_inj= 89.6 RD= +9.6pp CI[+4.6,+14.5] disc 55/19 p=3.4e-05
+placebo                            n=  351 err_base= 60.7 err_inj= 57.8 RD= -2.8pp CI[-6.6,+0.6] disc 16/26 p=0.16
+  deepseek_v3                      n=  175 err_base= 68.0 err_inj= 61.7 RD= -6.3pp CI[-13.1,+0.6] disc 14/25 p=0.11
+  gemini_20_flash                  n=  175 err_base= 66.3 err_inj= 66.9 RD= +0.6pp CI[-4.0,+5.1] disc 9/8 p=1
+  gpt35_turbo                      n=  175 err_base= 66.9 err_inj= 68.0 RD= +1.1pp CI[-5.7,+8.0] disc 19/17 p=0.87
+  gpt41_mini                       n=  175 err_base= 54.9 err_inj= 65.1 RD=+10.3pp CI[+2.9,+17.7] disc 31/13 p=0.0096
+  gpt41_nano                       n=  175 err_base= 79.4 err_inj= 84.0 RD= +4.6pp CI[-2.3,+11.4] disc 23/15 p=0.26
+  gpt4o_mini                       n=  175 err_base= 70.9 err_inj= 72.6 RD= +1.7pp CI[-3.4,+7.4] disc 14/11 p=0.69
+  o3_mini                          n=   35 err_base= 51.4 err_inj= 68.6 RD=+17.1pp CI[+0.0,+34.3] disc 8/2 p=0.11
+  clean deepseek_v3                n=  100 err_base= 89.0 err_inj= 88.0 RD= -1.0pp CI[-9.0,+6.0] disc 8/9 p=1
+  clean gemini_20_flash            n=    9 err_base= 77.8 err_inj=100.0 RD=+22.2pp CI[+0.0,+44.4] disc 2/0 p=0.5
+  clean gpt35_turbo                n=   63 err_base= 88.9 err_inj= 96.8 RD= +7.9pp CI[-1.6,+17.5] disc 7/2 p=0.18
+  clean gpt41_mini                 n=   97 err_base= 69.1 err_inj= 85.6 RD=+16.5pp CI[+7.2,+25.8] disc 18/2 p=0.0004
+  clean gpt41_nano                 n=   94 err_base= 79.8 err_inj= 89.4 RD= +9.6pp CI[+0.0,+19.1] disc 15/6 p=0.078
+  clean gpt4o_mini                 n=    1 err_base=  0.0 err_inj=100.0 RD=+100.0pp CI[+100.0,+100.0] disc 1/0 p=1
+  clean o3_mini                    n=   12 err_base= 58.3 err_inj= 91.7 RD=+33.3pp CI[+8.3,+58.3] disc 4/0 p=0.12
+
+== heuristic ==
+ALL                                n= 1085 err_base= 35.0 err_inj= 31.8 RD= -3.2pp CI[-6.0,-0.4] disc 76/111 p=0.013
+executed clean                     n=  376 err_base= 36.7 err_inj= 27.1 RD= -9.6pp CI[-15.4,-4.0] disc 26/62 p=0.00016
+placebo                            n=  351 err_base= 31.3 err_inj= 31.3 RD= +0.0pp CI[-2.9,+3.0] disc 13/13 p=1
+  deepseek_v3                      n=  175 err_base= 29.1 err_inj= 24.0 RD= -5.1pp CI[-11.4,+1.1] disc 12/21 p=0.16
+  gemini_20_flash                  n=  175 err_base= 35.4 err_inj= 35.4 RD= +0.0pp CI[-2.9,+2.9] disc 4/4 p=1
+  gpt35_turbo                      n=  175 err_base= 29.7 err_inj= 28.0 RD= -1.7pp CI[-8.0,+4.6] disc 14/17 p=0.72
+  gpt41_mini                       n=  175 err_base= 25.7 err_inj= 25.1 RD= -0.6pp CI[-7.4,+5.7] disc 16/17 p=1
+  gpt41_nano                       n=  175 err_base= 41.1 err_inj= 28.0 RD=-13.1pp CI[-20.0,-6.9] disc 8/31 p=0.00029
+  gpt4o_mini                       n=  175 err_base= 46.9 err_inj= 49.1 RD= +2.3pp CI[-4.6,+9.1] disc 19/15 p=0.61
+  o3_mini                          n=   35 err_base= 45.7 err_inj= 37.1 RD= -8.6pp CI[-25.7,+8.6] disc 3/6 p=0.51
+  clean deepseek_v3                n=  100 err_base= 32.0 err_inj= 28.0 RD= -4.0pp CI[-12.0,+4.0] disc 6/10 p=0.45
+  clean gemini_20_flash            n=    9 err_base= 77.8 err_inj=100.0 RD=+22.2pp CI[+0.0,+55.6] disc 2/0 p=0.5
+  clean gpt35_turbo                n=   63 err_base= 33.3 err_inj= 22.2 RD=-11.1pp CI[-25.4,+3.2] disc 6/13 p=0.17
+  clean gpt41_mini                 n=   97 err_base= 36.1 err_inj= 26.8 RD= -9.3pp CI[-17.5,-1.0] disc 4/13 p=0.049
+  clean gpt41_nano                 n=   94 err_base= 38.3 err_inj= 19.1 RD=-19.1pp CI[-29.8,-9.6] disc 5/23 p=0.00091
+  clean gpt4o_mini                 n=    1 err_base=  0.0 err_inj=100.0 RD=+100.0pp CI[+100.0,+100.0] disc 1/0 p=1
+  clean o3_mini                    n=   12 err_base= 58.3 err_inj= 50.0 RD= -8.3pp CI[-41.7,+25.0] disc 2/3 p=1
+
+== gpt4o_mini ==
+ALL                                n= 1085 err_base= 51.4 err_inj= 56.0 RD= +4.6pp CI[+1.2,+8.1] disc 156/106 p=0.0024
+executed clean                     n=  376 err_base= 59.6 err_inj= 73.1 RD=+13.6pp CI[+7.6,+19.8] disc 85/34 p=3.3e-06
+placebo                            n=  351 err_base= 47.9 err_inj= 43.9 RD= -4.0pp CI[-7.8,+0.0] disc 15/29 p=0.049
+  deepseek_v3                      n=  175 err_base= 50.3 err_inj= 49.1 RD= -1.1pp CI[-9.1,+7.4] disc 27/29 p=0.89
+  gemini_20_flash                  n=  175 err_base= 46.3 err_inj= 42.9 RD= -3.4pp CI[-8.0,+1.1] disc 5/11 p=0.21
+  gpt35_turbo                      n=  175 err_base= 53.7 err_inj= 60.6 RD= +6.9pp CI[-1.1,+14.9] disc 31/19 p=0.12
+  gpt41_mini                       n=  175 err_base= 41.1 err_inj= 47.4 RD= +6.3pp CI[-1.1,+13.7] disc 28/17 p=0.14
+  gpt41_nano                       n=  175 err_base= 62.9 err_inj= 74.3 RD=+11.4pp CI[+4.0,+18.9] disc 34/14 p=0.0055
+  gpt4o_mini                       n=  175 err_base= 54.9 err_inj= 60.0 RD= +5.1pp CI[-1.1,+12.0] disc 22/13 p=0.18
+  o3_mini                          n=   35 err_base= 48.6 err_inj= 65.7 RD=+17.1pp CI[-2.9,+37.1] disc 9/3 p=0.15
+  clean deepseek_v3                n=  100 err_base= 69.0 err_inj= 70.0 RD= +1.0pp CI[-10.0,+13.0] disc 19/18 p=1
+  clean gemini_20_flash            n=    9 err_base= 77.8 err_inj=100.0 RD=+22.2pp CI[+0.0,+44.4] disc 2/0 p=0.5
+  clean gpt35_turbo                n=   63 err_base= 58.7 err_inj= 84.1 RD=+25.4pp CI[+11.1,+39.7] disc 20/4 p=0.0015
+  clean gpt41_mini                 n=   97 err_base= 49.5 err_inj= 60.8 RD=+11.3pp CI[+2.1,+20.6] disc 17/6 p=0.035
+  clean gpt41_nano                 n=   94 err_base= 59.6 err_inj= 76.6 RD=+17.0pp CI[+6.4,+27.7] disc 22/6 p=0.0037
+  clean gpt4o_mini                 n=    1 err_base=  0.0 err_inj=100.0 RD=+100.0pp CI[+100.0,+100.0] disc 1/0 p=1
+  clean o3_mini                    n=   12 err_base= 58.3 err_inj= 91.7 RD=+33.3pp CI[+8.3,+58.3] disc 4/0 p=0.12
+
+stratum sizes {"deepseek_v3": {"all": 175, "executed_clean": 100, "placebo": 4, "p2_no_exec": 30, "p2_schema_err_any": 47}, "gemini_20_flash": {"all": 175, "executed_clean": 9, "placebo": 165, "p2_no_exec": 165, "p2_schema_err_any": 1}, "gpt35_turbo": {"all": 175, "executed_clean": 63, "placebo": 58, "p2_no_exec": 75, "p2_schema_err_any": 38}, "gpt41_mini": {"all": 175, "executed_clean": 97, "placebo": 21, "p2_no_exec": 26, "p2_schema_err_any": 54}, "gpt41_nano": {"all": 175, "executed_clean": 94, "placebo": 15, "p2_no_exec": 23, "p2_schema_err_any": 81}, "gpt4o_mini": {"all": 175, "executed_clean": 1, "placebo": 84, "p2_no_exec": 95, "p2_schema_err_any": 79}, "o3_mini": {"all": 35, "executed_clean": 12, "placebo": 4, "p2_no_exec": 4, "p2_schema_err_any": 20}}
+
+P2 outcomes {
+"deepseek_v3": {
+"incomplete": 76,
+"correct": 107,
+"wrong_params": 63,
+"fabricated": 64,
+"wrong_answer_values": 6,
+"refused": 7,
+"schema_error": 1,
+"n": 324
+},
+"gemini_20_flash": {
+"incomplete": 44,
+"refused": 33,
+"fabricated": 89,
+"correct": 8,
+"wrong_params": 1,
+"n": 175
+},
+"gemini_25_flash": {
+"wrong_params": 7,
+"correct": 13,
+"refused": 8,
+"fabricated": 8,
+"incomplete": 5,
+"n": 41
+},
+"gpt35_turbo": {
+"incomplete": 48,
+"wrong_params": 54,
+"fabricated": 27,
+"correct": 19,
+"schema_error": 1,
+"refused": 26,
+"n": 175
+},
+"gpt41_mini": {
+"wrong_answer_values": 4,
+"correct": 73,
+"incomplete": 26,
+"fabricated": 25,
+"wrong_params": 37,
+"refused": 8,
+"schema_error": 2,
+"n": 175
+},
+"gpt41_nano": {
+"wrong_params": 48,
+"correct": 43,
+"incomplete": 27,
+"refused": 29,
+"schema_error": 23,
+"wrong_answer_values": 5,
+"n": 175
+},
+"gpt4o": {
+"refused": 7,
+"correct": 24,
+"wrong_answer_values": 2,
+"wrong_params": 4,
+"incomplete": 4,
+"n": 41
+},
+"gpt4o_mini": {
+"incomplete": 169,
+"correct": 86,
+"wrong_answer_values": 18,
+"fabricated": 50,
+"refused": 1,
+"wrong_params": 1,
+"n": 325
+},
+"o3_mini": {
+"incomplete": 6,
+"refused": 7,
+"wrong_params": 10,
+"correct": 15,
+"schema_error": 1,
+"fabricated": 2,
+"n": 41
+}
+}
+
+baseline outcomes {
+"deepseek_v3": {
+"incomplete": 43,
+"correct": 212,
+"fabricated": 25,
+"wrong_params": 12,
+"schema_error": 1,
+"wrong_answer_values": 13,
+"n": 306
+},
+"gemini_20_flash": {
+"incomplete": 74,
+"refused": 58,
+"fabricated": 156,
+"correct": 17,
+"wrong_state": 1,
+"n": 306
+},
+"gpt35_turbo": {
+"correct": 144,
+"incomplete": 90,
+"wrong_params": 11,
+"refused": 22,
+"fabricated": 36,
+"schema_error": 1,
+"wrong_answer_values": 2,
+"n": 306
+},
+"gpt41_mini": {
+"wrong_answer_values": 16,
+"correct": 203,
+"fabricated": 39,
+"incomplete": 42,
+"schema_error": 1,
+"wrong_params": 3,
+"refused": 2,
+"n": 306
+},
+"gpt41_nano": {
+"wrong_answer_values": 14,
+"correct": 173,
+"incomplete": 59,
+"wrong_params": 12,
+"schema_error": 36,
+"refused": 12,
+"n": 306
+},
+"gpt4o_mini": {
+"correct": 100,
+"incomplete": 146,
+"wrong_answer_values": 19,
+"fabricated": 37,
+"refused": 1,
+"wrong_params": 3,
+"n": 306
+},
+"o3_mini": {
+"correct": 27,
+"wrong_answer_values": 1,
+"fabricated": 2,
+"wrong_params": 1,
+"incomplete": 2,
+"refused": 2,
+"n": 35
+}
+}
+
+flip outcomes {"wrong_params": 157, "refused": 39, "fabricated": 27, "incomplete": 48, "wrong_answer_values": 9, "schema_error": 6}
+
+transitions {
+"correct->correct": 230,
+"incomplete->incomplete": 185,
+"correct->wrong_params": 157,
+"fabricated->fabricated": 146,
+"correct->incomplete": 48,
+"refused->refused": 41,
+"correct->refused": 39,
+"correct->fabricated": 27,
+"incomplete->correct": 25,
+"incomplete->refused": 23,
+"wrong_params->wrong_params": 21,
+"schema_error->schema_error": 16,
+"refused->incomplete": 13,
+"wrong_answer_values->incomplete": 13,
+"wrong_answer_values->wrong_answer_values": 12,
+"fabricated->correct": 9,
+"correct->wrong_answer_values": 9,
+"incomplete->wrong_params": 9,
+"incomplete->fabricated": 8,
+"correct->schema_error": 6,
+"incomplete->schema_error": 5,
+"wrong_answer_values->wrong_params": 5,
+"fabricated->wrong_params": 4,
+"schema_error->correct": 4,
+"fabricated->incomplete": 4,
+"wrong_answer_values->correct": 4,
+"incomplete->wrong_answer_values": 4,
+"fabricated->refused": 3,
+"wrong_params->correct": 3,
+"schema_error->refused": 1,
+"wrong_params->fabricated": 1,
+"schema_error->incomplete": 1,
+"schema_error->wrong_params": 1,
+"wrong_params->incomplete": 1,
+"refused->fabricated": 1,
+"fabricated->wrong_answer_values": 1,
+"wrong_answer_values->fabricated": 1,
+"schema_error->fabricated": 1,
+"wrong_state->correct": 1,
+"refused->correct": 1,
+"refused->schema_error": 1
+}

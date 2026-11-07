@@ -1,0 +1,220 @@
+AgentProp-Bench STRUCTURED CORRECTNESS VALIDATOR -- specification, version V1.0
+===============================================================================
+
+Code:  agentprop_revision/scripts/V_core.py (rubric), V_traces.py (loaders), V_01_run_all.py (re-score all),
+       V_02_human_agreement.py, V_03_robustness.py, V_04_adjudication.py, V_05_build.py (results.json + tables),
+       test_V_validator.py (24 pytest unit tests; `python3 -I -m pytest -q test_V_validator.py`).
+       V_00_*.py are development/inspection helpers only.
+Simulator: scripts/C_tools.py, a text copy of agent/tool_executor.py (the original repo file and the GitHub copy are
+       byte-identical: `diff` returns nothing). No code from the data folders is imported or executed; trace DBs are
+       opened read-only (sqlite URI mode=ro). Every script runs as `python3 -I`.
+Outputs: V_validator/labels_all.csv (33,583 traces), results.json, human_agreement.json,
+       human_disagreements(_adjudicated).csv, robustness.json, tab_V1..V5 *.tex.
+
+No LLM and no human label is used anywhere in the instrument. Every number in the deliverables is computed by these
+scripts from the stored data.
+
+
+1. DETERMINISM OF THE ENVIRONMENT (step 1 of the brief)
+-------------------------------------------------------
+Stateless tools (get_weather, get_forecast, get_historical, get_patient_record, check_drug_interaction,
+schedule_appointment, search_products, get_product, place_order) draw from random.Random(42 + md5(param string)),
+or read fixed dictionaries (patients, drug-interaction table). They are deterministic functions of their parameters.
+Verified empirically: every successful stateless call stored in every trace DB / rerun file was replayed through
+the copy -> 10,396 / 10,396 observations identical (0 mismatches). For get_forecast the per-day "date" field is
+datetime.now()+i at run time (not deterministic); all other forecast fields replay exactly.
+Non-deterministic parts and the policy used:
+  * calendar store (create_event / get_events / delete_event): a process-global dict shared by all concurrently
+    running sessions and an incrementing event counter. Event ids, the content of get_events and whether a delete
+    finds its id depend on what other sessions did. Policy (as instructed): the gold observation for these tools is
+    the observation the agent actually received from the call that matches the gold parameters. If no such call
+    exists the gold observation is unknown (and T/P fail anyway). For conditional writes ("if the 09:00 slot is
+    free", "cancel my Workshop") the condition is evaluated on the received get_events observation; if the agent
+    never fetched the right date, the empty-store mock (deterministic) is used only to define the gold call set.
+  * forecast dates: dates printed in any received forecast observation are treated as neutral (never errors).
+P2 injection: run_p2_experiment.py logs the agent's EMITTED params in steps and the corrupted params in the
+injections table (first tool call only). The loader substitutes injections.injected_value as the EXECUTED params of
+the first action (original_value matched the logged emitted params in 100% of cases); replay of the injected params
+reproduced the logged observation in all cases. multiseed logs post-injection params directly.
+
+2. GOLD SPECIFICATION (query-grounded)
+--------------------------------------
+Audit finding: the task files' correct_tool_sequence frequently contradicts the query text the agent saw, because
+the generators draw slot values with a second rng call instead of reusing the values rendered into the query, ignore
+conditions, or (ToolBench-style tasks) store a fixed placeholder call (e.g. query "Cancel my Workshop on 2024-01-10"
+-> gold create_event('Meeting', 2024-01-15)). Over the 1,091 distinct tasks appearing in traces, 945 are verifiable
+and 360 of these (38%) have a task-file gold that contradicts the query (by slot: get_product.product_id 96,
+get_forecast.days 91, tool multiset 58, schedule_appointment.date 57 / doctor_id 55 / appointment_type 50,
+check_drug_interaction pair 35, place_order.product_id 33, delete_event.event_id 18, patient_id 10).
+The validator therefore builds the gold from the QUERY with one regex per generator template (38 verifiable
+templates + 5 not-verifiable groups; no query is left unparsed) and uses task-file values only where the query is silent. Using the raw task-file gold
+instead lowers pooled baseline accuracy from 46.8% to 27.5% and flips 16.4% of labels (robustness arm), i.e. the
+choice matters and the query-grounded gold is the one consistent with what the agent was asked.
+Gold calls carry: tool, canonical params, scored slots, acceptable variants (alts), answer keys, write flag,
+optional condition. Order constraints are per template (e.g. get_events before a conditional create; get_product
+before a conditional order; get_patient_record before drug checks that need the patient's medications).
+Derived gold (computed from the deterministic simulator, never from the task file):
+  * "order N of the cheaper one": cheaper product by replayed get_product prices (ties: either accepted);
+  * "if it is in stock (and costs under $X)": replayed get_product; if false, the order must NOT be placed;
+  * "then get details on the first result": first product id of the replayed search;
+  * "check interactions between all their medications": every pair of the patient's recorded medications;
+  * "verify no interactions with X": X against each current medication of the patient;
+  * "their medications A and B" (A, B often not the patient's drugs): checking A+B or the patient's actual pair;
+  * "historical data for last January": full January 2024 or January 2023;
+  * "if the HH:MM slot is free": busy iff a received event starts at, or spans, HH:MM;
+  * "Cancel my <Title> on D": delete every received event with that exact title; if none, delete nothing.
+NOT VERIFIABLE (excluded, counted): knowledge/HaluEval tasks (94 tasks: empty correct_final_answer, no tool
+structure); relative dates without anchor ("tomorrow", "last week", "current") 25 tasks; "create a recurring
+weekly X" / "next Monday" without date or duration 15; "schedule ... for patient P" without doctor/date 7;
+"side effects of X" (no tool returns side effects) 5. Crisp rule: a task is verifiable iff every required slot of
+every gold call is determinable from the query (or computable from the deterministic simulator).
+
+3. COMPONENTS
+-------------
+Calls. A logged call is schema_error if the simulator's validator rejected it (missing/unknown/ill-typed/enum
+error or unknown tool); otherwise executed; executed and no "error" key = success.
+T (tool correctness): every REQUIRED gold call is matched one-to-one by an executed call of the same tool
+  (assignment: fully matching calls first, then best partial match), and all order constraints between matched
+  calls hold. Conditional gold calls whose condition is false are not required.
+P (parameter correctness): every matched executed call agrees with its gold call on every scored slot, using the
+  parameters ACTUALLY EXECUTED (post-injection), for at least one acceptable variant. Reported per slot.
+  P_emitted (diagnostic) recomputes P on the agent's pre-injection params.
+  Normalisation (each switchable): casefold + whitespace + quote stripping; accent folding (Sao Paulo); dates to ISO
+  (2024/07/08, July 8, 2024, ...); times to 24h HH:MM (10am, 1:30 PM); attendee lists and drug pairs as unordered
+  sets; appointment_type '-'/' ' -> '_'; ids upper-cased; integers compared numerically. Unit: a Fahrenheit query
+  is satisfied by unit=fahrenheit OR by a celsius call whose answer gives the correctly converted F value.
+  Optional slots not mentioned in the query (fields, calendar_id, notify_attendees, payment_method unless stated,
+  max_price unless stated) are not scored.
+S (state/action success; write tasks only): strict = the multiset of state-changing successful writes equals the
+  multiset of required gold writes (extra or wrong successful writes, e.g. an injected wrong appointment, fail S);
+  a gold delete is satisfied by an executed attempt with the gold id whatever the simulator answered (the event may
+  not exist in the shared store; then the correct end state is "unchanged"). lenient (robustness) = gold writes
+  present. Read-only tasks: S = n/a (treated as true in the conjunction).
+A (answer faithfulness): deterministic regex extraction of typed value mentions from the final answer:
+  temperatures (with unit; ranges; 'temperature of N'), humidity %, sky condition (simulator vocabulary + synonyms
+  clear->sunny, rain->rainy, snow->snowy, clouds->cloudy; other weather words such as 'thunderstorm' are always
+  ungrounded), ids (EVT_/APPT_/ORD_/PRD_), prices ($, USD, price: N), ISO and natural-language dates, times, drug
+  names, medical conditions, interaction severity, product names, event titles. Weather-typed mentions are only
+  extracted for weather tasks; negated mentions ('no rain') and hedged/suggestion/question sentences are ignored for
+  precision.
+  Recall: every required answer key of every required read call must be present, keyed per template:
+    weather -> temperature (in requested unit; conversions accepted) and condition; temperature-only for the F query;
+    forecast/historical -> at least one value that comes from the list observation (not merely today's value);
+    record -> name+conditions+medications / conditions / medications as asked; interaction -> polarity, plus the
+    severity when the gold interaction is true; get_events -> at least one received event (title/time/id) or an
+    explicit 'no events' when the list is empty; search -> a returned product (name/id) or the result count;
+    product details -> name and price. Writes contribute one key: outcome-claim faithfulness (a success claim iff
+    the write succeeded with gold params; for a delete the claim must match found/not-found; when the gold says
+    'do not write' the answer must say so and must not claim the write).
+  Precision: share of typed mentions grounded in G = gold observations (deterministic replay of the gold/accepted
+    variant + the observation of an executed call that matches the gold after normalisation + observations of
+    auxiliary successful calls whose identifying slots all come from the query/gold) + values in the query/gold
+    params + derived aggregates of list observations (mean, rounded means, min, max, median, range, pairwise
+    differences) + C<->F conversions; temperature tolerance +/-1 degree, other numbers exact. Observations from
+    injected / wrong-entity calls are never in G, so propagated wrong values are caught.
+  A = (recall = 1) and (precision = 1) and (write claims faithful).
+CORRECT = T and P and S and A.
+  Justification: read tasks need the right call with the right slots (T,P) and a faithful report of the GOLD
+  observation (A); write tasks additionally need the right end state (S). A is kept for write-only tasks because an
+  agent that performs the write but reports failure (or claims a write that never happened) misinforms the user; for
+  them A reduces to claim faithfulness and precision. A required value read from the right tool but reported for the
+  wrong entity, or a value copied from a corrupted observation, fails A.
+
+4. OUTCOME CODES (first matching rule)
+--------------------------------------
+not_verifiable   task has no recoverable gold (Section 2) -- excluded from all accuracies.
+infra_error      final answer is runner/API error text ('ERROR: 402 credits', 'ERROR: 404 model unavailable') --
+                 excluded (it is not model behaviour). Added because 3,452 traces are such errors (2,840 of them on verifiable
+                 tasks): all baseline/P2 runs of gemini_15_flash and gemini_20_flash_lite, 771/1,850 deepseek_v3 P2
+                 sessions, 180/360 deepseek_v3 P4 sessions, 1 gemini_20_flash P2 session.
+correct          CORRECT.
+fabricated       the answer asserts results (typed values beyond the query, or a write-success claim) while NO call
+                 was executed at all, or claims a write that never succeeded.
+schema_error     >=1 call attempted, every call rejected by the schema validator, nothing asserted.
+refused          inability / clarification language and no gold content delivered.
+incomplete       not T (required call missing / order violated), incl. placeholders '[weather data for ...]' and
+                 'Max steps reached.'
+wrong_params     T but not P.
+wrong_state      T, P but not S (extra / duplicate state-changing writes). Added: needed to report S failures.
+wrong_answer_values  T, P, S but not A.
+Answer-only mode (no stored trace): answer_correct / wrong_answer_values / fabricated (runner step count shows 0
+executed calls) / refused / incomplete / not_verifiable_answer_only (write or store-dependent tasks).
+
+5. TRACES RE-SCORED (labels_all.csv, 33,583 rows)
+-------------------------------------------------
+Full traces (20,910): baseline_day6 (3,650 + 300 retail), p2_day6 (8,100 + 300 retail; 4 injection types),
+interceptor_day8 (1,600), interceptor_control (1,200), p4_day7 (720), ablation_day8 (360), multiseed_day8 (600),
+C_interceptor reruns (4,080).
+Answer-only (12,673): open-weight CSVs (baseline/P2/interceptor for qwen2.5-3b/7b/14b, hermes3-llama8b,
+mistral-7b, phi3.5-mini: their per-step traces stayed on the Modal volume and are not available locally), sweep_day8
+and self_consistency_day8 (no step rows stored).
+Excluded DBs: p3_day7 (multi-turn: final answer responds to run-time follow-up turns that are not part of the task
+spec), and development/test DBs (baseline_smoke_traces, baseline_traces, baseline (simulated agent), day2_test,
+day3_injector_test (mock agents)).
+
+6. VALIDATION OF THE VALIDATOR
+------------------------------
+Unit tests: 24 hand-constructed traces/tests, covering every outcome code (correct, wrong_params,
+wrong_answer_values incl. a propagated injected value, fabricated (no call; write claim without execution; claim
+after failed delete), refused, incomplete (placeholder; missing tool), schema_error, infra_error, not_verifiable,
+wrong_state + lenient-state switch, write-claim faithfulness, delete-not-found, conditional write on a busy slot),
+plus simulator determinism (value equals the one logged in baseline_day6.db), F conversion path, derived averages,
+extraction edge cases, and the task-file contradiction. All pass.
+Human agreement (100 P2 semantic_wrong traces, 3 annotators; 15 not verifiable -> n = 85):
+  validator vs majority kappa 0.53 [95% bootstrap CI 0.32, 0.70], raw agreement 78.8% [69.4, 87.1];
+  vs annotators 1/2/3: 0.57, 0.54, 0.53; human-human kappa on the same 85: 0.85-0.95.
+  Confusion (validator/majority): YES/YES 19, YES/NO 5, NO/YES 13, NO/NO 48. Validator YES-rate 28.2% vs humans 37.6%.
+  Every one of the 18 disagreements was adjudicated against the gold observations (human_disagreements_adjudicated.csv):
+  validator right 16, ambiguous 2 (hourly forecast delivered as daily value; event titled 'All Hands Meeting' instead
+  of 'All Hands' -- the latter flips with title_lenient), human right 0. 8 of the 18 are traces in which the agent
+  executed no tool at all but claimed results that read like the descriptive reference; 4 are correct refusals
+  (3 conditional creates in an occupied slot, 1 cancel of a non-existent event) that humans marked wrong because the
+  reference text assumed the action happened; 1 reports correct-but-implausible simulator values (-4 C, snowy, in
+  Mumbai) that humans rejected; 1 copies the injected wrong-city value (35 C Osaka for Tokyo, and in Celsius);
+  2 report forecast values matching neither the gold nor the received (injected) observation. Humans were not wrong to label
+  as they did -- they only had the descriptive references ("Event deleted.", "Weather analysis for Mumbai.") -- which
+  is exactly why human/LLM judging against those references is not a valid correctness instrument here.
+Robustness (one switch at a time; robustness.json, tab_V4): all normalisation switches change pooled baseline accuracy
+  by at most 2.7 points (no time normalisation 44.1% vs 46.8%; no derived aggregates 45.0%; recall>=0.5 49.3%),
+  flip <=2.1% of labels, and leave the per-model ranking unchanged (Kendall tau = 1.00 for every switch). Per-model
+  accuracy ranges across switches: e.g. deepseek_v3 64.1-71.9 (default 69.3), gpt4o_mini 30.1-37.9 (32.7). The only
+  large effect is replacing the query-grounded gold with the raw task-file gold (27.5% pooled, 16.4% flips, tau 0.90).
+
+7. MAIN RESULTS (baseline, verifiable tasks, infra errors excluded; Wilson 95% CI)
+-----------------------------------------------------------------------------
+model            n    validator CORRECT     old heuristic(all 450)  old 3-LLM ensemble(all 450)
+o3_mini          35   77.1 [61.0, 87.9]     40.0                    36.0
+deepseek_v3      306  69.3 [63.9, 74.2]     51.8                    27.3
+gpt41_mini       306  66.3 [60.9, 71.4]     54.7                    34.2
+gpt41_nano       306  56.5 [50.9, 62.0]     45.3                    16.4
+gpt35_turbo      306  47.1 [41.5, 52.6]     50.4                    24.7
+gpt4o_mini       306  32.7 [27.7, 38.1]     40.0                    24.4
+gemini_20_flash  306   5.6 [ 3.5,  8.7]     47.6                    22.9
+gemini_15_flash, gemini_20_flash_lite: 0 scorable (every run is an API error).
+The old 40-55% heuristic numbers neither rank nor scale the models correctly: the validator spreads them from 5.6%
+to 77.1%. Gemini-2.0-Flash executes no tool in 94% of its verifiable baseline traces (it emits Action and Final
+Answer in one message, which the harness treats as final), so 51% of its traces are fabricated answers.
+Retail (baseline, 100 tasks each): gpt4o_mini 49%, deepseek_v3 36%, gemini_20_flash 6%.
+P2 pooled over models: semantic_wrong 26.4%, missing_required 42.8%, type_mismatch 43.9%, out_of_range 46.0%.
+Interceptor (same 475 tasks, gpt4o_mini): no interceptor 30.3% vs early interceptor 8.5% CORRECT -- the interceptor
+mostly converts answers into refusals (205 refused vs 3) without reducing fabricated outcomes (77 vs 70).
+Open-weight (answer-only A on 170 read tasks with deterministic tools): qwen2.5-7b 85.3, qwen2.5-3b 50.6,
+qwen2.5-14b 41.8, hermes3 37.6, phi3.5-mini 5.3, mistral-7b 2.4. Not comparable to full CORRECT: on proprietary
+traces answer-only A = 49.4% vs CORRECT 41.5% on the same 1,040 traces (A-only accepts 84 traces that full CORRECT
+rejects, rejects 2 it accepts).
+
+8. KNOWN LIMITATIONS
+--------------------
+* Extraction is regex-based; unusual phrasings can be missed (mitigated by unit tests, the inspection of random
+  samples per outcome during development, and the robustness switches).
+* Grounding is per task, not per entity: in the two-city comparison a value of city A reported for city B is not
+  caught if it is grounded for city A.
+* Reporting requirements are strict by design (e.g. "Look up patient P's conditions and schedule ..." requires the
+  conditions in the answer; "hourly forecast" requires include_hourly -- the original harness never showed parameter
+  schemas, so no agent passed include_hourly; 61 gold slot instances in baseline). recall>=0.5 raises pooled baseline
+  accuracy by 2.5 points.
+* Store-dependent tasks rely on the received observation, so they verify faithfulness to the environment state the
+  agent saw, which differs across concurrent runs.
+* Open-weight models, sweep and self-consistency have no stored traces: only answer-only A can be computed.
+* search_products ignores the query string (simulator design), so an agent that says "no products match 'ceramic
+  pan'" is scored wrong although the returned items are unrelated.

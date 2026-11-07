@@ -1,0 +1,119 @@
+{
+ "models_in_trace_dbs": {
+  "interceptor_control.db": [
+   "gemini_20_flash",
+   "gpt4o_mini"
+  ],
+  "interceptor_day8.db": [
+   "gpt4o_mini",
+   "gemini_20_flash"
+  ]
+ },
+ "gpt4o_mini": {
+  "ctrl_trace_type_x_interceptor": {
+   "no_tool_executed": {
+    "n": 328,
+    "ctrl_wrong": 167,
+    "int_abst": 14,
+    "abst_ctrl_wrong(saved)": 8,
+    "abst_ctrl_right(broken)": 6,
+    "abst_L1": 8,
+    "abst_L3": 6
+   },
+   "schema_error": {
+    "n": 264,
+    "ctrl_wrong": 165,
+    "int_abst": 183,
+    "abst_ctrl_wrong(saved)": 123,
+    "abst_ctrl_right(broken)": 60,
+    "abst_L3": 52,
+    "abst_L1": 131
+   },
+   "unknown_tool": {
+    "n": 3,
+    "ctrl_wrong": 3,
+    "int_abst": 2,
+    "abst_ctrl_wrong(saved)": 2,
+    "abst_ctrl_right(broken)": 0,
+    "abst_L3": 2
+   },
+   "tools_ok": {
+    "n": 5,
+    "ctrl_wrong": 0,
+    "int_abst": 2,
+    "abst_ctrl_wrong(saved)": 0,
+    "abst_ctrl_right(broken)": 2,
+    "abst_L3": 2
+   }
+  },
+  "int_trace_type_x_layer": {
+   "no_tool_executed": {
+    "answered": 343
+   },
+   "schema_error": {
+    "L1": 139,
+    "L3": 53,
+    "answered": 54
+   },
+   "tools_ok": {
+    "L3": 5,
+    "answered": 1
+   },
+   "unknown_tool": {
+    "L3": 4,
+    "answered": 1
+   }
+  }
+ },
+ "gemini_20_flash": {
+  "ctrl_trace_type_x_interceptor": {
+   "no_tool_executed": {
+    "n": 574,
+    "ctrl_wrong": 245,
+    "int_abst": 0,
+    "abst_ctrl_wrong(saved)": 0,
+    "abst_ctrl_right(broken)": 0
+   },
+   "schema_error": {
+    "n": 15,
+    "ctrl_wrong": 14,
+    "int_abst": 9,
+    "abst_ctrl_wrong(saved)": 9,
+    "abst_ctrl_right(broken)": 0,
+    "abst_L3": 9
+   },
+   "tools_ok": {
+    "n": 9,
+    "ctrl_wrong": 7,
+    "int_abst": 6,
+    "abst_ctrl_wrong(saved)": 6,
+    "abst_ctrl_right(broken)": 0,
+    "abst_L3": 6
+   },
+   "tool_error_other": {
+    "n": 2,
+    "ctrl_wrong": 1,
+    "int_abst": 2,
+    "abst_ctrl_wrong(saved)": 1,
+    "abst_ctrl_right(broken)": 1,
+    "abst_L1": 2
+   }
+  },
+  "int_trace_type_x_layer": {
+   "no_tool_executed": {
+    "answered": 574
+   },
+   "tools_ok": {
+    "L3": 5,
+    "answered": 8
+   },
+   "tool_error_other": {
+    "L1": 2
+   },
+   "schema_error": {
+    "L3": 10,
+    "answered": 1
+   }
+  }
+ }
+}

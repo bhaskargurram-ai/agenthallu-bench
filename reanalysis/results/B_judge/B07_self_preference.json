@@ -1,0 +1,1444 @@
+{
+  "A_human_anchored_n100": {
+    "gpt4o(stored,P0)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.06060606060606061,
+          "fp_rate": 0.16666666666666666,
+          "fn_rate": 0.4583333333333333,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.23529411764705882,
+          "fp_rate": 0.25,
+          "fn_rate": 0.6666666666666666,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.1746880570409982,
+          "ci95": [
+            -0.07664884135472372,
+            0.42513368983957217
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.08333333333333334,
+          "ci95": [
+            -0.3382113821138211,
+            0.15284552845528454
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.20833333333333331,
+          "ci95": [
+            -0.5014005602240896,
+            0.08620689655172409
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": 0.18181818181818182,
+          "fp_rate": 0.5,
+          "fn_rate": 0.6666666666666666,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.15730337078651685,
+          "fp_rate": 0.14,
+          "fn_rate": 0.5384615384615384,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.3391215526046987,
+          "ci95": [
+            -0.09295199182839631,
+            0.7701736465781409
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.36,
+          "ci95": [
+            -0.0037037037037036813,
+            0.7215686274509805
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.1282051282051282,
+          "ci95": [
+            -0.5833333333333334,
+            0.5789473684210527
+          ]
+        }
+      }
+    },
+    "gpt4o_mini(stored,P0)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.09523809523809523,
+          "fn_rate": 0.4166666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.058823529411764705,
+          "fp_rate": 0.1875,
+          "fn_rate": 0.2777777777777778,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": -0.03208556149732621,
+          "ci95": [
+            -0.22549019607843135,
+            0.16131907308377896
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.09226190476190477,
+          "ci95": [
+            -0.3181818181818182,
+            0.10256410256410256
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.1388888888888889,
+          "ci95": [
+            -0.15789473684210525,
+            0.42105263157894735
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": 0.0,
+          "fp_rate": 0.125,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.0898876404494382,
+          "fp_rate": 0.12,
+          "fn_rate": 0.358974358974359,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.0898876404494382,
+          "ci95": [
+            -0.18181818181818182,
+            0.3626149131767109
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0050000000000000044,
+          "ci95": [
+            -0.19230769230769232,
+            0.2898936170212766
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.02564102564102566,
+          "ci95": [
+            -0.4722222222222222,
+            0.6756756756756757
+          ]
+        }
+      }
+    },
+    "gemini25flash(stored,P0)": {
+      "same_vendor": {
+        "own": {
+          "n": 22,
+          "bias": -0.22727272727272727,
+          "fp_rate": 0.0,
+          "fn_rate": 0.45454545454545453,
+          "n_humanNO": 11,
+          "n_humanYES": 11
+        },
+        "other": {
+          "n": 78,
+          "bias": -0.2692307692307692,
+          "fp_rate": 0.02127659574468085,
+          "fn_rate": 0.7096774193548387,
+          "n_humanNO": 47,
+          "n_humanYES": 31
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.04195804195804195,
+          "ci95": [
+            -0.16550116550116553,
+            0.23659673659673658
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.02127659574468085,
+          "ci95": [
+            -0.06976744186046512,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.2551319648093842,
+          "ci95": [
+            -0.5893416927899686,
+            0.09523809523809523
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 12,
+          "bias": -0.25,
+          "fp_rate": 0.0,
+          "fn_rate": 0.42857142857142855,
+          "n_humanNO": 5,
+          "n_humanYES": 7
+        },
+        "other": {
+          "n": 88,
+          "bias": -0.26136363636363635,
+          "fp_rate": 0.018867924528301886,
+          "fn_rate": 0.6857142857142857,
+          "n_humanNO": 53,
+          "n_humanYES": 35
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.011363636363636354,
+          "ci95": [
+            -0.26136363636363635,
+            0.25757575757575757
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.018867924528301886,
+          "ci95": [
+            -0.06382978723404255,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.2571428571428572,
+          "ci95": [
+            -0.6666666666666666,
+            0.16666666666666674
+          ]
+        }
+      }
+    },
+    "ensemble(stored)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.12121212121212122,
+          "fp_rate": 0.07142857142857142,
+          "fn_rate": 0.4583333333333333,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.2647058823529412,
+          "fp_rate": 0.125,
+          "fn_rate": 0.6111111111111112,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.14349376114081996,
+          "ci95": [
+            -0.0659536541889483,
+            0.35561497326203206
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.053571428571428575,
+          "ci95": [
+            -0.25650118203309696,
+            0.10953058321479375
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.15277777777777785,
+          "ci95": [
+            -0.4570135746606334,
+            0.1470588235294118
+          ]
+        }
+      }
+    },
+    "gpt-4o-mini(P0_original)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.06060606060606061,
+          "fp_rate": 0.14285714285714285,
+          "fn_rate": 0.4166666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.08823529411764706,
+          "fp_rate": 0.125,
+          "fn_rate": 0.2777777777777778,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.027629233511586457,
+          "ci95": [
+            -0.16488413547237077,
+            0.22014260249554368
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.01785714285714285,
+          "ci95": [
+            -0.19349593495934958,
+            0.2
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.1388888888888889,
+          "ci95": [
+            -0.15789473684210525,
+            0.42105263157894735
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": 0.0,
+          "fp_rate": 0.125,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.07865168539325842,
+          "fp_rate": 0.14,
+          "fn_rate": 0.358974358974359,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.07865168539325842,
+          "ci95": [
+            -0.19407558733401428,
+            0.3513789581205311
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.015000000000000013,
+          "ci95": [
+            -0.2222222222222222,
+            0.2769607843137255
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.02564102564102566,
+          "ci95": [
+            -0.4722222222222222,
+            0.6756756756756757
+          ]
+        }
+      }
+    },
+    "gpt-4o-mini(P1_rubric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.10606060606060606,
+          "fp_rate": 0.07142857142857142,
+          "fn_rate": 0.4166666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.17647058823529413,
+          "fp_rate": 0.125,
+          "fn_rate": 0.4444444444444444,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.07040998217468807,
+          "ci95": [
+            -0.12477718360071302,
+            0.2762923351158645
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.053571428571428575,
+          "ci95": [
+            -0.2534883720930232,
+            0.10810810810810811
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.027777777777777735,
+          "ci95": [
+            -0.3333333333333333,
+            0.2767857142857143
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.0,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.1348314606741573,
+          "fp_rate": 0.1,
+          "fn_rate": 0.4358974358974359,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.04392236976506639,
+          "ci95": [
+            -0.17160367722165473,
+            0.21348314606741572
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.1,
+          "ci95": [
+            -0.19148936170212766,
+            -0.02127659574468085
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.10256410256410259,
+          "ci95": [
+            -0.5476190476190477,
+            0.6
+          ]
+        }
+      }
+    },
+    "gpt-4o-mini(P2_request_centric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.15151515151515152,
+          "fp_rate": 0.023809523809523808,
+          "fn_rate": 0.4583333333333333,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.2647058823529412,
+          "fp_rate": 0.0625,
+          "fn_rate": 0.5555555555555556,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.11319073083778966,
+          "ci95": [
+            -0.07932263814616755,
+            0.30570409982174684
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.03869047619047619,
+          "ci95": [
+            -0.1875,
+            0.06818181818181818
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.09722222222222227,
+          "ci95": [
+            -0.3988603988603989,
+            0.21323529411764708
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": -0.18181818181818182,
+          "fp_rate": 0.0,
+          "fn_rate": 0.6666666666666666,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.19101123595505617,
+          "fp_rate": 0.04,
+          "fn_rate": 0.48717948717948717,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.009193054136874351,
+          "ci95": [
+            -0.26251276813074564,
+            0.2247191011235955
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.04,
+          "ci95": [
+            -0.10204081632653061,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.17948717948717946,
+          "ci95": [
+            -0.5151515151515151,
+            0.6285714285714286
+          ]
+        }
+      }
+    },
+    "gpt-4o-mini(P3_reason_then_verdict)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.023809523809523808,
+          "fn_rate": 0.2916666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.14705882352941177,
+          "fp_rate": 0.0,
+          "fn_rate": 0.2777777777777778,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.05614973262032086,
+          "ci95": [
+            -0.07843137254901959,
+            0.20499108734402852
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.023809523809523808,
+          "ci95": [
+            0.0,
+            0.07894736842105263
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.013888888888888895,
+          "ci95": [
+            -0.26666666666666666,
+            0.28846153846153844
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": 0.0,
+          "fp_rate": 0.0,
+          "fn_rate": 0.0,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.12359550561797752,
+          "fp_rate": 0.02,
+          "fn_rate": 0.3076923076923077,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.12359550561797752,
+          "ci95": [
+            0.056179775280898875,
+            0.20224719101123595
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.02,
+          "ci95": [
+            -0.06521739130434782,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.3076923076923077,
+          "ci95": [
+            -0.46153846153846156,
+            -0.16666666666666666
+          ]
+        }
+      }
+    },
+    "gpt-4.1-mini(P0_original)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.045454545454545456,
+          "fp_rate": 0.11904761904761904,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.23529411764705882,
+          "fp_rate": 0.125,
+          "fn_rate": 0.5555555555555556,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.18983957219251335,
+          "ci95": [
+            -0.017825311942959,
+            0.39839572192513373
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.005952380952380959,
+          "ci95": [
+            -0.21254355400696862,
+            0.17073170731707318
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.22222222222222227,
+          "ci95": [
+            -0.5166666666666666,
+            0.08631578947368429
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.25,
+          "fn_rate": 0.2857142857142857,
+          "n_humanNO": 4,
+          "n_humanYES": 7
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.11235955056179775,
+          "fp_rate": 0.1111111111111111,
+          "fn_rate": 0.45714285714285713,
+          "n_humanNO": 54,
+          "n_humanYES": 35
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.021450459652706838,
+          "ci95": [
+            -0.2972420837589377,
+            0.3391215526046987
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.1388888888888889,
+          "ci95": [
+            -0.1724137931034483,
+            0.6861702127659575
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.17142857142857143,
+          "ci95": [
+            -0.5277777777777778,
+            0.23809523809523808
+          ]
+        }
+      }
+    },
+    "gpt-4.1-mini(P1_rubric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.045454545454545456,
+          "fp_rate": 0.14285714285714285,
+          "fn_rate": 0.375,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.14705882352941177,
+          "fp_rate": 0.125,
+          "fn_rate": 0.3888888888888889,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.10160427807486631,
+          "ci95": [
+            -0.09269162210338681,
+            0.2950089126559715
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.01785714285714285,
+          "ci95": [
+            -0.1965811965811966,
+            0.2
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.013888888888888895,
+          "ci95": [
+            -0.3116883116883117,
+            0.2818627450980392
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": -0.18181818181818182,
+          "fp_rate": 0.25,
+          "fn_rate": 0.42857142857142855,
+          "n_humanNO": 4,
+          "n_humanYES": 7
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.06741573033707865,
+          "fp_rate": 0.12962962962962962,
+          "fn_rate": 0.37142857142857144,
+          "n_humanNO": 54,
+          "n_humanYES": 35
+        },
+        "diff_bias_own_minus_other": {
+          "diff": -0.11440245148110317,
+          "ci95": [
+            -0.466802860061287,
+            0.236976506639428
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.12037037037037038,
+          "ci95": [
+            -0.19672131147540983,
+            0.6745283018867925
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.057142857142857106,
+          "ci95": [
+            -0.34827586206896555,
+            0.4722222222222222
+          ]
+        }
+      }
+    },
+    "gpt-4.1-mini(P2_request_centric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.2727272727272727,
+          "fp_rate": 0.0,
+          "fn_rate": 0.75,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.4411764705882353,
+          "fp_rate": 0.0,
+          "fn_rate": 0.8333333333333334,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.16844919786096257,
+          "ci95": [
+            -0.025846702317290526,
+            0.3609625668449198
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.08333333333333337,
+          "ci95": [
+            -0.3311036789297659,
+            0.16862745098039222
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": -0.5454545454545454,
+          "fp_rate": 0.0,
+          "fn_rate": 0.8571428571428571,
+          "n_humanNO": 4,
+          "n_humanYES": 7
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.30337078651685395,
+          "fp_rate": 0.0,
+          "fn_rate": 0.7714285714285715,
+          "n_humanNO": 54,
+          "n_humanYES": 35
+        },
+        "diff_bias_own_minus_other": {
+          "diff": -0.24208375893769146,
+          "ci95": [
+            -0.5372829417773238,
+            0.06435137895812054
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.08571428571428563,
+          "ci95": [
+            -0.24444444444444446,
+            0.3414634146341463
+          ]
+        }
+      }
+    },
+    "gpt-4.1-mini(P3_reason_then_verdict)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.07575757575757576,
+          "fp_rate": 0.07142857142857142,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.14705882352941177,
+          "fp_rate": 0.0625,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.07130124777183601,
+          "ci95": [
+            -0.1051693404634581,
+            0.23618538324420676
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.008928571428571425,
+          "ci95": [
+            -0.15240641711229946,
+            0.13513513513513514
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            -0.2867647058823529,
+            0.2894736842105263
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.25,
+          "fn_rate": 0.2857142857142857,
+          "n_humanNO": 4,
+          "n_humanYES": 7
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.10112359550561797,
+          "fp_rate": 0.05555555555555555,
+          "fn_rate": 0.34285714285714286,
+          "n_humanNO": 54,
+          "n_humanYES": 35
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.010214504596527063,
+          "ci95": [
+            -0.30745658835546474,
+            0.3176710929519918
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.19444444444444445,
+          "ci95": [
+            -0.10204081632653061,
+            0.7330508474576272
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.05714285714285716,
+          "ci95": [
+            -0.40909090909090906,
+            0.35555555555555557
+          ]
+        }
+      }
+    },
+    "gpt-4.1(P0_original)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.015151515151515152,
+          "fp_rate": 0.19047619047619047,
+          "fn_rate": 0.375,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.029411764705882353,
+          "fp_rate": 0.3125,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.0142602495543672,
+          "ci95": [
+            -0.20855614973262032,
+            0.23975044563279857
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.12202380952380953,
+          "ci95": [
+            -0.3919413919413919,
+            0.13562753036437247
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.041666666666666685,
+          "ci95": [
+            -0.25,
+            0.3333333333333333
+          ]
+        }
+      }
+    },
+    "gpt-4.1(P1_rubric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.07575757575757576,
+          "fp_rate": 0.09523809523809523,
+          "fn_rate": 0.375,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.14705882352941177,
+          "fp_rate": 0.125,
+          "fn_rate": 0.3888888888888889,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.07130124777183601,
+          "ci95": [
+            -0.12210338680926916,
+            0.26648841354723707
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.029761904761904767,
+          "ci95": [
+            -0.23015873015873017,
+            0.1388888888888889
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.013888888888888895,
+          "ci95": [
+            -0.3137254901960785,
+            0.28615384615384615
+          ]
+        }
+      }
+    },
+    "gpt-4.1(P2_request_centric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.047619047619047616,
+          "fn_rate": 0.3333333333333333,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.11764705882352941,
+          "fp_rate": 0.0,
+          "fn_rate": 0.2222222222222222,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.0267379679144385,
+          "ci95": [
+            -0.10784313725490195,
+            0.1746880570409982
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.047619047619047616,
+          "ci95": [
+            0.0,
+            0.12195121951219512
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.1111111111111111,
+          "ci95": [
+            -0.16666666666666669,
+            0.38095238095238093
+          ]
+        }
+      }
+    },
+    "gpt-4.1(P3_reason_then_verdict)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.09090909090909091,
+          "fp_rate": 0.023809523809523808,
+          "fn_rate": 0.2916666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.11764705882352941,
+          "fp_rate": 0.0625,
+          "fn_rate": 0.2777777777777778,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.0267379679144385,
+          "ci95": [
+            -0.12299465240641712,
+            0.17647058823529413
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.03869047619047619,
+          "ci95": [
+            -0.19047619047619047,
+            0.06521739130434782
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.013888888888888895,
+          "ci95": [
+            -0.2571428571428572,
+            0.29464285714285715
+          ]
+        }
+      }
+    },
+    "gpt-5-mini(P0_original)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.22727272727272727,
+          "fp_rate": 0.0,
+          "fn_rate": 0.625,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.29411764705882354,
+          "fp_rate": 0.0,
+          "fn_rate": 0.5555555555555556,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.06684491978609627,
+          "ci95": [
+            -0.11140819964349377,
+            0.2459893048128342
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.06944444444444442,
+          "ci95": [
+            -0.23484848484848486,
+            0.37230769230769234
+          ]
+        }
+      }
+    },
+    "gpt-5-mini(P1_rubric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.19696969696969696,
+          "fp_rate": 0.0,
+          "fn_rate": 0.5416666666666666,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.4117647058823529,
+          "fp_rate": 0.0,
+          "fn_rate": 0.7777777777777778,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.21479500891265596,
+          "ci95": [
+            0.02228163992869875,
+            0.4055258467023173
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.23611111111111116,
+          "ci95": [
+            -0.5079365079365079,
+            0.04761904761904767
+          ]
+        }
+      }
+    },
+    "gpt-5-mini(P2_request_centric)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.2878787878787879,
+          "fp_rate": 0.0,
+          "fn_rate": 0.7916666666666666,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.4411764705882353,
+          "fp_rate": 0.0,
+          "fn_rate": 0.8333333333333334,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.15329768270944738,
+          "ci95": [
+            -0.05258467023172908,
+            0.34759358288770054
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.04166666666666674,
+          "ci95": [
+            -0.2777777777777778,
+            0.20220588235294112
+          ]
+        }
+      }
+    },
+    "gpt-5-mini(P3_reason_then_verdict)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.15151515151515152,
+          "fp_rate": 0.0,
+          "fn_rate": 0.4166666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.23529411764705882,
+          "fp_rate": 0.0,
+          "fn_rate": 0.4444444444444444,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.0837789661319073,
+          "ci95": [
+            -0.07932263814616755,
+            0.24777183600713015
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.027777777777777735,
+          "ci95": [
+            -0.3288770053475936,
+            0.2739463601532567
+          ]
+        }
+      }
+    },
+    "gpt-4o(P0_original)": {
+      "same_vendor": {
+        "own": {
+          "n": 66,
+          "bias": -0.015151515151515152,
+          "fp_rate": 0.21428571428571427,
+          "fn_rate": 0.4166666666666667,
+          "n_humanNO": 42,
+          "n_humanYES": 24
+        },
+        "other": {
+          "n": 34,
+          "bias": -0.23529411764705882,
+          "fp_rate": 0.25,
+          "fn_rate": 0.6666666666666666,
+          "n_humanNO": 16,
+          "n_humanYES": 18
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.22014260249554368,
+          "ci95": [
+            -0.031194295900178255,
+            0.47058823529411764
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": -0.035714285714285726,
+          "ci95": [
+            -0.29591836734693877,
+            0.20833333333333334
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": -0.24999999999999994,
+          "ci95": [
+            -0.5394736842105263,
+            0.04805491990846683
+          ]
+        }
+      },
+      "exact_model": {
+        "own": {
+          "n": 11,
+          "bias": 0.18181818181818182,
+          "fp_rate": 0.5,
+          "fn_rate": 0.6666666666666666,
+          "n_humanNO": 8,
+          "n_humanYES": 3
+        },
+        "other": {
+          "n": 89,
+          "bias": -0.12359550561797752,
+          "fp_rate": 0.18,
+          "fn_rate": 0.5128205128205128,
+          "n_humanNO": 50,
+          "n_humanYES": 39
+        },
+        "diff_bias_own_minus_other": {
+          "diff": 0.3054136874361594,
+          "ci95": [
+            -0.12665985699693563,
+            0.7364657814096016
+          ]
+        },
+        "diff_fp_rate_own_minus_other": {
+          "diff": 0.32,
+          "ci95": [
+            -0.046798029556650245,
+            0.6826923076923077
+          ]
+        },
+        "diff_fn_rate_own_minus_other": {
+          "diff": 0.15384615384615385,
+          "ci95": [
+            -0.5555555555555556,
+            0.6060606060606061
+          ]
+        }
+      }
+    }
+  },
+  "B_human_free_n2150": {
+    "gpt4o_verdict_vs_gemini_25_flash": {
+      "did_openaiAgents_minus_googleAgents": -0.042666666666666665,
+      "ci95": [
+        -0.096,
+        0.00888888888888889
+      ],
+      "per_vendor": {
+        "openai": {
+          "n": 900,
+          "openai_judge_yes": 0.27555555555555555,
+          "gemini_judge_yes": 0.2222222222222222
+        },
+        "google": {
+          "n": 250,
+          "openai_judge_yes": 0.344,
+          "gemini_judge_yes": 0.248
+        },
+        "deepseek": {
+          "n": 200,
+          "openai_judge_yes": 0.37,
+          "gemini_judge_yes": 0.3
+        },
+        "alibaba": {
+          "n": 600,
+          "openai_judge_yes": 0.25333333333333335,
+          "gemini_judge_yes": 0.24333333333333335
+        },
+        "meta_nous": {
+          "n": 200,
+          "openai_judge_yes": 0.33,
+          "gemini_judge_yes": 0.3
+        }
+      }
+    },
+    "gpt4o_mini_verdict_vs_gemini_25_flash": {
+      "did_openaiAgents_minus_googleAgents": -0.10333333333333333,
+      "ci95": [
+        -0.16511111111111113,
+        -0.03977777777777777
+      ],
+      "per_vendor": {
+        "openai": {
+          "n": 900,
+          "openai_judge_yes": 0.3788888888888889,
+          "gemini_judge_yes": 0.2222222222222222
+        },
+        "google": {
+          "n": 250,
+          "openai_judge_yes": 0.508,
+          "gemini_judge_yes": 0.248
+        },
+        "deepseek": {
+          "n": 200,
+          "openai_judge_yes": 0.505,
+          "gemini_judge_yes": 0.3
+        },
+        "alibaba": {
+          "n": 600,
+          "openai_judge_yes": 0.40166666666666667,
+          "gemini_judge_yes": 0.24333333333333335
+        },
+        "meta_nous": {
+          "n": 200,
+          "openai_judge_yes": 0.56,
+          "gemini_judge_yes": 0.3
+        }
+      }
+    }
+  },
+  "C_human_free_exact_self": {
+    "gpt4o_verdict_minus_gemini_25_flash_verdict_on_gpt4o": {
+      "n_own": 50,
+      "did": 0.11714285714285715,
+      "ci95": [
+        0.005714285714285713,
+        0.24238095238095242
+      ]
+    },
+    "gpt4o_mini_verdict_minus_gemini_25_flash_verdict_on_gpt4o_mini": {
+      "n_own": 200,
+      "did": 0.0019230769230769162,
+      "ci95": [
+        -0.05551282051282053,
+        0.061282051282051275
+      ]
+    },
+    "gemini_25_flash_verdict_minus_gpt4o_verdict_on_gemini_25_flash": {
+      "n_own": 50,
+      "did": -0.03523809523809524,
+      "ci95": [
+        -0.14952380952380953,
+        0.06761904761904762
+      ]
+    },
+    "gemini_25_flash_verdict_minus_gpt4o_mini_verdict_on_gemini_25_flash": {
+      "n_own": 50,
+      "did": 0.003333333333333327,
+      "ci95": [
+        -0.1195238095238095,
+        0.12428571428571428
+      ]
+    }
+  },
+  "n_by_vendor_in_100": {
+    "deepseek": 12,
+    "openai": 66,
+    "alibaba": 0,
+    "google": 22,
+    "meta_nous": 0
+  }
+}

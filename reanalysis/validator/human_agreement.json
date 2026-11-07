@@ -1,0 +1,56 @@
+{
+  "n_total": 100,
+  "n_verifiable": 85,
+  "n_not_verifiable": 15,
+  "not_verifiable_templates": [
+    "CU_underspecified",
+    "MU_schedule_missing_slots",
+    "WU_relative_date"
+  ],
+  "n_infra_error": 0,
+  "validator_yes_rate": 0.2823529411764706,
+  "human_majority_yes_rate": 0.3764705882352941,
+  "kappa_vs_majority": 0.5254342431761786,
+  "kappa_vs_majority_ci95": [
+    0.32432432432432445,
+    0.7043945621245653
+  ],
+  "raw_agreement_vs_majority": 0.788235294117647,
+  "raw_agreement_ci95": [
+    0.6941176470588235,
+    0.8705882352941177
+  ],
+  "confusion_vs_majority": {
+    "both_yes": 19,
+    "validator_yes_human_no": 5,
+    "validator_no_human_yes": 13,
+    "both_no": 48
+  },
+  "kappa_vs_bhaskar": 0.5682539682539682,
+  "kappa_vs_bhaskar_ci95": [
+    0.36833602584814207,
+    0.739742804654011
+  ],
+  "kappa_vs_yoshitha": 0.536082474226804,
+  "kappa_vs_yoshitha_ci95": [
+    0.3439911797133406,
+    0.7100625355315519
+  ],
+  "kappa_vs_third": 0.5254342431761786,
+  "kappa_vs_third_ci95": [
+    0.32432432432432445,
+    0.7043945621245653
+  ],
+  "kappa_human_bhaskar_yoshitha": 0.8500000000000001,
+  "kappa_human_bhaskar_third": 0.898507462686567,
+  "kappa_human_yoshitha_third": 0.9504950495049505,
+  "kappa_vs_majority_all100_notverifiable_as_NO": 0.3891797556719021,
+  "outcomes_on_verifiable": {
+    "incomplete": 17,
+    "correct": 24,
+    "fabricated": 9,
+    "refused": 15,
+    "wrong_params": 17,
+    "schema_error": 3
+  }
+}

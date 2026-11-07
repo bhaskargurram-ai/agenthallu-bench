@@ -1,0 +1,17 @@
+% C_interceptor/tab_C3_reported_audit.tex -- source: reported Table 8 numbers (no raw open-weight data exists); C_06
+\begin{table}[t]\centering\small
+\caption{Audit of the submitted interceptor table. $n$ = the only task count reproducing every reported percentage. Random = hallucination expected from abstaining at random at the reported rate, $\mathrm{Ctrl}\times(1-\mathrm{Abst})$. Positive Int$-$Random means the Interceptor is \emph{worse} than random abstention. Precision under both Sv/Bk orderings; base rate = Ctrl\%. Unpaired 95\% CI = the paper's own CI method.}
+\label{tab:C3}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrl}
+\toprule
+Model & $n$ & Ctrl\% & Int\% & Abst\% & Random\% & Int$-$Random (pp) & Prec.\ (submitted Sv/Bk) & Prec.\ (arXiv v2 Sv/Bk) & Unpaired 95\% CI $\Delta$ \\
+\midrule
+GPT-4o-mini & 600 & 55.8 & 32.8 & 33.5 & 37.1 & -4.3 & 0.66 (133/68) & 0.66 (133/68) & [-28.5, -17.5] \\
+Gemini-2.0-Flash & 600 & 44.5 & 43.2 & 2.8 & 43.3 & -0.1 & 0.94 (16/1) & 0.94 (16/1) & [-6.9, 4.3] \\
+Qwen2.5-7B & 300 & 55.3 & 31.3 & 55.3 & 24.7 & +6.6 & 0.55 (91/75) & 0.45 (75/91) & [-31.7, -16.3] \\
+Qwen2.5-14B & 300 & 45.0 & 37.0 & 27.0 & 32.9 & +4.1 & 0.30 (24/57) & 0.30 (24/57) & [-15.8, -0.2] \\
+Hermes-3-Llama-8B & 300 & 43.0 & 39.0 & 13.3 & 37.3 & +1.7 & 0.60 (24/16) & 0.40 (16/24) & [-11.9, 3.9] \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Injection-induced failure among tasks the same model solves without injection: $P(\text{wrong}\mid\text{injected},\ \text{baseline correct})$, paired traces, Wilson 95\% CIs. The placebo stratum (no tool executed in either arm) measures run-to-run and re-judging noise.}
+\label{tab:flip}
+\begin{tabular}{l r l r l}
+\toprule
+Stratum & \multicolumn{2}{c}{Ensemble judge} & \multicolumn{2}{c}{GPT-4o-mini judge} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & $k/n$ & rate [95\% CI] & $k/n$ & rate [95\% CI] \\
+\midrule
+Placebo (no tool call in either arm) & 21/251 & 0.08 [0.06, 0.12] & 28/341 & 0.08 [0.06, 0.12] \\
+All paired traces & 207/689 & 0.30 [0.27, 0.34] & 273/991 & 0.28 [0.25, 0.30] \\
+Injector invoked, trace has an error ($T{=}1$) & 79/263 & 0.30 [0.25, 0.36] & 92/330 & 0.28 [0.23, 0.33] \\
+Corrupted call executed, no error ($T{=}0$) & 97/132 & 0.73 [0.65, 0.80] & 145/255 & 0.57 [0.51, 0.63] \\
+Paper's $S_2$ & 42/80 & 0.53 [0.42, 0.63] & 54/107 & 0.50 [0.41, 0.60] \\
+\bottomrule
+\end{tabular}
+\end{table}

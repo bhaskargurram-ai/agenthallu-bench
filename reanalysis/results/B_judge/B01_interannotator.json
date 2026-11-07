@@ -1,0 +1,216 @@
+{
+  "n": 100,
+  "yoshitha_completed_equals_labeled": true,
+  "yes_rate": {
+    "bhaskar": 0.38,
+    "yoshitha": 0.44,
+    "third": 0.43
+  },
+  "pairs": {
+    "bhaskar-yoshitha": {
+      "kappa": 0.8352553542009885,
+      "kappa_ci95": [
+        0.7183098591549295,
+        0.9372909698996655
+      ],
+      "raw_agreement": 0.92,
+      "raw_agreement_ci95": [
+        0.86,
+        0.97
+      ],
+      "gwet_ac1": 0.8450213095699342,
+      "confusion": {
+        "both_yes": 37,
+        "bhaskar_yes_yoshitha_no": 1,
+        "bhaskar_no_yoshitha_yes": 7,
+        "both_no": 55
+      },
+      "disagree_ids": [
+        "p2_semantic_wrong_gpt4o_weather_095_120424",
+        "p2_semantic_wrong_gemini_25_flash_medical_098_c0aef6",
+        "p2_semantic_wrong_gpt4o_weather_005_8209c1",
+        "p2_semantic_wrong_gpt35_turbo_weather_027_b26045",
+        "p2_semantic_wrong_deepseek_v3_toolbench_syn_0063_e70b4b",
+        "p2_semantic_wrong_gpt41_mini_toolbench_syn_0072_e6f63f",
+        "p2_semantic_wrong_o3_mini_weather_005_319705",
+        "p2_semantic_wrong_gpt41_mini_calendar_019_cf9a6e"
+      ]
+    },
+    "bhaskar-third": {
+      "kappa": 0.855132450331126,
+      "kappa_ci95": [
+        0.742063492063492,
+        0.9400479616306954
+      ],
+      "raw_agreement": 0.93,
+      "raw_agreement_ci95": [
+        0.88,
+        0.97
+      ],
+      "gwet_ac1": 0.8648779075378825,
+      "confusion": {
+        "both_yes": 37,
+        "bhaskar_yes_third_no": 1,
+        "bhaskar_no_third_yes": 6,
+        "both_no": 56
+      },
+      "disagree_ids": [
+        "p2_semantic_wrong_deepseek_v3_toolbench_syn_0036_ad3445",
+        "p2_semantic_wrong_gemini_25_flash_medical_098_c0aef6",
+        "p2_semantic_wrong_gpt4o_weather_005_8209c1",
+        "p2_semantic_wrong_gpt35_turbo_weather_027_b26045",
+        "p2_semantic_wrong_deepseek_v3_toolbench_syn_0063_e70b4b",
+        "p2_semantic_wrong_gpt41_mini_toolbench_syn_0072_e6f63f",
+        "p2_semantic_wrong_gpt41_mini_calendar_019_cf9a6e"
+      ]
+    },
+    "yoshitha-third": {
+      "kappa": 0.9389747762408461,
+      "kappa_ci95": [
+        0.8589846897663176,
+        1.0
+      ],
+      "raw_agreement": 0.97,
+      "raw_agreement_ci95": [
+        0.93,
+        1.0
+      ],
+      "gwet_ac1": 0.9409971481954961,
+      "confusion": {
+        "both_yes": 42,
+        "yoshitha_yes_third_no": 2,
+        "yoshitha_no_third_yes": 1,
+        "both_no": 55
+      },
+      "disagree_ids": [
+        "p2_semantic_wrong_gpt4o_weather_095_120424",
+        "p2_semantic_wrong_deepseek_v3_toolbench_syn_0036_ad3445",
+        "p2_semantic_wrong_o3_mini_weather_005_319705"
+      ]
+    }
+  },
+  "fleiss_kappa_3": {
+    "kappa": 0.8765714285714284,
+    "ci95": [
+      0.7938049853372434,
+      0.9457970098017072
+    ]
+  },
+  "unanimous_items": 91,
+  "majority_yes_rate": 0.42,
+  "each_vs_majority3_kappa_nonindependent": {
+    "bhaskar": 0.8752079866888518,
+    "yoshitha": 0.9592169657422512,
+    "third": 0.9795417348608838
+  },
+  "leave_one_out_vs_other_two_consensus": {
+    "bhaskar": {
+      "n": 97,
+      "kappa": 0.8725919439579685,
+      "agreement": 0.9381443298969072
+    },
+    "yoshitha": {
+      "n": 93,
+      "kappa": 0.9555236728837877,
+      "agreement": 0.978494623655914
+    },
+    "third": {
+      "n": 92,
+      "kappa": 0.9774951076320938,
+      "agreement": 0.9891304347826086
+    }
+  },
+  "items_with_any_disagreement": 9,
+  "disagreement_detail": [
+    {
+      "session_id": "p2_semantic_wrong_gpt4o_weather_095_120424",
+      "model": "gpt4o",
+      "domain": "weather",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 0
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_deepseek_v3_toolbench_syn_0036_ad3445",
+      "model": "deepseek_v3",
+      "domain": "calendar",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 0,
+        "third": 1
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_gemini_25_flash_medical_098_c0aef6",
+      "model": "gemini_25_flash",
+      "domain": "medical",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 1
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_gpt4o_weather_005_8209c1",
+      "model": "gpt4o",
+      "domain": "weather",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 1
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_gpt35_turbo_weather_027_b26045",
+      "model": "gpt35_turbo",
+      "domain": "weather",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 1
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_deepseek_v3_toolbench_syn_0063_e70b4b",
+      "model": "deepseek_v3",
+      "domain": "weather",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 1
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_gpt41_mini_toolbench_syn_0072_e6f63f",
+      "model": "gpt41_mini",
+      "domain": "weather",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 1
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_o3_mini_weather_005_319705",
+      "model": "o3_mini",
+      "domain": "weather",
+      "labels": {
+        "bhaskar": 0,
+        "yoshitha": 1,
+        "third": 0
+      }
+    },
+    {
+      "session_id": "p2_semantic_wrong_gpt41_mini_calendar_019_cf9a6e",
+      "model": "gpt41_mini",
+      "domain": "calendar",
+      "labels": {
+        "bhaskar": 1,
+        "yoshitha": 0,
+        "third": 0
+      }
+    }
+  ]
+}

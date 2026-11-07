@@ -1,0 +1,32 @@
+\begin{table*}[t]
+\centering
+\caption{Baseline accuracy under the structured validator (verifiable tasks only; knowledge and underspecified tasks
+excluded). $T,P,A$: component pass rates; $S$: pass rate on write tasks; Fab.: share of traces coded
+\texttt{fabricated}. Old: the paper's string-heuristic and 3-LLM-ensemble labels on all 450 sessions of the same model
+(incl.\ knowledge tasks). Open-weight models have no stored traces (only final answers), so only the answer-only
+component can be computed (read tasks with deterministic tools); on proprietary traces answer-only $A$ over-estimates
+full CORRECT (49.4\% vs 41.5\% on the same traces), so the two blocks are not comparable.
+Excluded (all runs are API errors): Gemini-1.5-Flash, Gemini-2.0-Flash-Lite.}
+\label{tab:validator-models}
+\small
+\begin{tabular}{@{}lrccccccrr@{}}
+\toprule
+Model & $n$ & CORRECT [95\% CI] & $T$ & $P$ & $S$ & $A$ & Fab. & Old heur. & Old ens. \\
+\midrule
+o3-mini & 35 & 77.1 [61.0, 87.9] & 82.9 & 80.0 & 85.7 & 80.0 & 5.7 & 40.0 & 36.0 \\
+DeepSeek-V3 & 306 & 69.3 [63.9, 74.2] & 77.8 & 73.9 & 81.7 & 77.5 & 8.2 & 51.8 & 27.3 \\
+GPT-4.1-mini & 306 & 66.3 [60.9, 71.4] & 73.5 & 72.5 & 61.5 & 68.6 & 12.7 & 54.7 & 34.2 \\
+GPT-4.1-nano & 306 & 56.5 [50.9, 62.0] & 65.0 & 61.1 & 59.6 & 62.1 & 0.0 & 45.3 & 16.4 \\
+GPT-3.5-Turbo & 306 & 47.1 [41.5, 52.6] & 51.3 & 47.7 & 48.6 & 52.9 & 11.8 & 50.4 & 24.7 \\
+GPT-4o-mini & 306 & 32.7 [27.7, 38.1] & 44.4 & 43.1 & 58.7 & 35.3 & 12.1 & 40.0 & 24.4 \\
+Gemini-2.0-Flash & 306 & 5.6 [3.5, 8.7] & 5.9 & 5.9 & 20.2 & 7.5 & 51.0 & 47.6 & 22.9 \\
+\midrule
+Qwen2.5-7B & 170 & \multicolumn{6}{c}{$A$-only (answer-only mode): 85.3 [79.2, 89.8]} & & \\
+Qwen2.5-3B & 170 & \multicolumn{6}{c}{$A$-only (answer-only mode): 50.6 [43.1, 58.0]} & & \\
+Qwen2.5-14B & 170 & \multicolumn{6}{c}{$A$-only (answer-only mode): 41.8 [34.6, 49.3]} & & \\
+Hermes-3-Llama-8B & 170 & \multicolumn{6}{c}{$A$-only (answer-only mode): 37.6 [30.7, 45.1]} & & \\
+Phi-3.5-mini & 170 & \multicolumn{6}{c}{$A$-only (answer-only mode): 5.3 [2.8, 9.8]} & & \\
+Mistral-7B & 170 & \multicolumn{6}{c}{$A$-only (answer-only mode): 2.4 [0.9, 5.9]} & & \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,49 @@
+\begin{table*}[t]
+\centering
+\caption{Agreement (Cohen's $\kappa$) of correctness metrics with human labels on the 100 calibration traces.
+A1/A2/A3: individual annotators; Maj.: 3-annotator majority (human YES rate 0.42). 95\% CIs: percentile
+bootstrap ($B{=}10{,}000$). All 100 references are task descriptions, not gold values (Sec.~X), which caps
+every reference-based string metric. Slot checks and prompt P3 were designed by the authors after
+inspecting the failure modes in this set and are therefore not out-of-sample estimates. On the 88 traces not
+inspected during design, slot-strict reaches $\kappa{=}0.64$.}
+\label{tab:judge-expanded}
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Metric & YES rate & $\kappa$ vs A1 [95\% CI] & vs A2 & vs A3 & vs Maj. & Maj. 95\% CI \\
+\midrule
+\multicolumn{7}{l}{\emph{String / surface metrics (reference-based)}} \\
+\quad Exact match & 0.00 & 0.000 [0.00, 0.00] & 0.000 & 0.000 & 0.000 & [0.00, 0.00] \\
+\quad Normalized match (equality) & 0.00 & 0.000 [0.00, 0.00] & 0.000 & 0.000 & 0.000 & [0.00, 0.00] \\
+\quad Normalized containment & 0.03 & -0.007 [-0.08, 0.08] & 0.031 & 0.033 & 0.035 & [-0.04, 0.13] \\
+\quad Token-F1 $\geq$ 0.5 & 0.16 & 0.235 [0.06, 0.41] & 0.172 & 0.182 & 0.192 & [0.03, 0.36] \\
+\quad Numeric tolerance (1\%/0.5) & 0.42 & 0.334 [0.14, 0.52] & 0.225 & 0.243 & 0.261 & [0.06, 0.45] \\
+\quad Reference-entity match & 0.70 & 0.270 [0.12, 0.42] & 0.351 & 0.299 & 0.323 & [0.17, 0.48] \\
+\quad Substring heuristic (as coded) & 0.65 & 0.049 [-0.12, 0.22] & 0.015 & 0.002 & -0.011 & [-0.19, 0.17] \\
+\quad Substring heuristic (as described) & 0.91 & 0.014 [-0.08, 0.10] & 0.035 & 0.031 & 0.028 & [-0.07, 0.13] \\
+\addlinespace
+\multicolumn{7}{l}{\emph{Query-grounded slot checks (rule-based)}} \\
+\quad Slot presence & 0.71 & 0.291 [0.15, 0.43] & 0.372 & 0.358 & 0.344 & [0.20, 0.49] \\
+\quad + no conflicting entity & 0.68 & 0.337 [0.19, 0.48] & 0.425 & 0.410 & 0.395 & [0.24, 0.54] \\
+\quad Non-answer filter only & 0.68 & 0.448 [0.32, 0.59] & 0.502 & 0.524 & 0.508 & [0.37, 0.65] \\
+\quad Slot-strict (presence+no-conflict+non-answer) & 0.53 & 0.586 [0.43, 0.73] & 0.662 & 0.683 & 0.663 & [0.52, 0.80] \\
+\addlinespace
+\multicolumn{7}{l}{\emph{Original LLM judges (stored verdicts, original prompt)}} \\
+\quad GPT-4o & 0.30 & 0.336 [0.15, 0.52] & 0.244 & 0.258 & 0.274 & [0.09, 0.46] \\
+\quad Gemini-2.5-Flash & 0.16 & 0.379 [0.21, 0.55] & 0.347 & 0.359 & 0.372 & [0.22, 0.54] \\
+\quad GPT-4o-mini & 0.34 & 0.567 [0.39, 0.73] & 0.501 & 0.518 & 0.536 & [0.36, 0.69] \\
+\quad 3-LLM ensemble (majority) & 0.25 & 0.432 [0.25, 0.61] & 0.383 & 0.398 & 0.413 & [0.24, 0.58] \\
+\addlinespace
+\multicolumn{7}{l}{\emph{Re-run LLM judges (this revision; P0=original prompt, P3=reason-then-verdict)}} \\
+\quad gpt-4o-mini (P0) & 0.35 & 0.547 [0.37, 0.71] & 0.481 & 0.499 & 0.517 & [0.34, 0.68] \\
+\quad gpt-4o-mini (P3) & 0.31 & 0.714 [0.56, 0.85] & 0.686 & 0.704 & 0.723 & [0.58, 0.85] \\
+\quad gpt-4.1-mini (P0) & 0.31 & 0.538 [0.36, 0.70] & 0.434 & 0.451 & 0.468 & [0.29, 0.63] \\
+\quad gpt-4.1-mini (P3) & 0.32 & 0.694 [0.54, 0.83] & 0.582 & 0.600 & 0.618 & [0.45, 0.76] \\
+\quad gpt-4.1 (P0) & 0.40 & 0.496 [0.31, 0.66] & 0.385 & 0.403 & 0.421 & [0.23, 0.60] \\
+\quad gpt-4.1 (P3) & 0.32 & 0.737 [0.59, 0.87] & 0.666 & 0.684 & 0.703 & [0.55, 0.84] \\
+\quad gpt-5-mini (P0) & 0.17 & 0.453 [0.28, 0.63] & 0.414 & 0.427 & 0.441 & [0.29, 0.61] \\
+\quad gpt-5-mini (P3) & 0.24 & 0.680 [0.53, 0.82] & 0.573 & 0.590 & 0.607 & [0.45, 0.76] \\
+\bottomrule
+\end{tabular}}
+\end{table*}

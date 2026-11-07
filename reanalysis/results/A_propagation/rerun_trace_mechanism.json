@@ -1,0 +1,100 @@
+{
+  "p2sem_r1": {
+    "summary": {
+      "n": 266,
+      "action_and_final_in_same_completion_no_exec": 134,
+      "no_tool_executed": 165,
+      "tool_executed": 101,
+      "template_key_param": 62,
+      "first_call_validation_error": 101,
+      "first_call_error_dict": 101,
+      "T_any_error": 101,
+      "error_then_clean_retry_same_tool": 94,
+      "injection_logged": 95
+    },
+    "by_first_tool": {
+      "get_events": {
+        "n": 53,
+        "template_key_param": 53,
+        "first_call_validation_error": 53,
+        "first_call_error_dict": 53,
+        "T_any_error": 53
+      },
+      "create_event": {
+        "n": 33,
+        "first_call_validation_error": 33,
+        "first_call_error_dict": 33,
+        "T_any_error": 33
+      },
+      "search_knowledge": {
+        "n": 6,
+        "first_call_validation_error": 6,
+        "first_call_error_dict": 6,
+        "T_any_error": 6
+      },
+      "search_products": {
+        "n": 6,
+        "template_key_param": 6,
+        "first_call_validation_error": 6,
+        "first_call_error_dict": 6,
+        "T_any_error": 6
+      },
+      "get_patient_record": {
+        "n": 3,
+        "template_key_param": 3,
+        "first_call_validation_error": 3,
+        "first_call_error_dict": 3,
+        "T_any_error": 3
+      }
+    }
+  },
+  "clean_r1": {
+    "summary": {
+      "n": 265,
+      "action_and_final_in_same_completion_no_exec": 132,
+      "no_tool_executed": 164,
+      "tool_executed": 101,
+      "template_key_param": 63,
+      "first_call_validation_error": 101,
+      "first_call_error_dict": 101,
+      "T_any_error": 101,
+      "error_then_clean_retry_same_tool": 95
+    },
+    "by_first_tool": {
+      "get_events": {
+        "n": 54,
+        "template_key_param": 54,
+        "first_call_validation_error": 54,
+        "first_call_error_dict": 54,
+        "T_any_error": 54
+      },
+      "create_event": {
+        "n": 33,
+        "first_call_validation_error": 33,
+        "first_call_error_dict": 33,
+        "T_any_error": 33
+      },
+      "search_knowledge": {
+        "n": 6,
+        "template_key_param": 1,
+        "first_call_validation_error": 6,
+        "first_call_error_dict": 6,
+        "T_any_error": 6
+      },
+      "search_products": {
+        "n": 4,
+        "template_key_param": 4,
+        "first_call_validation_error": 4,
+        "first_call_error_dict": 4,
+        "T_any_error": 4
+      },
+      "get_patient_record": {
+        "n": 4,
+        "template_key_param": 4,
+        "first_call_validation_error": 4,
+        "first_call_error_dict": 4,
+        "T_any_error": 4
+      }
+    }
+  }
+}

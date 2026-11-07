@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Self-preference check. Bias = judge YES rate $-$ human-majority YES rate (negative = conservative)
+on traces from the judge's own vendor/model vs.\ all other traces (100 calibration traces; CIs: bootstrap).
+Human-free check over all 2{,}150 P2 traces (judge minus Gemini-2.5-Flash YES-rate, own-model traces minus
+other traces): GPT-4o $+0.117$ [0.01, 0.24] ($n_{own}{=}50$),
+GPT-4o-mini $+0.002$ [-0.06, 0.06] ($n_{own}{=}200$);
+vendor-level (OpenAI vs Google agents): GPT-4o $-0.043$ [-0.10, 0.01],
+GPT-4o-mini $-0.103$ [-0.17, -0.04].}
+\label{tab:selfpref}
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+Judge & Own = & $n_{own}$ & Bias own & Bias other & $\Delta$ [95\% CI] \\
+\midrule
+GPT-4o & vendor & 66 & -0.06 & -0.24 & +0.17 [-0.08, 0.43] \\
+GPT-4o & self & 11 & +0.18 & -0.16 & +0.34 [-0.09, 0.77] \\
+GPT-4o-mini & vendor & 66 & -0.09 & -0.06 & -0.03 [-0.23, 0.16] \\
+GPT-4o-mini & self & 11 & +0.00 & -0.09 & +0.09 [-0.18, 0.36] \\
+Gemini-2.5-Flash & vendor & 22 & -0.23 & -0.27 & +0.04 [-0.17, 0.24] \\
+Gemini-2.5-Flash & self & 12 & -0.25 & -0.26 & +0.01 [-0.26, 0.26] \\
+Ensemble & vendor & 66 & -0.12 & -0.26 & +0.14 [-0.07, 0.36] \\
+\bottomrule
+\end{tabular}}
+\end{table}

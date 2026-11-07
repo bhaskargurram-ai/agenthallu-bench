@@ -1,0 +1,61 @@
+% C_interceptor/tab_C2_replay.tex -- source: C_02 full-trace GPT-4o-mini re-runs, C_03 offline replay, C_04 judge
+\begin{table}[t]\centering\small
+\caption{Offline replay of Interceptor layers and baselines on full GPT-4o-mini traces (no abstention applied at run time; GPT-4o-mini judge labels; halueval/toolbench\_syn excluded from clean/P2 rows because their references are empty or echo the query). Sel.\ risk = wrong among answered. Random hall.\% = expected hallucination of random abstention at the same rate. $p$: one-sided hypergeometric test vs.\ random.}
+\label{tab:C2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Run & Policy & Cov.\% & Hall.\% after & Random hall.\% & Sel.\ risk\% & Sv & Bk & Prec. & $p$ \\
+\midrule
+\multicolumn{10}{l}{\emph{Clean, original harness} ($n{=}442$, no-abstention hallucination 58.6\%)} \\
+ & As run: $L_1{\ge}2 \lor L_3$ & 53.6 & 30.3 & 31.4 & 56.5 & 125 & 80 & 0.61 & 0.198 \\
+ & Paper Coverage: $L_1{\ge}1 \lor L_2 \lor L_3$ & 44.3 & 23.3 & 26.0 & 52.6 & 156 & 90 & 0.63 & 0.014 \\
+ & $L_1$ only (Precision mode) & 47.1 & 26.0 & 27.6 & 55.3 & 144 & 90 & 0.62 & 0.108 \\
+ & $L_2$ only & 46.4 & 24.2 & 27.2 & 52.2 & 152 & 85 & 0.64 & 0.007 \\
+ & $L_3$ only & 75.8 & 49.1 & 44.4 & 64.8 & 42 & 65 & 0.39 & 1.000 \\
+ & Abstain if no tool executed & 54.8 & 34.4 & 32.1 & 62.8 & 107 & 93 & 0.54 & 0.981 \\
+ & No tool $\lor$ inline-fabricated & 54.8 & 34.4 & 32.1 & 62.8 & 107 & 93 & 0.54 & 0.981 \\
+ & Arg-grounding check (diagnostic) & 80.1 & 43.4 & 46.9 & 54.2 & 67 & 21 & 0.76 & $<$0.001 \\
+\midrule
+\multicolumn{10}{l}{\emph{Clean, schema-exposed harness} ($n{=}442$, no-abstention hallucination 44.8\%)} \\
+ & As run: $L_1{\ge}2 \lor L_3$ & 55.4 & 29.2 & 24.8 & 52.7 & 69 & 128 & 0.35 & 1.000 \\
+ & Paper Coverage: $L_1{\ge}1 \lor L_2 \lor L_3$ & 46.8 & 22.4 & 21.0 & 47.8 & 99 & 136 & 0.42 & 0.903 \\
+ & $L_1$ only (Precision mode) & 97.3 & 44.3 & 43.6 & 45.6 & 2 & 10 & 0.17 & 0.992 \\
+ & $L_2$ only & 87.8 & 34.6 & 39.3 & 39.4 & 45 & 9 & 0.83 & $<$0.001 \\
+ & $L_3$ only & 55.4 & 29.2 & 24.8 & 52.7 & 69 & 128 & 0.35 & 1.000 \\
+ & Abstain if no tool executed & 73.8 & 35.3 & 33.0 & 47.9 & 42 & 74 & 0.36 & 0.989 \\
+ & No tool $\lor$ inline-fabricated & 73.8 & 35.3 & 33.0 & 47.9 & 42 & 74 & 0.36 & 0.989 \\
+ & Arg-grounding check (diagnostic) & 96.2 & 41.4 & 43.1 & 43.1 & 15 & 2 & 0.88 & $<$0.001 \\
+\midrule
+\multicolumn{10}{l}{\emph{P2 semantic-wrong, schema-exposed} ($n{=}442$, no-abstention hallucination 44.8\%)} \\
+ & As run: $L_1{\ge}2 \lor L_3$ & 54.1 & 28.5 & 24.2 & 52.7 & 72 & 131 & 0.35 & 1.000 \\
+ & Paper Coverage: $L_1{\ge}1 \lor L_2 \lor L_3$ & 38.5 & 18.1 & 17.2 & 47.1 & 118 & 154 & 0.43 & 0.804 \\
+ & $L_1$ only (Precision mode) & 97.5 & 44.8 & 43.7 & 45.9 & 0 & 11 & 0.00 & 1.000 \\
+ & $L_2$ only & 79.2 & 30.5 & 35.5 & 38.6 & 63 & 29 & 0.68 & $<$0.001 \\
+ & $L_3$ only & 54.1 & 28.5 & 24.2 & 52.7 & 72 & 131 & 0.35 & 1.000 \\
+ & Abstain if no tool executed & 74.0 & 35.3 & 33.1 & 47.7 & 42 & 73 & 0.37 & 0.986 \\
+ & No tool $\lor$ inline-fabricated & 73.3 & 35.1 & 32.8 & 47.8 & 43 & 75 & 0.36 & 0.988 \\
+ & Arg-grounding check (diagnostic) & 26.0 & 9.5 & 11.7 & 36.5 & 156 & 171 & 0.48 & 0.024 \\
+\midrule
+\multicolumn{10}{l}{\emph{Retail (unseen domain), original harness} ($n{=}270$, no-abstention hallucination 78.1\%)} \\
+ & As run: $L_1{\ge}2 \lor L_3$ & 51.1 & 41.5 & 39.9 & 81.2 & 99 & 33 & 0.75 & 0.915 \\
+ & Paper Coverage: $L_1{\ge}1 \lor L_2 \lor L_3$ & 27.8 & 19.3 & 21.7 & 69.3 & 159 & 36 & 0.82 & 0.024 \\
+ & $L_1$ only (Precision mode) & 48.9 & 34.1 & 38.2 & 69.7 & 119 & 19 & 0.86 & $<$0.001 \\
+ & $L_2$ only & 52.6 & 35.2 & 41.1 & 66.9 & 116 & 12 & 0.91 & $<$0.001 \\
+ & $L_3$ only & 53.3 & 43.7 & 41.7 & 81.9 & 93 & 33 & 0.74 & 0.961 \\
+ & Abstain if no tool executed & 75.2 & 59.6 & 58.8 & 79.3 & 50 & 17 & 0.75 & 0.835 \\
+ & No tool $\lor$ inline-fabricated & 71.9 & 56.3 & 56.2 & 78.4 & 59 & 17 & 0.78 & 0.620 \\
+ & Arg-grounding check (diagnostic) & 96.3 & 74.4 & 75.3 & 77.3 & 10 & 0 & 1.00 & 0.081 \\
+\midrule
+\multicolumn{10}{l}{\emph{Retail (unseen domain), schema-exposed} ($n{=}270$, no-abstention hallucination 69.3\%)} \\
+ & As run: $L_1{\ge}2 \lor L_3$ & 42.2 & 26.3 & 29.2 & 62.3 & 116 & 40 & 0.74 & 0.024 \\
+ & Paper Coverage: $L_1{\ge}1 \lor L_2 \lor L_3$ & 30.7 & 15.9 & 21.3 & 51.8 & 144 & 43 & 0.77 & $<$0.001 \\
+ & $L_1$ only (Precision mode) & 100.0 & 69.3 & 69.3 & 69.3 & 0 & 0 & -- & -- \\
+ & $L_2$ only & 81.1 & 51.5 & 56.2 & 63.5 & 48 & 3 & 0.94 & $<$0.001 \\
+ & $L_3$ only & 42.2 & 26.3 & 29.2 & 62.3 & 116 & 40 & 0.74 & 0.024 \\
+ & Abstain if no tool executed & 93.3 & 68.9 & 64.6 & 73.8 & 1 & 17 & 0.06 & 1.000 \\
+ & No tool $\lor$ inline-fabricated & 90.7 & 66.3 & 62.8 & 73.1 & 8 & 17 & 0.32 & 1.000 \\
+ & Arg-grounding check (diagnostic) & 51.1 & 31.9 & 35.4 & 62.3 & 101 & 31 & 0.77 & 0.008 \\
+\bottomrule
+\end{tabular}}
+\end{table}

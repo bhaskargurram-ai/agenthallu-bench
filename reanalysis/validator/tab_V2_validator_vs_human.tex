@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Agreement of the structured validator with the three human annotators on the 100 labelled P2
+(semantic\_wrong) traces; 15 traces are not verifiable (underspecified queries) and excluded,
+leaving $n=85$. 95\% CIs: 10{,}000-sample bootstrap. Humans saw only the descriptive reference;
+every disagreement was adjudicated against the gold simulator observations.}
+\label{tab:validator-human}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Comparison & Cohen's $\kappa$ [95\% CI] & Raw agreement \\
+\midrule
+Validator vs human majority & 0.53 [0.32, 0.70] & 78.8\% \\
+Validator vs annotator 1 & 0.57 [0.37, 0.74] & -- \\
+Validator vs annotator 2 & 0.54 [0.34, 0.71] & -- \\
+Validator vs annotator 3 & 0.53 [0.32, 0.70] & -- \\
+Human vs human (range of 3 pairs) & 0.85--0.95 & -- \\
+\midrule
+\multicolumn{3}{@{}l}{Confusion (validator/majority): YES/YES 19, YES/NO 5, NO/YES 13, NO/NO 48} \\
+\multicolumn{3}{@{}l}{Adjudication of the 18 disagreements: validator right 16, human right 0, ambiguous 2} \\
+\multicolumn{3}{@{}l}{\quad (8 disagreements are traces in which the agent executed no tool call at all)} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\caption{Prompt and judge sensitivity: Cohen's $\kappa$ [95\% CI] vs.\ the 3-annotator majority on the
+100 calibration traces (temperature 0; GPT-5-mini at minimal reasoning effort). P0: original ensemble
+prompt; P1: explicit rubric; P2: request-centric; P3: brief reasoning then verdict. Re-running the original
+prompt reproduces the stored verdicts on 97\% of traces (GPT-4o-mini and GPT-4o).
+Total API cost of the re-judging runs: \$0.31.}
+\label{tab:prompt-robustness}
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Judge & P0 & P1 & P2 & P3 & Range \\
+\midrule
+gpt-4o-mini & 0.52 [0.34, 0.68] & 0.51 [0.34, 0.67] & 0.50 [0.33, 0.66] & 0.72 [0.58, 0.85] & 0.23 \\
+gpt-4.1-mini & 0.47 [0.29, 0.63] & 0.49 [0.31, 0.66] & 0.24 [0.11, 0.39] & 0.62 [0.45, 0.76] & 0.38 \\
+gpt-4.1 & 0.42 [0.23, 0.60] & 0.53 [0.36, 0.69] & 0.70 [0.55, 0.83] & 0.70 [0.55, 0.84] & 0.28 \\
+gpt-5-mini & 0.44 [0.29, 0.61] & 0.39 [0.24, 0.55] & 0.21 [0.09, 0.35] & 0.61 [0.45, 0.76] & 0.39 \\
+\midrule
+Majority(4.1-mini, 4.1, 5-mini) & 0.52 [0.35, 0.68] & 0.55 [0.38, 0.71] & 0.29 [0.15, 0.44] & 0.70 [0.55, 0.83] & -- \\
+\bottomrule
+\end{tabular}}
+\end{table*}

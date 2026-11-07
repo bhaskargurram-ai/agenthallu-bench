@@ -4,27 +4,35 @@ Benchmark and methodology for evaluating **tool-using language agents** under
 adversarial parameter injection — measuring **judge reliability**, **error
 propagation**, **tool-call fabrication**, and **runtime mitigation**.
 
-Paper: *Evaluating Tool-Using Language Agents: Judge Reliability, Propagation
-Cascades, and Runtime Mitigation in AgentProp-Bench* — on arXiv and under review
-at TMLR.
+Paper (current version, arXiv v3): *Measuring What Tool-Using LLM Agents Actually
+Do: Structured Validation, Causal Error Propagation, and Fabricated Tool Use*
+([arXiv:2604.16706](https://arxiv.org/abs/2604.16706)).
 
-## Key results (current release: 13 models)
+## Key results (re-analysis, structured validator)
 
-- **Judge reliability.** Substring/keyword judging (the default in most agent
-  benchmarks) agrees with human annotation only at **chance level (Cohen's
-  κ = 0.049)**; a validated 3-LLM ensemble reaches **κ = 0.432**. Validated on
-  100 human labels; inter-annotator **κ = 0.835**.
-- **Error propagation.** A parameter-level injection reaches a wrong final
-  answer with human-calibrated probability **≈ 0.62** (range 0.46–0.73),
-  **consistently across all 13 models** — 9 proprietary + 4 open-weight
-  (Qwen2.5-3B/7B/14B, Hermes-3-Llama-3.1-8B).
-- **Fabricated tool use.** Models differ 5–100% in how often they emit a real
-  tool call; several **fabricate** tool results they never obtained
-  (Gemini-2.0-Flash: **37.5%** of traces). Classifier precision 92.5% (40-trace
-  hand-check).
-- **Runtime interceptor.** Cuts GPT-4o-mini hallucination by **−23.0 pp**
-  (55.8%→32.8%, n=600 concurrent control, p<0.001); no effect on
-  Gemini-2.0-Flash, which rarely emits an injectable tool call.
+Correctness is measured by a deterministic, gold-grounded validator (tools called,
+executed parameters, resulting state, and grounding of every answer value in the
+replayed tool observation). No LLM or human label is part of the instrument.
+Code and outputs: [`reanalysis/`](reanalysis/).
+
+- **Instrument validity.** 33,583 traces from 13 agents re-scored; the simulator
+  replays 10,396/10,396 logged observations exactly. On the same 306 traces,
+  Gemini-2.0-Flash scores 63.4% under the substring heuristic and 5.6% under the
+  validator.
+- **Causal effect of one wrong argument.** Paired runs (same task and model, with
+  and without injection): error rate 52.4% → 74.5%, **+22.0 pp** (95% CI 18.4–25.5;
+  1,085 pairs, 7 models); **+44.7 pp** (38.4–51.0) where the corrupted call
+  executed without errors. An LLM-judge ensemble sees +2.5 pp on the same pairs.
+- **Fabricated tool use.** 0–42.5% of traces depending on the model (rule-based
+  lower bounds), largely caused by the harness accepting an action and a final
+  answer in one completion.
+- **Runtime monitor.** About 7 µs per trace, but it lowers wrong answers mainly by
+  abstaining; it is not better than random abstention under the validator.
+
+> **Withdrawn from v1–v2:** the propagation probability of ≈0.62, the decoupling of
+> rejection and recovery, and the claim that the interceptor reduces hallucination
+> on every tool-calling model. See Section 8 of the v3 paper. Inter-annotator
+> agreement is now reported for three annotators (Fleiss κ = 0.877).
 
 ## Quick start
 
@@ -52,7 +60,9 @@ python analysis/citation_tracker.py track       # log the citation count over ti
 - `benchmark/` — task generator + 4 domain simulators
 - `experiments/` — baseline / P2 / interceptor / ensemble-judge runners
 - `analysis/` — statistics, merge, tool-call-rate, leaderboard + citation tracker
-- `data/tasks/`, `data/results/` — 2,000 tasks; result CSVs + human labels
+- `data/tasks/`, `data/results/` — 2,000 tasks; result CSVs + human labels (incl. open-weight interceptor runs)
+- `data/traces/` — per-step SQLite trace databases (baseline, P2 injection, interceptor, interceptor control)
+- `reanalysis/` — structured validator, unit tests, all re-analysis scripts and outputs for the v3 paper
 - `hf_dataset/` — Hugging Face dataset card + upload script
 - `leaderboard/` — leaderboard.csv + Gradio HF Space
 - `promo/` — announcement + outreach assets
@@ -62,8 +72,8 @@ python analysis/citation_tracker.py track       # log the citation count over ti
 
 ```bibtex
 @article{gurram2026agentprop,
-  title        = {Evaluating Tool-Using Language Agents: Judge Reliability,
-                  Propagation Cascades, and Runtime Mitigation in AgentProp-Bench},
+  title        = {Measuring What Tool-Using {LLM} Agents Actually Do: Structured
+                  Validation, Causal Error Propagation, and Fabricated Tool Use},
   author       = {Gurram, Bhaskar},
   journal      = {arXiv preprint arXiv:2604.16706},
   year         = {2026},

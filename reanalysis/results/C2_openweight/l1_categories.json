@@ -1,0 +1,125 @@
+{
+ "qwen25_7b/full": {
+  "enum_violation": {
+   "saved(ctrl_wrong)": 3,
+   "broken(ctrl_right)": 9
+  },
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 19,
+   "broken(ctrl_right)": 6
+  },
+  "placeholder_param(harness format example)": {
+   "saved(ctrl_wrong)": 5,
+   "broken(ctrl_right)": 4
+  },
+  "tool_returned_error": {
+   "saved(ctrl_wrong)": 6,
+   "broken(ctrl_right)": 0
+  },
+  "type_error": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 2
+  },
+  "unknown_tool(hallucinated tool name)": {
+   "saved(ctrl_wrong)": 13,
+   "broken(ctrl_right)": 2
+  }
+ },
+ "qwen25_7b/schemaonly": {
+  "enum_violation": {
+   "saved(ctrl_wrong)": 1,
+   "broken(ctrl_right)": 11
+  },
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 19,
+   "broken(ctrl_right)": 3
+  },
+  "placeholder_param(harness format example)": {
+   "saved(ctrl_wrong)": 4,
+   "broken(ctrl_right)": 3
+  },
+  "tool_returned_error": {
+   "saved(ctrl_wrong)": 4,
+   "broken(ctrl_right)": 1
+  },
+  "type_error": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 2
+  },
+  "unknown_tool(hallucinated tool name)": {
+   "saved(ctrl_wrong)": 11,
+   "broken(ctrl_right)": 4
+  }
+ },
+ "qwen25_14b/full": {
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 2,
+   "broken(ctrl_right)": 9
+  },
+  "type_error": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 1
+  }
+ },
+ "qwen25_14b/schemaonly": {
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 1,
+   "broken(ctrl_right)": 9
+  },
+  "type_error": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 1
+  }
+ },
+ "hermes3_llama8b/full": {
+  "enum_violation": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 1
+  },
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 1,
+   "broken(ctrl_right)": 3
+  },
+  "type_error": {
+   "saved(ctrl_wrong)": 1,
+   "broken(ctrl_right)": 4
+  },
+  "unknown_tool(hallucinated tool name)": {
+   "saved(ctrl_wrong)": 6,
+   "broken(ctrl_right)": 0
+  }
+ },
+ "hermes3_llama8b/schemaonly": {
+  "enum_violation": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 1
+  },
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 2,
+   "broken(ctrl_right)": 0
+  },
+  "type_error": {
+   "saved(ctrl_wrong)": 0,
+   "broken(ctrl_right)": 3
+  },
+  "unknown_tool(hallucinated tool name)": {
+   "saved(ctrl_wrong)": 6,
+   "broken(ctrl_right)": 1
+  }
+ },
+ "gpt4o_mini/full": {
+  "missing/unknown_param_name": {
+   "saved(ctrl_wrong)": 118,
+   "broken(ctrl_right)": 21
+  }
+ },
+ "gemini_20_flash/full": {
+  "tool_returned_error": {
+   "saved(ctrl_wrong)": 1,
+   "broken(ctrl_right)": 1
+  }
+ },
+ "empty_reference_test_tasks_by_source(full_500)": {
+  "halueval": 94
+ }
+}

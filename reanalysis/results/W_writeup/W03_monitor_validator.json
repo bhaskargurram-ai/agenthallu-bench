@@ -1,0 +1,34 @@
+{
+ "gpt4o_mini": {
+  "n": 475,
+  "control_correct": 144,
+  "interceptor_correct": 41,
+  "control_refused": 3,
+  "abstained": 186,
+  "abstained_control_wrong": 100,
+  "abstained_control_correct": 86,
+  "precision": 0.5376344086021505,
+  "base_error": 0.6968421052631579,
+  "expected_caught_random": 129.61263157894737,
+  "p_better_than_random": 0.9999999995455788,
+  "answered": 289,
+  "answered_int_correct": 41,
+  "answered_ctrl_correct": 58
+ },
+ "gemini_20_flash": {
+  "n": 475,
+  "control_correct": 25,
+  "interceptor_correct": 15,
+  "control_refused": 78,
+  "abstained": 81,
+  "abstained_control_wrong": 72,
+  "abstained_control_correct": 9,
+  "precision": 0.8888888888888888,
+  "base_error": 0.9473684210526315,
+  "expected_caught_random": 76.73684210526316,
+  "p_better_than_random": 0.9955753520235227,
+  "answered": 394,
+  "answered_int_correct": 15,
+  "answered_ctrl_correct": 16
+ }
+}

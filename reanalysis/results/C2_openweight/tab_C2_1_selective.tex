@@ -1,0 +1,31 @@
+% C2_openweight/tab_C2_1_selective.tex -- source: original project data/results/interceptor_{qwen25_7b,qwen25_14b,hermes3_llama8b}[_schemaonly].csv, interceptor_{control,heldout}_600.csv; scripts/C2_01
+\begin{table}[t]\centering\small
+\caption{Interceptor re-analysed as selective prediction, all five models, from raw per-task CSVs (heuristic labels). Open-weight rows: $n{=}300$ tasks (seed-42 sample of the 450 test tasks in \texttt{full\_500\_tasks.json}, 66 of them HaluEval with empty references), both arms run concurrently in one job; proprietary rows: $n{=}600$ different tasks, control run two days later. $\Delta$ = Int$-$Ctrl hallucination (abstentions count as non-hallucinated); CI = paired task-level bootstrap (10{,}000). McNemar $b$ = ctrl hallucinated \& int not, $c$ = reverse. Acc.\ ans.\ = accuracy of the interceptor arm on the tasks it answered. Sv/Bk = abstained on a task the control got wrong/right; Prec.\ = Sv/abstentions (base = control error rate); Rec.\ = Sv/control errors. Random = exact expected hallucination when abstaining on the same number of tasks uniformly at random; Int$-$Rand $>0$ means worse than random; $p_{\mathrm{rand}}$ = one-sided simulation p-value (20{,}000 draws) that random abstention saves at least as many errors.}
+\label{tab:C2_1}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrlrrrrrrrrrrr}
+\toprule
+Model & $n$ & Ctrl\% & Int\% & $\Delta$ pp [paired 95\% CI] & McNemar $b/c$, $p$ & Cov.\% & Acc.\ ans.\% & Ctrl acc.\% & Sv & Bk & Prec.\ (base) & Rec. & Random\% & Int$-$Rand & $p_{\mathrm{rand}}$ \\
+\midrule
+\multicolumn{16}{l}{\emph{Three-layer interceptor as run (L1 $\geq$2 schema/tool errors; L3 unsupported numbers)}} \\
+GPT-4o-mini & 600 & 55.8 & 32.8 & -23.0 [-27.0, -18.8] & 163/25, $<$0.001 & 66.5 & 50.6 & 44.2 & 133 & 68 & 0.66 (0.56) & 0.40 & 37.1 & -4.3 & $<$0.001 \\
+Gemini-2.0-Flash & 600 & 44.5 & 43.2 & -1.3 [-3.3, +0.7] & 24/16, 0.268 & 97.2 & 55.6 & 55.5 & 16 & 1 & 0.94 (0.45) & 0.06 & 43.2 & -0.1 & $<$0.001 \\
+Qwen2.5-7B & 300 & 55.3 & 31.3 & -24.0 [-29.3, -19.0] & 77/5, $<$0.001 & 44.7 & 29.9 & 44.7 & 75 & 91 & 0.45 (0.55) & 0.45 & 24.7 & +6.6 & 1.000 \\
+Qwen2.5-14B & 300 & 45.0 & 37.0 & -8.0 [-11.3, -4.7] & 26/2, $<$0.001 & 73.0 & 49.3 & 55.0 & 24 & 57 & 0.30 (0.45) & 0.18 & 32.9 & +4.1 & 1.000 \\
+Hermes-3-Llama-8B & 300 & 43.0 & 39.0 & -4.0 [-7.3, -0.7] & 20/8, 0.036 & 86.7 & 55.0 & 57.0 & 16 & 24 & 0.40 (0.43) & 0.12 & 37.3 & +1.7 & 0.718 \\
+\midrule
+\multicolumn{16}{l}{\emph{Schema-only ``precision mode'' (\texttt{INT\_NO\_L3=1}; separate re-run of both arms)}} \\
+Qwen2.5-7B & 300 & 53.0 & 39.7 & -13.3 [-18.0, -8.7] & 48/8, $<$0.001 & 79.0 & 49.8 & 47.0 & 39 & 24 & 0.62 (0.53) & 0.25 & 41.9 & -2.2 & 0.074 \\
+Qwen2.5-14B & 300 & 44.7 & 44.3 & -0.3 [-2.3, +1.7] & 5/4, 1.000 & 96.3 & 54.0 & 55.3 & 1 & 10 & 0.09 (0.45) & 0.01 & 43.0 & +1.3 & 0.999 \\
+Hermes-3-Llama-8B & 300 & 44.0 & 40.0 & -4.0 [-7.0, -1.3] & 16/4, 0.012 & 95.7 & 58.2 & 56.0 & 8 & 5 & 0.62 (0.44) & 0.06 & 42.1 & -2.1 & 0.157 \\
+\midrule
+\multicolumn{16}{l}{\emph{Open-weight, excluding the 66 HaluEval tasks (empty reference $\Rightarrow$ always scored wrong)}} \\
+Qwen2.5-7B (full) & 234 & 42.7 & 19.7 & -23.1 [-29.1, -17.1] & 59/5, $<$0.001 & 36.8 & 46.5 & 57.3 & 57 & 91 & 0.39 (0.43) & 0.57 & 15.7 & +4.0 & 0.967 \\
+Qwen2.5-14B (full) & 234 & 29.5 & 20.5 & -9.0 [-13.2, -5.1] & 23/2, $<$0.001 & 66.7 & 69.2 & 70.5 & 21 & 57 & 0.27 (0.29) & 0.30 & 19.7 & +0.9 & 0.775 \\
+Hermes-3-Llama-8B (full) & 234 & 26.9 & 21.8 & -5.1 [-9.4, -0.9] & 20/8, 0.036 & 82.9 & 73.7 & 73.1 & 16 & 24 & 0.40 (0.27) & 0.25 & 22.3 & -0.5 & 0.035 \\
+Qwen2.5-7B (schema) & 234 & 39.7 & 27.8 & -12.0 [-17.5, -6.8] & 36/8, $<$0.001 & 78.2 & 64.5 & 60.3 & 27 & 24 & 0.53 (0.40) & 0.29 & 31.1 & -3.3 & 0.022 \\
+Qwen2.5-14B (schema) & 234 & 29.1 & 28.6 & -0.4 [-3.0, +2.1] & 5/4, 1.000 & 95.3 & 70.0 & 70.9 & 1 & 10 & 0.09 (0.29) & 0.01 & 27.7 & +0.9 & 0.979 \\
+Hermes-3-Llama-8B (schema) & 234 & 28.2 & 23.1 & -5.1 [-9.0, -1.7] & 16/4, 0.012 & 94.4 & 75.6 & 71.8 & 8 & 5 & 0.62 (0.28) & 0.12 & 26.6 & -3.6 & 0.010 \\
+\bottomrule
+\end{tabular}}
+\end{table}

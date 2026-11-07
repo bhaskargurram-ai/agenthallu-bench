@@ -1,0 +1,92 @@
+{
+  "get_patient_record": {
+    "n_applied": 302,
+    "T": 110,
+    "S2": 63,
+    "W_h": 132,
+    "W_ens": 228,
+    "T_rate": 0.364,
+    "injection": "patient_id P00k -> P00(k+1) (else 'P999')",
+    "injected_call_error_behaviour": "error only if ID outside P001-P005"
+  },
+  "get_weather": {
+    "n_applied": 280,
+    "T": 98,
+    "S2": 45,
+    "W_h": 81,
+    "W_ens": 267,
+    "T_rate": 0.35,
+    "injection": "city -> alternative city (fallback 'Reykjavik')",
+    "injected_call_error_behaviour": "never returns an error dict"
+  },
+  "get_events": {
+    "n_applied": 261,
+    "T": 70,
+    "S2": 48,
+    "W_h": 137,
+    "W_ens": 221,
+    "T_rate": 0.268,
+    "injection": "date + 180 days",
+    "injected_call_error_behaviour": "never returns an error dict (mock events generated)"
+  },
+  "get_forecast": {
+    "n_applied": 192,
+    "T": 104,
+    "S2": 43,
+    "W_h": 83,
+    "W_ens": 181,
+    "T_rate": 0.542,
+    "injection": "city -> alternative city",
+    "injected_call_error_behaviour": "never returns an error dict"
+  },
+  "create_event": {
+    "n_applied": 181,
+    "T": 177,
+    "S2": 31,
+    "W_h": 31,
+    "W_ens": 80,
+    "T_rate": 0.978,
+    "injection": "date + 180 days",
+    "injected_call_error_behaviour": "never returns an error dict"
+  },
+  "check_drug_interaction": {
+    "n_applied": 70,
+    "T": 70,
+    "S2": 22,
+    "W_h": 22,
+    "W_ens": 19,
+    "T_rate": 1.0,
+    "injection": "drug_a -> alternative drug",
+    "injected_call_error_behaviour": "never returns an error dict"
+  },
+  "get_historical": {
+    "n_applied": 64,
+    "T": 17,
+    "S2": 15,
+    "W_h": 48,
+    "W_ens": 64,
+    "T_rate": 0.266,
+    "injection": "city -> alternative city (city checked before dates)",
+    "injected_call_error_behaviour": "no error unless the model's own dates are malformed/reversed"
+  },
+  "schedule_appointment": {
+    "n_applied": 36,
+    "T": 36,
+    "S2": 3,
+    "W_h": 3,
+    "W_ens": 11,
+    "T_rate": 1.0,
+    "injection": "date + 180 days",
+    "injected_call_error_behaviour": "never returns an error dict"
+  },
+  "delete_event": {
+    "n_applied": 29,
+    "T": 29,
+    "S2": 1,
+    "W_h": 1,
+    "W_ens": 29,
+    "T_rate": 1.0,
+    "injection": "event_id -> 'EVT_9999'",
+    "injected_call_error_behaviour": "returns error 'not found' -- but so does the un-injected id, store is empty"
+  }
+}

@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\caption{Sensitivity of validator scores to each normalisation/rubric choice (one switch at a time). Accuracy pooled
+over verifiable baseline / P2 traces; flips: share of CORRECT labels that change vs default (baseline+P2+retail);
+$\kappa$ vs human majority ($n=85$); $\tau$: Kendall rank correlation of the per-model baseline
+ranking with the default.}
+\label{tab:validator-robustness}
+\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Variant & Baseline & P2 & Flips & $\kappa$ & $\tau$ \\
+\midrule
+Default (V1.0) & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No case folding & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No accent folding & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No date normalisation & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No time normalisation & 44.1 & 37.6 & 1.6 & 0.53 & 1.00 \\
+Temp.\ tolerance 0 & 45.0 & 38.0 & 1.1 & 0.53 & 1.00 \\
+Temp.\ tolerance 0.5 & 46.1 & 38.6 & 0.4 & 0.53 & 1.00 \\
+Temp.\ tolerance 2 & 47.0 & 39.1 & 0.1 & 0.53 & 1.00 \\
+Numeric tolerance $\pm1$ & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No $^\circ$C/$^\circ$F conversion & 46.1 & 38.7 & 0.4 & 0.53 & 1.00 \\
+No derived aggregates & 45.0 & 36.8 & 1.9 & 0.47 & 1.00 \\
+Precision ignored & 47.3 & 39.3 & 0.4 & 0.53 & 1.00 \\
+Precision $\ge 0.8$ & 47.2 & 39.2 & 0.2 & 0.53 & 1.00 \\
+Recall $\ge 0.5$ & 49.3 & 41.1 & 2.0 & 0.53 & 1.00 \\
+Lenient state (subset) & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No equivalent-call observations & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No sky-condition synonyms & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+Lenient `last January' range & 46.8 & 39.0 & 0.0 & 0.53 & 1.00 \\
+No auxiliary on-task observations & 46.8 & 39.0 & 0.1 & 0.53 & 1.00 \\
+Lenient event titles & 46.9 & 39.0 & 0.0 & 0.55 & 1.00 \\
+\midrule
+Gold = raw task-file sequence & 27.5 & 23.4 & 16.4 & 0.56 & 0.90 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,669 @@
+{
+  "reference_classes_all_450_baseline_tasks": {
+    "query_echo": 91,
+    "descriptive": 265,
+    "empty": 94
+  },
+  "reference_classes_200_P2_tasks": {
+    "query_echo": 50,
+    "descriptive": 150
+  },
+  "reference_classes_by_domain": {
+    "calendar": {
+      "query_echo": 31,
+      "descriptive": 88
+    },
+    "knowledge": {
+      "empty": 94
+    },
+    "medical": {
+      "descriptive": 87,
+      "query_echo": 24
+    },
+    "weather": {
+      "descriptive": 90,
+      "query_echo": 36
+    }
+  },
+  "concrete_value_candidates": {},
+  "baseline_decomposition": {
+    "deepseek_v3": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.2733333333333333,
+      "acc_nonknowledge_ensemble": 0.3455056179775281,
+      "acc_tool_substantive_ensemble": 0.30063291139240506,
+      "acc_no_tool_substantive_ensemble": 0.8,
+      "acc_placeholder_bracket_ensemble": 0.0,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.33969465648854963,
+      "acc_all_heuristic": 0.5177777777777778,
+      "acc_nonknowledge_heuristic": 0.6544943820224719,
+      "acc_tool_substantive_heuristic": 0.6550632911392406,
+      "acc_no_tool_substantive_heuristic": 0.6857142857142857,
+      "acc_placeholder_bracket_heuristic": 0.5,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.7290076335877863,
+      "acc_all_gpt4o_mini": 0.3711111111111111,
+      "acc_nonknowledge_gpt4o_mini": 0.4691011235955056,
+      "acc_tool_substantive_gpt4o_mini": 0.43670886075949367,
+      "acc_no_tool_substantive_gpt4o_mini": 0.8285714285714286,
+      "acc_placeholder_bracket_gpt4o_mini": 0.0,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.48854961832061067,
+      "answer_forms_nonknowledge": {
+        "no_tool_substantive": 35,
+        "tool_substantive": 316,
+        "placeholder_bracket": 4,
+        "error_or_maxsteps": 1
+      },
+      "tool_correct_rate_nonknowledge": 0.7387640449438202,
+      "first_tool_valid_rate_nonknowledge": 0.8904494382022472,
+      "answers_longer_than_300_chars_judge_truncation": 47
+    },
+    "gpt35_turbo": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.24666666666666667,
+      "acc_nonknowledge_ensemble": 0.31179775280898875,
+      "acc_tool_substantive_ensemble": 0.25333333333333335,
+      "acc_no_tool_substantive_ensemble": 0.4774774774774775,
+      "acc_placeholder_bracket_ensemble": 0.05555555555555555,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.2810810810810811,
+      "acc_all_heuristic": 0.5044444444444445,
+      "acc_nonknowledge_heuristic": 0.6376404494382022,
+      "acc_tool_substantive_heuristic": 0.6266666666666667,
+      "acc_no_tool_substantive_heuristic": 0.6666666666666666,
+      "acc_placeholder_bracket_heuristic": 0.6666666666666666,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.6864864864864865,
+      "acc_all_gpt4o_mini": 0.35555555555555557,
+      "acc_nonknowledge_gpt4o_mini": 0.449438202247191,
+      "acc_tool_substantive_gpt4o_mini": 0.4311111111111111,
+      "acc_no_tool_substantive_gpt4o_mini": 0.5585585585585585,
+      "acc_placeholder_bracket_gpt4o_mini": 0.05555555555555555,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.4594594594594595,
+      "answer_forms_nonknowledge": {
+        "tool_substantive": 225,
+        "no_tool_substantive": 111,
+        "placeholder_bracket": 18,
+        "error_or_maxsteps": 2
+      },
+      "tool_correct_rate_nonknowledge": 0.5252808988764045,
+      "first_tool_valid_rate_nonknowledge": 0.6348314606741573,
+      "answers_longer_than_300_chars_judge_truncation": 21
+    },
+    "gpt41_mini": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.3422222222222222,
+      "acc_nonknowledge_ensemble": 0.43258426966292135,
+      "acc_tool_substantive_ensemble": 0.339041095890411,
+      "acc_no_tool_substantive_ensemble": 0.9016393442622951,
+      "acc_placeholder_bracket_ensemble": null,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.4147465437788018,
+      "acc_all_heuristic": 0.5466666666666666,
+      "acc_nonknowledge_heuristic": 0.6910112359550562,
+      "acc_tool_substantive_heuristic": 0.6643835616438356,
+      "acc_no_tool_substantive_heuristic": 0.8524590163934426,
+      "acc_placeholder_bracket_heuristic": null,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.7142857142857143,
+      "acc_all_gpt4o_mini": 0.4444444444444444,
+      "acc_nonknowledge_gpt4o_mini": 0.5617977528089888,
+      "acc_tool_substantive_gpt4o_mini": 0.4965753424657534,
+      "acc_no_tool_substantive_gpt4o_mini": 0.9016393442622951,
+      "acc_placeholder_bracket_gpt4o_mini": null,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5714285714285714,
+      "answer_forms_nonknowledge": {
+        "tool_substantive": 292,
+        "no_tool_substantive": 61,
+        "error_or_maxsteps": 3
+      },
+      "tool_correct_rate_nonknowledge": 0.6179775280898876,
+      "first_tool_valid_rate_nonknowledge": 0.8286516853932584,
+      "answers_longer_than_300_chars_judge_truncation": 20
+    },
+    "gpt41_nano": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.16444444444444445,
+      "acc_nonknowledge_ensemble": 0.20786516853932585,
+      "acc_tool_substantive_ensemble": 0.21037463976945245,
+      "acc_no_tool_substantive_ensemble": 1.0,
+      "acc_placeholder_bracket_ensemble": null,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.2589641434262948,
+      "acc_all_heuristic": 0.4533333333333333,
+      "acc_nonknowledge_heuristic": 0.5730337078651685,
+      "acc_tool_substantive_heuristic": 0.5878962536023055,
+      "acc_no_tool_substantive_heuristic": 0.0,
+      "acc_placeholder_bracket_heuristic": null,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.5816733067729084,
+      "acc_all_gpt4o_mini": 0.28,
+      "acc_nonknowledge_gpt4o_mini": 0.3539325842696629,
+      "acc_tool_substantive_gpt4o_mini": 0.36023054755043227,
+      "acc_no_tool_substantive_gpt4o_mini": 1.0,
+      "acc_placeholder_bracket_gpt4o_mini": null,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.41434262948207173,
+      "answer_forms_nonknowledge": {
+        "tool_substantive": 347,
+        "error_or_maxsteps": 8,
+        "no_tool_substantive": 1
+      },
+      "tool_correct_rate_nonknowledge": 0.7275280898876404,
+      "first_tool_valid_rate_nonknowledge": 0.9971910112359551,
+      "answers_longer_than_300_chars_judge_truncation": 24
+    },
+    "gpt4o_mini": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.24444444444444444,
+      "acc_nonknowledge_ensemble": 0.3089887640449438,
+      "acc_tool_substantive_ensemble": 0.27205882352941174,
+      "acc_no_tool_substantive_ensemble": 0.9107142857142857,
+      "acc_placeholder_bracket_ensemble": 0.1476510067114094,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.28448275862068967,
+      "acc_all_heuristic": 0.4,
+      "acc_nonknowledge_heuristic": 0.5056179775280899,
+      "acc_tool_substantive_heuristic": 0.5220588235294118,
+      "acc_no_tool_substantive_heuristic": 0.9642857142857143,
+      "acc_placeholder_bracket_heuristic": 0.3691275167785235,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.49137931034482757,
+      "acc_all_gpt4o_mini": 0.36,
+      "acc_nonknowledge_gpt4o_mini": 0.4550561797752809,
+      "acc_tool_substantive_gpt4o_mini": 0.5588235294117647,
+      "acc_no_tool_substantive_gpt4o_mini": 0.9464285714285714,
+      "acc_placeholder_bracket_gpt4o_mini": 0.2214765100671141,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5775862068965517,
+      "answer_forms_nonknowledge": {
+        "placeholder_bracket": 149,
+        "no_tool_substantive": 56,
+        "tool_substantive": 136,
+        "error_or_maxsteps": 15
+      },
+      "tool_correct_rate_nonknowledge": 0.3651685393258427,
+      "first_tool_valid_rate_nonknowledge": 0.4241573033707865,
+      "answers_longer_than_300_chars_judge_truncation": 15
+    },
+    "gemini_20_flash": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.2288888888888889,
+      "acc_nonknowledge_ensemble": 0.2893258426966292,
+      "acc_tool_substantive_ensemble": 0.1111111111111111,
+      "acc_no_tool_substantive_ensemble": 0.29573170731707316,
+      "acc_placeholder_bracket_ensemble": 0.4,
+      "acc_error_or_maxsteps_ensemble": null,
+      "acc_toolcorrect_substantive_ensemble": 0.1111111111111111,
+      "acc_all_heuristic": 0.47555555555555556,
+      "acc_nonknowledge_heuristic": 0.601123595505618,
+      "acc_tool_substantive_heuristic": 0.2222222222222222,
+      "acc_no_tool_substantive_heuristic": 0.6371951219512195,
+      "acc_placeholder_bracket_heuristic": 0.1,
+      "acc_error_or_maxsteps_heuristic": null,
+      "acc_toolcorrect_substantive_heuristic": 0.0,
+      "acc_all_gpt4o_mini": 0.39111111111111113,
+      "acc_nonknowledge_gpt4o_mini": 0.4943820224719101,
+      "acc_tool_substantive_gpt4o_mini": 0.1111111111111111,
+      "acc_no_tool_substantive_gpt4o_mini": 0.5152439024390244,
+      "acc_placeholder_bracket_gpt4o_mini": 0.5,
+      "acc_error_or_maxsteps_gpt4o_mini": null,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.1111111111111111,
+      "answer_forms_nonknowledge": {
+        "no_tool_substantive": 328,
+        "tool_substantive": 18,
+        "placeholder_bracket": 10
+      },
+      "tool_correct_rate_nonknowledge": 0.025280898876404494,
+      "first_tool_valid_rate_nonknowledge": 0.05056179775280899,
+      "answers_longer_than_300_chars_judge_truncation": 16
+    },
+    "o3_mini": {
+      "n": 50,
+      "n_knowledge_empty_ref": 9,
+      "acc_all_ensemble": 0.36,
+      "acc_nonknowledge_ensemble": 0.43902439024390244,
+      "acc_tool_substantive_ensemble": 0.42857142857142855,
+      "acc_no_tool_substantive_ensemble": 0.5,
+      "acc_placeholder_bracket_ensemble": null,
+      "acc_error_or_maxsteps_ensemble": null,
+      "acc_toolcorrect_substantive_ensemble": 0.4666666666666667,
+      "acc_all_heuristic": 0.4,
+      "acc_nonknowledge_heuristic": 0.4878048780487805,
+      "acc_tool_substantive_heuristic": 0.45714285714285713,
+      "acc_no_tool_substantive_heuristic": 0.6666666666666666,
+      "acc_placeholder_bracket_heuristic": null,
+      "acc_error_or_maxsteps_heuristic": null,
+      "acc_toolcorrect_substantive_heuristic": 0.5,
+      "acc_all_gpt4o_mini": 0.4,
+      "acc_nonknowledge_gpt4o_mini": 0.4878048780487805,
+      "acc_tool_substantive_gpt4o_mini": 0.4857142857142857,
+      "acc_no_tool_substantive_gpt4o_mini": 0.5,
+      "acc_placeholder_bracket_gpt4o_mini": null,
+      "acc_error_or_maxsteps_gpt4o_mini": null,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5,
+      "answer_forms_nonknowledge": {
+        "tool_substantive": 35,
+        "no_tool_substantive": 6
+      },
+      "tool_correct_rate_nonknowledge": 0.7317073170731707,
+      "first_tool_valid_rate_nonknowledge": 0.8536585365853658,
+      "answers_longer_than_300_chars_judge_truncation": 7
+    },
+    "qwen25_3b": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.14444444444444443,
+      "acc_nonknowledge_ensemble": 0.18258426966292135,
+      "acc_tool_substantive_ensemble": 0.24017467248908297,
+      "acc_no_tool_substantive_ensemble": 0.07766990291262135,
+      "acc_placeholder_bracket_ensemble": 0.3333333333333333,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.23076923076923078,
+      "acc_all_heuristic": 0.5422222222222223,
+      "acc_nonknowledge_heuristic": 0.6853932584269663,
+      "acc_tool_substantive_heuristic": 0.7336244541484717,
+      "acc_no_tool_substantive_heuristic": 0.7184466019417476,
+      "acc_placeholder_bracket_heuristic": 0.3333333333333333,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.8051282051282052,
+      "acc_all_gpt4o_mini": 0.28444444444444444,
+      "acc_nonknowledge_gpt4o_mini": 0.3595505617977528,
+      "acc_tool_substantive_gpt4o_mini": 0.39737991266375544,
+      "acc_no_tool_substantive_gpt4o_mini": 0.33980582524271846,
+      "acc_placeholder_bracket_gpt4o_mini": 0.3333333333333333,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.4,
+      "answer_forms_nonknowledge": {
+        "no_tool_substantive": 103,
+        "tool_substantive": 229,
+        "error_or_maxsteps": 18,
+        "placeholder_bracket": 6
+      },
+      "tool_correct_rate_nonknowledge": 0.598314606741573,
+      "first_tool_valid_rate_nonknowledge": 0.6882022471910112,
+      "answers_longer_than_300_chars_judge_truncation": 49
+    },
+    "qwen25_7b": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.31333333333333335,
+      "acc_nonknowledge_ensemble": 0.3960674157303371,
+      "acc_tool_substantive_ensemble": 0.43209876543209874,
+      "acc_no_tool_substantive_ensemble": 1.0,
+      "acc_placeholder_bracket_ensemble": null,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.4797047970479705,
+      "acc_all_heuristic": 0.4911111111111111,
+      "acc_nonknowledge_heuristic": 0.6207865168539326,
+      "acc_tool_substantive_heuristic": 0.6820987654320988,
+      "acc_no_tool_substantive_heuristic": 0.0,
+      "acc_placeholder_bracket_heuristic": null,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.7675276752767528,
+      "acc_all_gpt4o_mini": 0.3888888888888889,
+      "acc_nonknowledge_gpt4o_mini": 0.49157303370786515,
+      "acc_tool_substantive_gpt4o_mini": 0.5370370370370371,
+      "acc_no_tool_substantive_gpt4o_mini": 1.0,
+      "acc_placeholder_bracket_gpt4o_mini": null,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5867158671586716,
+      "answer_forms_nonknowledge": {
+        "tool_substantive": 324,
+        "error_or_maxsteps": 31,
+        "no_tool_substantive": 1
+      },
+      "tool_correct_rate_nonknowledge": 0.8314606741573034,
+      "first_tool_valid_rate_nonknowledge": 0.9971910112359551,
+      "answers_longer_than_300_chars_judge_truncation": 50
+    },
+    "qwen25_14b": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.3422222222222222,
+      "acc_nonknowledge_ensemble": 0.43258426966292135,
+      "acc_tool_substantive_ensemble": 0.3933649289099526,
+      "acc_no_tool_substantive_ensemble": 0.5772357723577236,
+      "acc_placeholder_bracket_ensemble": 0.0,
+      "acc_error_or_maxsteps_ensemble": null,
+      "acc_toolcorrect_substantive_ensemble": 0.4642857142857143,
+      "acc_all_heuristic": 0.5555555555555556,
+      "acc_nonknowledge_heuristic": 0.702247191011236,
+      "acc_tool_substantive_heuristic": 0.6255924170616114,
+      "acc_no_tool_substantive_heuristic": 0.8536585365853658,
+      "acc_placeholder_bracket_heuristic": 0.5909090909090909,
+      "acc_error_or_maxsteps_heuristic": null,
+      "acc_toolcorrect_substantive_heuristic": 0.7142857142857143,
+      "acc_all_gpt4o_mini": 0.46,
+      "acc_nonknowledge_gpt4o_mini": 0.5814606741573034,
+      "acc_tool_substantive_gpt4o_mini": 0.5260663507109005,
+      "acc_no_tool_substantive_gpt4o_mini": 0.7642276422764228,
+      "acc_placeholder_bracket_gpt4o_mini": 0.09090909090909091,
+      "acc_error_or_maxsteps_gpt4o_mini": null,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5952380952380952,
+      "answer_forms_nonknowledge": {
+        "tool_substantive": 211,
+        "no_tool_substantive": 123,
+        "placeholder_bracket": 22
+      },
+      "tool_correct_rate_nonknowledge": 0.49719101123595505,
+      "first_tool_valid_rate_nonknowledge": 0.6235955056179775,
+      "answers_longer_than_300_chars_judge_truncation": 37
+    },
+    "hermes3_llama8b": {
+      "n": 450,
+      "n_knowledge_empty_ref": 94,
+      "acc_all_ensemble": 0.31777777777777777,
+      "acc_nonknowledge_ensemble": 0.40168539325842695,
+      "acc_tool_substantive_ensemble": 0.3135593220338983,
+      "acc_no_tool_substantive_ensemble": 0.4840182648401826,
+      "acc_placeholder_bracket_ensemble": 0.0,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.375,
+      "acc_all_heuristic": 0.5822222222222222,
+      "acc_nonknowledge_heuristic": 0.7359550561797753,
+      "acc_tool_substantive_heuristic": 0.7203389830508474,
+      "acc_no_tool_substantive_heuristic": 0.8082191780821918,
+      "acc_placeholder_bracket_heuristic": 0.0,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.8977272727272727,
+      "acc_all_gpt4o_mini": 0.4955555555555556,
+      "acc_nonknowledge_gpt4o_mini": 0.6264044943820225,
+      "acc_tool_substantive_gpt4o_mini": 0.5254237288135594,
+      "acc_no_tool_substantive_gpt4o_mini": 0.6986301369863014,
+      "acc_placeholder_bracket_gpt4o_mini": 0.5714285714285714,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5568181818181818,
+      "answer_forms_nonknowledge": {
+        "placeholder_bracket": 14,
+        "no_tool_substantive": 219,
+        "tool_substantive": 118,
+        "error_or_maxsteps": 5
+      },
+      "tool_correct_rate_nonknowledge": 0.2556179775280899,
+      "first_tool_valid_rate_nonknowledge": 0.3455056179775281,
+      "answers_longer_than_300_chars_judge_truncation": 35
+    },
+    "_all": {
+      "n": 4550,
+      "n_knowledge_empty_ref": 949,
+      "acc_all_ensemble": 0.26285714285714284,
+      "acc_nonknowledge_ensemble": 0.33212996389891697,
+      "acc_tool_substantive_ensemble": 0.30786317192358953,
+      "acc_no_tool_substantive_ensemble": 0.4540229885057471,
+      "acc_placeholder_bracket_ensemble": 0.13004484304932734,
+      "acc_error_or_maxsteps_ensemble": 0.0,
+      "acc_toolcorrect_substantive_ensemble": 0.3515625,
+      "acc_all_heuristic": 0.5057142857142857,
+      "acc_nonknowledge_heuristic": 0.6389891696750902,
+      "acc_tool_substantive_heuristic": 0.6410484229231452,
+      "acc_no_tool_substantive_heuristic": 0.7404214559386973,
+      "acc_placeholder_bracket_heuristic": 0.3811659192825112,
+      "acc_error_or_maxsteps_heuristic": 0.0,
+      "acc_toolcorrect_substantive_heuristic": 0.7003348214285714,
+      "acc_all_gpt4o_mini": 0.3832967032967033,
+      "acc_nonknowledge_gpt4o_mini": 0.484309913912802,
+      "acc_tool_substantive_gpt4o_mini": 0.4611283873833852,
+      "acc_no_tool_substantive_gpt4o_mini": 0.6273946360153256,
+      "acc_placeholder_bracket_gpt4o_mini": 0.22869955156950672,
+      "acc_error_or_maxsteps_gpt4o_mini": 0.0,
+      "acc_toolcorrect_substantive_gpt4o_mini": 0.5078125,
+      "answer_forms_nonknowledge": {
+        "placeholder_bracket": 223,
+        "no_tool_substantive": 1044,
+        "tool_substantive": 2251,
+        "error_or_maxsteps": 83
+      },
+      "tool_correct_rate_nonknowledge": 0.5206886975840045,
+      "first_tool_valid_rate_nonknowledge": 0.6503748958622605,
+      "answers_longer_than_300_chars_judge_truncation": 321
+    }
+  },
+  "baseline_ensemble_error_mass": {
+    "n_wrong": 3354,
+    "n_total": 4550,
+    "by_cause": {
+      "empty_reference_knowledge": 949,
+      "placeholder_bracket": 194,
+      "tool_substantive": 1558,
+      "error_or_maxsteps": 83,
+      "no_tool_substantive": 570
+    }
+  },
+  "human_labels_by_answer_form": {
+    "tool_substantive": {
+      "n": 66,
+      "human_yes": 26,
+      "ens_yes": 12,
+      "heur_yes": 44,
+      "ens_no_human_yes": 17,
+      "ens_yes_human_no": 3,
+      "yoshitha_yes": 31
+    },
+    "no_tool_substantive": {
+      "n": 25,
+      "human_yes": 12,
+      "ens_yes": 13,
+      "heur_yes": 20,
+      "ens_no_human_yes": 2,
+      "ens_yes_human_no": 3,
+      "yoshitha_yes": 13
+    },
+    "placeholder_bracket": {
+      "n": 8,
+      "human_yes": 0,
+      "ens_yes": 0,
+      "heur_yes": 1,
+      "ens_no_human_yes": 0,
+      "ens_yes_human_no": 0,
+      "yoshitha_yes": 0
+    },
+    "error_or_maxsteps": {
+      "n": 1,
+      "human_yes": 0,
+      "ens_yes": 0,
+      "heur_yes": 0,
+      "ens_no_human_yes": 0,
+      "ens_yes_human_no": 0,
+      "yoshitha_yes": 0
+    }
+  },
+  "examples_ens_wrong_human_correct": [
+    {
+      "task": "calendar_099",
+      "model": "deepseek_v3",
+      "ref": "Created 'Budget Review' and listed all events on 2024-07-22.",
+      "answer": "The 'Budget Review' meeting has been successfully created for 2024-07-22 at 10:00 for 45 minutes with alice@company.com and carol@company.com. Here are all events for that day:\n\n1. Code Review Session at 09:00 for 30 min"
+    },
+    {
+      "task": "calendar_014",
+      "model": "deepseek_v3",
+      "ref": "Calendar for 2024-07-10.",
+      "answer": "Here are your events for 2024-07-10:\n1. **1:1 with Manager** at 09:00 (30 minutes)\n2. **Retrospective** at 10:00 (60 minutes)\n3. **Budget Review** at 13:00 (45 minutes)"
+    },
+    {
+      "task": "toolbench_syn_0072",
+      "model": "deepseek_v3",
+      "ref": "Completed: What was the temperature in Berlin last week?",
+      "answer": "Last week in Berlin, the temperatures were as follows:  \n- November 20: 45\u00b0F  \n- November 21: 42\u00b0F  \n- November 22: 39\u00b0F  \n- November 23: 36\u00b0F  \n- November 24: 34\u00b0F  \n- November 25: 32\u00b0F  \n- November 26: 30\u00b0F"
+    },
+    {
+      "task": "calendar_089",
+      "model": "gpt4o",
+      "ref": "Created 'Client Call' and listed all events on 2024-08-05.",
+      "answer": "On 2024-08-05, there are four 'Client Call' meetings scheduled at 09:00, each lasting 60 minutes. Here are the event IDs:\n- EVT_0006\n- EVT_0018\n- EVT_0027\n- EVT_0036"
+    },
+    {
+      "task": "calendar_061",
+      "model": "o3_mini",
+      "ref": "Created 'Strategy Meeting' and listed all events on 2024-08-12.",
+      "answer": "On 2024-08-12, there are four 'Strategy Meeting' events scheduled at 10:00, each with a duration of 60 minutes. Their event IDs are EVT_0005, EVT_0015, EVT_0023, and EVT_0031."
+    },
+    {
+      "task": "weather_027",
+      "model": "gemini_25_flash",
+      "ref": "The temperature in Tokyo on 2024-10-12 in fahrenheit.",
+      "answer": "The temperature in Tokyo on 2024-10-12 is 62 degrees fahrenheit."
+    },
+    {
+      "task": "weather_007",
+      "model": "gemini_25_flash",
+      "ref": "The temperature in Istanbul on 2024-10-12 in fahrenheit.",
+      "answer": "The temperature in Istanbul on 2024-10-12 is 68 degrees fahrenheit."
+    },
+    {
+      "task": "calendar_089",
+      "model": "o3_mini",
+      "ref": "Created 'Client Call' and listed all events on 2024-08-05.",
+      "answer": "The events on 2024-08-05 are four \"Client Call\" meetings at 09:00 (60 minutes each) with event IDs: EVT_0006, EVT_0016, EVT_0024, and EVT_0032."
+    },
+    {
+      "task": "toolbench_syn_0012",
+      "model": "gemini_20_flash",
+      "ref": "Completed: What meetings do I have on 2024-08-15?",
+      "answer": "There are no events on 2024-08-15."
+    },
+    {
+      "task": "weather_095",
+      "model": "gemini_25_flash",
+      "ref": "Weather analysis for Mumbai.",
+      "answer": "The weather in Mumbai on 2024-01-15 was 25\u00b0C and clear. Over the next 7 days, the weather is expected to remain clear with temperatures fluctuating slightly between 25\u00b0C and 27\u00b0C. No significant change in weather conditi"
+    },
+    {
+      "task": "calendar_089",
+      "model": "gemini_25_flash",
+      "ref": "Created 'Client Call' and listed all events on 2024-08-05.",
+      "answer": "I have created a 'Client Call' meeting on 2024-08-05 at 09:00 for 60 minutes with dave@company.com and alice@company.com (event ID: EVT_0053).Here are all events for 2024-08-05:\n- Client Call at 09:00 for 60 minutes (eve"
+    },
+    {
+      "task": "toolbench_syn_0018",
+      "model": "deepseek_v3",
+      "ref": "Completed: Give me a 3-day forecast for Tokyo.",
+      "answer": "Here's the 3-day weather forecast for Tokyo:  \n- **April 16, 2026**: Clear skies, 18\u00b0C  \n- **April 17, 2026**: Partly cloudy, 20\u00b0C  \n- **April 18, 2026**: Clear skies, 22\u00b0C"
+    },
+    {
+      "task": "weather_094",
+      "model": "gpt41_mini",
+      "ref": "Current vs historical weather for Rome.",
+      "answer": "Today's weather in Rome (22\u00b0C, rainy, 40% humidity) is slightly cooler than the historical average temperature of about 24.3\u00b0C from January 1-7, 2023. The current conditions are rainy, whereas the historical data only pr"
+    },
+    {
+      "task": "weather_003",
+      "model": "deepseek_v3",
+      "ref": "Forecast for Sydney.",
+      "answer": "Here\u2019s the 3-day forecast for Sydney:  \n- **Apr 16, 2026**: 24\u00b0C, sunny.  \n- **Apr 17, 2026**: 22\u00b0C, partly cloudy.  \n- **Apr 18, 2026**: 23\u00b0C, rainy."
+    },
+    {
+      "task": "toolbench_syn_0096",
+      "model": "gpt41_mini",
+      "ref": "Completed: What was the temperature in Paris last week?",
+      "answer": "The temperatures in Paris last week (April 15 to April 21, 2024) were as follows:\n- April 15: 23\u00b0C\n- April 16: 23\u00b0C\n- April 17: 12\u00b0C\n- April 18: 17\u00b0C\n- April 19: 31\u00b0C\n- April 20: 30\u00b0C\n- April 21: 14\u00b0C"
+    },
+    {
+      "task": "calendar_099",
+      "model": "gpt41_mini",
+      "ref": "Created 'Budget Review' and listed all events on 2024-07-22.",
+      "answer": "Here are all the events for 2024-07-22:\n- Code Review Session at 09:00 for 30 minutes\n- Budget Review at 10:00 for 45 minutes\n- 1:1 with Manager at 10:00 for 60 minutes\n- Code Review Session at 09:00 for 30 minutes\n- Bud"
+    },
+    {
+      "task": "medical_004",
+      "model": "gpt41_mini",
+      "ref": "Conditions for patient P003 retrieved.",
+      "answer": "Patient P003 has the conditions migraine and anxiety."
+    },
+    {
+      "task": "calendar_019",
+      "model": "gpt41_mini",
+      "ref": "Calendar for 2024-07-10.",
+      "answer": "You have no events scheduled for 2024-07-10."
+    },
+    {
+      "task": "calendar_047",
+      "model": "gpt4o_mini",
+      "ref": "Events on 2024-07-22.",
+      "answer": "On 2024-07-22, you have the following meetings scheduled:\n1. Code Review Session at 09:00 (30 minutes)\n2. Budget Review at 10:00 (45 minutes)\n3. Code Review Session at 09:00 (30 minutes)\n4. Budget Review at 10:00:00 (45 "
+    }
+  ],
+  "placeholder_examples": [
+    {
+      "model": "gpt4o_mini",
+      "ref": "Weather analysis for Dubai.",
+      "answer": "[weather data for Dubai on 2024-05-22 and the forecast for the next 5 days]",
+      "heuristic": "True",
+      "ensemble": "True"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Current weather and forecast for Singapore.",
+      "answer": "[I will provide the weather data shortly.]",
+      "heuristic": "True",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Completed: Is it going to rain in Berlin tomorrow?",
+      "answer": "[waiting for the forecast data]",
+      "heuristic": "False",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Completed: Look up patient P004's medication list.",
+      "answer": "[retrieving patient record...]",
+      "heuristic": "False",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Forecast for Sydney.",
+      "answer": "[weather forecast for Sydney]",
+      "heuristic": "True",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Hourly forecast for Singapore.",
+      "answer": "[the hourly forecast for Singapore for the next day]",
+      "heuristic": "True",
+      "ensemble": "True"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Completed: What's the current weather in Mumbai?",
+      "answer": "[waiting for the response from the tool]",
+      "heuristic": "False",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Completed: What's the current weather in Paris?",
+      "answer": "[your answer]",
+      "heuristic": "False",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "Completed: Look up patient P004's medication list.",
+      "answer": "[retrieving patient record...]",
+      "heuristic": "False",
+      "ensemble": "False"
+    },
+    {
+      "model": "gpt4o_mini",
+      "ref": "The temperature in Singapore on 2024-06-15 in fahrenheit.",
+      "answer": "[waiting for response]",
+      "heuristic": "False",
+      "ensemble": "False"
+    }
+  ]
+}

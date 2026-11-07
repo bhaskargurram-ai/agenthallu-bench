@@ -1,0 +1,53 @@
+{
+  "source": "interceptor_open_models.csv",
+  "models": {
+    "hermes3_llama8b": {
+      "n_paired": 300,
+      "control_halluc_pct": 43.0,
+      "interceptor_halluc_pct": 39.0,
+      "delta_pp": 4.0,
+      "delta_ci95": [
+        0.3,
+        7.3
+      ],
+      "abstain_pct": 13.3,
+      "saved": 16,
+      "broken": 24,
+      "heldout_precision": 0.4,
+      "heldout_recall": 0.124,
+      "heldout_f1": 0.189
+    },
+    "qwen25_14b": {
+      "n_paired": 300,
+      "control_halluc_pct": 45.0,
+      "interceptor_halluc_pct": 37.0,
+      "delta_pp": 8.0,
+      "delta_ci95": [
+        5.0,
+        11.3
+      ],
+      "abstain_pct": 27.0,
+      "saved": 24,
+      "broken": 57,
+      "heldout_precision": 0.296,
+      "heldout_recall": 0.178,
+      "heldout_f1": 0.222
+    },
+    "qwen25_7b": {
+      "n_paired": 300,
+      "control_halluc_pct": 55.3,
+      "interceptor_halluc_pct": 31.3,
+      "delta_pp": 24.0,
+      "delta_ci95": [
+        19.3,
+        29.0
+      ],
+      "abstain_pct": 55.3,
+      "saved": 75,
+      "broken": 91,
+      "heldout_precision": 0.452,
+      "heldout_recall": 0.452,
+      "heldout_f1": 0.452
+    }
+  }
+}

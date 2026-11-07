@@ -1,0 +1,925 @@
+{
+  "n": 100,
+  "metrics": {
+    "exact": {
+      "yes_rate": 0.0,
+      "h_bhaskar": {
+        "kappa": 0.0,
+        "ci95": [
+          -2.707861035671114e-16,
+          3.4694469519536137e-16
+        ],
+        "agreement": 0.62,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 38
+      },
+      "h_yoshitha": {
+        "kappa": 0.0,
+        "ci95": [
+          -2.707861035671114e-16,
+          1.02798428206033e-16
+        ],
+        "agreement": 0.56,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 44
+      },
+      "h_third": {
+        "kappa": -2.581914010756178e-16,
+        "ci95": [
+          -2.707861035671114e-16,
+          3.2653618371328126e-16
+        ],
+        "agreement": 0.57,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 43
+      },
+      "h_majority3": {
+        "kappa": -2.643388153869421e-16,
+        "ci95": [
+          -2.707861035671114e-16,
+          3.364312195833807e-16
+        ],
+        "agreement": 0.58,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 42
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.0,
+        "ci95": [
+          -3.3676765080296424e-16,
+          3.157196726277788e-16
+        ]
+      }
+    },
+    "normalized_eq": {
+      "yes_rate": 0.0,
+      "h_bhaskar": {
+        "kappa": 0.0,
+        "ci95": [
+          -2.707861035671114e-16,
+          3.4694469519536137e-16
+        ],
+        "agreement": 0.62,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 38
+      },
+      "h_yoshitha": {
+        "kappa": 0.0,
+        "ci95": [
+          -2.707861035671114e-16,
+          1.02798428206033e-16
+        ],
+        "agreement": 0.56,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 44
+      },
+      "h_third": {
+        "kappa": -2.581914010756178e-16,
+        "ci95": [
+          -2.707861035671114e-16,
+          3.2653618371328126e-16
+        ],
+        "agreement": 0.57,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 43
+      },
+      "h_majority3": {
+        "kappa": -2.643388153869421e-16,
+        "ci95": [
+          -2.707861035671114e-16,
+          3.364312195833807e-16
+        ],
+        "agreement": 0.58,
+        "fp_metric_yes_human_no": 0,
+        "fn_metric_no_human_yes": 42
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.0,
+        "ci95": [
+          -3.3676765080296424e-16,
+          3.157196726277788e-16
+        ]
+      }
+    },
+    "normalized_contain": {
+      "yes_rate": 0.03,
+      "h_bhaskar": {
+        "kappa": -0.0072314049586774615,
+        "ci95": [
+          -0.07861936720997109,
+          0.08256880733944998
+        ],
+        "agreement": 0.61,
+        "fp_metric_yes_human_no": 2,
+        "fn_metric_no_human_yes": 37
+      },
+      "h_yoshitha": {
+        "kappa": 0.030658250676284818,
+        "ci95": [
+          -0.03978300180831841,
+          0.11764705882352951
+        ],
+        "agreement": 0.57,
+        "fp_metric_yes_human_no": 1,
+        "fn_metric_no_human_yes": 42
+      },
+      "h_third": {
+        "kappa": 0.032703823122984525,
+        "ci95": [
+          -0.039741219963031676,
+          0.1232876712328771
+        ],
+        "agreement": 0.58,
+        "fp_metric_yes_human_no": 1,
+        "fn_metric_no_human_yes": 41
+      },
+      "h_majority3": {
+        "kappa": 0.03483992467043297,
+        "ci95": [
+          -0.03965183752417815,
+          0.12818096135720997
+        ],
+        "agreement": 0.59,
+        "fp_metric_yes_human_no": 1,
+        "fn_metric_no_human_yes": 40
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.009997059688327172,
+        "ci95": [
+          -0.0641950734013436,
+          0.09077933200114223
+        ]
+      }
+    },
+    "token_f1_ge_0.5": {
+      "yes_rate": 0.16,
+      "h_bhaskar": {
+        "kappa": 0.23518164435946493,
+        "ci95": [
+          0.05797101449275367,
+          0.4103194103194102
+        ],
+        "agreement": 0.68,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 27
+      },
+      "h_yoshitha": {
+        "kappa": 0.1724738675958187,
+        "ci95": [
+          0.015088013411567446,
+          0.33562992125984265
+        ],
+        "agreement": 0.62,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 33
+      },
+      "h_third": {
+        "kappa": 0.18213969938107855,
+        "ci95": [
+          0.02313624678663241,
+          0.34448462929475565
+        ],
+        "agreement": 0.63,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 32
+      },
+      "h_majority3": {
+        "kappa": 0.19210053859964096,
+        "ci95": [
+          0.030172413793103477,
+          0.3583650190114069
+        ],
+        "agreement": 0.64,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 31
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.21747572815533966,
+        "ci95": [
+          0.04373757455268407,
+          0.39658983264919495
+        ]
+      }
+    },
+    "numeric_tol": {
+      "yes_rate": 0.42,
+      "h_bhaskar": {
+        "kappa": 0.33444259567387696,
+        "ci95": [
+          0.1394148020654044,
+          0.5153473344103392
+        ],
+        "agreement": 0.68,
+        "fp_metric_yes_human_no": 18,
+        "fn_metric_no_human_yes": 14
+      },
+      "h_yoshitha": {
+        "kappa": 0.22512234910277315,
+        "ci95": [
+          0.0306946688206785,
+          0.41176470588235287
+        ],
+        "agreement": 0.62,
+        "fp_metric_yes_human_no": 18,
+        "fn_metric_no_human_yes": 20
+      },
+      "h_third": {
+        "kappa": 0.24304418985270035,
+        "ci95": [
+          0.047996826656088856,
+          0.429037520391517
+        ],
+        "agreement": 0.63,
+        "fp_metric_yes_human_no": 18,
+        "fn_metric_no_human_yes": 19
+      },
+      "h_majority3": {
+        "kappa": 0.2610837438423645,
+        "ci95": [
+          0.06250000000000006,
+          0.4480784955028617
+        ],
+        "agreement": 0.64,
+        "fp_metric_yes_human_no": 18,
+        "fn_metric_no_human_yes": 18
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.30294044971583883,
+        "ci95": [
+          0.10034602076124567,
+          0.4972375690607735
+        ]
+      }
+    },
+    "ref_entity_match": {
+      "yes_rate": 0.7,
+      "h_bhaskar": {
+        "kappa": 0.27007299270072993,
+        "ci95": [
+          0.12491420727522302,
+          0.4161152199299338
+        ],
+        "agreement": 0.6,
+        "fp_metric_yes_human_no": 36,
+        "fn_metric_no_human_yes": 4
+      },
+      "h_yoshitha": {
+        "kappa": 0.3511450381679389,
+        "ci95": [
+          0.19385796545105555,
+          0.5057660626029654
+        ],
+        "agreement": 0.66,
+        "fp_metric_yes_human_no": 30,
+        "fn_metric_no_human_yes": 4
+      },
+      "h_third": {
+        "kappa": 0.2992424242424242,
+        "ci95": [
+          0.1440267956829178,
+          0.4556765163297044
+        ],
+        "agreement": 0.63,
+        "fp_metric_yes_human_no": 32,
+        "fn_metric_no_human_yes": 5
+      },
+      "h_majority3": {
+        "kappa": 0.3233082706766917,
+        "ci95": [
+          0.17136812411847682,
+          0.47517157852240605
+        ],
+        "agreement": 0.64,
+        "fp_metric_yes_human_no": 32,
+        "fn_metric_no_human_yes": 4
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.3207419135942094,
+        "ci95": [
+          0.15873731679819625,
+          0.48344370860927166
+        ]
+      }
+    },
+    "heuristic_csv": {
+      "yes_rate": 0.65,
+      "h_bhaskar": {
+        "kappa": 0.0485074626865671,
+        "ci95": [
+          -0.12403100775193798,
+          0.21641791044776115
+        ],
+        "agreement": 0.49,
+        "fp_metric_yes_human_no": 39,
+        "fn_metric_no_human_yes": 12
+      },
+      "h_yoshitha": {
+        "kappa": 0.01544401544401535,
+        "ci95": [
+          -0.1654135338345864,
+          0.1929133858267715
+        ],
+        "agreement": 0.49,
+        "fp_metric_yes_human_no": 36,
+        "fn_metric_no_human_yes": 15
+      },
+      "h_third": {
+        "kappa": 0.001919385796545001,
+        "ci95": [
+          -0.17760617760617756,
+          0.17999999999999994
+        ],
+        "agreement": 0.48,
+        "fp_metric_yes_human_no": 37,
+        "fn_metric_no_human_yes": 15
+      },
+      "h_majority3": {
+        "kappa": -0.01145038167938943,
+        "ci95": [
+          -0.19004688063469166,
+          0.1650099403578528
+        ],
+        "agreement": 0.47,
+        "fp_metric_yes_human_no": 38,
+        "fn_metric_no_human_yes": 15
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.04210526315789488,
+        "ci95": [
+          -0.1420790906938196,
+          0.22188116641087477
+        ]
+      }
+    },
+    "heuristic_paper_described": {
+      "yes_rate": 0.91,
+      "h_bhaskar": {
+        "kappa": 0.014037433155080244,
+        "ci95": [
+          -0.07878391631252037,
+          0.10377358490566038
+        ],
+        "agreement": 0.41,
+        "fp_metric_yes_human_no": 56,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_yoshitha": {
+        "kappa": 0.03495994173343034,
+        "ci95": [
+          -0.06506584043377231,
+          0.13726993865030693
+        ],
+        "agreement": 0.47,
+        "fp_metric_yes_human_no": 50,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_third": {
+        "kappa": 0.03121636167922502,
+        "ci95": [
+          -0.06813996316758755,
+          0.1301196085538239
+        ],
+        "agreement": 0.46,
+        "fp_metric_yes_human_no": 51,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_majority3": {
+        "kappa": 0.02758132956152768,
+        "ci95": [
+          -0.06990014265335229,
+          0.12551440329218097
+        ],
+        "agreement": 0.45,
+        "fp_metric_yes_human_no": 52,
+        "fn_metric_no_human_yes": 3
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.025204788909892868,
+        "ci95": [
+          -0.08017917133258677,
+          0.12953367875647662
+        ]
+      }
+    },
+    "slot_present": {
+      "yes_rate": 0.71,
+      "h_bhaskar": {
+        "kappa": 0.2914244186046511,
+        "ci95": [
+          0.15477084898572507,
+          0.43181818181818177
+        ],
+        "agreement": 0.61,
+        "fp_metric_yes_human_no": 36,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_yoshitha": {
+        "kappa": 0.3716679360243717,
+        "ci95": [
+          0.22423346878463235,
+          0.52
+        ],
+        "agreement": 0.67,
+        "fp_metric_yes_human_no": 30,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_third": {
+        "kappa": 0.3577635058556857,
+        "ci95": [
+          0.21245421245421242,
+          0.5038167938931297
+        ],
+        "agreement": 0.66,
+        "fp_metric_yes_human_no": 31,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_majority3": {
+        "kappa": 0.34407796101949023,
+        "ci95": [
+          0.2023346303501945,
+          0.4903959231673853
+        ],
+        "agreement": 0.65,
+        "fp_metric_yes_human_no": 32,
+        "fn_metric_no_human_yes": 3
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.36190907034607556,
+        "ci95": [
+          0.20395948434622482,
+          0.5228789323164919
+        ]
+      }
+    },
+    "slot_noconflict": {
+      "yes_rate": 0.68,
+      "h_bhaskar": {
+        "kappa": 0.33726067746686306,
+        "ci95": [
+          0.19465387251542157,
+          0.48315467075038276
+        ],
+        "agreement": 0.64,
+        "fp_metric_yes_human_no": 33,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_yoshitha": {
+        "kappa": 0.42484662576687104,
+        "ci95": [
+          0.2729306487695749,
+          0.5755860953920777
+        ],
+        "agreement": 0.7,
+        "fp_metric_yes_human_no": 27,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_third": {
+        "kappa": 0.40974866717440966,
+        "ci95": [
+          0.25952045133991536,
+          0.56
+        ],
+        "agreement": 0.69,
+        "fp_metric_yes_human_no": 28,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_majority3": {
+        "kappa": 0.3948562783661121,
+        "ci95": [
+          0.24460431654676243,
+          0.5432883240667197
+        ],
+        "agreement": 0.68,
+        "fp_metric_yes_human_no": 29,
+        "fn_metric_no_human_yes": 3
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.41693363844393594,
+        "ci95": [
+          0.25815217391304335,
+          0.578601023641238
+        ]
+      }
+    },
+    "non_answer_filter_only": {
+      "yes_rate": 0.68,
+      "h_bhaskar": {
+        "kappa": 0.44771723122238577,
+        "ci95": [
+          0.316546762589928,
+          0.5928338762214984
+        ],
+        "agreement": 0.7,
+        "fp_metric_yes_human_no": 30,
+        "fn_metric_no_human_yes": 0
+      },
+      "h_yoshitha": {
+        "kappa": 0.5015337423312883,
+        "ci95": [
+          0.35703479576399405,
+          0.6484374999999998
+        ],
+        "agreement": 0.74,
+        "fp_metric_yes_human_no": 25,
+        "fn_metric_no_human_yes": 1
+      },
+      "h_third": {
+        "kappa": 0.523990860624524,
+        "ci95": [
+          0.3849493487698987,
+          0.6669278996865202
+        ],
+        "agreement": 0.75,
+        "fp_metric_yes_human_no": 25,
+        "fn_metric_no_human_yes": 0
+      },
+      "h_majority3": {
+        "kappa": 0.508320726172466,
+        "ci95": [
+          0.36959654178674356,
+          0.6500777604976671
+        ],
+        "agreement": 0.74,
+        "fp_metric_yes_human_no": 26,
+        "fn_metric_no_human_yes": 0
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.5229085935719171,
+        "ci95": [
+          0.37986370630907884,
+          0.6714801444043322
+        ]
+      }
+    },
+    "slot_strict": {
+      "yes_rate": 0.53,
+      "h_bhaskar": {
+        "kappa": 0.5859621451104101,
+        "ci95": [
+          0.4295830055074743,
+          0.7302904564315352
+        ],
+        "agreement": 0.79,
+        "fp_metric_yes_human_no": 18,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_yoshitha": {
+        "kappa": 0.6624305003971405,
+        "ci95": [
+          0.5136186770428015,
+          0.7995991983967936
+        ],
+        "agreement": 0.83,
+        "fp_metric_yes_human_no": 13,
+        "fn_metric_no_human_yes": 4
+      },
+      "h_third": {
+        "kappa": 0.6826656088853629,
+        "ci95": [
+          0.538283955367449,
+          0.8189863234111022
+        ],
+        "agreement": 0.84,
+        "fp_metric_yes_human_no": 13,
+        "fn_metric_no_human_yes": 3
+      },
+      "h_majority3": {
+        "kappa": 0.6632329635499207,
+        "ci95": [
+          0.5173745173745173,
+          0.7997597116539849
+        ],
+        "agreement": 0.83,
+        "fp_metric_yes_human_no": 14,
+        "fn_metric_no_human_yes": 3
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.6916747337850919,
+        "ci95": [
+          0.5382942739792221,
+          0.8249158249158249
+        ]
+      }
+    },
+    "gpt4o": {
+      "yes_rate": 0.3,
+      "h_bhaskar": {
+        "kappa": 0.3362831858407078,
+        "ci95": [
+          0.14623467600700518,
+          0.5192307692307692
+        ],
+        "agreement": 0.7,
+        "fp_metric_yes_human_no": 11,
+        "fn_metric_no_human_yes": 19
+      },
+      "h_yoshitha": {
+        "kappa": 0.24369747899159663,
+        "ci95": [
+          0.058823529411764504,
+          0.42555147058823534
+        ],
+        "agreement": 0.64,
+        "fp_metric_yes_human_no": 11,
+        "fn_metric_no_human_yes": 25
+      },
+      "h_third": {
+        "kappa": 0.2584745762711865,
+        "ci95": [
+          0.07167530224525022,
+          0.44444444444444436
+        ],
+        "agreement": 0.65,
+        "fp_metric_yes_human_no": 11,
+        "fn_metric_no_human_yes": 24
+      },
+      "h_majority3": {
+        "kappa": 0.27350427350427353,
+        "ci95": [
+          0.08675799086758003,
+          0.45866141732283483
+        ],
+        "agreement": 0.66,
+        "fp_metric_yes_human_no": 11,
+        "fn_metric_no_human_yes": 23
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.3193190611297395,
+        "ci95": [
+          0.1196537678207741,
+          0.5102739726027395
+        ]
+      }
+    },
+    "gemini25flash": {
+      "yes_rate": 0.16,
+      "h_bhaskar": {
+        "kappa": 0.37858508604206514,
+        "ci95": [
+          0.20675537359263044,
+          0.5544554455445545
+        ],
+        "agreement": 0.74,
+        "fp_metric_yes_human_no": 2,
+        "fn_metric_no_human_yes": 24
+      },
+      "h_yoshitha": {
+        "kappa": 0.3466898954703831,
+        "ci95": [
+          0.19571045576407498,
+          0.5103092783505156
+        ],
+        "agreement": 0.7,
+        "fp_metric_yes_human_no": 1,
+        "fn_metric_no_human_yes": 29
+      },
+      "h_third": {
+        "kappa": 0.35897435897435875,
+        "ci95": [
+          0.20675537359263044,
+          0.5209854014598541
+        ],
+        "agreement": 0.71,
+        "fp_metric_yes_human_no": 1,
+        "fn_metric_no_human_yes": 28
+      },
+      "h_majority3": {
+        "kappa": 0.3716337522441651,
+        "ci95": [
+          0.21636085626911308,
+          0.5398773006134969
+        ],
+        "agreement": 0.72,
+        "fp_metric_yes_human_no": 1,
+        "fn_metric_no_human_yes": 27
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.3970182219768086,
+        "ci95": [
+          0.22924901185770727,
+          0.5708737864077669
+        ]
+      }
+    },
+    "gpt4o_mini": {
+      "yes_rate": 0.34,
+      "h_bhaskar": {
+        "kappa": 0.5667244367417679,
+        "ci95": [
+          0.38921651221566966,
+          0.7250000000000001
+        ],
+        "agreement": 0.8,
+        "fp_metric_yes_human_no": 8,
+        "fn_metric_no_human_yes": 12
+      },
+      "h_yoshitha": {
+        "kappa": 0.5008319467554077,
+        "ci95": [
+          0.3240388677651035,
+          0.6642793196060877
+        ],
+        "agreement": 0.76,
+        "fp_metric_yes_human_no": 7,
+        "fn_metric_no_human_yes": 17
+      },
+      "h_third": {
+        "kappa": 0.518425460636516,
+        "ci95": [
+          0.3400000000000001,
+          0.6772805507745266
+        ],
+        "agreement": 0.77,
+        "fp_metric_yes_human_no": 7,
+        "fn_metric_no_human_yes": 16
+      },
+      "h_majority3": {
+        "kappa": 0.5362563237774032,
+        "ci95": [
+          0.35897435897435886,
+          0.6944565691837625
+        ],
+        "agreement": 0.78,
+        "fp_metric_yes_human_no": 7,
+        "fn_metric_no_human_yes": 15
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.5829938900203667,
+        "ci95": [
+          0.40273037542662116,
+          0.7484292535813019
+        ]
+      }
+    },
+    "ensemble": {
+      "yes_rate": 0.25,
+      "h_bhaskar": {
+        "kappa": 0.4318181818181819,
+        "ci95": [
+          0.24849699398797584,
+          0.6080352768250857
+        ],
+        "agreement": 0.75,
+        "fp_metric_yes_human_no": 6,
+        "fn_metric_no_human_yes": 19
+      },
+      "h_yoshitha": {
+        "kappa": 0.3829787234042552,
+        "ci95": [
+          0.2115637319316687,
+          0.550561797752809
+        ],
+        "agreement": 0.71,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 24
+      },
+      "h_third": {
+        "kappa": 0.3978494623655913,
+        "ci95": [
+          0.22459893048128332,
+          0.5653973509933775
+        ],
+        "agreement": 0.72,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 23
+      },
+      "h_majority3": {
+        "kappa": 0.41304347826086946,
+        "ci95": [
+          0.23664122137404572,
+          0.582463465553236
+        ],
+        "agreement": 0.73,
+        "fp_metric_yes_human_no": 5,
+        "fn_metric_no_human_yes": 22
+      },
+      "unanimous_subset": {
+        "n": 91,
+        "kappa": 0.44556291390728486,
+        "ci95": [
+          0.2593856655290102,
+          0.6198433420365534
+        ]
+      }
+    }
+  },
+  "paired_kappa_diffs_vs_majority3": {
+    "slot_strict_minus_heuristic": {
+      "diff": 0.6746833452293101,
+      "ci95": [
+        0.45097848498390064,
+        0.8944145396017387
+      ]
+    },
+    "slot_strict_minus_ensemble": {
+      "diff": 0.2501894852890512,
+      "ci95": [
+        0.024090857797865683,
+        0.4680728071436774
+      ]
+    },
+    "slot_strict_minus_gpt4o_mini": {
+      "diff": 0.1269766397725175,
+      "ci95": [
+        -0.07404790288179097,
+        0.32688394611282634
+      ]
+    },
+    "ensemble_minus_heuristic": {
+      "diff": 0.4244938599402589,
+      "ci95": [
+        0.17939411043778442,
+        0.6589666135324836
+      ]
+    },
+    "gpt4o_mini_minus_ensemble": {
+      "diff": 0.12321284551653372,
+      "ci95": [
+        0.0035805279582699634,
+        0.24838327539665594
+      ]
+    }
+  },
+  "reference_audit": {
+    "kinds": {
+      "task_description": 74,
+      "echo_of_query": 26
+    },
+    "ref_has_any_number": 66,
+    "query_empty_in_csv": 11,
+    "rows_with_no_query_entities": 1,
+    "heuristic_csv_equals_recomputed": 100,
+    "possible_gold_value_examples": [],
+    "kinds_all_p2_rows": {
+      "task_description": 1608,
+      "echo_of_query": 542
+    },
+    "distinct_references_in_sample": 50,
+    "gold_value_examples_all_p2": []
+  },
+  "heldout_88_uninspected": {
+    "slot_strict": {
+      "n": 88,
+      "kappa": 0.6408163265306124,
+      "ci95": [
+        0.4826175869120655,
+        0.794392523364486
+      ]
+    },
+    "slot_noconflict": {
+      "n": 88,
+      "kappa": 0.41362290227048376,
+      "ci95": [
+        0.25498007968127495,
+        0.5798994974874372
+      ]
+    },
+    "non_answer_filter_only": {
+      "n": 88,
+      "kappa": 0.46341463414634154,
+      "ci95": [
+        0.32000000000000006,
+        0.6136363636363635
+      ]
+    },
+    "heuristic_csv": {
+      "n": 88,
+      "kappa": -0.0019801980198019204,
+      "ci95": [
+        -0.18859429714857442,
+        0.1839258114374035
+      ]
+    },
+    "ensemble": {
+      "n": 88,
+      "kappa": 0.4185022026431719,
+      "ci95": [
+        0.2307692307692307,
+        0.5974842767295598
+      ]
+    },
+    "gpt4o_mini": {
+      "n": 88,
+      "kappa": 0.4773218142548596,
+      "ci95": [
+        0.2874493927125506,
+        0.6537250786988459
+      ]
+    }
+  }
+}

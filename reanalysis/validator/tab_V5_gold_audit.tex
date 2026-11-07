@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\caption{Audit of the task-file gold sequences against the query text, over the 1091 distinct tasks
+that appear in any trace. 945 are verifiable; in 360
+of them the task-file \texttt{correct\_tool\_sequence} contradicts the query (generator draws slot values independently
+of the values rendered into the query, ignores conditions such as `cheaper' or `in stock', or, for ToolBench-style
+tasks, uses a fixed placeholder call). The validator uses the query-grounded gold. Not verifiable:
+knowledge (94), WU\_relative\_date (25), MU\_side\_effects (5), CU\_underspecified (15), MU\_schedule\_missing\_slots (7).}
+\label{tab:gold-audit}
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Contradicted slot (task file vs query) & Tasks \\
+\midrule
+\texttt{get\_product.product\_id} & 96 \\
+\texttt{get\_forecast.days} & 91 \\
+\texttt{tool\_multiset} & 58 \\
+\texttt{schedule\_appointment.date} & 57 \\
+\texttt{schedule\_appointment.doctor\_id} & 55 \\
+\texttt{schedule\_appointment.appointment\_type} & 50 \\
+\texttt{check\_drug\_interaction.drug\_pair} & 35 \\
+\texttt{place\_order.product\_id} & 33 \\
+\texttt{delete\_event.event\_id} & 18 \\
+\texttt{get\_patient\_record.patient\_id} & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}

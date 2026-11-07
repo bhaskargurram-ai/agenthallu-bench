@@ -1,0 +1,10 @@
+ALL                          n= 1085 err_base= 52.4 err_inj= 74.5 RD=+22.0pp CI[+18.4,+25.5] disc 286/47 p=6.3e-43
+injected call executed clean n=  376 err_base= 26.3 err_inj= 71.0 RD=+44.7pp CI[+38.4,+51.0] disc 186/18 p=2.3e-36
+placebo: no tool either arm  n=  351 err_base=100.0 err_inj=100.0 RD= +0.0pp CI[+0.0,+0.0] disc 0/0 p=1
+  deepseek_v3                n=  175 err_base= 29.7 err_inj= 62.3 RD=+32.6pp CI[+22.9,+41.1] disc 71/14 p=2.4e-10
+  gemini_20_flash            n=  175 err_base= 94.9 err_inj= 95.4 RD= +0.6pp CI[-1.1,+2.9] disc 2/1 p=1
+  gpt35_turbo                n=  175 err_base= 53.1 err_inj= 89.1 RD=+36.0pp CI[+28.0,+44.0] disc 67/4 p=8.7e-16
+  gpt41_mini                 n=  175 err_base= 33.7 err_inj= 58.3 RD=+24.6pp CI[+16.0,+33.1] disc 56/13 p=1.7e-07
+  gpt41_nano                 n=  175 err_base= 42.3 err_inj= 75.4 RD=+33.1pp CI[+24.6,+41.7] disc 65/7 p=7e-13
+  gpt4o_mini                 n=  175 err_base= 66.9 err_inj= 69.7 RD= +2.9pp CI[-2.3,+8.0] disc 13/8 p=0.38
+  o3_mini                    n=   35 err_base= 22.9 err_inj= 57.1 RD=+34.3pp CI[+20.0,+51.4] disc 12/0 p=0.00049

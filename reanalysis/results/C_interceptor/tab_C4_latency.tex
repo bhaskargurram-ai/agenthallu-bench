@@ -1,0 +1,15 @@
+% C_interceptor/tab_C4_latency.tex -- source: C_05 (real traces from C_02)
+\begin{table}[t]\centering\small
+\caption{Interceptor overhead measured on real GPT-4o-mini traces vs.\ the agent's own LLM latency recorded in the same traces.}
+\label{tab:C4}
+\begin{tabular}{lr}
+\toprule
+Traces timed & 4080 \\
+Monitor CPU time, median / p95 ($\mu$s per trace) & 7.0 / 31.4 \\
+Agent LLM wall-clock, median / mean (ms per trace) & 3596 / 4223 \\
+LLM calls per trace (mean) & 2.60 \\
+Overhead / LLM latency, median (max) & 0.0001\% (0.0017\%) \\
+Additional LLM calls / tokens & 0 / 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,100 @@
+{
+ "toolcall_hermes3_llama8b": {
+  "n": 200,
+  "rate_pct": 37.0
+ },
+ "toolcall_qwen25_7b": {
+  "n": 200,
+  "rate_pct": 99.5
+ },
+ "toolcall_qwen25_14b": {
+  "n": 200,
+  "rate_pct": 61.0
+ },
+ "toolcall_qwen25_3b": {
+  "n": 200,
+  "rate_pct": 70.0
+ },
+ "tool_call_rates.json_has_hermes": false,
+ "hop_v2_models": [
+  "deepseek_v3",
+  "gemini_20_flash",
+  "gemini_25_flash",
+  "gpt35_turbo",
+  "gpt41_mini",
+  "gpt41_nano",
+  "gpt4o",
+  "gpt4o_mini",
+  "o3_mini",
+  "qwen25_14b",
+  "qwen25_7b"
+ ],
+ "inj_to_err_open": {
+  "qwen25_14b": 0.647,
+  "qwen25_7b": 0.63
+ },
+ "pooled_r23_hop_v2": {
+  "S2": 233,
+  "S3|S2": 185,
+  "models": 11
+ },
+ "rows:~/Desktop/LifeNavigator/agenthallu_bench/hf_dataset/human_labels.csv": 100,
+ "rows:~/Desktop/LifeNavigator/agenthallu_bench/hf_dataset/traces.csv": 2150,
+ "rows:~/Downloads/agentprop_repo/src/hf_dataset/human_labels.csv": 100,
+ "rows:~/Downloads/agentprop_repo/src/hf_dataset/traces.csv": 2150,
+ "interceptor_open_delta.json": {
+  "hermes3_llama8b": {
+   "n_paired": 300,
+   "control_halluc_pct": 43.0,
+   "interceptor_halluc_pct": 39.0,
+   "delta_pp": 4.0,
+   "delta_ci95": [
+    0.3,
+    7.3
+   ],
+   "abstain_pct": 13.3,
+   "saved": 16,
+   "broken": 24,
+   "heldout_precision": 0.4,
+   "heldout_recall": 0.124,
+   "heldout_f1": 0.189
+  },
+  "qwen25_14b": {
+   "n_paired": 300,
+   "control_halluc_pct": 45.0,
+   "interceptor_halluc_pct": 37.0,
+   "delta_pp": 8.0,
+   "delta_ci95": [
+    5.0,
+    11.3
+   ],
+   "abstain_pct": 27.0,
+   "saved": 24,
+   "broken": 57,
+   "heldout_precision": 0.296,
+   "heldout_recall": 0.178,
+   "heldout_f1": 0.222
+  },
+  "qwen25_7b": {
+   "n_paired": 300,
+   "control_halluc_pct": 55.3,
+   "interceptor_halluc_pct": 31.3,
+   "delta_pp": 24.0,
+   "delta_ci95": [
+    19.3,
+    29.0
+   ],
+   "abstain_pct": 55.3,
+   "saved": 75,
+   "broken": 91,
+   "heldout_precision": 0.452,
+   "heldout_recall": 0.452,
+   "heldout_f1": 0.452
+  }
+ },
+ "judge_agreement_dual": {
+  "kappa_vs_bhaskar": 0.049,
+  "kappa_vs_yoshitha": 0.015,
+  "kappa_vs_consensus": 0.036
+ }
+}

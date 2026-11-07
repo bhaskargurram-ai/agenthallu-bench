@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Structured correctness validator (V1.0). All components are computed programmatically from the query-grounded
+gold specification, deterministic simulator replay and the logged trace; no LLM or human judgement is involved.}
+\label{tab:validator-def}
+\small
+\begin{tabular}{@{}lp{0.74\linewidth}@{}}
+\toprule
+Component & Definition \\
+\midrule
+$T$ (tools) & Every required gold call is matched one-to-one by an \emph{executed} (schema-valid) call of the same tool; per-template order constraints hold (e.g.\ \texttt{get\_events} before a conditional \texttt{create\_event}). \\
+$P$ (params) & Every matched call agrees with the gold call on every scored slot, using the parameters actually executed (post-injection). Normalisation: case/whitespace/accents, ISO dates, 24h times, unordered sets (attendees, drug pairs), enum spelling; celsius call + correct $^\circ$F answer accepted for Fahrenheit queries. \\
+$S$ (state) & Write tasks only. Multiset of state-changing successful writes equals the gold writes (strict, $\tau$-bench style); conditional writes (slot free, in stock, cheaper item) are resolved from the simulator or the received observation; a gold delete is satisfied by an executed attempt with the gold id. \\
+$A$ (answer) & Typed values in the final answer (temperatures, humidity, sky condition, IDs, prices, dates, times, drugs, conditions, severity, product and event names) vs the \emph{gold} observation: recall of required key values $=1$ and precision of typed mentions $=1$ (derived aggregates and unit conversions are grounded, tolerance $\pm1^\circ$); write-outcome claims must match $S$. \\
+CORRECT & $T\wedge P\wedge S\wedge A$ ($S$ vacuous for read-only tasks; for write-only tasks $A$ reduces to outcome-claim faithfulness and precision). \\
+\midrule
+Outcome code & First matching rule: \texttt{infra\_error} (runner/API error text) $\to$ \texttt{correct} $\to$ \texttt{fabricated} (asserts values/success with no executed call, or claims a write that never succeeded) $\to$ \texttt{schema\_error} (all calls failed validation) $\to$ \texttt{refused} (inability/clarification, no gold content) $\to$ \texttt{incomplete} ($\neg T$) $\to$ \texttt{wrong\_params} ($\neg P$) $\to$ \texttt{wrong\_state} ($\neg S$) $\to$ \texttt{wrong\_answer\_values} ($\neg A$). Tasks without recoverable gold are \texttt{not\_verifiable} and excluded. \\
+\bottomrule
+\end{tabular}
+\end{table}

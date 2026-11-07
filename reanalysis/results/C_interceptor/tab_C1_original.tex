@@ -1,0 +1,18 @@
+% C_interceptor/tab_C1_original.tex -- source: interceptor_control_600.csv, interceptor_heldout_600.csv (C_01)
+\begin{table}[t]\centering\small
+\caption{Original interceptor experiment re-analysed as selective prediction (heuristic labels, $n{=}600$ tasks per model, paired by task). Sv/Bk = abstained on a task the control arm got wrong/right. Precision = Sv/abstentions; recall = Sv/control errors. ``Random'' = expected hallucination when abstaining on the same number of control tasks uniformly at random; $p$ = one-sided hypergeometric test that the Interceptor's abstentions hit more control errors than random.}
+\label{tab:C1}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+Model & Ctrl hall.\% & Int.\ hall.\% & Cov.\% & Sel.\ acc.\% (Int) & Ctrl acc.\% & Sv & Bk & Prec. & Rec. & Random hall.\% & $p$ \\
+\midrule
+GPT-4o-mini & 55.8 & 32.8 & 66.5 & 50.6 & 44.2 & 133 & 68 & 0.66 & 0.40 & 37.1 & $<$0.001 \\
+Gemini-2.0-Flash & 44.5 & 43.2 & 97.2 & 55.6 & 55.5 & 16 & 1 & 0.94 & 0.06 & 43.2 & $<$0.001 \\
+\midrule
+\multicolumn{12}{l}{\emph{Per layer (GPT-4o-mini, from \texttt{abstain\_reason})}} \\
+\quad L1 abstentions & \multicolumn{5}{r}{139 abstentions} & 118 & 21 & 0.85 & -- & -- & $<$0.001 \\
+\quad L3 abstentions & \multicolumn{5}{r}{62 abstentions} & 15 & 47 & 0.24 & -- & -- & 1.000 \\
+\bottomrule
+\end{tabular}}
+\end{table}
